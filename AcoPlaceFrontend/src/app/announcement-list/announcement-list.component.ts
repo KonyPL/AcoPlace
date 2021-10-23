@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Announcement } from '../model/announcement';
+import { AnnouncementService } from './announcement.service';
 
 @Component({
   selector: 'app-announcement-list',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnnouncementListComponent implements OnInit {
 
-  constructor() { }
+  announcements: Announcement[];
+
+  constructor(private announcementService: AnnouncementService) { }
 
   ngOnInit(): void {
+    this.getAnnouncements();
   }
 
+  private getAnnouncements() {
+    this.announcementService.getAnnouncementsList().subscribe(
+      data => {
+        this.announcements = data;
+        console.log("DATA from endpoint" + data);
+      }
+    )
+  }
 }
