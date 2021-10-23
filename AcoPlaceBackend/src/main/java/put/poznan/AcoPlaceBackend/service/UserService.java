@@ -1,7 +1,7 @@
 package put.poznan.AcoPlaceBackend.service;
 
 import org.springframework.stereotype.Service;
-import put.poznan.AcoPlaceBackend.model.User;
+import put.poznan.AcoPlaceBackend.model.WebUser;
 import put.poznan.AcoPlaceBackend.repository.UserRepository;
 
 import java.util.List;
@@ -15,7 +15,7 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    private List<User> getAllUsers() {
+    public List<WebUser> getAllUsers() {
         return userRepository.findAll();
     }
 }

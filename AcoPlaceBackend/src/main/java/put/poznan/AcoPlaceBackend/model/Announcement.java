@@ -12,15 +12,15 @@ public class Announcement {
     private Date publicationDate;
     private String description;
     @ManyToOne
-    private User user;
-    @OneToOne
+    private WebUser webUser;
+    @ManyToOne
     private Place place;
 
-    public Announcement(long id, Date publicationDate, String description, User user, Place place) {
+    public Announcement(long id, Date publicationDate, String description, WebUser webUser, Place place) {
         this.id = id;
         this.publicationDate = publicationDate;
         this.description = description;
-        this.user = user;
+        this.webUser = webUser;
         this.place = place;
     }
 
@@ -33,7 +33,7 @@ public class Announcement {
                 "id=" + id +
                 ", publicationDate=" + publicationDate +
                 ", description='" + description + '\'' +
-                ", user=" + user +
+                ", user=" + webUser +
                 ", place=" + place +
                 '}';
     }
@@ -62,12 +62,12 @@ public class Announcement {
         this.description = description;
     }
 
-    public User getUser() {
-        return user;
+    public WebUser getUser() {
+        return webUser;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(WebUser webUser) {
+        this.webUser = webUser;
     }
 
     public Place getPlace() {

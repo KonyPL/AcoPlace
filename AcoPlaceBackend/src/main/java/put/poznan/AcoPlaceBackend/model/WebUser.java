@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class User {
+public class WebUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,13 +14,13 @@ public class User {
     @OneToMany
     private List<Announcement> announcements;
 
-    public User(Long id, String login, String password) {
+    public WebUser(Long id, String login, String password) {
         this.id = id;
         this.login = login;
         this.password = password;
     }
 
-    public User() {
+    public WebUser() {
     }
 
     public Long getId() {

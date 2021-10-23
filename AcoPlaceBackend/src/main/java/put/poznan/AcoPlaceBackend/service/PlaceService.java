@@ -15,7 +15,7 @@ public class PlaceService {
         this.placeRepository = placeRepository;
     }
 
-    private List<Place> getAllPlaces(){
+    public List<Place> getAllPlaces(){
         return placeRepository.findAll();
     }
 }

@@ -14,7 +14,7 @@ public class OwnerService {
         this.ownerRepository = ownerRepository;
     }
 
-    private List<Owner> getAllOwners(){
+    public List<Owner> getAllOwners(){
         return ownerRepository.findAll();
     }
 }

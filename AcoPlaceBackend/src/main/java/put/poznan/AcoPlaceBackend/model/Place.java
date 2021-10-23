@@ -15,31 +15,19 @@ public class Place {
     private List<Flatmate> flatmates;
     @ManyToOne
     private Owner owner;
-    @OneToOne
-    private Announcement announcement;
+    @OneToMany
+    private List<Announcement> announcements;
 
-    public Place(long id, String type, String address, List<Flatmate> flatmates, Owner owner, Announcement announcement) {
+    public Place(long id, String type, String address, List<Flatmate> flatmates, Owner owner, List<Announcement> announcements) {
         this.id = id;
         this.type = type;
         this.address = address;
         this.flatmates = flatmates;
         this.owner = owner;
-        this.announcement = announcement;
+        this.announcements = announcements;
     }
 
     public Place() {
-    }
-
-    @Override
-    public String toString() {
-        return "Place{" +
-                "id=" + id +
-                ", type='" + type + '\'' +
-                ", address='" + address + '\'' +
-                ", flatmates=" + flatmates +
-                ", owner=" + owner +
-                ", announcement=" + announcement +
-                '}';
     }
 
     public long getId() {
@@ -82,11 +70,23 @@ public class Place {
         this.owner = owner;
     }
 
-    public Announcement getAnnouncement() {
-        return announcement;
+    public List<Announcement> getAnnouncements() {
+        return announcements;
     }
 
-    public void setAnnouncement(Announcement announcement) {
-        this.announcement = announcement;
+    public void setAnnouncements(List<Announcement> announcements) {
+        this.announcements = announcements;
+    }
+
+    @Override
+    public String toString() {
+        return "Place{" +
+                "id=" + id +
+                ", type='" + type + '\'' +
+                ", address='" + address + '\'' +
+                ", flatmates=" + flatmates +
+                ", owner=" + owner +
+                ", announcements=" + announcements +
+                '}';
     }
 }
