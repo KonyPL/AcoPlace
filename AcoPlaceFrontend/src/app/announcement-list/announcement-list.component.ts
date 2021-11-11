@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Announcement } from '../model/announcement';
 import { AnnouncementService } from './announcement.service';
 
@@ -11,7 +12,7 @@ export class AnnouncementListComponent implements OnInit {
 
   announcements: Announcement[];
 
-  constructor(private announcementService: AnnouncementService) { }
+  constructor(private announcementService: AnnouncementService, private router: Router) { }
 
   ngOnInit(): void {
     this.getAnnouncements();
@@ -25,4 +26,17 @@ export class AnnouncementListComponent implements OnInit {
       }
     )
   }
+
+  public showAnnouncementById(id: number){
+    console.log("odczytuje id="+id);
+    this.router.navigate(['announcement', id]);
+
+  }
+
+  /* 
+    employeeDetails(id: number) {
+    this.router.navigate(['employee-details', id]);
+  }
+
+  */
 }

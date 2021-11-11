@@ -9,14 +9,14 @@ public class Announcement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private Date publicationDate;
+    private String publicationDate;
     private String description;
     @ManyToOne
     private WebUser webUser;
     @ManyToOne
     private Place place;
 
-    public Announcement(long id, Date publicationDate, String description, WebUser webUser, Place place) {
+    public Announcement(long id, String publicationDate, String description, WebUser webUser, Place place) {
         this.id = id;
         this.publicationDate = publicationDate;
         this.description = description;
@@ -46,11 +46,11 @@ public class Announcement {
         this.id = id;
     }
 
-    public Date getPublicationDate() {
+    public String getPublicationDate() {
         return publicationDate;
     }
 
-    public void setPublicationDate(Date publicationDate) {
+    public void setPublicationDate(String publicationDate) {
         this.publicationDate = publicationDate;
     }
 

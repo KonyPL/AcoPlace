@@ -5,6 +5,7 @@
             <th>ID</th>
             <th>DATE</th>
             <th>DESCRIPTION</th>
+            <th>SHOW header</th>
 
         </tr>
     </thead>
@@ -13,7 +14,9 @@
             <td>{{announcement.id}}</td>
             <td>{{announcement.date}}</td>
             <td>{{announcement.description}}</td>
+            <button (click)="showAnnouncementById(announcement.id)" 
+                    >show</button>
 
+         
         </tr>
     </tbody>
-</table>

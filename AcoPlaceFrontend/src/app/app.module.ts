@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { PlacesListComponent } from './places-list/places-list.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AnnouncementDetailsComponent } from './announcement-details/announcement-details.component';
+import { AddAnnouncementComponent } from './add-announcement/add-announcement.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
     AnnouncementListComponent,
     HeaderComponent,
-    PlacesListComponent
+    PlacesListComponent,
+    AnnouncementDetailsComponent,
+    AddAnnouncementComponent
   ],
   imports: [
     BrowserModule,
