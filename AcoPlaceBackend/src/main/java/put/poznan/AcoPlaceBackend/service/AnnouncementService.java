@@ -23,5 +23,8 @@ public class AnnouncementService {
         return announcementRepositoy.findById(id).orElseThrow(() -> new ResourceNotFoundException("anouncment not found for id:"+id));
     }
 
+    public Announcement saveAnnouncement(Announcement announcement){
+        return announcementRepositoy.save(announcement);
+    }
 
 }

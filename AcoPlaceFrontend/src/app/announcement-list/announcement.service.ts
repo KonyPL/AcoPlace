@@ -17,4 +17,10 @@ export class AnnouncementService {
   getAnnouncementById(id: number): Observable<Announcement> {
     return this.httpClient.get<Announcement>(`http://localhost:8080/announcement/`+id);
   }
+
+  createAnnouncement(announcement: Announcement): Observable<Object> {
+    return this.httpClient.post(`http://localhost:8080/addAnnouncement/`, announcement);
+  }
+
+
 }

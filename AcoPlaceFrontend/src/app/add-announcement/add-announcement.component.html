@@ -1,1 +1,14 @@
-<p>add-announcement works!</p>
+<div>
+    <h3>Create Employee</h3>
+
+    <form (ngSubmit)="onSubmit()">
+        
+        <div >
+            <label>description</label>
+            <input type="text" id="description" [(ngModel)]="announcement.description" name="description">
+        </div>
+
+        <button  type="submit">Dodaj</button>
+    </form>
+
+</div>

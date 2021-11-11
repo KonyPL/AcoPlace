@@ -9,6 +9,7 @@ import { PlacesListComponent } from './places-list/places-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AnnouncementDetailsComponent } from './announcement-details/announcement-details.component';
 import { AddAnnouncementComponent } from './add-announcement/add-announcement.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AddAnnouncementComponent } from './add-announcement/add-announcement.co
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
 
   ],
   providers: [HttpClientModule],
