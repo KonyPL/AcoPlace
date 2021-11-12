@@ -17,20 +17,23 @@ export class AddAnnouncementComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
+
   saveAnnouncement(){
     this.announcementService.createAnnouncement(this.announcement).subscribe( data =>{
-      console.log(data);
-      this.goToAnnouncementList;
+      console.log("jestem w save announcement"+data);
+      this.goToAnnouncementList();
     }, error=> console.log(error))
     
   }
 
   goToAnnouncementList(){
-    this.router.navigate(['announcements-list'])
+    console.log("jestem w  go to tu chce byc announcement list");
+    this.router.navigate(['announcements-list']);
   }
 
   onSubmit(){
-    console.log("THIS ANNOUNCEMENT"+this.announcement);
+    console.log("THIS ANNOUNCEMENT on sumbit clicked"+this.announcement);
     this.saveAnnouncement();
   }
 }
