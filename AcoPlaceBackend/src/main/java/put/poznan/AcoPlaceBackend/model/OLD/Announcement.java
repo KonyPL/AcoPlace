@@ -1,5 +1,7 @@
 package put.poznan.AcoPlaceBackend.model.OLD;
 
+import put.poznan.AcoPlaceBackend.model.WebUser;
+
 import javax.persistence.*;
 
 @Entity

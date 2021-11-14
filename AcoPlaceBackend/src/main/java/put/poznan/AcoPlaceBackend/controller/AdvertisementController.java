@@ -1,4 +1,4 @@
 package put.poznan.AcoPlaceBackend.controller;
 
-public class AdvertismentController {
+public class AdvertisementController {
 }

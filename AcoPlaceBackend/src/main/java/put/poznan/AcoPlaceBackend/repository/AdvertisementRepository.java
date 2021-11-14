@@ -1,4 +1,4 @@
 package put.poznan.AcoPlaceBackend.repository;
 
-public interface AdversimentRepository {
+public interface AdvertisementRepository {
 }
