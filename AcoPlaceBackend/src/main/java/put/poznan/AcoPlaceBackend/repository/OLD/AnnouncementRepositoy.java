@@ -1,7 +1,7 @@
-package put.poznan.AcoPlaceBackend.repository;
+package put.poznan.AcoPlaceBackend.repository.OLD;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import put.poznan.AcoPlaceBackend.model.Announcement;
+import put.poznan.AcoPlaceBackend.model.OLD.Announcement;
 
 public interface AnnouncementRepositoy extends JpaRepository<Announcement, Long> {
 

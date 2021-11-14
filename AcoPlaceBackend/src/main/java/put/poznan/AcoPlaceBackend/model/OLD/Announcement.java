@@ -1,7 +1,6 @@
-package put.poznan.AcoPlaceBackend.model;
+package put.poznan.AcoPlaceBackend.model.OLD;
 
 import javax.persistence.*;
-import java.sql.Date;
 
 @Entity
 public class Announcement {

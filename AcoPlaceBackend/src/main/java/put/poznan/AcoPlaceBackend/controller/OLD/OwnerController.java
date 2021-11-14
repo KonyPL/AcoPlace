@@ -1,10 +1,10 @@
-package put.poznan.AcoPlaceBackend.controller;
+package put.poznan.AcoPlaceBackend.controller.OLD;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import put.poznan.AcoPlaceBackend.model.Owner;
-import put.poznan.AcoPlaceBackend.service.OwnerService;
+import put.poznan.AcoPlaceBackend.model.OLD.Owner;
+import put.poznan.AcoPlaceBackend.service.OLD.OwnerService;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
-package put.poznan.AcoPlaceBackend.controller;
+package put.poznan.AcoPlaceBackend.controller.OLD;
 
 import org.springframework.web.bind.annotation.*;
-import put.poznan.AcoPlaceBackend.model.Announcement;
-import put.poznan.AcoPlaceBackend.service.AnnouncementService;
+import put.poznan.AcoPlaceBackend.model.OLD.Announcement;
+import put.poznan.AcoPlaceBackend.service.OLD.AnnouncementService;
 
 import java.util.Date;
 import java.util.List;

@@ -1,9 +1,9 @@
-package put.poznan.AcoPlaceBackend.service;
+package put.poznan.AcoPlaceBackend.service.OLD;
 
 import org.springframework.stereotype.Service;
 import put.poznan.AcoPlaceBackend.exception.ResourceNotFoundException;
-import put.poznan.AcoPlaceBackend.model.Announcement;
-import put.poznan.AcoPlaceBackend.repository.AnnouncementRepositoy;
+import put.poznan.AcoPlaceBackend.model.OLD.Announcement;
+import put.poznan.AcoPlaceBackend.repository.OLD.AnnouncementRepositoy;
 
 import java.util.List;
 

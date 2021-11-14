@@ -1,8 +1,8 @@
-package put.poznan.AcoPlaceBackend.service;
+package put.poznan.AcoPlaceBackend.service.OLD;
 
 import org.springframework.stereotype.Service;
-import put.poznan.AcoPlaceBackend.model.Place;
-import put.poznan.AcoPlaceBackend.repository.PlaceRepository;
+import put.poznan.AcoPlaceBackend.model.OLD.Place;
+import put.poznan.AcoPlaceBackend.repository.OLD.PlaceRepository;
 
 import java.util.List;
 

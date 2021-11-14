@@ -1,4 +1,4 @@
-package put.poznan.AcoPlaceBackend.model;
+package put.poznan.AcoPlaceBackend.model.OLD;
 
 import javax.persistence.*;
 import java.util.List;
