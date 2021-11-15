@@ -1,9 +1,6 @@
 package put.poznan.AcoPlaceBackend.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
@@ -28,10 +25,13 @@ public class Advertisement {
     private Date availableFrom;
     private Date publicationDate;
 
+    @ManyToOne
+    private WebUser webUser;
+
     public Advertisement() {
     }
 
-    public Advertisement(long id, String country, String city, String postalCode, String district, String state, String street, String houseNumber, String title, String text, String propertyType, double price, String currency, int livingSpace, int yearBuilt, Date availableFrom, Date publicationDate) {
+    public Advertisement(long id, String country, String city, String postalCode, String district, String state, String street, String houseNumber, String title, String text, String propertyType, double price, String currency, int livingSpace, int yearBuilt, Date availableFrom, Date publicationDate, WebUser webUser) {
         this.id = id;
         this.country = country;
         this.city = city;
@@ -49,6 +49,7 @@ public class Advertisement {
         this.yearBuilt = yearBuilt;
         this.availableFrom = availableFrom;
         this.publicationDate = publicationDate;
+        this.webUser = webUser;
     }
 
     public long getId() {
@@ -187,26 +188,11 @@ public class Advertisement {
         this.publicationDate = publicationDate;
     }
 
-    @Override
-    public String toString() {
-        return "Advertisement{" +
-                "id=" + id +
-                ", country='" + country + '\'' +
-                ", city='" + city + '\'' +
-                ", postalCode='" + postalCode + '\'' +
-                ", district='" + district + '\'' +
-                ", state='" + state + '\'' +
-                ", street='" + street + '\'' +
-                ", houseNumber='" + houseNumber + '\'' +
-                ", title='" + title + '\'' +
-                ", text='" + text + '\'' +
-                ", propertyType='" + propertyType + '\'' +
-                ", price=" + price +
-                ", currency='" + currency + '\'' +
-                ", livingSpace=" + livingSpace +
-                ", yearBuilt=" + yearBuilt +
-                ", availableFrom=" + availableFrom +
-                ", publicationDate=" + publicationDate +
-                '}';
+    public WebUser getWebUser() {
+        return webUser;
+    }
+
+    public void setWebUser(WebUser webUser) {
+        this.webUser = webUser;
     }
 }
