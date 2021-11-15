@@ -19,7 +19,7 @@ public class AdvertisementController {
         this.advertisementService = advertisementService;
     }
 
-    @GetMapping("/adverisements")
+    @GetMapping("/advertisements")
     public List<Advertisement> getAllAdvertisements() {
         return advertisementService.getAllAdvertisements();
     }
