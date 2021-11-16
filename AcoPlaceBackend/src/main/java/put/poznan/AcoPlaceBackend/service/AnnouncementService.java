@@ -24,4 +24,8 @@ public class AnnouncementService {
     public List<Announcement> getAllAnnouncements() {
         return announcementRepository.findAll();
     }
+
+    public Announcement saveAnnouncement(Announcement announcement) {
+        return announcementRepository.save(announcement);
+    }
 }

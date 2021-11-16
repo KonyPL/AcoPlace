@@ -1,12 +1,10 @@
 package put.poznan.AcoPlaceBackend.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import put.poznan.AcoPlaceBackend.model.Announcement;
 import put.poznan.AcoPlaceBackend.service.AnnouncementService;
 
+import java.sql.Date;
 import java.util.List;
 
 @RestController
@@ -28,4 +26,9 @@ public class AnnouncementController {
         return announcementService.getAnnouncementById(id);
     }
 
+    @PostMapping("/addAnnouncement")
+    public Announcement createAnnouncement(@RequestBody Announcement announcement) {
+        announcement.setPublicationDate((new Date(System.currentTimeMillis())));
+        return announcementService.saveAnnouncement(announcement);
+    }
 }
