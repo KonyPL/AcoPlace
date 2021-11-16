@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-public class Advertisement {
+public class Announcement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -28,10 +28,10 @@ public class Advertisement {
     @ManyToOne
     private WebUser webUser;
 
-    public Advertisement() {
+    public Announcement() {
     }
 
-    public Advertisement(long id, String country, String city, String postalCode, String district, String state, String street, String houseNumber, String title, String text, String propertyType, double price, String currency, int livingSpace, int yearBuilt, Date availableFrom, Date publicationDate, WebUser webUser) {
+    public Announcement(long id, String country, String city, String postalCode, String district, String state, String street, String houseNumber, String title, String text, String propertyType, double price, String currency, int livingSpace, int yearBuilt, Date availableFrom, Date publicationDate, WebUser webUser) {
         this.id = id;
         this.country = country;
         this.city = city;

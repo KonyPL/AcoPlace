@@ -3,7 +3,7 @@ package put.poznan.AcoPlaceBackend.model;
 import javax.persistence.*;
 
 @Entity
-public class AdvertisementDetails {
+public class AnnouncementDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,12 +31,12 @@ public class AdvertisementDetails {
     private boolean nearSupermarket;
 
     @ManyToOne
-    private Advertisement advertisement;
+    private Announcement announcement;
 
-    public AdvertisementDetails() {
+    public AnnouncementDetails() {
     }
 
-    public AdvertisementDetails(Long id, boolean bath, boolean shower, boolean microwave, boolean oven, boolean petsAllowed, boolean elevator, boolean nearPark, boolean fenced, boolean nearTram, boolean nearBus, boolean wifi, boolean ethernetOutlets, int internetSpeed, boolean internet, boolean tv, boolean dishwasher, boolean clothesDryer, boolean nearShoppingMall, boolean nearBakery, boolean nearFoodMarket, boolean nearSupermarket, Advertisement advertisement) {
+    public AnnouncementDetails(Long id, boolean bath, boolean shower, boolean microwave, boolean oven, boolean petsAllowed, boolean elevator, boolean nearPark, boolean fenced, boolean nearTram, boolean nearBus, boolean wifi, boolean ethernetOutlets, int internetSpeed, boolean internet, boolean tv, boolean dishwasher, boolean clothesDryer, boolean nearShoppingMall, boolean nearBakery, boolean nearFoodMarket, boolean nearSupermarket, Announcement announcement) {
         this.id = id;
         this.bath = bath;
         this.shower = shower;
@@ -59,7 +59,7 @@ public class AdvertisementDetails {
         this.nearBakery = nearBakery;
         this.nearFoodMarket = nearFoodMarket;
         this.nearSupermarket = nearSupermarket;
-        this.advertisement = advertisement;
+        this.announcement = announcement;
     }
 
     public Long getId() {
@@ -238,11 +238,11 @@ public class AdvertisementDetails {
         this.nearSupermarket = nearSupermarket;
     }
 
-    public Advertisement getAdvertisement() {
-        return advertisement;
+    public Announcement getAdvertisement() {
+        return announcement;
     }
 
-    public void setAdvertisement(Advertisement advertisement) {
-        this.advertisement = advertisement;
+    public void setAdvertisement(Announcement announcement) {
+        this.announcement = announcement;
     }
 }

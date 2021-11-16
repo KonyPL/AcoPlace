@@ -13,15 +13,15 @@ public class RoomDetails {
     private int bathrooms;
 
     @ManyToOne
-    private Advertisement advertisement;
+    private Announcement announcement;
 
-    public RoomDetails(Long id, int floor, int bedsInRoom, int numberOfFlatmates, int bathrooms, Advertisement advertisement) {
+    public RoomDetails(Long id, int floor, int bedsInRoom, int numberOfFlatmates, int bathrooms, Announcement announcement) {
         this.id = id;
         this.floor = floor;
         this.bedsInRoom = bedsInRoom;
         this.numberOfFlatmates = numberOfFlatmates;
         this.bathrooms = bathrooms;
-        this.advertisement = advertisement;
+        this.announcement = announcement;
     }
 
     public Long getId() {
@@ -64,11 +64,11 @@ public class RoomDetails {
         this.bathrooms = bathrooms;
     }
 
-    public Advertisement getAdvertisement() {
-        return advertisement;
+    public Announcement getAdvertisement() {
+        return announcement;
     }
 
-    public void setAdvertisement(Advertisement advertisement) {
-        this.advertisement = advertisement;
+    public void setAdvertisement(Announcement announcement) {
+        this.announcement = announcement;
     }
 }

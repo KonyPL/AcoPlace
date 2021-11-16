@@ -1,5 +1,7 @@
 package put.poznan.AcoPlaceBackend.model.OLD;
 
+import put.poznan.AcoPlaceBackend.model.Announcement;
+
 import javax.persistence.*;
 import java.util.List;
 

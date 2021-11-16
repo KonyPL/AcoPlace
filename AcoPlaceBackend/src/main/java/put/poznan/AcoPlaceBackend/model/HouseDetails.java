@@ -16,12 +16,12 @@ public class HouseDetails {
     private int balcony;
 
     @ManyToOne
-    private Advertisement advertisement;
+    private Announcement announcement;
 
     public HouseDetails() {
     }
 
-    public HouseDetails(Long id, int floors, boolean basement, int bedrooms, int bathrooms, int lotSize, boolean parking, int balcony, Advertisement advertisement) {
+    public HouseDetails(Long id, int floors, boolean basement, int bedrooms, int bathrooms, int lotSize, boolean parking, int balcony, Announcement announcement) {
         this.id = id;
         this.floors = floors;
         this.basement = basement;
@@ -30,7 +30,7 @@ public class HouseDetails {
         this.lotSize = lotSize;
         this.parking = parking;
         this.balcony = balcony;
-        this.advertisement = advertisement;
+        this.announcement = announcement;
     }
 
     public Long getId() {
@@ -97,11 +97,11 @@ public class HouseDetails {
         this.balcony = balcony;
     }
 
-    public Advertisement getAdvertisement() {
-        return advertisement;
+    public Announcement getAdvertisement() {
+        return announcement;
     }
 
-    public void setAdvertisement(Advertisement advertisement) {
-        this.advertisement = advertisement;
+    public void setAdvertisement(Announcement announcement) {
+        this.announcement = announcement;
     }
 }

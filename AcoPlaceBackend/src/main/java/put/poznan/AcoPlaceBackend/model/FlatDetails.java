@@ -16,12 +16,12 @@ public class FlatDetails {
     private int balcony;
 
     @ManyToOne
-    private Advertisement advertisement;
+    private Announcement announcement;
 
     public FlatDetails() {
     }
 
-    public FlatDetails(Long id, boolean basement, int floor, int bedrooms, int bathrooms, int flatParking, int balcony, Advertisement advertisement) {
+    public FlatDetails(Long id, boolean basement, int floor, int bedrooms, int bathrooms, int flatParking, int balcony, Announcement announcement) {
         this.id = id;
         this.basement = basement;
         this.floor = floor;
@@ -29,7 +29,7 @@ public class FlatDetails {
         this.bathrooms = bathrooms;
         this.flatParking = flatParking;
         this.balcony = balcony;
-        this.advertisement = advertisement;
+        this.announcement = announcement;
     }
 
     public Long getId() {
@@ -88,11 +88,11 @@ public class FlatDetails {
         this.balcony = balcony;
     }
 
-    public Advertisement getAdvertisement() {
-        return advertisement;
+    public Announcement getAdvertisement() {
+        return announcement;
     }
 
-    public void setAdvertisement(Advertisement advertisement) {
-        this.advertisement = advertisement;
+    public void setAdvertisement(Announcement announcement) {
+        this.announcement = announcement;
     }
 }
