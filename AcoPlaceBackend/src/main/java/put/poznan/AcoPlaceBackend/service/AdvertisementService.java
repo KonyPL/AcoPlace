@@ -1,6 +1,7 @@
 package put.poznan.AcoPlaceBackend.service;
 
 import org.springframework.stereotype.Service;
+import put.poznan.AcoPlaceBackend.exception.ResourceNotFoundException;
 import put.poznan.AcoPlaceBackend.model.Advertisement;
 import put.poznan.AcoPlaceBackend.repository.AdvertisementRepository;
 
@@ -16,7 +17,8 @@ public class AdvertisementService {
     }
 
     public Advertisement getAdvertisementById(long id) {
-        return advertisementRepository.getById(id);
+        // return advertisementRepository.getById(id);
+        return advertisementRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Advertisement with id:" + id + " not found in database"));
     }
 
     public List<Advertisement> getAllAdvertisements() {
