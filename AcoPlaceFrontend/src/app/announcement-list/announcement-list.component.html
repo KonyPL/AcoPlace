@@ -3,8 +3,8 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>DATE</th>
-            <th>DESCRIPTION</th>
+            <th>COUNTRY</th>
+            <th>CITY</th>
             <th>SHOW header</th>
 
         </tr>
@@ -12,8 +12,8 @@
     <tbody>
         <tr *ngFor="let announcement of announcements">
             <td>{{announcement.id}}</td>
-            <td>{{announcement.date}}</td>
-            <td>{{announcement.description}}</td>
+            <td>{{announcement.country}}</td>
+            <td>{{announcement.city}}</td>
             <button (click)="showAnnouncementById(announcement.id)" 
                     >show</button>
 

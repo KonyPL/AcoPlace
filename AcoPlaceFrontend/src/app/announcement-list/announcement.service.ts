@@ -11,7 +11,7 @@ export class AnnouncementService {
   constructor(private httpClient: HttpClient) { }
 
   getAnnouncementsList(): Observable<Announcement[]> {
-    return this.httpClient.get<Announcement[]>("http://localhost:8080/annoucements");
+    return this.httpClient.get<Announcement[]>("http://localhost:8080/announcements");
   }
 
   getAnnouncementById(id: number): Observable<Announcement> {

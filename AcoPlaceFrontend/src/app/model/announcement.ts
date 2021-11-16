@@ -16,4 +16,5 @@ export class Announcement {
     yearBuild: number; 
     availableFrom: Date;
     publicationDate: Date;
+
 }
