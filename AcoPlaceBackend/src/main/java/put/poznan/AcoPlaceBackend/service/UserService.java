@@ -18,4 +18,8 @@ public class UserService {
     public List<WebUser> getAllUsers() {
         return userRepository.findAll();
     }
+
+    public WebUser getUserById(long id){
+        return userRepository.getById(id);
+    }
 }
