@@ -22,4 +22,8 @@ public class UserService {
     public WebUser getUserById(long id){
         return userRepository.getById(id);
     }
+
+    public WebUser saveWebUser(WebUser webUser){
+        return userRepository.save(webUser);
+    }
 }

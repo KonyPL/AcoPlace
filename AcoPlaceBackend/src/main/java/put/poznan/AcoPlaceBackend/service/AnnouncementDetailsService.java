@@ -22,4 +22,8 @@ public class AnnouncementDetailsService {
     public AnnouncementDetails getAnnouncementDetailsById(long id){
         return announcementDetailsRepository.getById(id);
     }
+
+    public AnnouncementDetails saveAnnouncementDetails(AnnouncementDetails announcementDetails){
+        return announcementDetailsRepository.save(announcementDetails);
+    }
 }

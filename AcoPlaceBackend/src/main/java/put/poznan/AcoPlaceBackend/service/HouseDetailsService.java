@@ -21,4 +21,8 @@ public class HouseDetailsService {
     public HouseDetails getHouseDetailsById(long id){
         return houseDetailsRepository.getById(id);
     }
+
+    public HouseDetails saveHouseDetails(HouseDetails houseDetails){
+        return houseDetailsRepository.save(houseDetails);
+    }
 }

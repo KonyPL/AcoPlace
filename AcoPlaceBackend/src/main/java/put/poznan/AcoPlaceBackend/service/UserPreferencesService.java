@@ -21,4 +21,8 @@ public class UserPreferencesService {
     public UserPreferences getUserPreferencesById(long id){
         return userPreferencesRepository.getById(id);
     }
+
+    public UserPreferences saveUserPreferences(UserPreferences userPreferences){
+        return userPreferencesRepository.save(userPreferences);
+    }
 }

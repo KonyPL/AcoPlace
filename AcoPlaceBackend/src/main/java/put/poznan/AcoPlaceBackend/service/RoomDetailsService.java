@@ -20,4 +20,7 @@ public class RoomDetailsService {
     public RoomDetails getRoomDetailsById(long id){
         return roomDetailsRepository.getById(id);
     }
+    public RoomDetails saveRoomDetails(RoomDetails roomDetails){
+        return roomDetailsRepository.save(roomDetails);
+    }
 }

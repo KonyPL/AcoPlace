@@ -22,4 +22,8 @@ public class UserDetailsService {
     public UserDetails getUserById(long id){
         return userDetailsRepository.getById(id);
     }
+
+    public UserDetails saveUserDetails(UserDetails userDetails){
+        return userDetailsRepository.save(userDetails);
+    }
 }
