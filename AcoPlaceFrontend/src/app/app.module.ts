@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AnnouncementDetailsComponent } from './announcement-details/announcement-details.component';
 import { AddAnnouncementComponent } from './add-announcement/add-announcement.component';
 import { FormsModule } from '@angular/forms';
+import { AnnouncementDetailsListComponent } from './announcement-details-list/announcement-details-list.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     AnnouncementListComponent,
     HeaderComponent,
     AnnouncementDetailsComponent,
-    AddAnnouncementComponent
+    AddAnnouncementComponent,
+    AnnouncementDetailsListComponent
   ],
   imports: [
     BrowserModule,
@@ -31,3 +33,4 @@ import { FormsModule } from '@angular/forms';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+//comment

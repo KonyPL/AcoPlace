@@ -8,7 +8,7 @@ import { Announcement } from '../model/announcement';
   templateUrl: './announcement-details.component.html',
   styleUrls: ['./announcement-details.component.css']
 })
-export class AnnouncementDetailsComponent implements OnInit {
+export class AnnouncementDetailsComponent implements OnInit {//TODO ZMIANA NAZWY POTRZEBNA
   announcement: Announcement;
   id: number;
   constructor(private announcementService: AnnouncementService, private router: Router, private route: ActivatedRoute ) { }
