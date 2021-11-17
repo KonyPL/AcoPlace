@@ -13,8 +13,9 @@ export class Announcement {
     price: number; 
     currency: string; 
     livingSpace: number;
-    yearBuild: number; 
+    yearBuilt: number; 
     availableFrom: Date;
     publicationDate: Date;
+    webUser: number;
 
 }

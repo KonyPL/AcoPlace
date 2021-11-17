@@ -3,9 +3,23 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>COUNTRY</th>
+            <th>cou</th>
             <th>CITY</th>
-            <th>SHOW header</th>
+            <th>POSTAL_CODE</th>
+            <th>DISTRICT</th>
+            <th>STATE</th>
+            <th>STREET</th>
+            <th>HOUSE NUMBER</th>
+            <th>TITLE</th>
+            <th>TEXT</th>
+            <th>PROPERTY TYPE</th>
+            <th>PRICE</th>
+            <th>LIVING SPACE</th>
+            <th>YEAR BUILT</th>
+            <th>AVAILABLE FROM</th>
+            <th>PUBLICATION DATE</th>
+        
+            <th>SHOW</th>
 
         </tr>
     </thead>
@@ -13,7 +27,21 @@
         <tr *ngFor="let announcement of announcements">
             <td>{{announcement.id}}</td>
             <td>{{announcement.country}}</td>
-            <td>{{announcement.city}}</td>
+            <td>{{announcement.postalCode}}</td>
+            <td>{{announcement.district}}</td>
+            <td>{{announcement.state}}</td>
+            <td>{{announcement.street}}</td>
+            <td>{{announcement.houseNumber}}</td>
+            <td>{{announcement.title}}</td>
+            <td>{{announcement.text}}</td>
+            <td>{{announcement.propertyType}}</td>
+            <td>{{announcement.price}}</td>
+            <td>{{announcement.currency}}</td>
+            <td>{{announcement.livingSpace}}</td>
+            <td>{{announcement.yearBuilt}}</td>
+            <td>{{announcement.availableFrom}}</td>
+            <td>{{announcement.publicationDate}}</td>
+        
             <button (click)="showAnnouncementById(announcement.id)" 
                     >show</button>
 
