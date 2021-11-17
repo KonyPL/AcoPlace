@@ -28,6 +28,7 @@ public class AnnouncementController {
 
     @PostMapping("/addAnnouncement")
     public Announcement createAnnouncement(@RequestBody Announcement announcement) {
+        System.out.println(announcement.toString());
         announcement.setPublicationDate((new Date(System.currentTimeMillis())));
         return announcementService.saveAnnouncement(announcement);
     }

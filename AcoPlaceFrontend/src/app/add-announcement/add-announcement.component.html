@@ -4,15 +4,70 @@
     <form (ngSubmit)="onSubmit()">
 
         <div >
-            <label>country</label>
+            <label>country(string)</label>
             <input type="text" id="country" [(ngModel)]="announcement.country" name="country">
         </div>
     
         <div >
-            <label>city</label>
+            <label>city(string)</label>
             <input type="text" id="city" [(ngModel)]="announcement.city" name="city">
         </div>
-
+        <div >
+            <label>postal code(string)</label>
+            <input type="text" id="postalCode" [(ngModel)]="announcement.postalCode" name="postalCode">
+        </div>
+        <div >
+            <label>district(string)</label>
+            <input type="text" id="district" [(ngModel)]="announcement.district" name="district">
+        </div>
+        <div >
+            <label>state(string)</label>
+            <input type="text" id="state" [(ngModel)]="announcement.state" name="state">
+        </div>   
+         <div >
+            <label>street(string)</label>
+            <input type="text" id="street" [(ngModel)]="announcement.street" name="street">
+        </div>    
+        <div>
+            <label>houseNumber(string)</label>
+            <input type="text" id="houseNumber" [(ngModel)]="announcement.houseNumber" name="houseNumber">
+        </div>   
+         <div >
+            <label>title(string)</label>
+            <input type="text" id="title" [(ngModel)]="announcement.title" name="title">
+        </div>
+        <div >
+            <label>text(string)</label>
+            <input type="text" id="text" [(ngModel)]="announcement.text" name="text">
+        </div>
+        <div >
+            <label>propertyType(string)</label>
+            <input type="text" id="propertyType" [(ngModel)]="announcement.propertyType" name="propertyType">
+        </div>
+        <div >
+            <label>price(number)</label>
+            <input type="text" id="price" [(ngModel)]="announcement.price" name="price">
+        </div>
+        <div >
+            <label>currency(string)</label>
+            <input type="text" id="currency" [(ngModel)]="announcement.currency" name="currency">
+        </div>
+        <div >
+            <label>livingSpace(number)</label>
+            <input type="text" id="livingSpace" [(ngModel)]="announcement.livingSpace" name="livingSpace">
+        </div>
+        <div >
+            <label>yearBuilt(number)</label>
+            <input type="text" id="yearBuilt" [(ngModel)]="announcement.yearBuilt" name="yearBuilt">
+        </div>
+        <div >
+            <label>availableFrom(date) pattern -> '2021-11-18''</label>
+            <input type="text" id="availableFrom" [(ngModel)]="announcement.availableFrom" name="availableFrom">
+        </div>
+        <div >
+            <p>PUBLICATION DATE AUTO</p>
+        </div>
+       
         <button  type="submit">Dodaj</button>
     </form>
 
