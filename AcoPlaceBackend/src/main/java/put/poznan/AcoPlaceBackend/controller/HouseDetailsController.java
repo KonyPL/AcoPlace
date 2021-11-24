@@ -20,7 +20,7 @@ public class HouseDetailsController {
         return houseDetailsService.getAllHouseDetails();
     }
 
-    @GetMapping("/houseDetails/{id{")
+    @GetMapping("/houseDetails/{id}")
     public HouseDetails getHouseDetailsById(@PathVariable long id){
         return houseDetailsService.getHouseDetailsById(id);
     }
