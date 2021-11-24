@@ -46,7 +46,7 @@
         </div>
         <div >
             <label>price(number)</label>
-            <input type="text" id="price" [(ngModel)]="announcement.price" name="price">
+            <input type="number" min="1" max="9999" id="price" [(ngModel)]="announcement.price" name="price">
         </div>
         <div >
             <label>currency(string)</label>
@@ -54,15 +54,15 @@
         </div>
         <div >
             <label>livingSpace(number)</label>
-            <input type="text" id="livingSpace" [(ngModel)]="announcement.livingSpace" name="livingSpace">
+            <input type="number" min="1" max="999" id="livingSpace" [(ngModel)]="announcement.livingSpace" name="livingSpace">
         </div>
         <div >
             <label>yearBuilt(number)</label>
-            <input type="text" id="yearBuilt" [(ngModel)]="announcement.yearBuilt" name="yearBuilt">
+            <input type="number" min="1900" max="2021" id="yearBuilt" [(ngModel)]="announcement.yearBuilt" name="yearBuilt">
         </div>
         <div >
             <label>availableFrom(date) pattern -> '2021-11-18''</label>
-            <input type="text" id="availableFrom" [(ngModel)]="announcement.availableFrom" name="availableFrom">
+            <input type="date" max="2021-12-31" min="1700-01-01" id="availableFrom" [(ngModel)]="announcement.availableFrom" name="availableFrom">
         </div>
         <div >
             <p>PUBLICATION DATE AUTO</p>
