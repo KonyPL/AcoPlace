@@ -195,4 +195,28 @@ public class Announcement {
     public void setWebUser(WebUser webUser) {
         this.webUser = webUser;
     }
+
+    @Override
+    public String toString() {
+        return "Announcement{" +
+                "id=" + id +
+                ", country='" + country + '\'' +
+                ", city='" + city + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                ", district='" + district + '\'' +
+                ", state='" + state + '\'' +
+                ", street='" + street + '\'' +
+                ", houseNumber='" + houseNumber + '\'' +
+                ", title='" + title + '\'' +
+                ", text='" + text + '\'' +
+                ", propertyType='" + propertyType + '\'' +
+                ", price=" + price +
+                ", currency='" + currency + '\'' +
+                ", livingSpace=" + livingSpace +
+                ", yearBuilt=" + yearBuilt +
+                ", availableFrom=" + availableFrom +
+                ", publicationDate=" + publicationDate +
+                ", webUser=" + webUser +
+                '}';
+    }
 }

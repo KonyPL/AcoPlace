@@ -31,6 +31,8 @@ public class AnnouncementService {
     }
 
     public List<Announcement> searchAnnouncementsByParams(Map<String, String> allParams) {
+
+
         String priceMin = "0";
         String priceMax = "0";
         String propertyType = "0";
@@ -62,7 +64,14 @@ public class AnnouncementService {
         for( Integer id: finalIdList){
            matchingAnnouncements.add( announcementRepository.findById((long)id).orElseThrow(() ->new ResourceNotFoundException("announcement with id="+id+"not found")));
         }
+        for(Announcement announcement: matchingAnnouncements){
+            System.out.println(announcement.toString());
+        }
+        System.out.println("==========================PRINTUJEMY MAPE ====================");
 
+        for (Map.Entry<String, String> entry : allParams.entrySet()) {
+            System.out.println("KEY="+entry.getKey()+"|  value="+entry.getValue());
+        }
 
         return matchingAnnouncements;
 

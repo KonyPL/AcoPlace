@@ -33,6 +33,9 @@ export class AnnouncementListComponent implements OnInit {
 
   }
 
+
+
+
   /* 
     employeeDetails(id: number) {
     this.router.navigate(['employee-details', id]);

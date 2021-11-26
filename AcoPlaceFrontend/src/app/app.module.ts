@@ -11,6 +11,7 @@ import { AnnouncementDetailsComponent } from './announcement-details/announcemen
 import { AddAnnouncementComponent } from './add-announcement/add-announcement.component';
 import { FormsModule } from '@angular/forms';
 import { AnnouncementDetailsListComponent } from './announcement-details-list/announcement-details-list.component';
+import { SearchAnnouncementComponent } from './search-announcement/search-announcement.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AnnouncementDetailsListComponent } from './announcement-details-list/an
     HeaderComponent,
     AnnouncementDetailsComponent,
     AddAnnouncementComponent,
-    AnnouncementDetailsListComponent
+    AnnouncementDetailsListComponent,
+    SearchAnnouncementComponent
   ],
   imports: [
     BrowserModule,
