@@ -36,6 +36,10 @@ public class AnnouncementDetails {
     public AnnouncementDetails() {
     }
 
+    public Long getId() {
+        return id;
+    }
+
     public AnnouncementDetails(Long id, boolean bath, boolean shower, boolean microwave, boolean oven, boolean petsAllowed, boolean elevator, boolean nearPark, boolean fenced, boolean nearTram, boolean nearBus, boolean wifi, boolean ethernetOutlets, int internetSpeed, boolean internet, boolean tv, boolean dishwasher, boolean clothesDryer, boolean nearShoppingMall, boolean nearBakery, boolean nearFoodMarket, boolean nearSupermarket, Announcement announcement) {
         this.id = id;
         this.bath = bath;
@@ -60,10 +64,6 @@ public class AnnouncementDetails {
         this.nearFoodMarket = nearFoodMarket;
         this.nearSupermarket = nearSupermarket;
         this.announcement = announcement;
-    }
-
-    public Long getId() {
-        return id;
     }
 
     public void setId(Long id) {
@@ -238,11 +238,11 @@ public class AnnouncementDetails {
         this.nearSupermarket = nearSupermarket;
     }
 
-    public Announcement getAdvertisement() {
+    public Announcement getAnnouncement() {
         return announcement;
     }
 
-    public void setAdvertisement(Announcement announcement) {
+    public void setAnnouncement(Announcement announcement) {
         this.announcement = announcement;
     }
 }

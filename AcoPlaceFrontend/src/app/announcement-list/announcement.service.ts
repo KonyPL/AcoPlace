@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Announcement } from '../model/announcement';
 import { AnnouncementParams } from '../model/announcementParams';
+import { AnnouncementDetails } from '../model/announcement-details';
 
 @Injectable({
   providedIn: 'root'
@@ -36,5 +37,10 @@ export class AnnouncementService {
     return this.httpClient.get<Announcement[]>(`http://localhost:8080/searchAnnouncement/`,{params});
 
   }
+  
+  getAnnouncementDetailsById(id: number): Observable<AnnouncementDetails> {
+    return this.httpClient.get<AnnouncementDetails>(`http://localhost:8080/announcementDetails/`+id);
+  }
+
 
 }

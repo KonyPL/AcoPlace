@@ -12,6 +12,7 @@ import { AddAnnouncementComponent } from './add-announcement/add-announcement.co
 import { FormsModule } from '@angular/forms';
 import { AnnouncementDetailsListComponent } from './announcement-details-list/announcement-details-list.component';
 import { SearchAnnouncementComponent } from './search-announcement/search-announcement.component';
+import { AnnouncementDetailsDetailsComponent } from './announcement-details-details/announcement-details-details.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { SearchAnnouncementComponent } from './search-announcement/search-announ
     AnnouncementDetailsComponent,
     AddAnnouncementComponent,
     AnnouncementDetailsListComponent,
-    SearchAnnouncementComponent
+    SearchAnnouncementComponent,
+    AnnouncementDetailsDetailsComponent
   ],
   imports: [
     BrowserModule,
