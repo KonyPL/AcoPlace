@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { HouseDetails } from '../model/house-details';
+import { HouseService } from './house.service';
 
 @Component({
   selector: 'app-house-details',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HouseDetailsComponent implements OnInit {
 
-  constructor() { }
+  @Input('id') id: number; 
+  houseDetails: HouseDetails;
+
+  constructor(private houseService: HouseService) { }
 
   ngOnInit(): void {
+    this.getHouseDetails();
   }
+
+
+
+  public getHouseDetails(){
+    this.houseService.getHouseByAnnouncementId(this.id).subscribe(
+      data => {
+        this.houseDetails = data;
+        console.log("DATA from endpoint" + data);
+      }
+    )  }
 
 }

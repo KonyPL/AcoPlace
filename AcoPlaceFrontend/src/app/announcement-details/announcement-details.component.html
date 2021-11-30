@@ -23,6 +23,7 @@
 <p>publicationDate={{announcement.publicationDate}}</p>
 <app-announcement-details-details [id]=announcement.id ></app-announcement-details-details>
 <app-room-details *ngIf="announcement.propertyType=='POKOJ'" [id]=announcement.id></app-room-details>
+<app-house-details *ngIf="announcement.propertyType=='DOM'" [id]=announcement.id></app-house-details>
 <!-- ngIf*="if propertyType='POKOJ'" pokoj details componetn i -->
 <!-- ngIf*="if propertyType='HOUSE'" pokoj details componetn i -->
 
