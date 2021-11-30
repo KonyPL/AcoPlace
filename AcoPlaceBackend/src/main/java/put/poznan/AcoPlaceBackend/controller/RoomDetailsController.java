@@ -22,9 +22,15 @@ public class RoomDetailsController {
     }
 
     @GetMapping("/roomDetails/{id}")
-    public RoomDetails getRoomDetailsById(long id){
+    public RoomDetails getRoomDetailsById(@PathVariable  long id){
         return roomDetailsService.getRoomDetailsById(id);
     }
+
+    @GetMapping("/roomDetails/announcement/{id}")
+    public RoomDetails getRoomDetailsByAnnouncementIDId(@PathVariable  long id){
+        return roomDetailsService.getRoomDetailsByAnnouncementId(id);
+    }
+
 
     @PostMapping("/addRoomDetails")
     public RoomDetails createRoomDetails(@RequestBody RoomDetails roomDetails){

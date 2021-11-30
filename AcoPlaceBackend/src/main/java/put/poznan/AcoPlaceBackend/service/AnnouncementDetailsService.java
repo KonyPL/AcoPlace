@@ -1,6 +1,7 @@
 package put.poznan.AcoPlaceBackend.service;
 
 import org.springframework.stereotype.Service;
+import put.poznan.AcoPlaceBackend.exception.ResourceNotFoundException;
 import put.poznan.AcoPlaceBackend.model.AnnouncementDetails;
 import put.poznan.AcoPlaceBackend.repository.AnnouncementDetailsRepository;
 
@@ -20,7 +21,7 @@ public class AnnouncementDetailsService {
     }
 
     public AnnouncementDetails getAnnouncementDetailsById(long id){
-        return announcementDetailsRepository.getById(id);
+        return announcementDetailsRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("AnnouncmentDetails with id:" + id + " not found in database"));
     }
 
     public AnnouncementDetails saveAnnouncementDetails(AnnouncementDetails announcementDetails){
