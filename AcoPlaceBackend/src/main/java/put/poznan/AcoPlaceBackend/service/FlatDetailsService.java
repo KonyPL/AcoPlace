@@ -25,4 +25,8 @@ public class FlatDetailsService {
     public FlatDetails saveFlatDetails( FlatDetails flatDetails){
         return flatDetailsRepository.save(flatDetails);
     }
+
+    public FlatDetails getFlatByAnnouncementId(long id) {
+        return  flatDetailsRepository.findByAnnouncementId(id);
+    }
 }

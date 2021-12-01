@@ -29,4 +29,11 @@ public class FlatDetailsController {
     public FlatDetails createFlatDetails(@RequestBody FlatDetails flatDetails){
         return  flatDetailsService.saveFlatDetails(flatDetails);
     }
+
+    @GetMapping("/flatDetails/announcement/{id}")
+    public FlatDetails getFlatDetailsByAnnouncementId(@PathVariable long id ){
+        return flatDetailsService.getFlatByAnnouncementId(id);
+    }
+
+
 }
