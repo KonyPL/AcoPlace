@@ -31,7 +31,6 @@ public class RoomDetailsController {
         return roomDetailsService.getRoomDetailsByAnnouncementId(id);
     }
 
-
     @PostMapping("/addRoomDetails")
     public RoomDetails createRoomDetails(@RequestBody RoomDetails roomDetails){
         return roomDetailsService.saveRoomDetails(roomDetails);

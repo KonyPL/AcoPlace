@@ -15,6 +15,7 @@ import { SearchAnnouncementComponent } from './search-announcement/search-announ
 import { AnnouncementDetailsDetailsComponent } from './announcement-details-details/announcement-details-details.component';
 import { HouseDetailsComponent } from './house-details/house-details.component';
 import { RoomDetailsComponent } from './room-details/room-details.component';
+import { FlatDetailsComponent } from './flat-details/flat-details.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { RoomDetailsComponent } from './room-details/room-details.component';
     SearchAnnouncementComponent,
     AnnouncementDetailsDetailsComponent,
     HouseDetailsComponent,
-    RoomDetailsComponent
+    RoomDetailsComponent,
+    FlatDetailsComponent
   ],
   imports: [
     BrowserModule,

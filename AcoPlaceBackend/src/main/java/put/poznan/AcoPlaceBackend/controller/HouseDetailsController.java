@@ -25,6 +25,12 @@ public class HouseDetailsController {
         return houseDetailsService.getHouseDetailsById(id);
     }
 
+
+    @GetMapping("/houseDetails/announcement/{id}")
+    public HouseDetails getHouseDetailsByAnnouncementId(@PathVariable long id) {
+        return houseDetailsService.getHouseDetailsByAnnouncementId(id);
+    }
+
     @PostMapping("addHouseDetails")
     public HouseDetails createHouseDetails(@RequestBody HouseDetails houseDetails){
         return houseDetailsService.saveHouseDetails(houseDetails);
