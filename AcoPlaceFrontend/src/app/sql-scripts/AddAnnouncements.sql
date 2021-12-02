@@ -1,7 +1,7 @@
+--Announcment table
 insert into announcement(id, available_from, city, country, currency, district, house_number, living_space, postal_code, price, property_type, publication_date, state, street, text, title, year_built, web_user_id) values(100,'2021-11-15','poznan','polska','PLN','wilda','12/3',10,'61-78',999,'POKOJ','2021-11-18','wlkp','gorna wilda','opis musi byc','super pokoj dla studenta', 2002,100);
 insert into announcement(id, available_from, city, country, currency, district, house_number, living_space, postal_code, price, property_type, publication_date, state, street, text, title, year_built, web_user_id) values(101,'2021-11-15','poznan','polska','PLN','wilda','12/3',10,'61-78',999,'POKOJ','2021-11-18','wlkp','gorna wilda','opis musi byc','super pokoj dla studenta wersja 2', 2002,101);
 insert into announcement(id, available_from, city, country, currency, district, house_number, living_space, postal_code, price, property_type, publication_date, state, street, text, title, year_built, web_user_id) values(102,'2021-11-15','poznan','polska','PLN','wilda','12/3',10,'61-78',999,'POKOJ','2021-11-18','wlkp','gorna wilda','opis musi byc','super pokoj dla studenta wersja 3', 2002,102);
-
 insert into announcement(id, available_from, city, country, currency, district, house_number, living_space, postal_code, price, property_type, publication_date, state, street, text, title, year_built, web_user_id) values(103,'2021-11-15','warszawa','polska','EUR','lazarz','12',10,'61-783',111,'MIESZKANIE','2021-10-25','malopl','dolna wilda','ciasny ale wlasny','super pokoj dla studenta wersja 3', 1999,103);
 insert into announcement(id, available_from, city, country, currency, district, house_number, living_space, postal_code, price, property_type, publication_date, state, street, text, title, year_built, web_user_id) values(104,'1999-01-01','paryz','francja','CHF','gorczyn','12/113',13,'61-782',222,'DOM','2021-11-18','wlkp','gorna wilda','giga chata','super pokoj dla nikogo', 2005,104);
 insert into announcement(id, available_from, city, country, currency, district, house_number, living_space, postal_code, price, property_type, publication_date, state, street, text, title, year_built, web_user_id) values(105,'2000-12-31','wroclaw','polska','DOL','wilda','122/3',13,'61-783',111,'POKOJ','2021-10-25','wlkp','dolna wilda','opis musi byc','pokoj dla studenta', 1999,105);
@@ -12,6 +12,7 @@ insert into announcement(id, available_from, city, country, currency, district, 
 insert into announcement(id, available_from, city, country, currency, district, house_number, living_space, postal_code, price, property_type, publication_date, state, street, text, title, year_built, web_user_id) values(110,'2021-03-10','gdansk','polska','OMG','wilda','12/3a',10,'61228',222,'MIESZKANIE','2021-11-18','malopl','gorna wilda','tu tez milo jest','super wersja 3', 2002,110);
 insert into announcement(id, available_from, city, country, currency, district, house_number, living_space, postal_code, price, property_type, publication_date, state, street, text, title, year_built, web_user_id) values(111,'2021-07-12','lodz','czechy','ABC','rataje','122a/3',33,'6178',444,'DOM','1999-01-01','zachpom','gorczyn','super domor','wersja 3', 2005,111);
 
+---Announcment_detail table
 insert into announcement_details(id, bath, shower, microwave, oven, petsAllowed, elevator, nearPark, fenced, nearTram, nearBus, wifi, ethernetOutlets, internet, internetSpeed, tv, dishwasher, clothersDryer, nearShoppingMall, nearBakery, nearFoodMarket, nearSupermarket) values (100, true, true, true, true, false, false, false, true, true, false, true, false, true, 50, false, true, true, false, true, false, true);
 insert into announcement_details(id, bath, shower, microwave, oven, petsAllowed, elevator, nearPark, fenced, nearTram, nearBus, wifi, ethernetOutlets, internet, internetSpeed, tv, dishwasher, clothersDryer, nearShoppingMall, nearBakery, nearFoodMarket, nearSupermarket) values (101, true, true, true, true, true, true, true, true, true, true, true, true, true, 999, true, true, true, true, true, true, true);
 insert into announcement_details(id, bath, shower, microwave, oven, petsAllowed, elevator, nearPark, fenced, nearTram, nearBus, wifi, ethernetOutlets, internet, internetSpeed, tv, dishwasher, clothersDryer, nearShoppingMall, nearBakery, nearFoodMarket, nearSupermarket) values (102, false, false, false, false, false, false, false, false, false, false, false, false, false, 0, false, false, false, false, false, false, false);
@@ -24,3 +25,45 @@ insert into announcement_details(id, bath, shower, microwave, oven, petsAllowed,
 insert into announcement_details(id, bath, shower, microwave, oven, petsAllowed, elevator, nearPark, fenced, nearTram, nearBus, wifi, ethernetOutlets, internet, internetSpeed, tv, dishwasher, clothersDryer, nearShoppingMall, nearBakery, nearFoodMarket, nearSupermarket) values (109, true, true, true, true, false, false, false, true, true, false, true, false, true, 0, false, true, true, false, true, false, true);
 insert into announcement_details(id, bath, shower, microwave, oven, petsAllowed, elevator, nearPark, fenced, nearTram, nearBus, wifi, ethernetOutlets, internet, internetSpeed, tv, dishwasher, clothersDryer, nearShoppingMall, nearBakery, nearFoodMarket, nearSupermarket) values (110, true, true, true, true, false, false, false, true, true, true, true, false, false, 150, false, true, true, false, true, false, true);
 insert into announcement_details(id, bath, shower, microwave, oven, petsAllowed, elevator, nearPark, fenced, nearTram, nearBus, wifi, ethernetOutlets, internet, internetSpeed, tv, dishwasher, clothersDryer, nearShoppingMall, nearBakery, nearFoodMarket, nearSupermarket) values (111, true, false, true, true, true, false, true, true, true, false, true, false, true, 50, false, true, true, false, true, false, false);
+
+--Flat_delails table
+insert into flat_details(id, floor, bedrooms, bathrooms, flatParking, balcony) values (100, 0, 1, 2, true, 3);
+insert into flat_details(id, floor, bedrooms, bathrooms, flatParking, balcony) values (101, 3, 1, 2, false, 3);
+insert into flat_details(id, floor, bedrooms, bathrooms, flatParking, balcony) values (102, 4, 31, 2, false, 3);
+insert into flat_details(id, floor, bedrooms, bathrooms, flatParking, balcony) values (103, 1, 11, 2, false, 3);
+insert into flat_details(id, floor, bedrooms, bathrooms, flatParking, balcony) values (104, 2, 1, 2, true, 3);
+insert into flat_details(id, floor, bedrooms, bathrooms, flatParking, balcony) values (105, 55, 2, 2, true, 3);
+insert into flat_details(id, floor, bedrooms, bathrooms, flatParking, balcony) values (106, 111, 3, 2, false, 3);
+insert into flat_details(id, floor, bedrooms, bathrooms, flatParking, balcony) values (107, 0, 5, 2, true, 3);
+insert into flat_details(id, floor, bedrooms, bathrooms, flatParking, balcony) values (108, 66, 1, 2, true, 3);
+insert into flat_details(id, floor, bedrooms, bathrooms, flatParking, balcony) values (109, 3, 6, 1, true, 3);
+insert into flat_details(id, floor, bedrooms, bathrooms, flatParking, balcony) values (110, 0, 21, 6, true, 3);
+insert into flat_details(id, floor, bedrooms, bathrooms, flatParking, balcony) values (111, 1, 1, 7, true, 3);
+
+--room_details table
+insert into room_details(id, floor, bedsInRoom, numberOfFlatmates, bathrooms) values (100, 0, 0, 0, 0);
+insert into room_details(id, floor, bedsInRoom, numberOfFlatmates, bathrooms) values (101, 2, 3, 1, 0);
+insert into room_details(id, floor, bedsInRoom, numberOfFlatmates, bathrooms) values (102, 1, 1, 1, 1);
+insert into room_details(id, floor, bedsInRoom, numberOfFlatmates, bathrooms) values (103, 1, 6, 3, 2);
+insert into room_details(id, floor, bedsInRoom, numberOfFlatmates, bathrooms) values (104, 4, 7, 5, 3);
+insert into room_details(id, floor, bedsInRoom, numberOfFlatmates, bathrooms) values (105, 5, 5, 6, 1);
+insert into room_details(id, floor, bedsInRoom, numberOfFlatmates, bathrooms) values (106, 6, 11, 2, 5);
+insert into room_details(id, floor, bedsInRoom, numberOfFlatmates, bathrooms) values (107, 7, 1, 1, 6);
+insert into room_details(id, floor, bedsInRoom, numberOfFlatmates, bathrooms) values (108, 7, 3, 0, 1);
+insert into room_details(id, floor, bedsInRoom, numberOfFlatmates, bathrooms) values (109, 8, 1, 3, 2);
+insert into room_details(id, floor, bedsInRoom, numberOfFlatmates, bathrooms) values (110, 11, 2, 0, 2);
+insert into room_details(id, floor, bedsInRoom, numberOfFlatmates, bathrooms) values (111, 22, 2, 0, 0);
+
+--house_details table
+insert into house_details(id, floors, basement, bedrooms, bathrooms, lotSize, parking, balcony) values (100, 0, false, 0, 0, 0, false, 0);
+insert into house_details(id, floors, basement, bedrooms, bathrooms, lotSize, parking, balcony) values (101, 1, true, 1, 1, 1, true, 1);
+insert into house_details(id, floors, basement, bedrooms, bathrooms, lotSize, parking, balcony) values (102, 2, true, 2, 2, 2, false, 2);
+insert into house_details(id, floors, basement, bedrooms, bathrooms, lotSize, parking, balcony) values (103, 4, false, 2, 5, 5, false, 0);
+insert into house_details(id, floors, basement, bedrooms, bathrooms, lotSize, parking, balcony) values (104, 5, false, 5, 7, 1, true, 2);
+insert into house_details(id, floors, basement, bedrooms, bathrooms, lotSize, parking, balcony) values (105, 1, false, 6, 9, 4, false, 1);
+insert into house_details(id, floors, basement, bedrooms, bathrooms, lotSize, parking, balcony) values (106, 2, false, 3, 3, 1, true, 5);
+insert into house_details(id, floors, basement, bedrooms, bathrooms, lotSize, parking, balcony) values (107, 3, false, 8, 2, 2, false, 4);
+insert into house_details(id, floors, basement, bedrooms, bathrooms, lotSize, parking, balcony) values (108, 2, false, 2, 6, 5, false, 3);
+insert into house_details(id, floors, basement, bedrooms, bathrooms, lotSize, parking, balcony) values (109, 11, false, 2, 1, 0, true, 2);
+insert into house_details(id, floors, basement, bedrooms, bathrooms, lotSize, parking, balcony) values (110, 2, false, 1, 4, 2, false, 1);
+insert into house_details(id, floors, basement, bedrooms, bathrooms, lotSize, parking, balcony) values (111, 6, false, 3, 1, 7, true, 2);
