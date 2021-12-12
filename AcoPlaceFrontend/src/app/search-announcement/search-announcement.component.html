@@ -1,30 +1,30 @@
-<p>NAZWA</p>
+<!-- <p>NAZWA</p> -->
 <div>
     <h3>SEARCH announcement</h3>
 
     <form (ngSubmit)="onSubmit()">
 
-        <div >
+        <div>
             <label>priceMin(string)</label>
             <input type="text" id="priceMin" [(ngModel)]="announcementParams.priceMin" name="priceMin">
         </div>
-        <div >
+        <div>
             <label>priceMax(string)</label>
             <input type="text" id="priceMax" [(ngModel)]="announcementParams.priceMax" name="priceMax">
         </div>
-        <div >
+        <div>
             <label>propertyType WPISZ POOKOJ</label>
             <input type="text" id="propertyType" [(ngModel)]="announcementParams.propertyType" name="propertyType">
         </div>
-        <div >
+        <div>
             <label>oven (true/false)</label>
             <input type="text" id="oven" [(ngModel)]="announcementParams.oven" name="oven">
         </div>
-        <div >
+        <div>
             <label>shower (true/false)</label>
             <input type="text" id="shower" [(ngModel)]="announcementParams.shower" name="shower">
         </div>
-        <button  type="submit">SEARCH</button>
+        <button type="submit">SEARCH</button>
     </form>
 </div>
 <hr>
@@ -48,7 +48,7 @@
             <th>YEAR BUILT</th>
             <th>AVAILABLE FROM</th>
             <th>PUBLICATION DATE</th>
-        
+
             <th>SHOW</th>
 
         </tr>
@@ -71,10 +71,9 @@
             <td>{{announcement.yearBuilt}}</td>
             <td>{{announcement.availableFrom}}</td>
             <td>{{announcement.publicationDate}}</td>
-        
-            <button (click)="showAnnouncementById(announcement.id)" 
-                    >show</button>
 
-         
+            <button (click)="showAnnouncementById(announcement.id)">show</button>
+
+
         </tr>
     </tbody>

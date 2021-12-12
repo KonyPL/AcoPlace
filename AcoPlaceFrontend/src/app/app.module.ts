@@ -16,7 +16,14 @@ import { AnnouncementDetailsDetailsComponent } from './announcement-details-deta
 import { HouseDetailsComponent } from './house-details/house-details.component';
 import { RoomDetailsComponent } from './room-details/room-details.component';
 import { FlatDetailsComponent } from './flat-details/flat-details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
 
+// import {
+//   MatAutocompleteModule, MatButtonModule, MatCheckboxModule, MatDatepickerModule,
+//   MatFormFieldModule, MatInputModule, MatRadioModule, MatSelectModule, MatSliderModule,
+//   MatSlideToggleModule
+// } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -36,7 +43,9 @@ import { FlatDetailsComponent } from './flat-details/flat-details.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatSliderModule
 
   ],
   providers: [HttpClientModule],

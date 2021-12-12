@@ -1,61 +1,70 @@
 <h2>AnnouncementDetails list</h2>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>bath</th>
-            <th>shower</th>
-            <th>microvawe</th>
-            <th>oven</th>
-            <th>petsAllowed</th>
-            <th>elevator</th>
-            <th>nearPark</th>
-            <th>fenced</th>
-            <th>nearTram</th>
-            <th>nearBus</th>
-            <th>wifi</th>
-            <th>ethernetOutlets</th>
-            <th>internetSpeed</th>
-            <th>internet</th>
-            <th>tv</th>
-            <th>dishwasher</th>
-            <th>clothesDryer</th>
-            <th>nearShoppingMall</th>
-            <th>nearBakery</th>
-            <th>nearFoodMarket</th>
-            <th>nearSuperMarket</th>
-            <th>SHOW</th>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>bath</th>
+                        <th>shower</th>
+                        <th>microvawe</th>
+                        <th>oven</th>
+                        <th>petsAllowed</th>
+                        <th>elevator</th>
+                        <th>nearPark</th>
+                        <th>fenced</th>
+                        <th>nearTram</th>
+                        <th>nearBus</th>
+                        <th>wifi</th>
+                        <th>ethernetOutlets</th>
+                        <th>internetSpeed</th>
+                        <th>internet</th>
+                        <th>tv</th>
+                        <th>dishwasher</th>
+                        <th>clothesDryer</th>
+                        <th>nearShoppingMall</th>
+                        <th>nearBakery</th>
+                        <th>nearFoodMarket</th>
+                        <th>nearSuperMarket</th>
+                        <th>SHOW</th>
 
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let announcementDetails of announcementsDetailsList">
-            <td>{{announcementDetails.id}}</td>
-            <td>{{announcementDetails.bath}}</td>
-            <td>{{announcementDetails.shower}}</td>
-            <td>{{announcementDetails.microwave}}</td>
-            <td>{{announcementDetails.oven}}</td>
-            <td>{{announcementDetails.petsAllowed}}</td>
-            <td>{{announcementDetails.elevator}}</td>
-            <td>{{announcementDetails.nearPark}}</td>
-            <td>{{announcementDetails.fenced}}</td>
-            <td>{{announcementDetails.nearTram}}</td>
-            <td>{{announcementDetails.nearBus}}</td>
-            <td>{{announcementDetails.wifi}}</td>
-            <td>{{announcementDetails.ethernetOutlets}}</td>
-            <td>{{announcementDetails.internetSpeed}}</td>
-            <td>{{announcementDetails.internet}}</td>
-            <td>{{announcementDetails.tv}}</td>
-            <td>{{announcementDetails.dishwasher}}</td>
-            <td>{{announcementDetails.clothesDryer}}</td>
-            <td>{{announcementDetails.nearShoppingMall}}</td>
-            <td>{{announcementDetails.nearBakery}}</td>
-            <td>{{announcementDetails.nearFoodMarket}}</td>
-            <td>{{announcementDetails.nearSupermarket}}</td>
-        
-           <!-- <button (click)="showAnnouncementById(announcement.id)" 
+                    </tr>
+                </thead>
+
+
+                <tbody>
+                    <tr *ngFor="let announcementDetails of announcementsDetailsList">
+                        <td>{{announcementDetails.id}}</td>
+                        <td>{{announcementDetails.bath}}</td>
+                        <td>{{announcementDetails.shower}}</td>
+                        <td>{{announcementDetails.microwave}}</td>
+                        <td>{{announcementDetails.oven}}</td>
+                        <td>{{announcementDetails.petsAllowed}}</td>
+                        <td>{{announcementDetails.elevator}}</td>
+                        <td>{{announcementDetails.nearPark}}</td>
+                        <td>{{announcementDetails.fenced}}</td>
+                        <td>{{announcementDetails.nearTram}}</td>
+                        <td>{{announcementDetails.nearBus}}</td>
+                        <td>{{announcementDetails.wifi}}</td>
+                        <td>{{announcementDetails.ethernetOutlets}}</td>
+                        <td>{{announcementDetails.internetSpeed}}</td>
+                        <td>{{announcementDetails.internet}}</td>
+                        <td>{{announcementDetails.tv}}</td>
+                        <td>{{announcementDetails.dishwasher}}</td>
+                        <td>{{announcementDetails.clothesDryer}}</td>
+                        <td>{{announcementDetails.nearShoppingMall}}</td>
+                        <td>{{announcementDetails.nearBakery}}</td>
+                        <td>{{announcementDetails.nearFoodMarket}}</td>
+                        <td>{{announcementDetails.nearSupermarket}}</td>
+
+                        <!-- <button (click)="showAnnouncementById(announcement.id)" 
                     >show</button>-->
 
-         
-        </tr>
-    </tbody>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
