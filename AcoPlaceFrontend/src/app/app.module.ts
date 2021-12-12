@@ -13,6 +13,9 @@ import { FormsModule } from '@angular/forms';
 import { AnnouncementDetailsListComponent } from './announcement-details-list/announcement-details-list.component';
 import { SearchAnnouncementComponent } from './search-announcement/search-announcement.component';
 import { AnnouncementDetailsDetailsComponent } from './announcement-details-details/announcement-details-details.component';
+import { HouseDetailsComponent } from './house-details/house-details.component';
+import { RoomDetailsComponent } from './room-details/room-details.component';
+import { FlatDetailsComponent } from './flat-details/flat-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 
@@ -31,7 +34,10 @@ import { MatSliderModule } from '@angular/material/slider';
     AddAnnouncementComponent,
     AnnouncementDetailsListComponent,
     SearchAnnouncementComponent,
-    AnnouncementDetailsDetailsComponent
+    AnnouncementDetailsDetailsComponent,
+    HouseDetailsComponent,
+    RoomDetailsComponent,
+    FlatDetailsComponent
   ],
   imports: [
     BrowserModule,

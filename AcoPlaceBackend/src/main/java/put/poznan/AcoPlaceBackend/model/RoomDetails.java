@@ -24,6 +24,9 @@ public class RoomDetails {
         this.announcement = announcement;
     }
 
+    public RoomDetails() {
+    }
+
     public Long getId() {
         return id;
     }
