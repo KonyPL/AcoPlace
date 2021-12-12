@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ITS_JUST_ANGULAR } from '@angular/core/src/r3_symbols';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AnnouncementService } from '../announcement-list/announcement.service';
 import { Announcement } from '../model/announcement';
+//import { MatSliderModule } from '@angular/material/slider';
 
 @Component({
   selector: 'app-add-announcement',

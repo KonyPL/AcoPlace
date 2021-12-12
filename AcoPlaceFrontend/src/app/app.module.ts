@@ -13,7 +13,14 @@ import { FormsModule } from '@angular/forms';
 import { AnnouncementDetailsListComponent } from './announcement-details-list/announcement-details-list.component';
 import { SearchAnnouncementComponent } from './search-announcement/search-announcement.component';
 import { AnnouncementDetailsDetailsComponent } from './announcement-details-details/announcement-details-details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
 
+// import {
+//   MatAutocompleteModule, MatButtonModule, MatCheckboxModule, MatDatepickerModule,
+//   MatFormFieldModule, MatInputModule, MatRadioModule, MatSelectModule, MatSliderModule,
+//   MatSlideToggleModule
+// } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -30,7 +37,9 @@ import { AnnouncementDetailsDetailsComponent } from './announcement-details-deta
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatSliderModule
 
   ],
   providers: [HttpClientModule],
