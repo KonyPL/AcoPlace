@@ -1,52 +1,92 @@
-<h2>Announcement list</h2>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>COUNTRY</th>
-            <th>CITY</th>
-            <th>POSTAL_CODE</th>
-            <th>DISTRICT</th>
-            <th>STATE</th>
-            <th>STREET</th>
-            <th>HOUSE NUMBER</th>
-            <th>TITLE</th>
-            <th>TEXT</th>
-            <th>PROPERTY TYPE</th>
-            <th>PRICE</th>
-            <th>CURRENCY</th>
-            <th>LIVING SPACE</th>
-            <th>YEAR BUILT</th>
-            <th>AVAILABLE FROM</th>
-            <th>PUBLICATION DATE</th>
-        
-            <th>SHOW</th>
+<div class="container ">
+    <div class="row ">
+        <!-- h-100 -->
+        <!-- h-100 justify-content-center align-items-center -->
 
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let announcement of announcements">
-            <td>{{announcement.id}}</td>
-            <td>{{announcement.country}}</td>
-            <td>{{announcement.city}}</td>
-            <td>{{announcement.postalCode}}</td>
-            <td>{{announcement.district}}</td>
-            <td>{{announcement.state}}</td>
-            <td>{{announcement.street}}</td>
-            <td>{{announcement.houseNumber}}</td>
-            <td>{{announcement.title}}</td>
-            <td>{{announcement.text}}</td>
-            <td>{{announcement.propertyType}}</td>
-            <td>{{announcement.price}}</td>
-            <td>{{announcement.currency}}</td>
-            <td>{{announcement.livingSpace}}</td>
-            <td>{{announcement.yearBuilt}}</td>
-            <td>{{announcement.availableFrom}}</td>
-            <td>{{announcement.publicationDate}}</td>
-        
-            <button (click)="showAnnouncementById(announcement.id)" 
-                    >show</button>
+        <h2>Announcement list</h2>
 
-         
-        </tr>
-    </tbody>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>COUNTRY</th>
+                    <th>CITY</th>
+                    <th>POSTAL_CODE</th>
+                    <th>DISTRICT</th>
+                    <th>STATE</th>
+                    <th>STREET</th>
+                    <th>HOUSE NUMBER</th>
+                    <th>TITLE</th>
+                    <th>TEXT</th>
+                    <th>PROPERTY TYPE</th>
+                    <th>PRICE</th>
+                    <th>CURRENCY</th>
+                    <th>LIVING SPACE</th>
+                    <th>YEAR BUILT</th>
+                    <th>AVAILABLE FROM</th>
+                    <th>PUBLICATION DATE</th>
+
+                    <th>SHOW</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let announcement of announcements">
+                    <td>{{announcement.id}}</td>
+                    <td>{{announcement.country}}</td>
+                    <td>{{announcement.city}}</td>
+                    <td>{{announcement.postalCode}}</td>
+                    <td>{{announcement.district}}</td>
+                    <td>{{announcement.state}}</td>
+                    <td>{{announcement.street}}</td>
+                    <td>{{announcement.houseNumber}}</td>
+                    <td>{{announcement.title}}</td>
+                    <td>{{announcement.text}}</td>
+                    <td>{{announcement.propertyType}}</td>
+                    <td>{{announcement.price}}</td>
+                    <td>{{announcement.currency}}</td>
+                    <td>{{announcement.livingSpace}}</td>
+                    <td>{{announcement.yearBuilt}}</td>
+                    <td>{{announcement.availableFrom}}</td>
+                    <td>{{announcement.publicationDate}}</td>
+
+                    <button (click)="showAnnouncementById(announcement.id)">show</button>
+
+                    <!-- <button (click)="showAnnouncementDetailsById(announcementDetailsList.id)">show</button> -->
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- <div class="row">
+        <div class="col-xs-12">
+            <h1>{{announcement.country}}</h1>
+        </div>
+    </div> -->
+
+
+<!-- tu divy sie robia -->
+<!-- <div class="row h-100">
+    <div class="col-xs-12">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let announcement of announcements">
+                <ul>
+                    <li>{{ announcement.city }} {{ announcement.price }}
+                    </li>
+                    (click)="showAnnouncementById(announcement.id)">show
+<li routerLinkActive="active"><a routerLink="/announcement/:id"></a></li>
+</ul>
+
+</li>
+</ul>
+</div>
+</div> -->
+
+<!-- <div class="row">
+    <div class="col-xs-12">
+        <app-announcement-list *ngFor="let announcement of announcements" [recipe]="announcement">
+        </app-announcement-list>
+    </div>
+</div> -->

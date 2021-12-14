@@ -27,8 +27,8 @@ export class AnnouncementListComponent implements OnInit {
     )
   }
 
-  public showAnnouncementById(id: number){
-    console.log("odczytuje id="+id);
+  public showAnnouncementById(id: number) {
+    console.log("odczytuje id=" + id);
     this.router.navigate(['announcement', id]);
 
   }

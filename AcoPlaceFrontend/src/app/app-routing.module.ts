@@ -4,7 +4,7 @@ import { AddAnnouncementComponent } from './add-announcement/add-announcement.co
 import { AnnouncementDetailsListComponent } from './announcement-details-list/announcement-details-list.component';
 import { AnnouncementDetailsComponent } from './announcement-details/announcement-details.component';
 import { AnnouncementListComponent } from './announcement-list/announcement-list.component';
-
+import { SearchAnnouncementComponent } from './search-announcement/search-announcement.component';
 
 
 
@@ -12,8 +12,9 @@ const appRoutes: Routes = [
 
     { path: 'announcements-list', component: AnnouncementListComponent },
     { path: 'announcement/:id', component: AnnouncementDetailsComponent },
-    { path: 'add-announcement', component: AddAnnouncementComponent  },
-    { path: 'announcement-details-list', component: AnnouncementDetailsListComponent  }
+    { path: 'add-announcement', component: AddAnnouncementComponent },
+    { path: 'announcement-details-list', component: AnnouncementDetailsListComponent },
+    { path: 'search-announcement', component: SearchAnnouncementComponent }
 
 ];
 

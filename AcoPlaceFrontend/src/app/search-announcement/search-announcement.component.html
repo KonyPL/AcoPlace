@@ -1,31 +1,44 @@
 <!-- <p>NAZWA</p> -->
-<div>
-    <h3>SEARCH announcement</h3>
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <h3>SEARCH announcement</h3>
 
-    <form (ngSubmit)="onSubmit()">
+        <form (ngSubmit)="onSubmit()">
 
-        <div>
-            <label>priceMin(string)</label>
-            <input type="text" id="priceMin" [(ngModel)]="announcementParams.priceMin" name="priceMin">
-        </div>
-        <div>
-            <label>priceMax(string)</label>
-            <input type="text" id="priceMax" [(ngModel)]="announcementParams.priceMax" name="priceMax">
-        </div>
-        <div>
-            <label>propertyType WPISZ POOKOJ</label>
-            <input type="text" id="propertyType" [(ngModel)]="announcementParams.propertyType" name="propertyType">
-        </div>
-        <div>
-            <label>oven (true/false)</label>
-            <input type="text" id="oven" [(ngModel)]="announcementParams.oven" name="oven">
-        </div>
-        <div>
-            <label>shower (true/false)</label>
-            <input type="text" id="shower" [(ngModel)]="announcementParams.shower" name="shower">
-        </div>
-        <button type="submit">SEARCH</button>
-    </form>
+            <div>
+                <!-- (string) -->
+                <label>priceMin</label>
+                <input type="text" id="priceMin" [(ngModel)]="announcementParams.priceMin" name="priceMin">
+            </div>
+            <div>
+                <!-- (string) -->
+                <label>priceMax</label>
+                <input type="text" id="priceMax" [(ngModel)]="announcementParams.priceMax" name="priceMax">
+            </div>
+            <div>
+                <label>propertyType (POKOJ/DOM/M)</label>
+                <input type="text" id="propertyType" [(ngModel)]="announcementParams.propertyType" name="propertyType">
+            </div>
+            <div>
+                <label>oven (true/false)</label>
+                <input type="text" id="oven" [(ngModel)]="announcementParams.oven" name="oven">
+            </div>
+            <div>
+                <label>shower (true/false)</label>
+                <input type="text" id="shower" [(ngModel)]="announcementParams.shower" name="shower">
+                <!-- <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown" appDropdown>
+                        <a href="#" class="dropdown-toggle" role="button"><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Save Data</a></li>
+                            <li><a href="#">Fetch Data</a></li>
+                        </ul>
+                    </li>
+                </ul> -->
+            </div>
+            <button type="submit">SEARCH</button>
+        </form>
+    </div>
 </div>
 <hr>
 <h2>Announcement list</h2>
@@ -33,7 +46,7 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>cou</th>
+            <th>COUNTRY</th>
             <th>CITY</th>
             <th>POSTAL_CODE</th>
             <th>DISTRICT</th>
@@ -44,6 +57,7 @@
             <th>TEXT</th>
             <th>PROPERTY TYPE</th>
             <th>PRICE</th>
+            <th>CURRENCY</th>
             <th>LIVING SPACE</th>
             <th>YEAR BUILT</th>
             <th>AVAILABLE FROM</th>
@@ -57,6 +71,7 @@
         <tr *ngFor="let announcement of announcements">
             <td>{{announcement.id}}</td>
             <td>{{announcement.country}}</td>
+            <td>{{announcement.city}}</td>
             <td>{{announcement.postalCode}}</td>
             <td>{{announcement.district}}</td>
             <td>{{announcement.state}}</td>
