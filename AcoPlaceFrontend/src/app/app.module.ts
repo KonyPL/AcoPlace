@@ -18,6 +18,10 @@ import { RoomDetailsComponent } from './room-details/room-details.component';
 import { FlatDetailsComponent } from './flat-details/flat-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
 
 // import {
 //   MatAutocompleteModule, MatButtonModule, MatCheckboxModule, MatDatepickerModule,
@@ -45,7 +49,11 @@ import { MatSliderModule } from '@angular/material/slider';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatSliderModule
+    MatSliderModule,
+    // MatIconModule,
+    MatSelectModule,
+    MatCheckboxModule,
+
 
   ],
   providers: [HttpClientModule],

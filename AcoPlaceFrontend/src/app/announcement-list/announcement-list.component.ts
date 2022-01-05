@@ -2,6 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Announcement } from '../model/announcement';
 import { AnnouncementService } from './announcement.service';
+import { MatTableModule } from '@angular/material/table';
+import { SearchAnnouncementComponent } from '../search-announcement/search-announcement.component';
+import { AnnouncementParams } from '../model/announcementParams';
+import { ThemePalette } from '@angular/material/core';
+
+export interface Task {
+  name: string;
+  completed: boolean;
+  color: ThemePalette;
+  subtasks?: Task[];
+}
+
+// class sideBar {
+//   id: number;
+//   name: string;
+//   isSelected: boolean;
+// }
 
 @Component({
   selector: 'app-announcement-list',
@@ -10,12 +27,37 @@ import { AnnouncementService } from './announcement.service';
 })
 export class AnnouncementListComponent implements OnInit {
 
+  // _checkboxlist: sideBar[];
+
+  // ngOnInit
+
+  // getCheckboxes() {
+  //   this._checkboxlist = [
+  //     { id: 1, name: "Bath", isSelected: false },
+  //     { id: 2, name: "Shower", isSelected: false },
+  //     { id: 3, name: "Microvawe", isSelected: false },
+  //     { id: 4, name: "Oven", isSelected: false },
+  //     { id: 5, name: "Elevator", isSelected: false },
+  //     { id: 6, name: "Internet", isSelected: false },
+  //   ]
+  // }
+
+  // onChange() {
+  //   console.log(this._checkboxlist);
+  // }
+
+  announcementParams: AnnouncementParams = new AnnouncementParams();
   announcements: Announcement[];
+  // dataSource = new MatTableModule();
+
+
+
 
   constructor(private announcementService: AnnouncementService, private router: Router) { }
 
   ngOnInit(): void {
     this.getAnnouncements();
+    // this.getCheckboxes();
   }
 
   private getAnnouncements() {
@@ -42,4 +84,29 @@ export class AnnouncementListComponent implements OnInit {
   }
 
   */
+
+
+  onSubmit() {
+    console.log("THIS ANNOUNCEMENT on sumbit clicked" + this.announcementParams);
+    this.searchAnnouncement();
+  }
+
+
+
+  searchAnnouncement() {
+
+    console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.oven);
+    console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.priceMax);
+    console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.priceMin);
+    console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.shower);
+    console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.propertyType);
+
+    //this.announcementService.getAnnouncementWithParams(this.announcementParams);
+    this.announcementService.getAnnouncementWithParams(this.announcementParams).subscribe(
+      data => {
+        this.announcements = data;
+        console.log("DATA from endpoint" + data);
+      }
+    )
+  }
 }

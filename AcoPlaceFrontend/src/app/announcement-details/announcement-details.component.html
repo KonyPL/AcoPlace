@@ -1,34 +1,58 @@
-<p>announcement-details works!</p>
-<p>i tuu długi i dokładny opis tego ogłoszeina </p>
-<!--<p>{{announcement.id}}</p>
+<!-- <div class="banner">
+    <img src="D:\AcoPlace_git_tutaj\AcoPlace\AcoPlaceFrontend\src\app\images\home1.jpg" alt="dom">
+</div> -->
+<div class="component" style="background-color: #eee;">
+    <div class="row">
+        <div class="col-md-9">
+            <p>announcement-details works!</p>
+            <p>i tuu długi i dokładny opis tego ogłoszeina </p>
+            <p>Niżej zdjecia</p>
+        </div>
+        <div class="col-md-3">
+            <div class="row">
+                Info:
+            </div>
+            <!--<p>{{announcement.id}}</p>
 <p>{{announcement.date}}</p>
 <p>{{announcement.description}}</p>-->
-<p>id from path={{id}}</p>
-<p>id from announcement={{announcement.id}}</p>
-<p>id={{announcement.id}}</p>
-<p>country={{announcement.country}}</p>
-<p>postal code={{announcement.postalCode}}/
-<p>
-<p>district={{announcement.district}}</p>
-<p>state={{announcement.state}}</p>
-<p>street={{announcement.street}}</p>
-<p>hnumber={{announcement.houseNumber}}</p>
-<p>title={{announcement.title}}</p>
-<p>text={{announcement.text}}</p>
-<p> property type={{announcement.propertyType}}</p>
-<p>price = {{announcement.price}}</p>
-<p>currency={{announcement.currency}}</p>
-<p>living space={{announcement.livingSpace}}</p>
-<p>year built={{announcement.yearBuilt}}</p>
-<p>available from={{announcement.availableFrom}}</p>
-<p>publicationDate={{announcement.publicationDate}}</p>
-<app-announcement-details-details [id]=announcement.id>
-    <!-- probowane: [bath]=announcement.bath -->
-</app-announcement-details-details>
-<app-room-details *ngIf="announcement.propertyType=='POKOJ'" [id]=announcement.id></app-room-details>
-<app-house-details *ngIf="announcement.propertyType=='DOM'" [id]=announcement.id></app-house-details>
-<app-flat-details *ngIf="announcement.propertyType=='MIESZKANIE'" [id]=announcement.id></app-flat-details>
-<!-- ngIf*="if propertyType='POKOJ'" pokoj details componetn i -->
-<!-- ngIf*="if propertyType='HOUSE'" pokoj details componetn i -->
+            <p>id from path={{id}}</p>
+            <p>id from announcement={{announcement.id}}</p>
+            <p>id={{announcement.id}}</p>
+            <p>country={{announcement.country}}</p>
+            <p>postal code={{announcement.postalCode}}
+            <p>
+            <p>District={{announcement.district}}</p>
+            <p>state={{announcement.state}}</p>
+            <p>street={{announcement.street}}</p>
+            <p>hnumber={{announcement.houseNumber}}</p>
+            <p>title={{announcement.title}}</p>
+            <p>text={{announcement.text}}</p>
+            <p> property type={{announcement.propertyType}}</p>
+            <p>price = {{announcement.price}}</p>
+            <p>currency={{announcement.currency}}</p>
+            <p>living space={{announcement.livingSpace}}</p>
+            <p>year built={{announcement.yearBuilt}}</p>
+            <p>available from={{announcement.availableFrom}}</p>
+            <p>publicationDate={{announcement.publicationDate}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <app-announcement-details-details [id]=announcement.id>
+                <!-- probowane: [bath]=announcement.bath -->
+            </app-announcement-details-details>
+            <app-room-details *ngIf="announcement.propertyType=='POKOJ'" [id]=announcement.id></app-room-details>
+        </div>
+        <div class="col-md-4">
+            <app-house-details *ngIf="announcement.propertyType=='DOM'" [id]=announcement.id></app-house-details>
+        </div>
+        <div class="col-md-4">
+            <app-flat-details *ngIf="announcement.propertyType=='MIESZKANIE'" [id]=announcement.id></app-flat-details>
 
-<app-announcement-details-details></app-announcement-details-details>
+            <!-- ngIf*="if propertyType='POKOJ'" pokoj details componetn i -->
+            <!-- ngIf*="if propertyType='HOUSE'" pokoj details componetn i -->
+
+            <app-announcement-details-details></app-announcement-details-details>
+        </div>
+    </div>
+</div>
