@@ -1,79 +1,116 @@
 <div>
-    <h3>Create Employee</h3>
+
+    <h3>Create Announcement</h3>
 
     <form (ngSubmit)="onSubmit()">
 
         <div>
-
-            <label>country(string)</label>
-            <input type="text" id="country" [(ngModel)]="announcement.country" name="country">
+            <!-- (string) -->
+            <!-- class="offset-2 col-md-1" -->
+            <div>
+                <label>country</label>
+            </div>
+            <div>
+                <!-- class="col-md-9" -->
+                <input type="text" id="country" [(ngModel)]="announcement.country" name="country" required>
+                <!-- class="form-control" -->
+            </div>
         </div>
 
         <div>
-            <label>city(string)</label>
+            <!-- (string) -->
+            <label>city</label>
             <input type="text" id="city" [(ngModel)]="announcement.city" name="city">
+            <!-- class="form-control" -->
         </div>
         <div>
-            <label>postal code(string)</label>
+            <!-- (string) -->
+            <label>postal code</label>
             <input type="text" id="postalCode" [(ngModel)]="announcement.postalCode" name="postalCode">
+            <!-- class="form-control" -->
         </div>
         <div>
-            <label>district(string)</label>
+            <!-- (string) -->
+            <label>district</label>
             <input type="text" id="district" [(ngModel)]="announcement.district" name="district">
+            <!-- class="form-control" -->
         </div>
         <div>
-            <label>state(string)</label>
+            <!-- (string) -->
+            <label>state</label>
             <input type="text" id="state" [(ngModel)]="announcement.state" name="state">
+            <!-- class="form-control" -->
         </div>
         <div>
-            <label>street(string)</label>
+            <!-- (string) -->
+            <label>street</label>
             <input type="text" id="street" [(ngModel)]="announcement.street" name="street">
+            <!-- class="form-control" -->
         </div>
         <div>
-            <label>houseNumber(string)</label>
+            <!-- (string) -->
+            <label>houseNumber</label>
             <input type="text" id="houseNumber" [(ngModel)]="announcement.houseNumber" name="houseNumber">
+            <!-- class="form-control" -->
         </div>
         <div>
-            <label>title(string)</label>
+            <!-- (string) -->
+            <label>title</label>
             <input type="text" id="title" [(ngModel)]="announcement.title" name="title">
+            <!-- class="form-control" -->
         </div>
         <div>
-            <label>text(string)</label>
+            <!-- (string) -->
+            <label>text</label>
             <input type="text" id="text" [(ngModel)]="announcement.text" name="text">
+            <!-- class="form-control" -->
         </div>
         <div>
-            <label>propertyType(string)</label>
+            <!-- (string) -->
+            <label>propertyType</label>
             <input type="text" id="propertyType" [(ngModel)]="announcement.propertyType" name="propertyType">
+            <!-- class="form-control" -->
         </div>
         <div>
-            <label>price(number)</label>
+            <!-- number -->
+            <label>price</label>
             <input type="number" min="1" max="9999" id="price" [(ngModel)]="announcement.price" name="price">
+            <!-- class="form-control" -->
         </div>
         <div>
-            <label>currency(string)</label>
+            <!-- (string) -->
+            <label>currency</label>
             <input type="text" id="currency" [(ngModel)]="announcement.currency" name="currency">
+            <!-- class="form-control" -->
         </div>
         <div>
-            <label>livingSpace(number)</label>
+            <!-- (string) -->
+            <label>livingSpace</label>
             <input type="number" min="1" max="999" id="livingSpace" [(ngModel)]="announcement.livingSpace"
                 name="livingSpace">
+            <!-- class="form-control" -->
         </div>
         <div>
-            <label>yearBuilt(number)</label>
+            <!-- number -->
+            <div> </div>
+            <label>yearBuilt</label>
             <input type="number" min="1900" max="2021" id="yearBuilt" [(ngModel)]="announcement.yearBuilt"
                 name="yearBuilt">
+            <!-- class="form-control" -->
         </div>
         <div>
-            <label>availableFrom(date) pattern -> '2021-11-18''</label>
-            <input type="date" max="2021-12-31" min="1700-01-01" id="availableFrom"
+            <!-- date pattern -> '2021-11-18''-->
+            <label>availableFrom </label>
+            <input type="date" max="2023-12-31" min="1700-01-01" id="availableFrom"
                 [(ngModel)]="announcement.availableFrom" name="availableFrom">
+            <!-- class="form-control" -->
         </div>
         <div>
-            <p>PUBLICATION DATE AUTO</p>
+            <!-- <p>PUBLICATION DATE AUTO</p> -->
         </div>
 
-        <button class="btn btn-primary" type="submit">Add</button>
-        <button></button>
+        <button type="submit">Add</button>
+        <!-- <button></button> -->
     </form>
 
 </div>
