@@ -5,18 +5,19 @@ import { AnnouncementService } from '../announcement-list/announcement.service';
 import { Announcement } from '../model/announcement';
 import { AnnouncementParams } from '../model/announcementParams';
 import { MatTableModule } from '@angular/material/table';
+import { AnnouncementDetails } from '../model/announcement-details';
 
-interface TrueFalse {
-  value: boolean;
-  viewValue: boolean;
-}
+// interface TrueFalse {
+//   value: boolean;
+//   viewValue: boolean;
+// }
 
-export interface Task {
-  name: string;
-  completed: boolean;
-  // color: ThemePalette;
-  subtasks?: Task[];
-}
+// export interface Task {
+//   name: string;
+//   completed: boolean;
+//   // color: ThemePalette;
+//   subtasks?: Task[];
+// }
 
 @Component({
   selector: 'app-search-announcement',
@@ -27,11 +28,11 @@ export class SearchAnnouncementComponent implements OnInit {
   // checked = false;
 
 
-  trueFalse: TrueFalse[] = [
-    { value: true, viewValue: true },
-    { value: false, viewValue: false },
-  ];
-
+  // trueFalse: TrueFalse[] = [
+  //   { value: true, viewValue: true },
+  //   { value: false, viewValue: false },
+  // ];
+  announcementdetails: AnnouncementDetails = new AnnouncementDetails();
   announcementParams: AnnouncementParams = new AnnouncementParams();
   announcements: Announcement[];
 
@@ -51,10 +52,13 @@ export class SearchAnnouncementComponent implements OnInit {
   searchAnnouncement() {
 
     console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.oven);
+    console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.bath);
     console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.priceMax);
     console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.priceMin);
     console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.shower);
     console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.propertyType);
+    console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.microwave);
+    console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.shower);
 
     //this.announcementService.getAnnouncementWithParams(this.announcementParams);
     this.announcementService.getAnnouncementWithParams(this.announcementParams).subscribe(

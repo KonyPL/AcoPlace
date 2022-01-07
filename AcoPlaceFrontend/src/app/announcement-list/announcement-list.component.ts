@@ -45,8 +45,11 @@ export class AnnouncementListComponent implements OnInit {
   // onChange() {
   //   console.log(this._checkboxlist);
   // }
+  shower: boolean = false;
+
 
   announcementParams: AnnouncementParams = new AnnouncementParams();
+
   announcements: Announcement[];
   // dataSource = new MatTableModule();
 
@@ -99,12 +102,46 @@ export class AnnouncementListComponent implements OnInit {
     console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.priceMax);
     console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.priceMin);
     console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.shower);
-    console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.propertyType);
+    // console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.propertyType);
+    // this.announcementParams.bath = shower;
+    this.announcementParams.shower = this.shower ? "true" : "false";
+    // this.announcementParams.micr = shower;
+    // this.announcementParams.shower = shower;
+    // this.announcementParams.shower = shower;
+    // this.announcementParams.shower = shower;
+    // this.announcementParams.shower = shower;
+    // this.announcementParams.shower = shower;
+    // this.announcementParams.shower = shower;
+    // this.announcementParams.shower = shower;
+
+    // id: number;
+    // bath: boolean; 
+    // shower: boolean; 
+    // microwave: boolean; 
+    // oven: boolean; 
+    // petsAllowed: boolean; 
+    // elevator: boolean; 
+    // nearPark: boolean; 
+    // fenced: boolean; 
+    // nearTram: boolean; 
+    // nearBus: boolean;
+    // wifi: boolean; 
+    // ethernetOutlets: boolean; 
+    // internet: boolean;
+    // internetSpeed: number;
+    // tv: boolean; 
+    // dishwasher: boolean;
+    // clothesDryer: boolean;
+    // nearShoppingMall: boolean;
+    // nearBakery: boolean;
+    // nearFoodMarket: boolean;
+    // nearSupermarket: boolean; 
 
     //this.announcementService.getAnnouncementWithParams(this.announcementParams);
     this.announcementService.getAnnouncementWithParams(this.announcementParams).subscribe(
       data => {
         this.announcements = data;
+
         console.log("DATA from endpoint" + data);
       }
     )

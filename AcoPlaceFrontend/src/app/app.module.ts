@@ -21,6 +21,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 // import {
@@ -41,7 +43,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     AnnouncementDetailsDetailsComponent,
     HouseDetailsComponent,
     RoomDetailsComponent,
-    FlatDetailsComponent
+    FlatDetailsComponent,
+    UserProfileComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

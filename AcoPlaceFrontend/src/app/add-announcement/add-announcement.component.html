@@ -12,7 +12,7 @@
             </div>
             <div>
                 <!-- class="col-md-9" -->
-                <input type="text" id="country" [(ngModel)]="announcement.country" name="country">
+                <input type="text" id="country" [(ngModel)]="announcement.country" name="country" required>
                 <!-- class="form-control" -->
             </div>
         </div>
@@ -101,7 +101,7 @@
         <div>
             <!-- date pattern -> '2021-11-18''-->
             <label>availableFrom </label>
-            <input type="date" max="2021-12-31" min="1700-01-01" id="availableFrom"
+            <input type="date" max="2023-12-31" min="1700-01-01" id="availableFrom"
                 [(ngModel)]="announcement.availableFrom" name="availableFrom">
             <!-- class="form-control" -->
         </div>
