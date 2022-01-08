@@ -1,4 +1,0 @@
- id | available_from | city | country | currency | district | house_number | living_space | postal_code | price | property_type | publication_date | state | street | text | title | year_built | web_user_id 
-----+----------------+------+---------+----------+----------+--------------+--------------+-------------+-------+---------------+------------------+-------+--------+------+-------+------------+-------------
-(0 rows)
-
