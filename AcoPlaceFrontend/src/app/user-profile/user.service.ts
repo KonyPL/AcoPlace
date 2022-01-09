@@ -3,7 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../model/user';
 import { UserPrefereces } from '../model/user-preferences';
-import { UserTable } from '../model/user-table';
+import { WebUser } from '../model/web-user';
 
 @Injectable({
     providedIn: 'root'
@@ -12,7 +12,12 @@ export class UserService {
 
     constructor(private httpClient: HttpClient) { }
 
-    getUsersList(): Observable<User[]> {
+
+    getUserInfo(): Observable<WebUser> {
+        return this.httpClient.get<WebUser>(`http://localhost:8080/user/getuser`);
+    }
+
+    /*getUsersList(): Observable<User[]> {
         return this.httpClient.get<User[]>("http://localhost:8080/users");
     }
 
@@ -22,7 +27,7 @@ export class UserService {
 
     createUser(announcement: User): Observable<Object> {
         return this.httpClient.post(`http://localhost:8080/addAnnouncement/`, announcement);
-    }
+    }*/
 
     //   getUserWithParams(userPreferences: UserPrefereces): Observable<User[]> {
 
@@ -38,9 +43,9 @@ export class UserService {
     //     // /
     //   }
 
-    getUserDetailsById(id: number): Observable<UserTable> {
+   /* getUserDetailsById(id: number): Observable<UserTable> {
         return this.httpClient.get<UserTable>(`http://localhost:8080/announcementDetails/` + id);
-    }
+    }*/
 
 
 }

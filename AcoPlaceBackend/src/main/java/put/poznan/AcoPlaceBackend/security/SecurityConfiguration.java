@@ -1,5 +1,6 @@
 package put.poznan.AcoPlaceBackend.security;
 
+import org.apache.catalina.filters.CorsFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -9,6 +10,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.header.writers.StaticHeadersWriter;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
@@ -28,7 +33,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/**").hasAnyAuthority("ADMIN", "USER")
                 .antMatchers("/home").permitAll()
                 .and().formLogin()
-                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/home");
+                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/home").and().csrf().disable();
+
 
     }
 
@@ -36,4 +42,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public PasswordEncoder getPasswordEncoder() {
         return NoOpPasswordEncoder.getInstance();
     }
+
+
+
+
 }
+

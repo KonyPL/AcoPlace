@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../model/user';
 import { UserPrefereces } from '../model/user-preferences';
-import { UserTable } from '../model/user-table';
+import { WebUser } from '../model/web-user';
+
 import { UserService } from './user.service';
 
 @Component({
@@ -12,40 +13,22 @@ import { UserService } from './user.service';
 })
 export class UserProfileComponent implements OnInit {
 
-  // constructor() { }
+  constructor(private userService: UserService) { }
+
+  webUser: WebUser;
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.getUser();
   }
 
-  //  announcementParams: AnnouncementParams = new AnnouncementParams();
 
-  //  announcements: Announcement[];
-  //  dataSource = new MatTableModule();
+  public getUser(){
+    this.userService.getUserInfo().subscribe(
+      data => {
+        this.webUser = data;
+        console.log("DATA from endpoint" + data);
+      }
+    )  }
 
-  user: User[];
-  userPrederences: UserPrefereces = new UserPrefereces();
-  userTable: UserTable = new UserTable();
-
-  constructor(private userService: UserService, private router: Router) { }
-
-  // ngOnInit(): void {
-  //   this.getAnnouncements();
-  // }
-
-  // private getAnnouncements() {
-  //   this.announcementService.getAnnouncementsList().subscribe(
-  //     data => {
-  //       this.announcements = data;
-  //       console.log("DATA from endpoint" + data);
-  //     }
-  //   )
-  // }
-
-  // public showAnnouncementById(id: number) {
-  //   console.log("odczytuje id=" + id);
-  //   this.router.navigate(['announcement', id]);
-
-  // }
 
 }
-// 
