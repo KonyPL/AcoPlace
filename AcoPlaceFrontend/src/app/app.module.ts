@@ -23,6 +23,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AdminComponent } from './admin/admin.component';
+import { MatInputModule } from '@angular/material/input';
+import { StartPageComponent } from './start-page/start-page.component';
 
 
 // import {
@@ -45,7 +47,8 @@ import { AdminComponent } from './admin/admin.component';
     RoomDetailsComponent,
     FlatDetailsComponent,
     UserProfileComponent,
-    AdminComponent
+    AdminComponent,
+    StartPageComponent
   ],
   imports: [
     BrowserModule,
@@ -54,10 +57,10 @@ import { AdminComponent } from './admin/admin.component';
     FormsModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    // MatIconModule,
+    MatIconModule,
     MatSelectModule,
     MatCheckboxModule,
-
+    MatInputModule
 
   ],
   providers: [HttpClientModule],

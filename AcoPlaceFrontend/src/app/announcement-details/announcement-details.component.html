@@ -3,12 +3,12 @@
 </div> -->
 <div class="component" style="background-color: #eee;">
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-9" style="border: solid 1px black;">
             <p>announcement-details works!</p>
             <p>i tuu długi i dokładny opis tego ogłoszeina </p>
             <p>Niżej zdjecia</p>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3" style="border: solid 1px black;">
             <div class="row">
                 Info:
             </div>
@@ -37,16 +37,16 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4" style="border: solid 1px black;">
             <app-announcement-details-details [id]=announcement.id>
                 <!-- probowane: [bath]=announcement.bath -->
             </app-announcement-details-details>
             <app-room-details *ngIf="announcement.propertyType=='POKOJ'" [id]=announcement.id></app-room-details>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" style="border: solid 1px black;">
             <app-house-details *ngIf="announcement.propertyType=='DOM'" [id]=announcement.id></app-house-details>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" style="border: solid 1px black;">
             <app-flat-details *ngIf="announcement.propertyType=='MIESZKANIE'" [id]=announcement.id></app-flat-details>
 
             <!-- ngIf*="if propertyType='POKOJ'" pokoj details componetn i -->
