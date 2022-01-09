@@ -4,6 +4,8 @@ import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AnnouncementService } from '../announcement-list/announcement.service';
 import { Announcement } from '../model/announcement';
+import { MatFormField } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 //import { MatSliderModule } from '@angular/material/slider';
 
 @Component({
@@ -19,23 +21,23 @@ export class AddAnnouncementComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
 
-  saveAnnouncement(){
-    this.announcementService.createAnnouncement(this.announcement).subscribe( data =>{
-      console.log("jestem w save announcement"+data);
+
+  saveAnnouncement() {
+    this.announcementService.createAnnouncement(this.announcement).subscribe(data => {
+      console.log("jestem w save announcement" + data);
       this.goToAnnouncementList();
-    }, error=> console.log(error))
-    
+    }, error => console.log(error))
+
   }
 
-  goToAnnouncementList(){
+  goToAnnouncementList() {
     console.log("jestem w  go to tu chce byc announcement list");
     this.router.navigate(['announcements-list']);
   }
 
-  onSubmit(){
-    console.log("THIS ANNOUNCEMENT on sumbit clicked"+this.announcement);
+  onSubmit() {
+    console.log("THIS ANNOUNCEMENT on sumbit clicked" + this.announcement);
     this.saveAnnouncement();
   }
 }
