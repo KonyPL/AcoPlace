@@ -30,7 +30,7 @@ public class AnnouncementDetails {
     private boolean nearFoodMarket;
     private boolean nearSupermarket;
 
-    @ManyToOne
+    @OneToOne
     private Announcement announcement;
 
     public AnnouncementDetails() {
