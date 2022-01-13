@@ -19,7 +19,6 @@ public class AnnouncementService {
     }
 
     public Announcement getAnnouncementById(long id) {
-        // return advertisementRepository.getById(id);
         return announcementRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Advertisement with id:" + id + " not found in database"));
     }
 
@@ -30,5 +29,9 @@ public class AnnouncementService {
 
     public Announcement saveAnnouncement(Announcement announcement) {
         return announcementRepository.save(announcement);
+    }
+
+    public void deleteById(long id) {
+        announcementRepository.deleteById(id);
     }
 }

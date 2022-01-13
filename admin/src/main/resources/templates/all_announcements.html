@@ -24,12 +24,16 @@
 
         <th>TITLE</th>
         <th>TEXT</th>
+        <th>DELETE</th>
 
         </thead>
         <tbody>
         <tr th:each="announcement:${listAnnouncements}">
             <td th:text="${announcement.getTitle()}">Title</td>
             <td th:text="${announcement.getText()}">text</td>
+            <td>
+              <a th:href="@{'/announcement/delete/' + ${announcement.getId()}}">Delete</a>
+            </td>
 
         </tr>
         </tbody>

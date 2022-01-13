@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-@CrossOrigin()//tu mozna dac  z jakieg hosta pozniej
+@CrossOrigin()
 public class AnnouncementController {
     private final AnnouncementService announcementService;
 
@@ -25,33 +25,19 @@ public class AnnouncementController {
 
     @RequestMapping("/allAnnouncements")
     public String viewAllMealsByUser(Model model){
-       // List<Meal> listMeals=mealService.findAllMealsByEmail(SecurityContextHolder.getContext().getAuthentication().getName());
         List<Announcement> listAnnouncements = announcementService.getAllAnnouncements();
         model.addAttribute("listAnnouncements",listAnnouncements);
-
         return "all_announcements";
     }
 
-    //==============================NIE PATRZYMY NA TO========================================================================
-    /*@GetMapping("/rest/announcements")
-    public List<Announcement> getAllAdvertisements() {
-        return announcementService.getAllAnnouncements();
+    @RequestMapping(value = "/announcement/delete/{id}")
+    public String deleteMeal(@PathVariable(name="id") int id){
+
+        announcementService.deleteById(id);
+        return "redirect:/allAnnouncements";
+
+
     }
 
-    @GetMapping("/rest/announcement/{id}")
-    public Announcement getAdvertisementById(@PathVariable long id){
-        return announcementService.getAnnouncementById(id);
-    }
 
-    @PostMapping("/rest/addAnnouncement")
-    public Announcement createAnnouncement(@RequestBody Announcement announcement) {
-        System.out.println(announcement.toString());
-        announcement.setPublicationDate((new Date(System.currentTimeMillis())));
-        return announcementService.saveAnnouncement(announcement);
-    }*/
-
-  /*  @GetMapping("/admin/delete/{id}") // tu dac delete i porzadnie
-    public void deleteAnnpicnement(@PathVariable long id){
-         announcementRepository.deleteById(id);
-    }*/
 }
