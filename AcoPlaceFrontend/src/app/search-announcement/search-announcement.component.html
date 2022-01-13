@@ -1,180 +1,79 @@
 <!-- <p>NAZWA</p> -->
-<!-- h-100  -->
-<div class="container">
-    <!-- h-100 justify-content-center align-items-center -->
-    <div class="row">
-        <div class="col-xs-3" style="background-color: #eee;">
-            <h3>SEARCH announcement</h3>
+<div>
+    <h3>SEARCH announcement</h3>
 
-            <form (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()">
 
-
-                <!-- (string) -->
-                <div class="row">
-                    <div class="col-md-12" style="text-align: center;">
-                        <div class="row" style="text-align: center;">
-                            <label>priceMin</label>
-                        </div>
-                        <div class="row" style="text-align: center;">
-                            <input type="number" id="priceMin" [(ngModel)]="announcementParams.priceMin"
-                                name="priceMin">
-                        </div>
-                    </div>
-                    <!-- </div> -->
-                    <div class="col-xs-12" style="text-align: center;">
-                        <div class="row">
-                            <!-- (string) -->
-                            <label>priceMax</label>
-                        </div>
-                        <div class="row">
-                            <input type="number" id="priceMax" [(ngModel)]="announcementParams.priceMax"
-                                name="priceMax">
-                        </div>
-                    </div>
-                    <div class="col-xs-12" style="text-align: center;">
-                        <div class="row">
-                            <label>propertyType (POKOJ/DOM/M)</label>
-                        </div>
-                        <input type="text" id="propertyType" [(ngModel)]="announcementParams.propertyType"
-                            name="propertyType">
-                    </div>
-                    <div class="row" style="background: #fff; margin: 10px 0; border-radius: 0%;">
-                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                            <mat-checkbox [(ngModel)]="announcementParams.bath" name="bath" class="example-margin">Bath
-                            </mat-checkbox>
-                        </div>
-                    </div>
-                    <div class="row" style="background: #fff; margin: 10px 0;">
-                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                            <mat-checkbox class="example-margin">Shower</mat-checkbox>
-                        </div>
-                    </div>>
-                    <div>
-                        <!-- <label>shower</label> -->
-                        <mat-checkbox [(ngModel)]="announcementParams.microwave" name="microwave">Microvawe
-                        </mat-checkbox>
-                    </div>
-                    <div>
-                        <!-- <label>shower</label> -->
-                        <mat-checkbox [(ngModel)]="announcementParams.shower" name="shower">Shower
-                        </mat-checkbox>
-                    </div>
-                    <div>
-                        <!-- <label>oven (true/false)</label> -->
-                        <div class="row" style="background: #fff; margin: 10px 0; border-radius: 0%;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.oven" name="oven" class="example-margin">
-                                    Oven
-                                </mat-checkbox>
-                            </div>
-                        </div>
-                        <div class="row" style="background: #fff; margin: 10px 0; border-radius: 0%;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.elevator" name="elevator"
-                                    class="example-margin">
-                                    Elevator
-                                </mat-checkbox>
-                            </div>
-                        </div>
-
-                        <!-- <input type="text" id="oven" [(ngModel)]="announcementParams.oven" name="oven"> -->
-
-                    </div>
-                </div>
-                <div>
-                    <label>shower (true/false)</label>
-
-                    <!-- <input type="text" id="shower" [(ngModel)]="announcementParams.shower" name="shower"> -->
-                    <!-- <mat-form-field appearance="fill">
-                    <mat-label>Cars</mat-label>
-                    <select matNativeControl required>
-                        <option value="true">True</option>
-                        <option value="false">False</option>
-                    </select>
-                </mat-form-field> -->
-
-                    <!-- <mat-form-field appearance="fill">
-                        <mat-label>True/False</mat-label>
-                        <mat-select>
-                            <mat-option *ngFor="let TrueFalse of trueFalse" [value]="TrueFalse.value">
-                                {{TrueFalse.viewValue}}
-                            </mat-option>
-                        </mat-select>
-                    </mat-form-field> -->
-
-
-
-                    <!-- <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown" appDropdown>
-                        <a href="#" class="dropdown-toggle" role="button"><span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Save Data</a></li>
-                            <li><a href="#">Fetch Data</a></li>
-                        </ul>
-                    </li>
-                </ul> -->
-                </div>
-                <button type="submit">SEARCH</button>
-            </form>
-            <!-- </div> -->
+        <div>
+            <label>priceMin(string)</label>
+            <input type="text" id="priceMin" [(ngModel)]="announcementParams.priceMin" name="priceMin">
         </div>
-
-        <!-- h-100 justify-content-center align-items-center -->
-        <!-- <div class="row"> -->
-        <div class="col-xs-9">
-            <hr>
-            <h2>Announcement list</h2>
-            <table class="table table-striped table-wrapper">
-                <thead>
-                    <tr>
-                        <!-- <th>ID</th> -->
-                        <th>COUNTRY</th>
-                        <th>CITY</th>
-                        <!-- <th>POSTAL_CODE</th> -->
-                        <!-- <th>DISTRICT</th> -->
-                        <th>STATE</th>
-                        <!-- <th>STREET</th> -->
-                        <!-- <th>HOUSE NUMBER</th> -->
-                        <th>TITLE</th>
-                        <!-- <th>TEXT</th> -->
-                        <th>PROPERTY TYPE</th>
-                        <th>PRICE</th>
-                        <th>CURRENCY</th>
-                        <!-- <th>LIVING SPACE</th> -->
-                        <!-- <th>YEAR BUILT</th> -->
-                        <!-- <th>AVAILABLE FROM</th> -->
-                        <!-- <th>PUBLICATION DATE</th> -->
-
-                        <th>SHOW</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let announcement of announcements">
-                        <!-- <td>{{announcement.id}}</td> -->
-                        <td>{{announcement.country}}</td>
-                        <td>{{announcement.city}}</td>
-                        <!-- <td>{{announcement.postalCode}}</td> -->
-                        <!-- <td>{{announcement.district}}</td> -->
-                        <td>{{announcement.state}}</td>
-                        <!-- <td>{{announcement.street}}</td> -->
-                        <!-- <td>{{announcement.houseNumber}}</td> -->
-                        <td>{{announcement.title}}</td>
-                        <!-- <td>{{announcement.text}}</td> -->
-                        <td>{{announcement.propertyType}}</td>
-                        <td>{{announcement.price}}</td>
-                        <td>{{announcement.currency}}</td>
-                        <!-- <td>{{announcement.livingSpace}}</td> -->
-                        <!-- <td>{{announcement.yearBuilt}}</td> -->
-                        <!-- <td>{{announcement.availableFrom}}</td> -->
-                        <!-- <td>{{announcement.publicationDate}}</td> -->
-
-                        <button (click)="showAnnouncementById(announcement.id)">show</button>
-
-
-                    </tr>
-                </tbody>
-            </table>
+        <div>
+            <label>priceMax(string)</label>
+            <input type="text" id="priceMax" [(ngModel)]="announcementParams.priceMax" name="priceMax">
         </div>
-    </div>
+        <div>
+            <label>propertyType WPISZ POOKOJ</label>
+            <input type="text" id="propertyType" [(ngModel)]="announcementParams.propertyType" name="propertyType">
+        </div>
+        <div>
+            <label>oven (true/false)</label>
+            <input type="text" id="oven" [(ngModel)]="announcementParams.oven" name="oven">
+        </div>
+        <div>
+            <label>shower (true/false)</label>
+            <input type="text" id="shower" [(ngModel)]="announcementParams.shower" name="shower">
+        </div>
+        <button type="submit">SEARCH</button>
+    </form>
 </div>
+<hr>
+<h2>Announcement list</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>cou</th>
+            <th>CITY</th>
+            <th>POSTAL_CODE</th>
+            <th>DISTRICT</th>
+            <th>STATE</th>
+            <th>STREET</th>
+            <th>HOUSE NUMBER</th>
+            <th>TITLE</th>
+            <th>TEXT</th>
+            <th>PROPERTY TYPE</th>
+            <th>PRICE</th>
+            <th>LIVING SPACE</th>
+            <th>YEAR BUILT</th>
+            <th>AVAILABLE FROM</th>
+            <th>PUBLICATION DATE</th>
+
+            <th>SHOW</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let announcement of announcements">
+            <td>{{announcement.id}}</td>
+            <td>{{announcement.country}}</td>
+            <td>{{announcement.postalCode}}</td>
+            <td>{{announcement.district}}</td>
+            <td>{{announcement.state}}</td>
+            <td>{{announcement.street}}</td>
+            <td>{{announcement.houseNumber}}</td>
+            <td>{{announcement.title}}</td>
+            <td>{{announcement.text}}</td>
+            <td>{{announcement.propertyType}}</td>
+            <td>{{announcement.price}}</td>
+            <td>{{announcement.currency}}</td>
+            <td>{{announcement.livingSpace}}</td>
+            <td>{{announcement.yearBuilt}}</td>
+            <td>{{announcement.availableFrom}}</td>
+            <td>{{announcement.publicationDate}}</td>
+
+            <button (click)="showAnnouncementById(announcement.id)">show</button>
+
+
+        </tr>
+    </tbody>
