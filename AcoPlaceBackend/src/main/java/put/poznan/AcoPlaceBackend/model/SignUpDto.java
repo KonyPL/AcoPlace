@@ -1,38 +1,16 @@
 package put.poznan.AcoPlaceBackend.model;
 
-import javax.persistence.*;
-import java.util.Set;
-
-@Entity
-public class WebUser {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+public class SignUpDto {
     private String name;
     private String username;
     private String email;
     private String password;
-    private String role;
 
-    public WebUser(long id, String name, String username, String email, String password, String role) {
-        this.id = id;
+    public SignUpDto(String name, String username, String email, String password) {
         this.name = name;
         this.username = username;
         this.email = email;
         this.password = password;
-        this.role = role;
-    }
-
-    public WebUser() {
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -65,13 +43,5 @@ public class WebUser {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
     }
 }

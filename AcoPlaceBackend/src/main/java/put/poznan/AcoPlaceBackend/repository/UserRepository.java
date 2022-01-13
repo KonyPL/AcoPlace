@@ -6,6 +6,10 @@ import put.poznan.AcoPlaceBackend.model.WebUser;
 import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<WebUser, Long> {
-    Optional<WebUser> findByUserName(String userName);
+    Optional<WebUser> findByEmail(String email);
+    Optional<WebUser> findByUsernameOrEmail(String username, String email);
+    Optional<WebUser> findByUsername(String username);
+    //Boolean existsByUsername(String username);
+   // Boolean existsByEmail(String email);
 
 }

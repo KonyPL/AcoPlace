@@ -1,5 +1,6 @@
 package put.poznan.AcoPlaceBackend.controller;
 
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import put.poznan.AcoPlaceBackend.model.Announcement;
 import put.poznan.AcoPlaceBackend.repository.AnnouncementRepository;
@@ -24,6 +25,7 @@ public class AnnouncementController {
 
     @GetMapping("/announcements")
     public List<Announcement> getAllAdvertisements() {
+        System.out.println("SECURITY CONTEXT HOLDER NAME="+ SecurityContextHolder.getContext().getAuthentication().getName());
         return announcementService.getAllAnnouncements();
     }
 
@@ -36,12 +38,15 @@ public class AnnouncementController {
     public List<Announcement> searchAnnouncement(@RequestParam Map<String,String> allParams){
        /* System.out.println("DZIALAM");
         allParams.forEach((key, value) -> System.out.println(key + ":" + value));*/
+        System.out.println("E");
         return  announcementService.searchAnnouncementsByParams(allParams);
     }
 
 
     @PostMapping("/addAnnouncement")
     public Announcement createAnnouncement(@RequestBody Announcement announcement) {
+        System.out.println("SECURITY CONTEXT HOLDER NAME="+ SecurityContextHolder.getContext().getAuthentication().getName());
+
         System.out.println(announcement.toString());
         announcement.setPublicationDate((new Date(System.currentTimeMillis())));
         return announcementService.saveAnnouncement(announcement);

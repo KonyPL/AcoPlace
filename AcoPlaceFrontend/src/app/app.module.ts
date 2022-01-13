@@ -9,7 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AnnouncementDetailsComponent } from './announcement-details/announcement-details.component';
 import { AddAnnouncementComponent } from './add-announcement/add-announcement.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AnnouncementDetailsListComponent } from './announcement-details-list/announcement-details-list.component';
 import { SearchAnnouncementComponent } from './search-announcement/search-announcement.component';
 import { AnnouncementDetailsDetailsComponent } from './announcement-details-details/announcement-details-details.component';
@@ -25,6 +25,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AdminComponent } from './admin/admin.component';
 import { MatInputModule } from '@angular/material/input';
 import { StartPageComponent } from './start-page/start-page.component';
+import { LoginComponent } from './login/login.component';
 
 
 // import {
@@ -48,7 +49,8 @@ import { StartPageComponent } from './start-page/start-page.component';
     FlatDetailsComponent,
     UserProfileComponent,
     AdminComponent,
-    StartPageComponent
+    StartPageComponent, 
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,8 @@ import { StartPageComponent } from './start-page/start-page.component';
     MatIconModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatInputModule
+    MatInputModule, 
+    ReactiveFormsModule,
 
   ],
   providers: [HttpClientModule],

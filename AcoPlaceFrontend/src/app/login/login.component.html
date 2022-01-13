@@ -1,0 +1,49 @@
+<div >
+    <div >
+        <div ></div>
+        <div >
+            <div >
+                <div  style="text-align: center"><h4>Login</h4></div>
+                <div >
+                    <form [formGroup]="loginForm" (ngSubmit)="login()">
+                        <div>
+                            <label for="user_name">Username or Email</label>
+                            <div >
+                                <input type="text" id="user_name" class="form-control" [formControlName]="'username'" name="user_name">                                  
+                            </div>
+                        </div>
+ 
+                        <div>
+                            <label for="password">Password</label>
+                            <div>
+                                <input type="password" id="password" class="form-control" [formControlName]="'password'" name="password">
+                                                               
+                            </div>
+                        </div>
+ 
+                       <span>
+                            <button type="submit" class="login">
+                                Login
+                            </button>
+                            <span style="padding-left: 15px">New User? <a routerLink="/signup">SIGN UP</a></span>
+                        </span>  
+                        <div class="login-failed" *ngIf='this.isError'>
+                             <p class="login-failed-text">Login Failed. Please check your credentials and try again.</p>   
+                        </div>
+                       <!-- <div class="login-failed" [ngStyle]="{'background-color': 'green'}" *ngIf="this.registerSuccessMessage.length > 0">
+                            <p class="register-success-text">{{registerSuccessMessage}}</p>   
+                       </div>    -->                   
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <button type="submit" (click)="isLoggedIn()">
+       isLoggedIn
+    </button>
+
+    <button type="submit" (click)="getUserName()">
+        getUserName
+     </button>
+</div>
