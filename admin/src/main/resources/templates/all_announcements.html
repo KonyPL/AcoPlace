@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>products</title>
+</head>
+<style>
+
+</style>
+<body>
+<!--<div class="topnav">
+    <a class="active" th:href="@{/logout}">Sign out</a>
+    <a th:href="@{/meals}">Home</a>
+    <a th:href="@{/show_user}">Profile</a>
+    <a th:href="@{/allMeals}">History</a>
+</div>-->
+
+<div align="center">
+    <h1>ANNOUNCEMENTS</h1>
+
+    </br>
+    <table border="1" cellpadding="10">
+        <thead>
+
+        <th>TITLE</th>
+        <th>TEXT</th>
+
+        </thead>
+        <tbody>
+        <tr th:each="announcement:${listAnnouncements}">
+            <td th:text="${announcement.getTitle()}">Title</td>
+            <td th:text="${announcement.getText()}">text</td>
+
+        </tr>
+        </tbody>
+    </table>
+
+
+
+</div>
+
+</body>
+</html>
