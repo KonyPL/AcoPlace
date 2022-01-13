@@ -11,14 +11,13 @@
 <div class="topnav">
     <!--<a class="active" th:href="@{/logout}">Sign out</a>
     <a th:href="@{/meals}">Find By Title</a>-->
-   <!-- <a th:href="@{/show_user}">Find By Id</a>-->
+    <a th:href="@{/show_user}">Find By Id</a>
 
 </div>
 
 <div align="center">
-    <h1>ANNOUNCEMENTS</h1>
+    <h1>ANNOUNCEMENT</h1>
 
-    </br>
     <table border="1" cellpadding="10">
         <thead>
 
@@ -29,20 +28,14 @@
 
         </thead>
         <tbody>
-        <tr th:each="announcement:${listAnnouncements}">
             <td th:text="${announcement.getTitle()}">Title</td>
             <td th:text="${announcement.getText()}">text</td>
-            <td>
-              <a th:href="@{'/announcement/delete/' + ${announcement.getId()}}">Delete</a>
-            </td>
-            <td>
-                <a th:href="@{'/announcement/showById/' + ${announcement.getId()}}">SHOW</a>
-            </td>
-
-        </tr>
         </tbody>
-    </table>
 
+        <p th:text="${announcement.getCountry()}">country</p>
+
+        <a th:href="@{'/announcement/delete/' + ${announcement.getId()}}">Delete</a>
+    </table>
 
 
 </div>

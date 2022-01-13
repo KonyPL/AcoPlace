@@ -35,9 +35,15 @@ public class AnnouncementController {
 
         announcementService.deleteById(id);
         return "redirect:/allAnnouncements";
-
-
     }
 
+
+    @RequestMapping(value = "/announcement/showById/{id}")
+    public String announcement(Model model, @PathVariable(name="id") int id) {
+        Announcement announcement = announcementService.findById(id);
+        model.addAttribute("announcement", announcement);
+
+        return "announcement";
+    }
 
 }

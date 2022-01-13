@@ -34,4 +34,8 @@ public class AnnouncementService {
     public void deleteById(long id) {
         announcementRepository.deleteById(id);
     }
+
+    public Announcement findById(int id) {
+       return announcementRepository.findById((long)id).orElseThrow(() -> new ResourceNotFoundException("Announcement with id="+id+"not found!"));
+    }
 }
