@@ -21,15 +21,26 @@ public class AdminUser {
     @Column(name = "last_name", nullable = false, length = 20)
     private String lastName;
 
+    private Boolean active;
+
     public AdminUser() {
     }
 
-    public AdminUser(Long id, String email, String password, String firstName, String lastName) {
+    public AdminUser(Long id, String email, String password, String firstName, String lastName, Boolean active) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.active = active;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 
     public Long getId() {

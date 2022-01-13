@@ -34,7 +34,7 @@ public class SecurityController {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String encodedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
-        //TODO przy save dać flage actie na false
+        user.setActive(false);
         userRepo.save(user);
 
         return "registerSuccess";
