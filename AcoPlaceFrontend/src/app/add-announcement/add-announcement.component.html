@@ -1,28 +1,17 @@
 <div class="register-section">
-    <!-- justify-content-center -->
+
     <div class="row ">
         <h3>Create Announcement</h3>
         <div class="card-body">
-            <!-- <div class="container" style="margin: 0;">
-                <div class="row">
-                    <div class="col-md-12"> -->
+
             <form (ngSubmit)="onSubmit()">
-
-
-                <!-- <div class="form-group row">
-                    <label for="email_address" class="col-md-4 col-form-label text-md-right"
-                        style="text-align: center;">Country</label>
-                    <div class="col-md-6">
-                        <input type="text" id="email_address" class="form-control" name="email-address">
-
-                    </div>
-                </div> -->
 
                 <div class="container" style="border: 1px solid black;">
                     <h2>Info</h2>
                     <div class="row">
-                        <div class="col-md-9">
-                            <form class="example-form">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <form class="example-form center-div">
                                 <mat-form-field class="over-width" appearance="fill">
                                     <mat-label>Title</mat-label>
                                     <input matInput placeholder="Mieszkanie dla studenta" value="Sushi" type="text"
@@ -30,10 +19,12 @@
                                 </mat-form-field>
                             </form>
                         </div>
+                        <div class="col-md-2"></div>
                     </div>
                     <div class="row">
-                        <div class="col-md-9">
-                            <form class="example-form">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <form class="example-form center-div">
                                 <mat-form-field class="over-width" appearance="fill">
                                     <mat-label>Text</mat-label>
                                     <input matInput placeholder="Mieszkanie w centrum miasta" value="Sushi" type="text"
@@ -42,48 +33,29 @@
                                 </mat-form-field>
                             </form>
                         </div>
+                        <div class="col-md-2"></div>
                     </div>
                 </div>
                 <div class="container" style="border: 1px solid black;">
                     <h2>Address</h2>
                     <div class="col-md-6">
                         <div class="row" style="text-align: center; ">
-                            <div class="col-md-12" style="text-align: center;">
 
-                                <!-- <div>
-                    <label>country</label>
-                </div> -->
-                                <!-- style="padding-left: 9%;" -->
+                            <form class="example-form center-div">
 
-                                <!-- <div class="d-flex align-items-center"> -->
-                                <!-- <div class="col-md-9"> -->
-                                <!-- col-md-2 item-1 -->
-                                <form class="example-form offset " style="text-align: center;">
-                                    <div class="row">
-                                        <!-- -xs-4 col-xs-offset-4 -->
-                                        <div class="col">
-                                            <mat-form-field class="full-width" appearance="fill">
-                                                <mat-label>Country</mat-label>
-                                                <input matInput placeholder="Polska" value="Sushi" type="text"
-                                                    id="country" [(ngModel)]="announcement.country" name="country"
-                                                    required>
-                                            </mat-form-field>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <!-- </div> -->
+                                <mat-form-field class="full-width" appearance="fill">
+                                    <mat-label>Country</mat-label>
+                                    <input matInput placeholder="Polska" value="Sushi" type="text" id="country"
+                                        [(ngModel)]="announcement.country" name="country" required>
+                                </mat-form-field>
+
+                            </form>
+
                         </div>
-
-
-                        <!-- </div> -->
-                        <!-- nie dziala: float-md-right -->
-                        <!-- style="padding-left: 7%;" -->
 
                         <div class="row">
 
-                            <!-- <div class="col-md-9"> -->
-                            <form class="example-form">
+                            <form class="example-form center-div">
                                 <mat-form-field class="full-width" appearance="fill">
                                     <mat-label>Postal code</mat-label>
                                     <input matInput placeholder="01-100" value="Sushi" type="text"
@@ -94,19 +66,19 @@
                         </div>
 
                         <div class="row">
-                            <form class="example-form">
+                            <form class="example-form center-div">
                                 <mat-form-field class="full-width" appearance="fill">
                                     <mat-label>Street</mat-label>
                                     <input matInput placeholder="Jasna" value="Sushi" type="text" id="street"
                                         [(ngModel)]="announcement.street" name="street" required>
                                 </mat-form-field>
                             </form>
-                            <!-- </div> -->
+
                         </div>
 
                         <div class="row">
 
-                            <form class="example-form">
+                            <form class="example-form center-div">
                                 <mat-form-field class="short" appearance="fill">
                                     <mat-label>HouseNumber</mat-label>
                                     <input matInput placeholder="43" value="Sushi" type="text" id="houseNumber"
@@ -125,8 +97,7 @@
 
                         <div class="row">
 
-                            <!-- <div class="col-md-9"> -->
-                            <form class="example-form">
+                            <form class="example-form center-div">
                                 <mat-form-field class="full-width" appearance="fill">
                                     <mat-label>State</mat-label>
                                     <input matInput placeholder="Mazowieckie" value="Sushi" type="text" id="state"
@@ -136,7 +107,7 @@
 
                         </div>
                         <div class="row">
-                            <form class="example-form">
+                            <form class="example-form center-div">
                                 <mat-form-field class="full-width" appearance="fill">
                                     <mat-label>City</mat-label>
                                     <input matInput placeholder="Warszawa" value="Sushi" type="text" id="city"
@@ -146,7 +117,7 @@
                         </div>
                         <div class="row">
 
-                            <form class="example-form">
+                            <form class="example-form center-div">
                                 <mat-form-field class="full-width" appearance="fill">
                                     <mat-label>District</mat-label>
                                     <input matInput placeholder="Praga" value="Sushi" type="text" id="district"
@@ -154,15 +125,7 @@
                                 </mat-form-field>
                             </form>
                         </div>
-                        <!-- </div> -->
                     </div>
-
-
-
-
-
-
-
                 </div>
 
 
@@ -172,11 +135,10 @@
                     <h2>Technical</h2>
                     <div class="row">
                         <div class="col-md-6">
-                            <form class="example-form">
+                            <form class="example-form center-div">
                                 <mat-form-field class="full-width" appearance="fill">
                                     <mat-label>Property type</mat-label>
-                                    <!-- <input matInput placeholder="MIESZKANIE" value="Sushi" type="text" id="propertyType"
-                                        [(ngModel)]="announcement.propertyType" name="propertyType" required> -->
+
                                     <mat-select placeholder="MIESZKANIE" id="propertyType"
                                         [(ngModel)]="announcement.propertyType" name="propertyType" required>
                                         <mat-option value="MIESZKANIE" style="text-align: center;">MIESZKANIE
@@ -189,7 +151,7 @@
                         </div>
 
                         <div class="col-md-6">
-                            <form class="example-form">
+                            <form class="example-form center-div">
                                 <mat-form-field class="short" appearance="fill">
                                     <mat-label>Living space</mat-label>
                                     <input matInput placeholder="7. piętro" value="Sushi" type="text" id="livingSpace"
@@ -200,7 +162,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <form class="example-form">
+                            <form class="example-form center-div">
                                 <mat-form-field class="short" appearance="fill">
                                     <mat-label>Price</mat-label>
                                     <input matInput placeholder="999" value="Sushi" type="number" id="price"
@@ -209,7 +171,7 @@
                             </form>
                         </div>
                         <div class="col-md-6">
-                            <form class="example-form">
+                            <form class="example-form center-div">
                                 <mat-form-field class="short" appearance="fill">
                                     <mat-label>Currency</mat-label>
                                     <input matInput placeholder="PLN" value="Sushi" type="text" id="currency"
@@ -218,12 +180,11 @@
                             </form>
                         </div>
                     </div>
-                    <!-- </div> -->
+
                     <div class="row">
 
-
                         <div class="col-md-6">
-                            <form class="example-form">
+                            <form class="example-form center-div">
                                 <mat-form-field class="short" appearance="fill">
                                     <mat-label>Year built</mat-label>
                                     <input matInput placeholder="1980" value="Sushi" type="number" id="yearBuilt"
@@ -232,7 +193,7 @@
                             </form>
                         </div>
                         <div class="col-md-6">
-                            <form class="example-form">
+                            <form class="example-form center-div">
                                 <mat-form-field class="full-width" appearance="fill">
                                     <mat-label>Available from</mat-label>
                                     <input matInput placeholder="2021-12-01" value="Sushi" type="date" max="2023-12-31"
@@ -254,8 +215,5 @@
 
             </form>
         </div>
-        <!-- </div>
-            </div>
-        </div> -->
     </div>
     <div>

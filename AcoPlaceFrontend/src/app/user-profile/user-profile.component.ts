@@ -12,15 +12,9 @@ import { UserService } from './user.service';
 })
 export class UserProfileComponent implements OnInit {
 
-  // constructor() { }
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
-
-  //  announcementParams: AnnouncementParams = new AnnouncementParams();
-
-  //  announcements: Announcement[];
-  //  dataSource = new MatTableModule();
 
   user: User[];
   userPrederences: UserPrefereces = new UserPrefereces();
@@ -28,24 +22,4 @@ export class UserProfileComponent implements OnInit {
 
   constructor(private userService: UserService, private router: Router) { }
 
-  // ngOnInit(): void {
-  //   this.getAnnouncements();
-  // }
-
-  // private getAnnouncements() {
-  //   this.announcementService.getAnnouncementsList().subscribe(
-  //     data => {
-  //       this.announcements = data;
-  //       console.log("DATA from endpoint" + data);
-  //     }
-  //   )
-  // }
-
-  // public showAnnouncementById(id: number) {
-  //   console.log("odczytuje id=" + id);
-  //   this.router.navigate(['announcement', id]);
-
-  // }
-
 }
-// 

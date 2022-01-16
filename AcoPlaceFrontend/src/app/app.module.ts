@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AnnouncementListComponent } from './announcement-list/announcement-list.component';
@@ -25,6 +25,15 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AdminComponent } from './admin/admin.component';
 import { MatInputModule } from '@angular/material/input';
 import { StartPageComponent } from './start-page/start-page.component';
+import { OwlCarousel, OwlModule } from 'ngx-owl-carousel';
+import { GalleryComponent } from './gallery/gallery.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+// import { CarouselHolderComponent } from './carousel-holder/carousel-holder.component';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { NgImageSliderModule } from 'ng-image-slider';
+// import { SidebarComponent } from './sidebar/sidebar.component';
+// import { NgImageSliderModule } from 'ng-image-slider';
+// import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 // import {
@@ -48,7 +57,10 @@ import { StartPageComponent } from './start-page/start-page.component';
     FlatDetailsComponent,
     UserProfileComponent,
     AdminComponent,
-    StartPageComponent
+    StartPageComponent,
+    GalleryComponent,
+    // CarouselHolderComponent,
+    // SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +72,14 @@ import { StartPageComponent } from './start-page/start-page.component';
     MatIconModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatInputModule
+    MatInputModule,
+    CarouselModule,
+    OwlModule,
+    // OwlCarousel,
+    CarouselModule,
+    NgxGalleryModule,
+    HammerModule,
+    NgImageSliderModule
 
   ],
   providers: [HttpClientModule],

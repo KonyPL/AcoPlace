@@ -7,31 +7,13 @@ import { AnnouncementParams } from '../model/announcementParams';
 import { MatTableModule } from '@angular/material/table';
 import { AnnouncementDetails } from '../model/announcement-details';
 
-// interface TrueFalse {
-//   value: boolean;
-//   viewValue: boolean;
-// }
-
-// export interface Task {
-//   name: string;
-//   completed: boolean;
-//   // color: ThemePalette;
-//   subtasks?: Task[];
-// }
-
 @Component({
   selector: 'app-search-announcement',
   templateUrl: './search-announcement.component.html',
   styleUrls: ['./search-announcement.component.css']
 })
 export class SearchAnnouncementComponent implements OnInit {
-  // checked = false;
 
-
-  // trueFalse: TrueFalse[] = [
-  //   { value: true, viewValue: true },
-  //   { value: false, viewValue: false },
-  // ];
   announcementdetails: AnnouncementDetails = new AnnouncementDetails();
   announcementParams: AnnouncementParams = new AnnouncementParams();
   announcements: Announcement[];
@@ -60,7 +42,6 @@ export class SearchAnnouncementComponent implements OnInit {
     console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.microwave);
     console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.shower);
 
-    //this.announcementService.getAnnouncementWithParams(this.announcementParams);
     this.announcementService.getAnnouncementWithParams(this.announcementParams).subscribe(
       data => {
         this.announcements = data;
@@ -68,7 +49,6 @@ export class SearchAnnouncementComponent implements OnInit {
       }
     )
   }
-
 
   public showAnnouncementById(id: number) {
     console.log("odczytuje id=" + id);

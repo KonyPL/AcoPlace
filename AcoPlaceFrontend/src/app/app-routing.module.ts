@@ -6,6 +6,7 @@ import { AnnouncementDetailsListComponent } from './announcement-details-list/an
 import { AnnouncementDetailsComponent } from './announcement-details/announcement-details.component';
 import { AnnouncementListComponent } from './announcement-list/announcement-list.component';
 import { SearchAnnouncementComponent } from './search-announcement/search-announcement.component';
+import { StartPageComponent } from './start-page/start-page.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
@@ -18,7 +19,9 @@ const appRoutes: Routes = [
     { path: 'announcement-details-list', component: AnnouncementDetailsListComponent },
     { path: 'search-announcement', component: SearchAnnouncementComponent },
     { path: 'user-profile', component: UserProfileComponent },
-    { path: 'admin', component: AdminComponent }
+    { path: 'admin', component: AdminComponent },
+    { path: 'start', component: StartPageComponent }
+
 
 ];
 
