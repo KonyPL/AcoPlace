@@ -6,6 +6,7 @@ import { MatTableModule } from '@angular/material/table';
 import { SearchAnnouncementComponent } from '../search-announcement/search-announcement.component';
 import { AnnouncementParams } from '../model/announcementParams';
 import { ThemePalette } from '@angular/material/core';
+import {LocalStorageService} from 'ngx-webstorage';
 
 export interface Task {
   name: string;
@@ -56,11 +57,15 @@ export class AnnouncementListComponent implements OnInit {
 
 
 
-  constructor(private announcementService: AnnouncementService, private router: Router) { }
+  constructor(private announcementService: AnnouncementService, private router: Router,private localStoraqeService: LocalStorageService) { }
 
   ngOnInit(): void {
     this.getAnnouncements();
     // this.getCheckboxes();
+    //this.localStoraqeService.store('username', data.username);
+   console.log("username="+ this.localStoraqeService.retrieve('username'))
+    
+
   }
 
   private getAnnouncements() {
