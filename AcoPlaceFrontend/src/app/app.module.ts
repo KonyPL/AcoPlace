@@ -21,10 +21,10 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { AdminComponent } from './admin/admin.component';
+//import { UserProfileComponent } from './user-profile/user-profile.component';
+///import { AdminComponent } from './admin/admin.component';
 import { MatInputModule } from '@angular/material/input';
-import { StartPageComponent } from './start-page/start-page.component';
+//import { StartPageComponent } from './start-page/start-page.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterSuccessComponent } from './auth/register-success/register-success.component';
@@ -51,9 +51,6 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
     HouseDetailsComponent,
     RoomDetailsComponent,
     FlatDetailsComponent,
-    UserProfileComponent,
-    AdminComponent,
-    StartPageComponent,
     RegisterComponent,
     LoginComponent,
     RegisterSuccessComponent,
