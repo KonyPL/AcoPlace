@@ -2,7 +2,6 @@ package put.poznan.AcoPlaceBackend.controller;
 
 import org.springframework.web.bind.annotation.*;
 import put.poznan.AcoPlaceBackend.model.Announcement;
-import put.poznan.AcoPlaceBackend.repository.AnnouncementRepository;
 import put.poznan.AcoPlaceBackend.service.AnnouncementService;
 
 import java.sql.Date;
@@ -14,12 +13,9 @@ import java.util.Map;
 public class AnnouncementController {
     private final AnnouncementService announcementService;
 
-    private final AnnouncementRepository announcementRepository;
 
-
-    public AnnouncementController(AnnouncementService announcementService, AnnouncementRepository announcementRepository) {
+    public AnnouncementController(AnnouncementService announcementService) {
         this.announcementService = announcementService;
-        this.announcementRepository = announcementRepository;
     }
 
     @GetMapping("/announcements")
@@ -45,10 +41,5 @@ public class AnnouncementController {
         System.out.println(announcement.toString());
         announcement.setPublicationDate((new Date(System.currentTimeMillis())));
         return announcementService.saveAnnouncement(announcement);
-    }
-
-    @GetMapping("/admin/delete/{id}") // tu dac delete i porzadnie
-    public void deleteAnnpicnement(@PathVariable long id){
-         announcementRepository.deleteById(id);
     }
 }

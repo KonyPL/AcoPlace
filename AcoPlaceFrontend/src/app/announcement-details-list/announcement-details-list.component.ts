@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationExtras } from '@angular/router';
+import { Router } from '@angular/router';
 import { AnnouncementDetails } from '../model/announcement-details';
 import { AnnouncementDetailsService } from './announcement-details.service';
 
@@ -27,8 +27,8 @@ export class AnnouncementDetailsListComponent implements OnInit {
     )
   }
 
-  public showAnnouncementDetailsById(id: number) {
-    console.log("odczytuje id=" + id);
+  public showAnnouncementDetailsById(id: number){
+    console.log("odczytuje id="+id);
     this.router.navigate(['announcementDetails', id]);
 
   }

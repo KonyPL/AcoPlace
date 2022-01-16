@@ -8,22 +8,18 @@ public class WebUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String userName;
     private String email;
     private String password;
-    private boolean active;
-    private String roles;
-
-    public WebUser(Long id, String userName, String email, String password, boolean active, String roles) {
-        this.id = id;
-        this.userName = userName;
-        this.email = email;
-        this.password = password;
-        this.active = active;
-        this.roles = roles;
-    }
+    private boolean verified;
 
     public WebUser() {
+    }
+
+    public WebUser(Long id, String email, String password, boolean verified) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.verified = verified;
     }
 
     public Long getId() {
@@ -32,14 +28,6 @@ public class WebUser {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 
     public String getEmail() {
@@ -58,19 +46,11 @@ public class WebUser {
         this.password = password;
     }
 
-    public boolean isActive() {
-        return active;
+    public boolean isVerified() {
+        return verified;
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
-    }
-
-    public String getRoles() {
-        return roles;
-    }
-
-    public void setRoles(String roles) {
-        this.roles = roles;
+    public void setVerified(boolean verified) {
+        this.verified = verified;
     }
 }

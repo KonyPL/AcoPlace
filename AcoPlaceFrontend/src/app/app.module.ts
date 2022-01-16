@@ -18,14 +18,6 @@ import { RoomDetailsComponent } from './room-details/room-details.component';
 import { FlatDetailsComponent } from './flat-details/flat-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
-import { MatIconModule } from '@angular/material/icon';
-import { MatSelectModule } from '@angular/material/select';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { AdminComponent } from './admin/admin.component';
-import { MatInputModule } from '@angular/material/input';
-import { StartPageComponent } from './start-page/start-page.component';
-
 
 // import {
 //   MatAutocompleteModule, MatButtonModule, MatCheckboxModule, MatDatepickerModule,
@@ -45,10 +37,7 @@ import { StartPageComponent } from './start-page/start-page.component';
     AnnouncementDetailsDetailsComponent,
     HouseDetailsComponent,
     RoomDetailsComponent,
-    FlatDetailsComponent,
-    UserProfileComponent,
-    AdminComponent,
-    StartPageComponent
+    FlatDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -56,11 +45,7 @@ import { StartPageComponent } from './start-page/start-page.component';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatSliderModule,
-    MatIconModule,
-    MatSelectModule,
-    MatCheckboxModule,
-    MatInputModule
+    MatSliderModule
 
   ],
   providers: [HttpClientModule],
