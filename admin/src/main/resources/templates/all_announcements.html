@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>products</title>
+</head>
+<style>
+
+</style>
+<body>
+<div class="topnav">
+    <a class="active" th:href="@{/logout}">Sign out</a>
+    <a th:href="@{/findByTitle}">FIND BY TITLE </a>
+    <a th:href="@{/findById}">FIND BY ID </a>
+    <a th:href="@{/allAnnouncements}">ALL ANNOUNCEMENTS </a>
+    <a th:href="@{/allReportedAnnouncements}">REPORTED </a>
+
+</div>
+
+<div align="center">
+    <h1>ANNOUNCEMENTS</h1>
+
+    </br>
+    <table border="1" cellpadding="10">
+        <thead>
+
+        <th>TITLE</th>
+        <th>TEXT</th>
+        <th>DELETE</th>
+        <th>SHOW</th>
+        <th>REPORT</th>
+        <th>EDIT</th>
+
+        </thead>
+        <tbody>
+        <tr th:each="announcement:${listAnnouncements}">
+            <td th:text="${announcement.getTitle()}">Title</td>
+            <td th:text="${announcement.getText()}">text</td>
+            <td>
+              <a th:href="@{'/announcement/delete/' + ${announcement.getId()}}">Delete</a>
+            </td>
+            <td>
+                <a th:href="@{'/announcement/showById/' + ${announcement.getId()}}">SHOW</a>
+            </td>
+            <td>
+                <a th:href="@{'/announcement/reportById/' + ${announcement.getId()}}">REPORT</a>
+            </td>
+            <td>
+                <a th:href="@{'/announcement/editById/' + ${announcement.getId()}}">EDIT</a>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+
+
+
+</div>
+
+</body>
+</html>

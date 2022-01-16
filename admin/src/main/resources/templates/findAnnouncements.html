@@ -1,0 +1,45 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<style>
+
+</style>
+
+<div class="topnav">
+    <a class="active" th:href="@{/logout}">Sign out</a>
+    <a th:href="@{/findByTitle}">FIND BY TITLE </a>
+    <a th:href="@{/findById}">FIND BY ID </a>
+    <a th:href="@{/allAnnouncements}">ALL ANNOUNCEMENTS </a>
+</div>
+
+<h2>Find Announcements</h2>
+
+<form th:object="${announcement}" th:action="@{announcementFind}" method="get"
+      class="form-horizontal" id="search-owner-form">
+    <div class="form-group">
+        <div class="control-group" id="lastNameGroup">
+            <label class="col-sm-2 control-label">Last name </label>
+            <div class="col-sm-10">
+                <input class="form-control" th:field="*{title}" size="30"
+                       maxlength="80" /> <span class="help-inline"><div
+                    th:if="${#fields.hasAnyErrors()}">
+              <p th:each="err : ${#fields.allErrors()}" th:text="${err}">Error</p>
+            </div></span>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Find
+                Announcements by title
+            </button>
+        </div>
+    </div>
+
+</form>
+
+
+
+
+</body>
+</html>

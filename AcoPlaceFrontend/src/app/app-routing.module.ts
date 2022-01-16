@@ -21,7 +21,7 @@ const appRoutes: Routes = [
     { path: 'announcement-details-list', component: AnnouncementDetailsListComponent },
     { path: 'search-announcement', component: SearchAnnouncementComponent },
     { path: 'user-profile', component: UserProfileComponent },
-    { path: 'admin', component: AdminComponent }, 
+    { path: 'admin', component: AdminComponent },
     {path: 'register1', component: RegisterComponent},
     {path: 'login1', component: LoginComponent},
      {path: 'register-success', component: RegisterSuccessComponent},

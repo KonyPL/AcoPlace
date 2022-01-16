@@ -53,7 +53,7 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
     FlatDetailsComponent,
     UserProfileComponent,
     AdminComponent,
-    StartPageComponent, 
+    StartPageComponent,
     RegisterComponent,
     LoginComponent,
     RegisterSuccessComponent,
@@ -68,7 +68,7 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
     MatIconModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatInputModule, 
+    MatInputModule,
     ReactiveFormsModule,
     NgxWebstorageModule.forRoot()
   ],

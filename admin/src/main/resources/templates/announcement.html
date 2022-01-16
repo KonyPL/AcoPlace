@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>products</title>
+</head>
+<style>
+
+</style>
+<body>
+<div class="topnav">
+    <a class="active" th:href="@{/logout}">Sign out</a>
+    <a th:href="@{/findByTitle}">FIND BY TITLE </a>
+    <a th:href="@{/findById}">FIND BY ID</a>
+    <a th:href="@{/allAnnouncements}">ALL ANNOUNCEMENTS </a>
+    <a th:href="@{/allReportedAnnouncements}">REPORTED </a>
+
+
+</div>
+
+<div align="center">
+    <h1>ANNOUNCEMENT</h1>
+
+    <table border="1" cellpadding="10">
+        <thead>
+
+        <th>TITLE</th>
+        <th>TEXT</th>
+        <th>DELETE</th>
+        <th>SHOW</th>
+
+        </thead>
+        <tbody>
+            <td th:text="${announcement.getTitle()}">Title</td>
+            <td th:text="${announcement.getText()}">text</td>
+        </tbody>
+
+        <p th:text="${announcement.getCountry()}">country</p>
+
+        <a th:href="@{'/announcement/delete/' + ${announcement.getId()}}">Delete</a>
+    </table>
+    <div>
+        <a th:href="@{'/clearFlags/' + ${announcement.getId()}}">CLEAR FLAGS</a>
+    </div>
+
+</div>
+
+</body>
+</html>
