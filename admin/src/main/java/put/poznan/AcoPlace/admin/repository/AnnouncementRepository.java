@@ -14,4 +14,6 @@ public interface AnnouncementRepository extends JpaRepository<Announcement, Long
     @Transactional(readOnly = true)
     List<Announcement> findByTitle(@Param("title") String title);
 
+    @Query("SELECT  announcement FROM Announcement announcement WHERE announcement.reported = 'true' OR announcement.edited = 'true'")
+    List<Announcement> findAllReported();
 }

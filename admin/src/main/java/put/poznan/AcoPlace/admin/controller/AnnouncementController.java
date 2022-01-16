@@ -35,6 +35,13 @@ public class AnnouncementController {
         return "all_announcements";
     }
 
+    @RequestMapping("/allReportedAnnouncements")
+    public String viewReportedAnnouncements(Model model) {
+        List<Announcement> listAnnouncements = announcementService.getAllReportedAnnouncements();
+        model.addAttribute("listAnnouncements", listAnnouncements);
+        return "all_announcements";
+    }
+
     @RequestMapping(value = "/announcement/delete/{id}")
     public String deleteAnnouncement(@PathVariable(name = "id") int id) {
 
@@ -156,6 +163,17 @@ public class AnnouncementController {
     }
 
 
-
+    @RequestMapping(value = "/clearFlags/{id}")
+    public String clearFlags(@PathVariable(name = "id") int id) {
+        Announcement announcement = announcementService.findById(id);
+        announcement.setReported(false);
+        announcement.setReason(null);
+        announcement.setDescription(null);
+        announcement.setAdmin(null);
+        announcement.setReportedTime(null);
+        announcement.setEdited(false);
+        announcementService.saveAnnouncement(announcement);
+        return "redirect:/allReportedAnnouncements";
+    }
 
 }

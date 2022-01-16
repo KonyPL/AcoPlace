@@ -13,6 +13,9 @@
     <a th:href="@{/findByTitle}">FIND BY TITLE </a>
     <a th:href="@{/findById}">FIND BY ID</a>
     <a th:href="@{/allAnnouncements}">ALL ANNOUNCEMENTS </a>
+    <a th:href="@{/allReportedAnnouncements}">REPORTED </a>
+
+
 </div>
 
 <div align="center">
@@ -36,7 +39,9 @@
 
         <a th:href="@{'/announcement/delete/' + ${announcement.getId()}}">Delete</a>
     </table>
-
+    <div>
+        <a th:href="@{'/clearFlags/' + ${announcement.getId()}}">CLEAR FLAGS</a>
+    </div>
 
 </div>
 

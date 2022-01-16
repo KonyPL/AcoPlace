@@ -42,4 +42,8 @@ public class AnnouncementService {
     public List<Announcement> findByTitleLike(String title) {
         return  announcementRepository.findByTitle(title);
     }
+
+    public List<Announcement> getAllReportedAnnouncements() {
+        return announcementRepository.findAllReported();
+    }
 }
