@@ -24,6 +24,12 @@ public class Announcement {
     private int yearBuilt;
     private Date availableFrom;
     private Date publicationDate;
+    private Boolean reported;
+    private String reason;
+    private String description;
+    private String admin;
+    private String reportedTime;
+    private Boolean edited;
 
     @ManyToOne
     private WebUser webUser;
@@ -31,7 +37,7 @@ public class Announcement {
     public Announcement() {
     }
 
-    public Announcement(long id, String country, String city, String postalCode, String district, String state, String street, String houseNumber, String title, String text, String propertyType, double price, String currency, int livingSpace, int yearBuilt, Date availableFrom, Date publicationDate, WebUser webUser) {
+    public Announcement(long id, String country, String city, String postalCode, String district, String state, String street, String houseNumber, String title, String text, String propertyType, double price, String currency, int livingSpace, int yearBuilt, Date availableFrom, Date publicationDate, Boolean reported, String reason, String description, String admin, String reportedTime, Boolean edited, WebUser webUser) {
         this.id = id;
         this.country = country;
         this.city = city;
@@ -49,7 +55,29 @@ public class Announcement {
         this.yearBuilt = yearBuilt;
         this.availableFrom = availableFrom;
         this.publicationDate = publicationDate;
+        this.reported = reported;
+        this.reason = reason;
+        this.description = description;
+        this.admin = admin;
+        this.reportedTime = reportedTime;
+        this.edited = edited;
         this.webUser = webUser;
+    }
+
+    public Boolean getEdited() {
+        return edited;
+    }
+
+    public void setEdited(Boolean edited) {
+        this.edited = edited;
+    }
+
+    public String getReportedTime() {
+        return reportedTime;
+    }
+
+    public void setReportedTime(String reportedTime) {
+        this.reportedTime = reportedTime;
     }
 
     public long getId() {
@@ -196,6 +224,38 @@ public class Announcement {
         this.webUser = webUser;
     }
 
+    public Boolean getReported() {
+        return reported;
+    }
+
+    public void setReported(Boolean reported) {
+        this.reported = reported;
+    }
+
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(String admin) {
+        this.admin = admin;
+    }
+
     @Override
     public String toString() {
         return "Announcement{" +
@@ -216,6 +276,12 @@ public class Announcement {
                 ", yearBuilt=" + yearBuilt +
                 ", availableFrom=" + availableFrom +
                 ", publicationDate=" + publicationDate +
+                ", reported=" + reported +
+                ", reason='" + reason + '\'' +
+                ", description='" + description + '\'' +
+                ", admin='" + admin + '\'' +
+                ", reportedTime='" + reportedTime + '\'' +
+                ", edited=" + edited +
                 ", webUser=" + webUser +
                 '}';
     }

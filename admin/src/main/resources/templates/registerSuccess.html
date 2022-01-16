@@ -6,6 +6,12 @@
   <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
 </head>
 <body>
+<div class="topnav">
+  <a class="active" th:href="@{/logout}">Sign out</a>
+  <a th:href="@{/findByTitle}">FIND BY TITLE </a>
+  <a th:href="@{/findById}">FIND BY ID </a>
+  <a th:href="@{/allAnnouncements}">ALL ANNOUNCEMENTS </a>
+</div>
 <div class="container text-center">
   <h3>You have signed up successfully!</h3>
   <h3><a th:href="@{/login}">Login</a></h3>

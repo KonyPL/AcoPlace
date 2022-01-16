@@ -8,6 +8,12 @@
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
+<div class="topnav">
+    <a class="active" th:href="@{/logout}">Sign out</a>
+    <a th:href="@{/findByTitle}">FIND BY TITLE </a>
+    <a th:href="@{/findById}">FIND BY ID </a>
+    <a th:href="@{/allAnnouncements}">ALL ANNOUNCEMENTS </a>
+</div>
     <div class="container text-center">
         <div>
             <h1>User Registration - Sign Up</h1>

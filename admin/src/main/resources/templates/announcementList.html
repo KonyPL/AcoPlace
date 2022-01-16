@@ -7,12 +7,14 @@
 
   </style>
 
-<div id="topnav">
-    <!--<a th:href="@{/index}">HOME</a>-->
-
+<div class="topnav">
+    <a class="active" th:href="@{/logout}">Sign out</a>
+    <a th:href="@{/findByTitle}">FIND BY TITLE </a>
+    <a th:href="@{/findById}">FIND BY ID </a>
+    <a th:href="@{/allAnnouncements}">ALL ANNOUNCEMENTS </a>
 </div>
 
-<h2>Owners</h2>
+<h2>announcements</h2>
 
 <table id="vets" class="table table-striped">
     <thead>
