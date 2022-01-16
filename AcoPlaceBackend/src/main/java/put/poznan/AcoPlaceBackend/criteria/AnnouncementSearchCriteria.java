@@ -52,4 +52,13 @@ public class AnnouncementSearchCriteria {
     private FlatDetails flatDetails;
     private RoomDetails roomDetails;
     private HouseDetails houseDetails;
+
+    public static class AnnouncementSearchCriteriaBuilder{
+        private String title;
+
+        public AnnouncementSearchCriteriaBuilder title(String title) {
+            this.title = "%" + title + "%";
+            return this;
+        }
+    }
 }

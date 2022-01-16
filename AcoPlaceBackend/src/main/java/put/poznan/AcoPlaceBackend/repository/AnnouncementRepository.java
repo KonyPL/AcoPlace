@@ -62,7 +62,7 @@ public interface AnnouncementRepository extends JpaRepository<Announcement, Long
                     builder.append("  AND a.available_from <= :availableFrom " + System.lineSeparator());
                 }
                 if (queryParams.get("title") != null) {
-                    builder.append("  AND a.title like :title " + System.lineSeparator());
+                    builder.append("  AND a.title ilike :title " + System.lineSeparator());
                 }
                 if (queryParams.get("propertyType") != null) {
                     builder.append("  AND a.property_type like :propertyType " + System.lineSeparator());
