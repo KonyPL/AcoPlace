@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<style>
+
+  </style>
+
+<div id="topnav">
+    <!--<a th:href="@{/index}">HOME</a>-->
+
+</div>
+
+<h2>Owners</h2>
+
+<table id="vets" class="table table-striped">
+    <thead>
+    <tr>
+        <th>TITLE</th>
+        <th >CITY</th>
+        <th>DELETE</th>
+        <th>SHOW</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="announcement : ${selections}">
+
+        <td th:text="${announcement.title}"/>
+        <td th:text="${announcement.city}"/>
+        <td>
+            <a th:href="@{'/announcement/delete/' + ${announcement.getId()}}">Delete</a>
+        </td>
+        <td>
+            <a th:href="@{'/announcement/showById/' + ${announcement.getId()}}">SHOW</a>
+        </td>
+
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

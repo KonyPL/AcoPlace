@@ -38,4 +38,8 @@ public class AnnouncementService {
     public Announcement findById(int id) {
        return announcementRepository.findById((long)id).orElseThrow(() -> new ResourceNotFoundException("Announcement with id="+id+"not found!"));
     }
+
+    public List<Announcement> findByTitleLike(String title) {
+        return  announcementRepository.findByTitle(title);
+    }
 }
