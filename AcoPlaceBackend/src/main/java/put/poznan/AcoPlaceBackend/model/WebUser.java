@@ -4,23 +4,15 @@ import javax.persistence.*;
 
 @Entity
 public class WebUser {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String email;
+    @Column
+    private String userName;
+    @Column
     private String password;
-    private boolean verified;
-
-    public WebUser() {
-    }
-
-    public WebUser(Long id, String email, String password, boolean verified) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.verified = verified;
-    }
+    @Column
+    private String email;
 
     public Long getId() {
         return id;
@@ -30,12 +22,12 @@ public class WebUser {
         this.id = id;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -46,11 +38,21 @@ public class WebUser {
         this.password = password;
     }
 
-    public boolean isVerified() {
-        return verified;
+    public String getEmail() {
+        return email;
     }
 
-    public void setVerified(boolean verified) {
-        this.verified = verified;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public WebUser(Long id, String userName, String password, String email) {
+        this.id = id;
+        this.userName = userName;
+        this.password = password;
+        this.email = email;
+    }
+
+    public WebUser() {
     }
 }
