@@ -1,0 +1,48 @@
+.gallery {
+    display: grid;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    max-height: 100%;
+    /* width: 66vw; */
+}
+
+.center-div {
+    position: relative;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+  }
+
+  .border-div {
+    border: 1px solid black;
+  }
+
+  .item {
+      overflow: hidden;
+  }
+
+  .carousel-indicators {
+    display: none;
+  }
+
+  .ngx-gallery { display: inline-block; margin-bottom: 20px; }
+
+  .center-div {
+    position: relative;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, 0%);
+  }
+
+  ngx-gallery /deep/ ngx-gallery-image .ngx-gallery-arrow {
+    background-color: orangered;
+  }
+  ngx-gallery /deep/ ngx-gallery-thumbnails .ngx-gallery-arrow {
+    background-color: orangered;
+  }
+  ngx-gallery /deep/ ngx-gallery-preview .ngx-gallery-arrow {
+    background-color: orangered;
+  }
