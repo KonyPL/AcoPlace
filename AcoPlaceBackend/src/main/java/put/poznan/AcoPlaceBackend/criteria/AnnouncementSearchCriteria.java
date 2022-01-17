@@ -90,14 +90,6 @@ public class AnnouncementSearchCriteria {
 
         public AnnouncementSearchCriteriaBuilder mustHave(String mustHave) {
             if( mustHave == null ){ return this; } else { this.detailsPresent = true; }
-//            this.bath = mustHave.contains("bath") ? true : null;
-//            this.shower = mustHave.contains("shower") ? true : null;
-//            this.microwave = mustHave.contains("microwave") ? true : null;
-//            this.oven = mustHave.contains("oven") ? true : null;
-//            this.petsAllowed = mustHave.contains("petsAllowed") ? true : null;
-//            this.elevator = mustHave.contains("elevator") ? true : null;
-//            this.nearPark = mustHave.contains("nearPark") ? true : null;
-
             String[] params = {"bath","shower","microwave","oven","petsAllowed","elevator","nearPark"};
             //for each param in list
             for (String param : params) {
@@ -145,24 +137,6 @@ public class AnnouncementSearchCriteria {
             }
         }
 
-//        if (criteria.getTitle() != null) {
-//            result.put("title", criteria.getTitle());
-//        }
-//        if (criteria.getPropertyType() != null) {
-//            result.put("propertyType", criteria.getPropertyType());
-//        }
-//        if (criteria.getLivingSpace() != null) {
-//            result.put("livingSpace", criteria.getLivingSpace());
-//        }
-//        if (criteria.getInternetSpeed() != null) {
-//            result.put("internetSpeed", criteria.getInternetSpeed());
-//        }
-//        if (criteria.getBath() != null) {
-//            result.put("bath", criteria.getBath());
-//        }
-//        if (criteria.getShower() != null) {
-//            result.put("shower", criteria.getShower());
-//        }
         return result;
     }
 }

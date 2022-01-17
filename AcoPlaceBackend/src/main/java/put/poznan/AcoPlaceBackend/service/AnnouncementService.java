@@ -27,7 +27,6 @@ public class AnnouncementService {
     }
 
     public List<AnnouncementDto> searchAnnouncements(AnnouncementSearchCriteria searchCriteria) {
-        //Specification<Announcement> announcementSpecification = AnnouncementSpecifications.createAnnouncementSpecifications(searchCriteria);
         return announcementRepository.findAnnouncements(searchCriteria);
     }
 

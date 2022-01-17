@@ -100,77 +100,9 @@ public interface AnnouncementRepository extends JpaRepository<Announcement, Long
                         query.setParameter(param, queryParams.get(param));
                     }
                 }
-//                if (queryParams.get("availableFrom") != null) {
-//                    query.setParameter("availableFrom", queryParams.get("availableFrom"));
-//                }
-//                if (queryParams.get("title") != null) {
-//                    query.setParameter("title", queryParams.get("title"));
-//                }
-//                if (queryParams.get("propertyType") != null) {
-//                    query.setParameter("propertyType", queryParams.get("propertyType"));
-//                }
-//                if (queryParams.get("livingSpace") != null) {
-//                    query.setParameter("livingSpace", queryParams.get("livingSpace"));
-//                }
-//                if (queryParams.get("internetSpeed") != null) {
-//                    query.setParameter("internetSpeed", queryParams.get("internetSpeed"));
-//                }
-//                if (queryParams.get("bath") != null) {
-//                    query.setParameter("bath", queryParams.get("bath"));
-//                }
-//                if (queryParams.get("shower") != null) {
-//                    query.setParameter("shower", queryParams.get("shower"));
-//                }
-//                if (queryParams.get("microwave") != null) {
-//                    query.setParameter("microwave", queryParams.get("microwave"));
-//                }
-//                if (queryParams.get("oven") != null) {
-//                    query.setParameter("oven", queryParams.get("oven"));
-//                }
-//                if (queryParams.get("oven") != null) {
-//                    query.setParameter("oven", queryParams.get("oven"));
-//                }
-//                if (queryParams.get("elevator") != null) {
-//                    query.setParameter("elevator", queryParams.get("elevator"));
-//                }
-//                if (queryParams.get("nearPark") != null) {
-//                    query.setParameter("nearPark", queryParams.get("nearPark"));
-//                }
-
 
                 return query.getResultList();
             }
-
-//            private Map<String, Object> buildQueryParameters() {
-//                Map<String, Object> result = Maps.newHashMap();
-//                if (ObjectUtils.allNotNull(criteria.getPriceMin(), criteria.getPriceMax())) {
-//                    result.put("priceMin", criteria.getPriceMin());
-//                    result.put("priceMax", criteria.getPriceMax());
-//                }
-//                if (criteria.getAvailableFrom() != null) {
-//                    result.put("availableFrom", criteria.getAvailableFrom());
-//                }
-//                if (criteria.getTitle() != null) {
-//                    result.put("title", criteria.getTitle());
-//                }
-//                if (criteria.getPropertyType() != null) {
-//                    result.put("propertyType", criteria.getPropertyType());
-//                }
-//                if (criteria.getLivingSpace() != null) {
-//                    result.put("livingSpace", criteria.getLivingSpace());
-//                }
-//                if (criteria.getInternetSpeed() != null) {
-//                    result.put("internetSpeed", criteria.getInternetSpeed());
-//                }
-//                if (criteria.getBath() != null) {
-//                    result.put("bath", criteria.getBath());
-//                }
-//                if (criteria.getShower() != null) {
-//                    result.put("shower", criteria.getShower());
-//                }
-//                return result;
-//            }
         });
     }
-
 }
