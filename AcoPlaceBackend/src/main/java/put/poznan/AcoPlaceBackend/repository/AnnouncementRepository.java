@@ -1,5 +1,6 @@
 package put.poznan.AcoPlaceBackend.repository;
 
+import com.google.common.base.CaseFormat;
 import org.apache.commons.lang3.ObjectUtils;
 
 import com.google.common.collect.Maps;
@@ -69,11 +70,14 @@ public interface AnnouncementRepository extends JpaRepository<Announcement, Long
                 if (queryParams.get("internetSpeed") != null) {
                     builder.append("  AND a_d.internet_speed >= :internetSpeed " + System.lineSeparator());
                 }
-                if (queryParams.get("bath") != null) {
-                    builder.append("  AND a_d.bath = :bath " + System.lineSeparator());
-                }
-                if (queryParams.get("shower") != null) {
-                    builder.append("  AND a_d.shower = :shower " + System.lineSeparator());
+
+                String[] detailParamsToBuild = {"bath","shower","microwave","oven","petsAllowed","elevator","nearPark"};
+
+                for(String param : detailParamsToBuild){
+                    if (queryParams.get(param) != null) {
+                        String dbField = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, param);
+                        builder.append("  AND a_d." + dbField + " = :" + param + " " + System.lineSeparator());
+                    }
                 }
 
 
@@ -86,42 +90,52 @@ public interface AnnouncementRepository extends JpaRepository<Announcement, Long
                     query.setParameter("priceMin", queryParams.get("priceMin"));
                     query.setParameter("priceMax", queryParams.get("priceMax"));
                 }
-                if (queryParams.get("availableFrom") != null) {
-                    query.setParameter("availableFrom", queryParams.get("availableFrom"));
+
+                String[] possibleParams = {"availableFrom","title","propertyType","livingSpace","internetSpeed","bath",
+                        "shower", "microwave","oven","petsAllowed","elevator","nearPark"};
+
+                //Set all params specified in possibleParams
+                for(String param : possibleParams){
+                    if (queryParams.get(param) != null) {
+                        query.setParameter(param, queryParams.get(param));
+                    }
                 }
-                if (queryParams.get("title") != null) {
-                    query.setParameter("title", queryParams.get("title"));
-                }
-                if (queryParams.get("propertyType") != null) {
-                    query.setParameter("propertyType", queryParams.get("propertyType"));
-                }
-                if (queryParams.get("livingSpace") != null) {
-                    query.setParameter("livingSpace", queryParams.get("livingSpace"));
-                }
-                if (queryParams.get("internetSpeed") != null) {
-                    query.setParameter("internetSpeed", queryParams.get("internetSpeed"));
-                }
-                if (queryParams.get("bath") != null) {
-                    query.setParameter("bath", queryParams.get("bath"));
-                }
-                if (queryParams.get("shower") != null) {
-                    query.setParameter("shower", queryParams.get("shower"));
-                }
-                if (queryParams.get("microwave") != null) {
-                    query.setParameter("microwave", queryParams.get("microwave"));
-                }
-                if (queryParams.get("oven") != null) {
-                    query.setParameter("oven", queryParams.get("oven"));
-                }
-                if (queryParams.get("oven") != null) {
-                    query.setParameter("oven", queryParams.get("oven"));
-                }
-                if (queryParams.get("elevator") != null) {
-                    query.setParameter("elevator", queryParams.get("elevator"));
-                }
-                if (queryParams.get("nearPark") != null) {
-                    query.setParameter("nearPark", queryParams.get("nearPark"));
-                }
+//                if (queryParams.get("availableFrom") != null) {
+//                    query.setParameter("availableFrom", queryParams.get("availableFrom"));
+//                }
+//                if (queryParams.get("title") != null) {
+//                    query.setParameter("title", queryParams.get("title"));
+//                }
+//                if (queryParams.get("propertyType") != null) {
+//                    query.setParameter("propertyType", queryParams.get("propertyType"));
+//                }
+//                if (queryParams.get("livingSpace") != null) {
+//                    query.setParameter("livingSpace", queryParams.get("livingSpace"));
+//                }
+//                if (queryParams.get("internetSpeed") != null) {
+//                    query.setParameter("internetSpeed", queryParams.get("internetSpeed"));
+//                }
+//                if (queryParams.get("bath") != null) {
+//                    query.setParameter("bath", queryParams.get("bath"));
+//                }
+//                if (queryParams.get("shower") != null) {
+//                    query.setParameter("shower", queryParams.get("shower"));
+//                }
+//                if (queryParams.get("microwave") != null) {
+//                    query.setParameter("microwave", queryParams.get("microwave"));
+//                }
+//                if (queryParams.get("oven") != null) {
+//                    query.setParameter("oven", queryParams.get("oven"));
+//                }
+//                if (queryParams.get("oven") != null) {
+//                    query.setParameter("oven", queryParams.get("oven"));
+//                }
+//                if (queryParams.get("elevator") != null) {
+//                    query.setParameter("elevator", queryParams.get("elevator"));
+//                }
+//                if (queryParams.get("nearPark") != null) {
+//                    query.setParameter("nearPark", queryParams.get("nearPark"));
+//                }
 
 
                 return query.getResultList();

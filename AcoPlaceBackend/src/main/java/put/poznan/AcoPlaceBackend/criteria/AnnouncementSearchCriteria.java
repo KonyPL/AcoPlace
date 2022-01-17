@@ -90,22 +90,33 @@ public class AnnouncementSearchCriteria {
 
         public AnnouncementSearchCriteriaBuilder mustHave(String mustHave) {
             if( mustHave == null ){ return this; } else { this.detailsPresent = true; }
-            this.bath = mustHave.contains("bath") ? true : null;
-            this.shower = mustHave.contains("shower") ? true : null;
-            this.microwave = mustHave.contains("microwave") ? true : null;
-            this.oven = mustHave.contains("oven") ? true : null;
-            this.petsAllowed = mustHave.contains("petsAllowed") ? true : null;
-            this.elevator = mustHave.contains("elevator") ? true : null;
-            this.nearPark = mustHave.contains("nearPark") ? true : null;
+//            this.bath = mustHave.contains("bath") ? true : null;
+//            this.shower = mustHave.contains("shower") ? true : null;
+//            this.microwave = mustHave.contains("microwave") ? true : null;
+//            this.oven = mustHave.contains("oven") ? true : null;
+//            this.petsAllowed = mustHave.contains("petsAllowed") ? true : null;
+//            this.elevator = mustHave.contains("elevator") ? true : null;
+//            this.nearPark = mustHave.contains("nearPark") ? true : null;
+
+            String[] params = {"bath","shower","microwave","oven","petsAllowed","elevator","nearPark"};
+            //for each param in list
+            for (String param : params) {
+                try {
+                    //get value of private field "param" from criteria
+                    Field field = AnnouncementSearchCriteriaBuilder.class.getDeclaredField(param);
+                    field.setAccessible(true);
+                    Boolean value = (Boolean) field.get(this);
+                    //if mustHave contains string "param": set private field "param" to true, otherwise null
+                    field.set(this, (mustHave.contains(param) ? true : null));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
             return this;
         }
 
 
-    }
-
-    private Map<String, Object> addParamIfNotNull(Map<String, Object> map, String[] params) {
-
-        return map;
     }
 
     public Map<String, Object> buildQueryParameters() {
@@ -117,8 +128,10 @@ public class AnnouncementSearchCriteria {
             result.put("priceMin", priceMin);
             result.put("priceMax", priceMax);
         }
+        if (detailsPresent != null) result.put("detailsPresent", detailsPresent);
         //create a list of all possible params for easier bind
-        String[] params = {"availableFrom","title","propertyType","livingSpace","internetSpeed","bath","shower"};
+        String[] params = {"availableFrom","title","propertyType","livingSpace","internetSpeed","bath","shower",
+                "microwave","oven","petsAllowed","elevator","nearPark"};
         //for each param in list
         for (String param : params) {
             try {
