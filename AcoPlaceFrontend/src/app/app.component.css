@@ -3,19 +3,3 @@
 /* bg-img {
     background-image: url("home1.jpg");
 } */
-
-/* * {
-    background-color: grey;
-} */
-
-* {
-    /* margin: 0; */
-    /* padding: 0; */
-}
-
-body {
-    color: #566787;
-    background: #f5f5f5;
-    font-family: 'Overpass', serif;
-    font-size: 13px;
-}

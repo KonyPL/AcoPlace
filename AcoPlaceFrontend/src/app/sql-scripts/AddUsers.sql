@@ -1,9 +1,9 @@
 --user table
-insert into web_user(id,email,password,verified) values(100,'piotr1@wp.pl','1234','true');
-insert into web_user(id,email,password,verified) values(101,'mirek@wp.pl','4321','false'); --false 
-insert into web_user(id,email,password,verified) values(102,'jurek@wp.pl','1221','true');
-insert into web_user(id,email,password,verified) values(103,'wiesiek@wp.pl','5555','true');
-insert into web_user(id,email,password,verified) values(104,'zbyszek@wp.pl','7890','true');
+insert into web_user(id, user_name, email, password, active, roles) values(100,'piotr1','piotr1@wp.pl','1234','true','USER');
+insert into web_user(id, user_name, email, password, active, roles) values(101,'admin1','piotradmin1@wp.pl','1234','true','USER,ADMIN');
+insert into web_user(id, user_name, email, password, active, roles) values(102,'user1','user@onet.pl','1234','true','USER');
+insert into web_user(id, user_name, email, password, active, roles) values(103,'onlyadmin','onlyadmin@gmail.pl','1234','true','ADMIN');
+insert into web_user(id, user_name, email, password, active, roles) values(104,'marcin1','marcin1@o2.pl','1234','true','USER,ADMIN');
 
 --user details
 insert into user_details(id, web_user_id, first_name, last_name, phone_number, country_code, about) values (100, 100, 'Piotr', 'Piotrowy', 123123123, 44, 'Jestem Piotrek');

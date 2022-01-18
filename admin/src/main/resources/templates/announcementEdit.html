@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>user</title>
+</head>
+<style>
+
+    body {
+        font-family: Verdana, sans-serif;
+        font-size: 20px;
+        color: black;
+    }
+</style>
+<body>
+<div class="topnav">
+    <a class="active" th:href="@{/logout}">Sign out</a>
+    <a th:href="@{/findByTitle}">FIND BY TITLE </a>
+    <a th:href="@{/findById}">FIND BY ID </a>
+    <a th:href="@{/allAnnouncements}">ALL ANNOUNCEMENTS </a>
+</div>
+<div align="center">
+
+
+
+
+    <form action="#" th:action="@{/saveAnnouncementEdited}" th:object="${announcement}" method="post">
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>ID:</td>
+                <td><input  type="text" readonly th:field="*{id}"/></td>
+            </tr>
+            <tr>
+                <td>country:</td>
+                <td><input  type="text" th:field="*{country}"/></td>
+            </tr>
+            <tr>
+                <td>title:</td>
+                <td><input type="text" th:field="*{title}"/></td>
+            </tr>
+            <tr>
+                <td>text:</td>
+                <td><input  type="text" th:field="*{text}"/></td>
+            </tr>
+            <tr>
+                <td>DODAJ RESZTE INFORMACJI:</td>
+                <hr>
+            </tr>
+            <tr>
+                <td> edited REASON:</td>
+                <td><input type="text" th:field="*{reason}"/></td>
+            </tr>
+            <tr>
+                <td>edited DESCRIPTION:</td>
+                <td><input type="text" th:field="*{description}"/></td>
+            </tr>
+
+
+            <tr><td colspan="2"><button type="submit">EDIT</button></td></tr>
+        </table> </form>
+
+
+
+
+</div>
+</body>
+</html>
