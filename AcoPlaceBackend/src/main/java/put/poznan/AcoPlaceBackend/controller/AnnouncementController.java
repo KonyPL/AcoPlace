@@ -28,7 +28,7 @@ public class AnnouncementController {
         return announcementService.getAnnouncementById(id);
     }
 
-    @GetMapping("/searchAnnouncement")
+    @GetMapping("/free/searchAnnouncement")
     public ResponseEntity<List<AnnouncementDto>> searchAnnouncement(
             @RequestParam(required = false) Optional<Double> priceMin,
             @RequestParam(required = false) Optional<Double> priceMax,
@@ -61,4 +61,10 @@ public class AnnouncementController {
         announcement.setPublicationDate((new Date(System.currentTimeMillis())));
         return announcementService.saveAnnouncement(announcement);
     }
+
+    @GetMapping("/free/announcements")
+    public List<Announcement> getAllAnnouncements(){
+        return announcementService.getAll();
+    }
+
 }

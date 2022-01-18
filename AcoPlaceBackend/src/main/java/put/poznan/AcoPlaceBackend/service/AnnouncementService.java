@@ -33,4 +33,8 @@ public class AnnouncementService {
     public Announcement saveAnnouncement(Announcement announcement) {
         return announcementRepository.save(announcement);
     }
+
+    public List<Announcement> getAll() {
+        return announcementRepository.findAll();
+    }
 }
