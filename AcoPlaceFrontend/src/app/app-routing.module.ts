@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddAnnouncementComponent } from './add-announcement/add-announcement.component';
-import { AdminComponent } from './admin/admin.component';
+// import { AdminComponent } from './admin/admin.component';
 import { AnnouncementDetailsListComponent } from './announcement-details-list/announcement-details-list.component';
 import { AnnouncementDetailsComponent } from './announcement-details/announcement-details.component';
 import { AnnouncementListComponent } from './announcement-list/announcement-list.component';
 import { SearchAnnouncementComponent } from './search-announcement/search-announcement.component';
 import { StartPageComponent } from './start-page/start-page.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
+// import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 
@@ -18,8 +18,8 @@ const appRoutes: Routes = [
     { path: 'add-announcement', component: AddAnnouncementComponent },
     { path: 'announcement-details-list', component: AnnouncementDetailsListComponent },
     { path: 'search-announcement', component: SearchAnnouncementComponent },
-    { path: 'user-profile', component: UserProfileComponent },
-    { path: 'admin', component: AdminComponent },
+    // { path: 'user-profile', component: UserProfileComponent },
+    // { path: 'admin', component: AdminComponent },
     { path: 'start', component: StartPageComponent }
 
 

@@ -61,7 +61,7 @@ export class AnnouncementListComponent implements OnInit {
     console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.priceMin);
     console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.shower);
 
-    this.announcementParams.shower = this.shower ? "true" : "false";
+    // this.announcementParams.shower = this.shower ? true : false;
 
     this.announcementService.getAnnouncementWithParams(this.announcementParams).subscribe(
       data => {

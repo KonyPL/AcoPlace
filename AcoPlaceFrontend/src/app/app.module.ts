@@ -21,8 +21,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { AdminComponent } from './admin/admin.component';
+// import { UserProfileComponent } from './user-profile/user-profile.component';
+// import { AdminComponent } from './admin/admin.component';
 import { MatInputModule } from '@angular/material/input';
 import { StartPageComponent } from './start-page/start-page.component';
 import { OwlCarousel, OwlModule } from 'ngx-owl-carousel';
@@ -31,6 +31,21 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 // import { CarouselHolderComponent } from './carousel-holder/carousel-holder.component';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { NgImageSliderModule } from 'ng-image-slider';
+import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
+import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
+import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
+import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
+import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
+import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
+import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
+import { MdbPopoverModule } from 'mdb-angular-ui-kit/popover';
+import { MdbRadioModule } from 'mdb-angular-ui-kit/radio';
+import { MdbRangeModule } from 'mdb-angular-ui-kit/range';
+import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
+import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
+import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
+import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
+import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 // import { SidebarComponent } from './sidebar/sidebar.component';
 // import { NgImageSliderModule } from 'ng-image-slider';
 // import { SidebarComponent } from './sidebar/sidebar.component';
@@ -55,8 +70,8 @@ import { NgImageSliderModule } from 'ng-image-slider';
     HouseDetailsComponent,
     RoomDetailsComponent,
     FlatDetailsComponent,
-    UserProfileComponent,
-    AdminComponent,
+    // UserProfileComponent,
+    // AdminComponent,
     StartPageComponent,
     GalleryComponent,
     // CarouselHolderComponent,
@@ -79,8 +94,23 @@ import { NgImageSliderModule } from 'ng-image-slider';
     CarouselModule,
     NgxGalleryModule,
     HammerModule,
-    NgImageSliderModule
-
+    NgImageSliderModule,
+    MdbAccordionModule,
+    MdbCarouselModule,
+    MdbCheckboxModule,
+    MdbCollapseModule,
+    MdbDropdownModule,
+    MdbFormsModule,
+    MdbModalModule,
+    MdbPopoverModule,
+    MdbRadioModule,
+    MdbRangeModule,
+    MdbRippleModule,
+    MdbScrollspyModule,
+    MdbTabsModule,
+    MdbTooltipModule,
+    MdbValidationModule,
+    MdbCarouselModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

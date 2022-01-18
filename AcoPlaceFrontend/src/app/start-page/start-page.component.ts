@@ -13,5 +13,27 @@ export class StartPageComponent implements OnInit {
     throw new Error('Method not implemented.');
   }
 
+  public images: Image[] = [
+    {
+      url: 'assets/images/Poznan_logo.png',
+      id: '1',
+      // row: '3/3'
+    },
+    {
+      url: 'assets/images/photo1.png',
+      id: '2',
+      // row: '3/3'
+    },
+    {
+      url: 'assets/images/photo2.png',
+      id: '3',
+      // row: '3/3'
+    },
+    {
+      url: 'assets/images/photo3.png',
+      id: '4',
+      // row: '3/3'
+    },
+  ] as Array<Image>;
 
 }
