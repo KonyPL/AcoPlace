@@ -13,33 +13,60 @@ export class AnnouncementService {
   constructor(private httpClient: HttpClient) { }
 
   getAnnouncementsList(): Observable<Announcement[]> {
-    return this.httpClient.get<Announcement[]>("http://localhost:8080/announcements");
+    return this.httpClient.get<Announcement[]>("http://localhost:8080/searchAnnouncement");
   }
 
   getAnnouncementById(id: number): Observable<Announcement> {
-    return this.httpClient.get<Announcement>(`http://localhost:8080/announcement/`+id);
+    return this.httpClient.get<Announcement>(`http://localhost:8080/announcement/` + id);
   }
 
   createAnnouncement(announcement: Announcement): Observable<Object> {
-    return this.httpClient.post(`http://localhost:8080/addAnnouncement/`, announcement);
+    return this.httpClient.post(`http://localhost:8080/addAnnouncement`, announcement);
   }
 
-  getAnnouncementWithParams(announcementParams: AnnouncementParams): Observable<Announcement[]>{
-    
-    const params= new HttpParams()
-    .set('priceMin',announcementParams.priceMin)
-    .set('priceMax',announcementParams.priceMax)
-    .set('propertyType',announcementParams.propertyType)
-    .set('shower',announcementParams.shower)
-    .set('oven',announcementParams.oven);
+  getAnnouncementWithParams(announcementParams: AnnouncementParams): Observable<Announcement[]> {
+
+    let params = new HttpParams();
+    if ((announcementParams.priceMax != undefined) && (announcementParams != undefined)) {
+      params = params.set('priceMin', announcementParams.priceMin);
+      params = params.set('priceMax', announcementParams.priceMax);
+    }
+    if (announcementParams.propertyType != undefined) {
+      params = params.set('propertyType', announcementParams.propertyType);
+    }
+    let mustHave = "";
+    if (announcementParams.oven === true) mustHave += "oven,";
+    if (announcementParams.shower === true) mustHave += "shower,";
+    if (announcementParams.bath === true) mustHave += "bath,";
+    if (announcementParams.microwave === true) mustHave += "microwave,";
+    if (announcementParams.elevator === true) mustHave += "elevator,";
+    if (announcementParams.petsAllowed === true) mustHave += "petsAllowed,";
+    if (announcementParams.nearPark === true) mustHave += "nearPark,";
+    if (announcementParams.fenced === true) mustHave += "fenced,";
+    if (announcementParams.nearTram === true) mustHave += "nearTram,";
+    if (announcementParams.nearBus === true) mustHave += "nearBus,";
+    if (announcementParams.wifi === true) mustHave += "wifi,";
+    if (announcementParams.ethernetOutlets === true) mustHave += "ethernetOutlets,";
+    if (announcementParams.internet === true) mustHave += "internet,";
+    if (announcementParams.tv === true) mustHave += "tv,";
+    if (announcementParams.dishwasher === true) mustHave += "dishwasher,";
+    if (announcementParams.clothesDryer === true) mustHave += "clothesDryer,";
+    if (announcementParams.nearShoppingMall === true) mustHave += "nearShoppingMall,";
+    if (announcementParams.nearBakery === true) mustHave += "nearBakery,";
+    if (announcementParams.nearFoodMarket === true) mustHave += "nearFoodMarket,";
+    if (announcementParams.nearSupermarket === true) mustHave += "nearSupermarket,";
 
 
-    return this.httpClient.get<Announcement[]>(`http://localhost:8080/searchAnnouncement/`,{params});
+
+    params = params.set('mustHave', mustHave);
+
+
+    return this.httpClient.get<Announcement[]>(`http://localhost:8080/searchAnnouncement`, { params });
 
   }
-  
+
   getAnnouncementDetailsById(id: number): Observable<AnnouncementDetails> {
-    return this.httpClient.get<AnnouncementDetails>(`http://localhost:8080/announcementDetails/`+id);
+    return this.httpClient.get<AnnouncementDetails>(`http://localhost:8080/announcementDetails/` + id);
   }
 
 
