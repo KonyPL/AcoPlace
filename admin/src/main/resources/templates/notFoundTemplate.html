@@ -2,17 +2,95 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="ISO-8859-1">
-    <title>resource not found</title>
+    <title>Resource not found</title>
 </head>
+<style>
+    .header {
+        padding: 25px;
+        text-align: center;
+        background: #a6075c;
+        color: white;
+        font-size: 20px;
+    }
+
+    .btn {
+        background-color: #85064a;
+        border: none;
+        color: white;
+        padding: 12px 16px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    /* Darker background on mouse-over */
+    .btn:hover {
+        background-color: #590531;
+    }
+    #announcements {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    #announcements td, #announcements th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #announcements tr:nth-child(even){background-color: #f2f2f2;}
+
+    #announcements tr:hover {background-color: #ddd;}
+
+    #announcements th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+    }
+
+
+    .topnav {
+        font-family: Arial, Helvetica, sans-serif;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .topnav a.active {
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+
 <body>
 <div class="topnav">
-    <a class="active" th:href="@{/logout}">Sign out</a>
-    <a th:href="@{/findByTitle}">FIND BY TITLE </a>
-    <a th:href="@{/findById}">FIND BY ID </a>
-    <a th:href="@{/allAnnouncements}">ALL ANNOUNCEMENTS </a>
+    <a th:href="@{/logout}"> Sign out </a>
+    <a th:href="@{/allAnnouncements}"> All announcements </a>
+    <a th:href="@{/findByTitle}"> Find by title </a>
+    <a th:href="@{/findById}"> Find by ID </a>
+    <a th:href="@{/allReportedAnnouncements}"> Reported </a>
+
 </div>
-<div class="container text-center">
-    <h3>announcement with this id not found</h3>
+<div class="header">
+    <h1>Ooops... Announcement with the given ID was not found.</h1>
+</div>
+<div align="center">
+    <br>
+    <a th:href="@{/findById}"><button class="btn"><i class="fa fa-arrow-left"></i> Return</button></a>
 
 </div>
 

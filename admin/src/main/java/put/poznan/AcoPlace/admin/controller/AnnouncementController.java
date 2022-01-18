@@ -39,7 +39,7 @@ public class AnnouncementController {
     public String viewReportedAnnouncements(Model model) {
         List<Announcement> listAnnouncements = announcementService.getAllReportedAnnouncements();
         model.addAttribute("listAnnouncements", listAnnouncements);
-        return "all_announcements";
+        return "all_reported_announcements";
     }
 
     @RequestMapping(value = "/announcement/delete/{id}")

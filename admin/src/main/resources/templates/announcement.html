@@ -2,29 +2,111 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>products</title>
+    <title>Announcement</title>
 </head>
 <style>
+    .header {
+        padding: 25px;
+        text-align: center;
+        background: #18d390;
+        color: white;
+        font-size: 20px;
+    }
 
+    .btn {
+        background-color: #04AA6D;
+        border: none;
+        color: white;
+        padding: 12px 16px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    /* Darker background on mouse-over */
+    .btn:hover {
+        background-color: #068550;
+    }
+    #announcements {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    #announcements td, #announcements th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #announcements tr:nth-child(even){background-color: #f2f2f2;}
+
+    #announcements tr:hover {background-color: #ddd;}
+
+    #announcements th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+    }
+
+
+    .topnav {
+        font-family: Arial, Helvetica, sans-serif;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .topnav a.active {
+        background-color: #04AA6D;
+        color: white;
+    }
 </style>
+
 <body>
 <div class="topnav">
-    <a class="active" th:href="@{/logout}">Sign out</a>
-    <a th:href="@{/findByTitle}">FIND BY TITLE </a>
-    <a th:href="@{/findById}">FIND BY ID</a>
-    <a th:href="@{/allAnnouncements}">ALL ANNOUNCEMENTS </a>
-    <a th:href="@{/allReportedAnnouncements}">REPORTED </a>
-
+    <a th:href="@{/logout}"> Sign out </a>
+    <a th:href="@{/allAnnouncements}"> All announcements </a>
+    <a th:href="@{/findByTitle}"> Find by title </a>
+    <a th:href="@{/findById}"> Find by ID </a>
+    <a th:href="@{/allReportedAnnouncements}"> Reported </a>
 
 </div>
 
-<div align="center">
-    <h1>ANNOUNCEMENT</h1>
+<div class="header">
+    <h1>All announcements</h1>
+</div>
 
-    <table border="1" cellpadding="10">
+    <table id="announcements">
         <thead>
 
-        <th>TITLE</th>
+        <th>ID</th>
+        <th>available from </th>
+        <th>city </th>
+        <th>country </th>
+        <th>currency </th>
+        <th>district </th>
+        <th> house_number</th>
+        <th>living_space </th>
+        <th>postal_code</th>
+        <th>price </th>
+        <th>property_type </th>
+        <th>publication_date </th>
+        <th>state </th>
+        <th>street </th>
         <th>TEXT</th>
         <th>DELETE</th>
         <th>SHOW</th>
@@ -34,8 +116,10 @@
             <td th:text="${announcement.getTitle()}">Title</td>
             <td th:text="${announcement.getText()}">text</td>
         </tbody>
+<DIV>
+    <p>country =<span th:text="${announcement.getCountry()}">country</span> </p>
 
-        <p th:text="${announcement.getCountry()}">country</p>
+</DIV>
 
         <a th:href="@{'/announcement/delete/' + ${announcement.getId()}}">Delete</a>
     </table>
