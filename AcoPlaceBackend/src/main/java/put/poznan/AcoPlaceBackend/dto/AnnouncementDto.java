@@ -1,5 +1,6 @@
 package put.poznan.AcoPlaceBackend.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import javax.persistence.Temporal;
@@ -22,5 +23,6 @@ public class AnnouncementDto {
     private String propertyType;
     private Double price;
     private String currency;
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "CET")
     private Date availableFrom;
 }
