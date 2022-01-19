@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Announcement</title>
 </head>
 <style>
@@ -87,47 +88,155 @@
 </div>
 
 <div class="header">
-    <h1>All announcements</h1>
+    <h1>Chosen announcement</h1>
+    </br>
 </div>
+
+<DIV>
+
 
     <table id="announcements">
         <thead>
 
-        <th>ID</th>
-        <th>available from </th>
-        <th>city </th>
-        <th>country </th>
-        <th>currency </th>
-        <th>district </th>
-        <th> house_number</th>
-        <th>living_space </th>
-        <th>postal_code</th>
-        <th>price </th>
-        <th>property_type </th>
-        <th>publication_date </th>
-        <th>state </th>
-        <th>street </th>
-        <th>TEXT</th>
-        <th>DELETE</th>
-        <th>SHOW</th>
+        <th>FIELD</th>
+        <th>VALUE</th>
 
         </thead>
         <tbody>
-            <td th:text="${announcement.getTitle()}">Title</td>
-            <td th:text="${announcement.getText()}">text</td>
+
+        <tr>
+            <td>ID</td>
+            <td th:text="${announcement.getId()}"></td>
+        </tr>
+
+        <tr>
+            <td>Property Type</td>
+            <td th:text="${announcement.getPropertyType()}"></td>
+        </tr>
+
+        <tr>
+            <td>Title</td>
+            <td th:text="${announcement.getTitle()}"></td>
+        </tr>
+
+        <tr>
+            <td>Text</td>
+            <td th:text="${announcement.getText()}"></td>
+        </tr>
+
+        <tr>
+            <td>Country</td>
+            <td th:text="${announcement.getCountry()}"></td>
+        </tr>
+
+        <tr>
+            <td>State</td>
+            <td th:text="${announcement.getState()}"></td>
+        </tr>
+
+        <tr>
+            <td>City</td>
+            <td th:text="${announcement.getCity()}"></td>
+        </tr>
+
+        <tr>
+            <td>District</td>
+            <td th:text="${announcement.getDistrict()}"></td>
+        </tr>
+
+        <tr>
+            <td>Street</td>
+            <td th:text="${announcement.getStreet()}"></td>
+        </tr>
+
+        <tr>
+            <td>House Number</td>
+            <td th:text="${announcement.getHouseNumber()}"></td>
+        </tr>
+
+        <tr>
+            <td>Postal Code</td>
+            <td th:text="${announcement.getPostalCode()}"></td>
+        </tr>
+
+        <tr>
+            <td>Living Space</td>
+            <td th:text="${announcement.getLivingSpace()}"></td>
+        </tr>
+
+        <tr>
+            <td>Price</td>
+            <td th:text="${announcement.getPrice()}"></td>
+        </tr>
+        <tr>
+            <td>Currency</td>
+            <td th:text="${announcement.getCurrency()}"></td>
+        </tr>
+
+        <tr>
+            <td>Year Built</td>
+            <td th:text="${announcement.getYearBuilt()}"></td>
+        </tr>
+
+        <tr>
+            <td>Available From</td>
+            <td th:text="${announcement.getAvailableFrom()}"></td>
+        </tr>
+
+        <tr>
+            <td>Publication Date</td>
+            <td th:text="${announcement.getPublicationDate()}"></td>
+        </tr>
+
+        <tr>
+            <td>Admin</td>
+            <td th:text="${announcement.getAdmin()}"></td>
+        </tr>
+
+
+        <tr>
+            <td>Description</td>
+            <td th:text="${announcement.getDescription()}"></td>
+        </tr>
+
+        <tr>
+            <td>Edited</td>
+            <td th:text="${announcement.getEdited()}"></td>
+        </tr>
+
+        <tr>
+            <td>Reason</td>
+            <td th:text="${announcement.getReason()}"></td>
+        </tr>
+        <tr>
+            <td>Reported</td>
+            <td th:text="${announcement.getReported()}"></td>
+        </tr>
+        <tr>
+            <td>Reported time</td>
+            <td th:text="${announcement.getReportedTime()}"></td>
+        </tr>
+
+        <tr>
+            <td>Web User</td>
+            <td th:text="${announcement.getWebUser()}"></td>
+        </tr>
+
+
         </tbody>
-<DIV>
-    <p>country =<span th:text="${announcement.getCountry()}">country</span> </p>
+    </table>
 
 </DIV>
 
-        <a th:href="@{'/announcement/delete/' + ${announcement.getId()}}">Delete</a>
-    </table>
-    <div>
-        <a th:href="@{'/clearFlags/' + ${announcement.getId()}}">CLEAR FLAGS</a>
-    </div>
+<div align="center">
+    <br>
+    <a th:href="@{'/announcement/editById/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-pencil-square-o"></i> Edit</button></a>
+    <a th:href="@{'/announcement/reportById/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-flag"></i> Report</button></a>
+    <a th:href="@{'/announcement/delete/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-trash"></i> Delete</button></a>
+    <a th:href="@{'/clearFlags/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-window-close"></i> Clear flags</button></a>
 
 </div>
+
 
 </body>
 </html>

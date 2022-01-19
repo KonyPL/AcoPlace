@@ -2,7 +2,6 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link th:href="@{/templates/style/styles.css}" rel="stylesheet" />
     <meta charset="UTF-8">
     <title>All announcements</title>
 </head>
@@ -99,27 +98,28 @@
 
         <th>ID</th>
         <th>TITLE</th>
-        <th>DELETE</th>
         <th>SHOW</th>
-        <th>REPORT</th>
         <th>EDIT</th>
+        <th>REPORT</th>
+        <th>DELETE</th>
 
         </thead>
         <tbody>
         <tr th:each="announcement:${listAnnouncements}">
             <td th:text="${announcement.getId()}">ID</td>
             <td th:text="${announcement.getTitle()}">Title</td>
-            <td>
-                <a th:href="@{'/announcement/delete/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-trash"></i> Delete</button></a>
-            </td>
+
             <td>
                 <a th:href="@{'/announcement/showById/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-info"></i> Show</button></a>
+            </td>
+            <td>
+                <a th:href="@{'/announcement/editById/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-pencil-square-o"></i> Edit</button></a>
             </td>
             <td>
                 <a th:href="@{'/announcement/reportById/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-flag"></i> Report</button></a>
             </td>
             <td>
-                <a th:href="@{'/announcement/editById/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-pencil-square-o"></i> Edit</button></a>
+                <a th:href="@{'/announcement/delete/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-trash"></i> Delete</button></a>
             </td>
 
         </tr>

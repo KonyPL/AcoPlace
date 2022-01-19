@@ -2,63 +2,210 @@
 <html lang="en">
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
-    <title>user</title>
+    <title>Report announcement</title>
 </head>
 <style>
+    .header {
+        padding: 25px;
+        text-align: center;
+        background: #18d390;
+        color: white;
+        font-size: 20px;
+    }
+
+    .btn {
+        background-color: #04AA6D;
+        border: none;
+        color: white;
+        padding: 12px 16px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    /* Darker background on mouse-over */
+    .btn:hover {
+        background-color: #068550;
+    }
+    #announcements {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    #announcements td, #announcements th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #announcements tr:nth-child(even){background-color: #f2f2f2;}
+
+    #announcements tr:hover {background-color: #ddd;}
+
+    #announcements th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+    }
 
 
+    .topnav {
+        font-family: Arial, Helvetica, sans-serif;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .topnav a.active {
+        background-color: #04AA6D;
+        color: white;
+    }
 </style>
+
 <body>
 <div class="topnav">
-    <a class="active" th:href="@{/logout}">Sign out</a>
-    <a th:href="@{/findByTitle}">FIND BY TITLE </a>
-    <a th:href="@{/findById}">FIND BY ID </a>
-    <a th:href="@{/allAnnouncements}">ALL ANNOUNCEMENTS </a>
+    <a th:href="@{/logout}"> Sign out </a>
+    <a th:href="@{/allAnnouncements}"> All announcements </a>
+    <a th:href="@{/findByTitle}"> Find by title </a>
+    <a th:href="@{/findById}"> Find by ID </a>
+    <a th:href="@{/allReportedAnnouncements}"> Reported </a>
+
 </div>
-<div align="center">
+
+<div class="header">
+    <h1>Reporting announcement</h1>
+    <br>
+</div>
+
+<DIV>
+    <table id="announcements">
+        <thead>
+
+        <th>FIELD</th>
+        <th>VALUE</th>
+
+        </thead>
 
 
+        <form action="#" th:action="@{/saveAnnouncement}" th:object="${announcement}" method="post">
+
+            <tr>
+                <td>ID</td>
+                <td th:text="${announcement.getId()}"></td>
+            </tr>
+
+            <tr>
+                <td>Property Type</td>
+                <td th:text="${announcement.getPropertyType()}"></td>
+            </tr>
+
+            <tr>
+                <td>Title</td>
+                <td th:text="${announcement.getTitle()}"></td>
+            </tr>
+
+            <tr>
+                <td>Text</td>
+                <td th:text="${announcement.getText()}"></td>
+            </tr>
+
+            <tr>
+                <td>Country</td>
+                <td th:text="${announcement.getCountry()}"></td>
+            </tr>
+
+            <tr>
+                <td>State</td>
+                <td th:text="${announcement.getState()}"></td>
+            </tr>
+
+            <tr>
+                <td>City</td>
+                <td th:text="${announcement.getCity()}"></td>
+            </tr>
+
+            <tr>
+                <td>District</td>
+                <td th:text="${announcement.getDistrict()}"></td>
+            </tr>
+
+            <tr>
+                <td>Street</td>
+                <td th:text="${announcement.getStreet()}"></td>
+            </tr>
+
+            <tr>
+                <td>House Number</td>
+                <td th:text="${announcement.getHouseNumber()}"></td>
+            </tr>
+
+            <tr>
+                <td>Postal Code</td>
+                <td th:text="${announcement.getPostalCode()}"></td>
+            </tr>
+
+            <tr>
+                <td>Living Space</td>
+                <td th:text="${announcement.getLivingSpace()}"></td>
+            </tr>
+
+            <tr>
+                <td>Price</td>
+                <td th:text="${announcement.getPrice()}"></td>
+            </tr>
+            <tr>
+                <td>Currency</td>
+                <td th:text="${announcement.getCurrency()}"></td>
+            </tr>
+
+            <tr>
+                <td>Year Built</td>
+                <td th:text="${announcement.getYearBuilt()}"></td>
+            </tr>
+
+            <tr>
+                <td>Available From</td>
+                <td th:text="${announcement.getAvailableFrom()}"></td>
+            </tr>
+
+            <tr>
+                <td>Publication Date</td>
+                <td th:text="${announcement.getPublicationDate()}"></td>
+            </tr>
 
 
-    <form action="#" th:action="@{/saveAnnouncement}" th:object="${announcement}" method="post">
-        <table border="0" cellpadding="10">
             <tr>
-                <td>ID:</td>
-                <td><input readonly type="text" th:field="*{id}"/></td>
+                <td align="center" colspan="2"><b>Write the reason of reporting and description:</b></td>
             </tr>
             <tr>
-                <td>country:</td>
-                <td><input readonly type="text" th:field="*{country}"/></td>
-            </tr>
-            <tr>
-                <td>title:</td>
-                <td><input readonly type="text" th:field="*{title}"/></td>
-            </tr>
-            <tr>
-                <td>text:</td>
-                <td><input readonly type="text" th:field="*{text}"/></td>
-            </tr>
-            <tr>
-                <td>DODAJ RESZTE INFORMACJI:</td>
-                <hr>
-            </tr>
-            <tr>
-                <td>REASON:</td>
+                <td>Reason</td>
                 <td><input type="text" th:field="*{reason}"/></td>
             </tr>
             <tr>
-                <td>DESCRIPTION:</td>
+                <td>Description:</td>
                 <td><input type="text" th:field="*{description}"/></td>
             </tr>
 
+            <tr><td align = "center" colspan="2"><button type = "submit" class="btn"><i class="fa fa-flag"></i> Report </button></td></tr>
 
-            <tr><td colspan="2"><button type="submit">REPORT</button></td></tr>
-        </table> </form>
-
-
-
-
+        </form>
+    </table>
 </div>
 </body>
 </html>
