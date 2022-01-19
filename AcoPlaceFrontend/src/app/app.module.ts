@@ -9,7 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AnnouncementDetailsComponent } from './announcement-details/announcement-details.component';
 import { AddAnnouncementComponent } from './add-announcement/add-announcement.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AnnouncementDetailsListComponent } from './announcement-details-list/announcement-details-list.component';
 import { SearchAnnouncementComponent } from './search-announcement/search-announcement.component';
 import { AnnouncementDetailsDetailsComponent } from './announcement-details-details/announcement-details-details.component';
@@ -25,6 +25,15 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 // import { AdminComponent } from './admin/admin.component';
 import { MatInputModule } from '@angular/material/input';
 import { StartPageComponent } from './start-page/start-page.component';
+// Kod Wodnika
+import { RegisterComponent } from './auth/register/register.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterSuccessComponent } from './auth/register-success/register-success.component';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
+//import {Ng2Webstorage} from 'ngx-webstorage';
+import { HttpClientInterceptor } from './http-client-interceptor';
+import { NgxWebstorageModule } from 'ngx-webstorage';
+// Koniec kodu Wodnika
 import { OwlCarousel, OwlModule } from 'ngx-owl-carousel';
 import { GalleryComponent } from './gallery/gallery.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -76,6 +85,11 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
     GalleryComponent,
     // CarouselHolderComponent,
     // SidebarComponent
+    //Kod Wodnika
+    RegisterComponent,
+    LoginComponent,
+    RegisterSuccessComponent,
+    //Koniec kodu Wodnika
   ],
   imports: [
     BrowserModule,
@@ -110,9 +124,15 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
-    MdbCarouselModule
+    MdbCarouselModule,
+    //Kod Wodnika
+    ReactiveFormsModule,
+    NgxWebstorageModule.forRoot()
+    //Koniec kodu Wodnika
   ],
-  providers: [HttpClientModule],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true}, HttpClientModule],
+  // vvv Tak było "wcześniej"
+  //providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

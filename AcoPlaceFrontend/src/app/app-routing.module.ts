@@ -5,6 +5,11 @@ import { AddAnnouncementComponent } from './add-announcement/add-announcement.co
 import { AnnouncementDetailsListComponent } from './announcement-details-list/announcement-details-list.component';
 import { AnnouncementDetailsComponent } from './announcement-details/announcement-details.component';
 import { AnnouncementListComponent } from './announcement-list/announcement-list.component';
+//Kod Wodnika
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterSuccessComponent } from './auth/register-success/register-success.component';
+import { RegisterComponent } from './auth/register/register.component';
+//Koniec kodu Wodnika
 import { SearchAnnouncementComponent } from './search-announcement/search-announcement.component';
 import { StartPageComponent } from './start-page/start-page.component';
 // import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -20,7 +25,12 @@ const appRoutes: Routes = [
     { path: 'search-announcement', component: SearchAnnouncementComponent },
     // { path: 'user-profile', component: UserProfileComponent },
     // { path: 'admin', component: AdminComponent },
-    { path: 'start', component: StartPageComponent }
+    { path: 'start', component: StartPageComponent },
+    //Kod Wodnika
+    {path: 'register1', component: RegisterComponent},
+    {path: 'login1', component: LoginComponent},
+    {path: 'register-success', component: RegisterSuccessComponent},
+    //Koniec kodu Wodnika
 
 
 ];
