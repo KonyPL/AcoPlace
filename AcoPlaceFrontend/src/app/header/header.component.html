@@ -3,20 +3,23 @@
         <div class="navbar-header">
             <a routerLink="/" class="navbar-brand">AcoPlace</a>
         </div>
+    
 
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li routerLinkActive="active"><a routerLink="/announcements-list">List of announcements</a></li>
                 <li routerLinkActive="active"><a routerLink="/add-announcement">Add announcement</a></li>
-                <li routerLinkActive="active">
+                <li  routerLinkActive="active">
                     <a routerLink="/announcement-details-list">List of announcement details</a>
                 </li>
                 <li routerLinkActive="active"><a routerLink="/search-announcement">Search announcement</a>
                 </li>
                 
-                <li routerLinkActive="active"><a routerLink="/register">REGISTER</a>
+                <li *ngIf="!authService.isAuthenticated()"routerLinkActive="active"><a routerLink="/register">REGISTER</a>
                 </li>
-                <li routerLinkActive="active"><a routerLink="/login">LOGIN</a>
+                <li *ngIf="!authService.isAuthenticated()" routerLinkActive="active"><a routerLink="/login">LOGIN</a>
+                </li>
+                <li  *ngIf="authService.isAuthenticated()" routerLinkActive="active"> <a (click)="logout()" >LOGOUT</a>
                 </li>
                
             </ul>
