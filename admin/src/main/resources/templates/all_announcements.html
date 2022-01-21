@@ -27,6 +27,20 @@
     .btn:hover {
         background-color: #068550;
     }
+
+    .addbutn {
+        background-color: #04AA6D;
+        border: none;
+        color: white;
+        padding: 20px 28px;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    /* Darker background on mouse-over */
+    .addbutn:hover {
+        background-color: #068550;
+    }
     #announcements {
         font-family: Arial, Helvetica, sans-serif;
         border-collapse: collapse;
@@ -89,6 +103,10 @@
 
 <div class="header">
     <h1>All announcements</h1>
+</div>
+<div align = "center">
+    </br>
+    <a th:href="@{'add'}"><button class="addbutn"><i class="fa fa-plus-square"></i> Add new announcement</button></a>
 </div>
 
 <div align="center">
