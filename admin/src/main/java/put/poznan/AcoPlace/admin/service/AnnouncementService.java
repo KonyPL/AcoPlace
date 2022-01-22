@@ -47,7 +47,7 @@ public class AnnouncementService {
         return announcementRepository.findAllReported();
     }
 
-    public List<Announcement> getAllUnactiveReportedAnnouncements() {
-        return announcementRepository.findAllUnactive();
+    public List<Announcement> getAllInactiveReportedAnnouncements() {
+        return announcementRepository.findAllInactive();
     }
 }

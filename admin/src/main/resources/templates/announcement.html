@@ -84,6 +84,8 @@
     <a th:href="@{/findByTitle}"> Find by title </a>
     <a th:href="@{/findById}"> Find by ID </a>
     <a th:href="@{/allReportedAnnouncements}"> Reported </a>
+    <a th:href="@{/allInactiveAnnouncements}"> Inactive </a>
+
 
 </div>
 
@@ -107,6 +109,11 @@
         <tr>
             <td>ID</td>
             <td th:text="${announcement.getId()}"></td>
+        </tr>
+
+        <tr>
+            <td>Active</td>
+            <td th:text="${announcement.getActive()}"></td>
         </tr>
 
         <tr>
@@ -218,7 +225,12 @@
         </tr>
 
         <tr>
-            <td>Web User</td>
+            <td>Property Owner Name</td>
+            <td th:text="${announcement.getWebUser().getUserName()}"></td>
+        </tr>
+
+        <tr>
+            <td>Property Owner ID</td>
             <td th:text="${announcement.getWebUser().getId()}"></td>
         </tr>
 
