@@ -1,3 +1,7 @@
+body {
+  min-height: 100%;
+}
+
 .example-form {
   width: 150px;
   max-width: 400px;
@@ -35,25 +39,6 @@ div.button {
   text-align: center; 
   left: 50%; 
   top: 0;
-}
-
-/* .float-md-right {
-  float: right;
-} */
-
-.register-section {
-  
-      display: grid;
-      grid-template-columns: repeat(8, 1fr);
-      gap: 10px;
-      grid-auto-rows: 100px;
-      grid-template-areas:
-        "a a a a b b b b"
-        "a a a a b b b b"
-        "c c c c d d d d"
-        "c c c c d d d d";
-      align-items: start;
-    
 }
 
 .item1 {
