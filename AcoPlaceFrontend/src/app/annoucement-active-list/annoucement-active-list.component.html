@@ -1,0 +1,28 @@
+<p> ACTIVE Announcement</p>
+
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="card-header card-header-danger">
+            <h2 class="card-title" style="text-align: center;">Announcement list</h2>
+        </div>
+        <table>
+
+        </table>
+        <!-- <mat-form-field>
+            <mat-label>
+                <input manInput placeholder="example">
+            </mat-label>
+        </mat-form-field> -->
+        <a *ngFor="let announcement of announcements" (click)="showAnnouncementById(announcement.id)"  class="list-group-item clearfix">
+    <div class="pull-left" style="padding-left: 50px;">
+        <h4 class="list-group-item-heading">{{ announcement.title }}</h4>
+        <p class="list-group-item-text">{{ announcement.city }}, {{announcement.district}}, {{announcement.state}} </p>
+      </div>
+      <div class="pull-right" style="padding-right: 50px;">
+        <h4 class="list-group-item-heading ">{{ announcement.propertyType }}</h4>
+        <p class="list-group-item-text pull-right">{{ announcement.price }} {{announcement.currency}} </p>
+    </div>
+</a>
+    </div>
+</div>
