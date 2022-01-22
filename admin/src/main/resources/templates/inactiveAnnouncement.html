@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Announcement</title>
+    <title>Inactive announcement</title>
 </head>
 <style>
     .header {
@@ -84,13 +84,13 @@
     <a th:href="@{/findByTitle}"> Find by title </a>
     <a th:href="@{/findById}"> Find by ID </a>
     <a th:href="@{/allReportedAnnouncements}"> Reported </a>
-    <a th:href="@{/allInactiveAnnouncements}"> Inactive </a>
+    <a class = "active" th:href="@{/allInactiveAnnouncements}"> Inactive </a>
 
 
 </div>
 
 <div class="header">
-    <h1>Chosen announcement</h1>
+    <h1>Inactive announcement</h1>
     </br>
 </div>
 
@@ -225,12 +225,7 @@
         </tr>
 
         <tr>
-            <td>Property Owner Name</td>
-            <td th:text="${announcement.getWebUser().getUserName()}"></td>
-        </tr>
-
-        <tr>
-            <td>Property Owner ID</td>
+            <td>Web User</td>
             <td th:text="${announcement.getWebUser().getId()}"></td>
         </tr>
 
@@ -242,10 +237,10 @@
 
 <div align="center">
     <br>
+    <a th:href="@{'/active/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-check"></i> Activate</button></a>
     <a th:href="@{'/announcement/editById/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-pencil-square-o"></i> Edit</button></a>
     <a th:href="@{'/announcement/reportById/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-flag"></i> Report</button></a>
     <a th:href="@{'/announcement/delete/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-trash"></i> Delete</button></a>
-    <a th:href="@{'/clearFlags/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-window-close"></i> Clear flags</button></a>
 
 </div>
 

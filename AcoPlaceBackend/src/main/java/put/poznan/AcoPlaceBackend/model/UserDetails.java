@@ -22,4 +22,16 @@ public class UserDetails {
     @ManyToOne
     private WebUser webUser;
 
+    @Override
+    public String toString() {
+        return "UserDetails{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", countryCode='" + countryCode + '\'' +
+                ", about='" + about + '\'' +
+                ", webUser=" + webUser +
+                '}';
+    }
 }

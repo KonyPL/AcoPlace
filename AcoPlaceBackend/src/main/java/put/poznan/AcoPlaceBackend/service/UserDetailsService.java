@@ -1,8 +1,12 @@
 package put.poznan.AcoPlaceBackend.service;
 
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import put.poznan.AcoPlaceBackend.exception.ResourceNotFoundException;
 import put.poznan.AcoPlaceBackend.model.UserDetails;
+import put.poznan.AcoPlaceBackend.model.WebUser;
 import put.poznan.AcoPlaceBackend.repository.UserDetailsRepository;
+import put.poznan.AcoPlaceBackend.repository.UserRepository;
 
 import java.util.List;
 
@@ -10,9 +14,11 @@ import java.util.List;
 public class UserDetailsService {
 
     private final UserDetailsRepository userDetailsRepository;
+    private final UserRepository userRepository;
 
-    public UserDetailsService(UserDetailsRepository userDetailsRepository) {
+    public UserDetailsService(UserDetailsRepository userDetailsRepository, UserRepository userRepository) {
         this.userDetailsRepository = userDetailsRepository;
+        this.userRepository = userRepository;
     }
 
     public List<UserDetails> getAllUserDetails(){
@@ -25,5 +31,13 @@ public class UserDetailsService {
 
     public UserDetails saveUserDetails(UserDetails userDetails){
         return userDetailsRepository.save(userDetails);
+    }
+
+    public UserDetails getCurrentUserDetails() {
+
+        String username= SecurityContextHolder.getContext().getAuthentication().getName();
+        WebUser currentWebUser = userRepository.findByUserName(username).orElseThrow(() -> new ResourceNotFoundException("user with name="+username+" not found"));
+        System.out.println("JESTEM  W CURRENT USER DETAILS webuser id="+currentWebUser.getId());
+        return userDetailsRepository.findByWebUserId(currentWebUser.getId());
     }
 }

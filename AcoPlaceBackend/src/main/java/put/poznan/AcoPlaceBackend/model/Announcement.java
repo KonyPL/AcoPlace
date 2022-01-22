@@ -1,6 +1,8 @@
 package put.poznan.AcoPlaceBackend.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import put.poznan.AcoPlaceBackend.dto.AnnouncementDto;
 
@@ -11,6 +13,8 @@ import java.util.Date;
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @SqlResultSetMapping(
         name = "AnnouncementDtoMapping",
         classes = {
@@ -49,6 +53,14 @@ public class Announcement implements Serializable {
     private String currency;
     private Integer livingSpace;
     private Integer yearBuilt;
+    private Boolean reported;
+    private String reason;
+    private String description;
+    private String admin;
+    private String reportedTime;
+    private Boolean edited;
+    private Boolean active;
+
 
     @Temporal(TemporalType.DATE)
     private Date availableFrom;

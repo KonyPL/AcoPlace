@@ -1,23 +1,26 @@
 <mat-nav-list>
     <div class="profile-card">
         <div class="header">
-            <h2>Soufiane FADIL</h2>
-            <h4>example@email.com</h4>
+            <h2>{{webUser.userName}}</h2>
+            <h4>{{webUser.email}}</h4>
         </div>
         <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Soufiane FADIL">
     </div>
 
     <mat-divider></mat-divider>
 
-    <h2 matSubheader>Pages</h2>
+    <h2 matSubheader>Announcements</h2>
 
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/">Dashboard</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/posts">Posts</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/articles">Articles</a>
+    
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/activeAnnouncement">active</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/inactiveAnnouncement">inactive</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/inactiveAnnouncement">favorite (TO_DO)</a>
+
 
     <mat-divider></mat-divider>
 
-    <h2 matSubheader>Tools</h2>
+    <h2 matSubheader>Others</h2>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/user-profile">Yout Profile</a>
 
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
         <mat-icon>import_contacts</mat-icon>

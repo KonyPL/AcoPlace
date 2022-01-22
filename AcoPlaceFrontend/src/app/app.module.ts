@@ -69,6 +69,10 @@ import { MatListModule } from '@angular/material/list'
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SearchComponent } from './search/search.component';
 // import { BoxComponent } from './box/box.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AnnoucementActiveListComponent } from './annoucement-active-list/annoucement-active-list.component';
+import { AnnouncementInactiveListComponent } from './announcement-inactive-list/announcement-inactive-list.component';
+
 // import { SidebarComponent } from './sidebar/sidebar.component';
 // import { NgImageSliderModule } from 'ng-image-slider';
 // import { SidebarComponent } from './sidebar/sidebar.component';
@@ -99,7 +103,6 @@ import { SearchComponent } from './search/search.component';
     GalleryComponent,
     // CarouselHolderComponent,
     // SidebarComponent
-    //Kod Wodnika
     RegisterComponent,
     LoginComponent,
     RegisterSuccessComponent,
@@ -107,7 +110,9 @@ import { SearchComponent } from './search/search.component';
     SearchComponent,
     // BoxComponent,
 
-    //Koniec kodu Wodnika
+    UserProfileComponent,
+    AnnoucementActiveListComponent,
+    AnnouncementInactiveListComponent
   ],
   imports: [
     BrowserModule,

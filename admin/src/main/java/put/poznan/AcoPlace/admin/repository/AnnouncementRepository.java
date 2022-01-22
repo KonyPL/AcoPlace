@@ -16,4 +16,7 @@ public interface AnnouncementRepository extends JpaRepository<Announcement, Long
 
     @Query("SELECT  announcement FROM Announcement announcement WHERE announcement.reported = 'true' OR announcement.edited = 'true'")
     List<Announcement> findAllReported();
+
+    @Query("SELECT  announcement FROM Announcement announcement WHERE announcement.active = 'false' AND announcement.edited = 'false' AND announcement.reported = 'false'")
+    List<Announcement> findAllInactive();
 }

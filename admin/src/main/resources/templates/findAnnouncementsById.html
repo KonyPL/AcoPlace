@@ -1,26 +1,104 @@
 <html xmlns:th="http://www.thymeleaf.org">
-
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <title>Find announcements by ID</title>
+</head>
 <body>
 <style>
+    .header {
+        padding: 25px;
+        text-align: center;
+        background: #18d390;
+        color: white;
+        font-size: 20px;
+    }
 
+    .btn {
+        background-color: #04AA6D;
+        border: none;
+        color: white;
+        padding: 12px 16px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    /* Darker background on mouse-over */
+    .btn:hover {
+        background-color: #068550;
+    }
+    #announcements {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    #announcements td, #announcements th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #announcements tr:nth-child(even){background-color: #f2f2f2;}
+
+    #announcements tr:hover {background-color: #ddd;}
+
+    #announcements th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+    }
+
+
+    .topnav {
+        font-family: Arial, Helvetica, sans-serif;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .topnav a.active {
+        background-color: #04AA6D;
+        color: white;
+    }
 </style>
 
 <div class="topnav">
-    <a class="active" th:href="@{/logout}">Sign out</a>
-    <a th:href="@{/findByTitle}">FIND BY TITLE </a>
-    <a th:href="@{/findById}">FIND BY ID </a>
-    <a th:href="@{/allAnnouncements}">ALL ANNOUNCEMENTS </a>
+    <a th:href="@{/logout}"> Sign out </a>
+    <a th:href="@{/allAnnouncements}"> All announcements </a>
+    <a th:href="@{/findByTitle}"> Find by title </a>
+    <a class="active" th:href="@{/findById}"> Find by ID </a>
+    <a th:href="@{/allReportedAnnouncements}"> Reported </a>
+    <a th:href="@{/allInactiveAnnouncements}"> Inactive </a>
+
 </div>
 
-<h2>Find announcment by ID</h2>
+<div class="header">
+    <h1>Find announcements by ID</h1>
+</div>
 
 <form th:object="${announcement}" th:action="@{announcementFindById}" method="get"
       class="form-horizontal" id="search-owner-form">
-    <div class="form-group">
+    <div align = "center" class="form-group">
         <div class="control-group" id="lastNameGroup">
-            <label class="col-sm-2 control-label">ID </label>
+            <label class="col-sm-2 control-label"> </label>
             <div class="col-sm-10">
-                <input class="form-control" th:field="*{id}" size="30"
+                <br>
+                <input class="form-control" placeholder="Insert ID..." th:field="*{id}" size="30"
                        maxlength="80" /> <span class="help-inline"><div
                     th:if="${#fields.hasAnyErrors()}">
               <p th:each="err : ${#fields.allErrors()}" th:text="${err}">Error</p>
@@ -28,10 +106,10 @@
             </div>
         </div>
     </div>
-    <div class="form-group">
+    <div align = "center "class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
+            <br>
             <button type="submit" class="btn btn-default">Find
-                Announcements by ID
             </button>
         </div>
     </div>
