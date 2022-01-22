@@ -65,7 +65,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDividerModule } from '@angular/material/divider';
-import {MatListModule} from '@angular/material/list'
+import {MatListModule} from '@angular/material/list';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AnnoucementActiveListComponent } from './annoucement-active-list/annoucement-active-list.component';
+import { AnnouncementInactiveListComponent } from './announcement-inactive-list/announcement-inactive-list.component';
+
 // import { SidebarComponent } from './sidebar/sidebar.component';
 // import { NgImageSliderModule } from 'ng-image-slider';
 // import { SidebarComponent } from './sidebar/sidebar.component';
@@ -100,7 +104,10 @@ import {MatListModule} from '@angular/material/list'
     RegisterComponent,
     LoginComponent,
     RegisterSuccessComponent,
-    SidebarComponent
+    SidebarComponent,
+    UserProfileComponent,
+    AnnoucementActiveListComponent,
+    AnnouncementInactiveListComponent
     //Koniec kodu Wodnika
   ],
   imports: [
