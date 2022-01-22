@@ -55,6 +55,17 @@ import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
 import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatDividerModule } from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list'
 // import { SidebarComponent } from './sidebar/sidebar.component';
 // import { NgImageSliderModule } from 'ng-image-slider';
 // import { SidebarComponent } from './sidebar/sidebar.component';
@@ -89,6 +100,7 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
     RegisterComponent,
     LoginComponent,
     RegisterSuccessComponent,
+    SidebarComponent
     //Koniec kodu Wodnika
   ],
   imports: [
@@ -127,8 +139,22 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
     MdbCarouselModule,
     //Kod Wodnika
     ReactiveFormsModule,
-    NgxWebstorageModule.forRoot()
+    NgxWebstorageModule.forRoot(),
     //Koniec kodu Wodnika
+    MdbCarouselModule,
+    CommonModule,
+    RouterModule,
+    // SharedModule,
+    MatSidenavModule,
+    MatSliderModule,
+    FlexLayoutModule,
+    MatCardModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatToolbarModule,
+    MatDividerModule,
+    MatListModule
+    
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true}, HttpClientModule],
   // vvv Tak było "wcześniej"

@@ -10,7 +10,7 @@ import { Image } from '../model/image';
 export class StartPageComponent implements OnInit {
   constructor() { }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    
   }
 
   public images: Image[] = [
