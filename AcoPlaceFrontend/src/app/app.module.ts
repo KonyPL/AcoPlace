@@ -29,7 +29,7 @@ import { StartPageComponent } from './start-page/start-page.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterSuccessComponent } from './auth/register-success/register-success.component';
-import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 //import {Ng2Webstorage} from 'ngx-webstorage';
 import { HttpClientInterceptor } from './http-client-interceptor';
 import { NgxWebstorageModule } from 'ngx-webstorage';
@@ -65,7 +65,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDividerModule } from '@angular/material/divider';
-import {MatListModule} from '@angular/material/list'
+import { MatListModule } from '@angular/material/list'
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { SearchComponent } from './search/search.component';
+// import { BoxComponent } from './box/box.component';
 // import { SidebarComponent } from './sidebar/sidebar.component';
 // import { NgImageSliderModule } from 'ng-image-slider';
 // import { SidebarComponent } from './sidebar/sidebar.component';
@@ -100,7 +103,10 @@ import {MatListModule} from '@angular/material/list'
     RegisterComponent,
     LoginComponent,
     RegisterSuccessComponent,
-    SidebarComponent
+    SidebarComponent,
+    SearchComponent,
+    // BoxComponent,
+
     //Koniec kodu Wodnika
   ],
   imports: [
@@ -153,10 +159,11 @@ import {MatListModule} from '@angular/material/list'
     MatTableModule,
     MatToolbarModule,
     MatDividerModule,
-    MatListModule
-    
+    MatListModule,
+    MatFormFieldModule
+
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true}, HttpClientModule],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }, HttpClientModule],
   // vvv Tak było "wcześniej"
   //providers: [HttpClientModule],
   bootstrap: [AppComponent]

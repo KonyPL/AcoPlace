@@ -15,6 +15,7 @@ export class AnnouncementParams {
     wifi: boolean;
     ethernetOutlets: boolean;
     internet: boolean;
+    internetSpeed: number;
     tv: boolean;
     dishwasher: boolean;
     clothesDryer: boolean;
@@ -22,4 +23,22 @@ export class AnnouncementParams {
     nearBakery: boolean;
     nearFoodMarket: boolean;
     nearSupermarket: boolean;
+    country: string;
+    city: string;
+    district: string;
+    livingSpace: number;
+    // flat
+    floor: number;
+    bedrooms: number;
+    bathrooms: number;
+    flatParking: boolean;
+    balcony: number;
+    // house
+    floors: number;
+    basement: boolean;
+    lotSize: number;
+    parking: boolean;
+    //room
+    bedsInRoom: number;
+    numberOfFlatmates: number;
 }

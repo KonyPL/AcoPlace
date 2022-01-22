@@ -27,10 +27,52 @@ export class AnnouncementService {
   getAnnouncementWithParams(announcementParams: AnnouncementParams): Observable<Announcement[]> {
 
     let params = new HttpParams();
-    if ((announcementParams.priceMax != undefined) && (announcementParams != undefined)) {
+
+    if (announcementParams.city != undefined) {
+      params = params.set('city', announcementParams.city);
+    }
+    if (announcementParams.country != undefined) {
+      params = params.set('country', announcementParams.country);
+    }
+    if (announcementParams.district != undefined) {
+      params = params.set('district', announcementParams.district);
+    }
+
+    if ((announcementParams.priceMax != undefined) && (announcementParams.priceMin != undefined)) {
       params = params.set('priceMin', announcementParams.priceMin);
       params = params.set('priceMax', announcementParams.priceMax);
     }
+    if (announcementParams.floor != undefined) {
+      params = params.set('floor', announcementParams.floor);
+    }
+    if (announcementParams.floors != undefined) {
+      params = params.set('floors', announcementParams.floors);
+    }
+    if (announcementParams.bedrooms != undefined) {
+      params = params.set('bedrooms', announcementParams.bedrooms);
+    }
+    if (announcementParams.bathrooms != undefined) {
+      params = params.set('bathrooms', announcementParams.bathrooms);
+    }
+    if (announcementParams.balcony != undefined) {
+      params = params.set('balcony', announcementParams.balcony);
+    }
+    if (announcementParams.lotSize != undefined) {
+      params = params.set('lotSize', announcementParams.lotSize);
+    }
+    if (announcementParams.bedsInRoom != undefined) {
+      params = params.set('bedsInRoom', announcementParams.bedsInRoom);
+    }
+    if (announcementParams.numberOfFlatmates != undefined) {
+      params = params.set('numberOfFlatmates', announcementParams.numberOfFlatmates);
+    }
+    if (announcementParams.internetSpeed != undefined) {
+      params = params.set('internetSpeed', announcementParams.internetSpeed);
+    }
+    if (announcementParams.livingSpace != undefined) {
+      params = params.set('livingSpace', announcementParams.livingSpace);
+    }
+
     if (announcementParams.propertyType != undefined) {
       params = params.set('propertyType', announcementParams.propertyType);
     }
@@ -55,10 +97,12 @@ export class AnnouncementService {
     if (announcementParams.nearBakery === true) mustHave += "nearBakery,";
     if (announcementParams.nearFoodMarket === true) mustHave += "nearFoodMarket,";
     if (announcementParams.nearSupermarket === true) mustHave += "nearSupermarket,";
+    if (announcementParams.flatParking === true) mustHave += "flatParking,";
+    if (announcementParams.basement === true) mustHave += "basement,";
+    if (announcementParams.parking === true) mustHave += "parking,";
 
+    if (mustHave != "") params = params.set('mustHave', mustHave);
 
-
-    params = params.set('mustHave', mustHave);
 
 
     return this.httpClient.get<Announcement[]>(`http://localhost:8080/free/searchAnnouncement`, { params });
