@@ -3,6 +3,7 @@ package put.poznan.AcoPlaceBackend.controller;
 import org.springframework.web.bind.annotation.*;
 import put.poznan.AcoPlaceBackend.model.UserDetails;
 import put.poznan.AcoPlaceBackend.service.UserDetailsService;
+import put.poznan.AcoPlaceBackend.service.UserService;
 
 import java.util.List;
 
@@ -10,9 +11,11 @@ import java.util.List;
 @CrossOrigin()
 public class UserDetailsController {
     private final UserDetailsService userDetailsService;
+    private final UserService userService;
 
-    public UserDetailsController(UserDetailsService userDetailsService) {
+    public UserDetailsController(UserDetailsService userDetailsService, UserService userService) {
         this.userDetailsService = userDetailsService;
+        this.userService = userService;
     }
 
     @GetMapping("/userDetailsAll")
@@ -28,5 +31,14 @@ public class UserDetailsController {
     @PostMapping("/addUserDetails/")
     public UserDetails createUserDetails(@RequestBody UserDetails userDetails){
         return userDetailsService.saveUserDetails(userDetails);
+    }
+
+    @GetMapping("/currentUserDetails")
+    public UserDetails getCurrentUserDetails(){
+        System.out.println("currentUserDetails called");
+        UserDetails userDetails = userDetailsService.getCurrentUserDetails();
+        System.out.println("zracam z currentUserDetails"+userDetails.toString());
+
+        return userDetails;
     }
 }

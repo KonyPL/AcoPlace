@@ -66,4 +66,14 @@ public class AnnouncementController {
     public List<Announcement> getAllAnnouncements(){
         return announcementService.getAll();
     }
+
+    @GetMapping("/announcements/active")
+    public List<Announcement> getAllActiveAnnouncementsForCurrentUser(){
+        return announcementService.getActiveForCurrentUser();
+    }
+
+    @GetMapping("/announcements/inactive")
+    public List<Announcement> getAllInactiveAnnouncementsForCurrentUser(){
+        return announcementService.getInactiveForCurrentUser();
+    }
 }
