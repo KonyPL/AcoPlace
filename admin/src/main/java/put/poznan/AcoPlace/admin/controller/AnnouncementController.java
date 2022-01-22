@@ -172,6 +172,7 @@ public class AnnouncementController {
         announcement.setAdmin(null);
         announcement.setReportedTime(null);
         announcement.setEdited(false);
+        announcement.setActive(true);
         announcementService.saveAnnouncement(announcement);
         return "redirect:/allReportedAnnouncements";
     }
