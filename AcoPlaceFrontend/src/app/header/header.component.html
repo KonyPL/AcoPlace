@@ -1,4 +1,5 @@
-<nav class="navbar navbar-default">
+<!-- ---------------- HEADER BOOTSTRAP -------------------------------- -->
+<!-- <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
             <a routerLink="/" class="navbar-brand">AcoPlace</a>
@@ -27,12 +28,66 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown" appDropdown>
                     <a href="#" class="dropdown-toggle" role="button">Log in<span class="caret"></span></a>
-                    <!-- <ul class="dropdown-menu">
+                     <ul class="dropdown-menu">
                         <li><a href="#">Save Data</a></li>
                         <li><a href="#">Fetch Data</a></li>
                     </ul> -->
-                </li>
+<!-- </li>
             </ul>
         </div>
     </div>
-</nav>
+</nav> -->
+
+<!-- --------------------HEADER ANGULAR MATERIAL-------------------- -->
+
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span routerLink="/" class="navbar-brand">AcoPlace</span>
+        <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+            <ul fxLayout="row" fxLayoutGap="20px">
+                <li routerLinkActive="active">
+                    <span routerLink="/announcements-list" mat-icon-button>List
+                        <!-- button  -->
+                        <!-- <mat-icon>List of announcements</mat-icon> -->
+                    </span>
+                </li>
+                <li routerLinkActive="active">
+                    <span routerLink="/add-announcement" mat-icon-button>Add
+                        <!-- <mat-icon>Add announcement</mat-icon> -->
+                    </span>
+                </li>
+                <li routerLinkActive="active">
+                    <span routerLink="/announcement-details-list" mat-icon-button>Details
+                        <!-- <mat-icon>List of announcement details</mat-icon> -->
+                    </span>
+                </li>
+                <li routerLinkActive="active">
+                    <span routerLink="/search-announcement" mat-icon-button>Search
+                        <!-- <mat-icon>Search announcement</mat-icon> -->
+                    </span>
+                </li>
+                <li routerLinkActive="active">
+                    <span routerLink="/user-profile" mat-icon-button>Profile
+                        <!-- <mat-icon>User profile</mat-icon> -->
+                    </span>
+                </li>
+                <li routerLinkActive="active">
+                    <span routerLink="/register1" mat-icon-button>Register
+                        <!-- <mat-icon>REGISTER</mat-icon> -->
+                    </span>
+                </li>
+                <li routerLinkActive="active">
+                    <span routerLink="/login1" mat-icon-button>Login
+                        <!-- <mat-icon>LOGIN</mat-icon> -->
+                    </span>
+                </li>
+                <li routerLinkActive="active">
+                    <span routerLink="/start" mat-icon-button>Start
+                        <!-- <mat-icon>Start</mat-icon> -->
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+    </mat-toolbar-row>
+</mat-toolbar>

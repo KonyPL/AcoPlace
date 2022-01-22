@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
             <app-header></app-header>
@@ -8,8 +8,8 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <!-- <app-start-page></app-start-page> -->
-        </div>
+             <app-start-page></app-start-page> -->
+<!-- </div>
     </div>
 </div>
 
@@ -27,4 +27,14 @@
             <router-outlet></router-outlet>
         </div>
     </div>
-</div>
+</div> -->
+
+<app-header></app-header>
+<mat-drawer-container>
+    <mat-drawer>
+        <app-sidebar></app-sidebar>
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>
