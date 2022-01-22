@@ -57,6 +57,13 @@ public class AnnouncementController {
 
         return "announcement";
     }
+    @RequestMapping(value = "/announcement/unactive/showById/{id}")
+    public String announcementUnactive(Model model, @PathVariable(name = "id") int id) {
+        Announcement announcement = announcementService.findById(id);
+        model.addAttribute("announcement", announcement);
+
+        return "unactiveAnnouncement";
+    }
 
 
     @RequestMapping("findByTitle")
@@ -175,6 +182,22 @@ public class AnnouncementController {
         announcement.setActive(true);
         announcementService.saveAnnouncement(announcement);
         return "redirect:/allReportedAnnouncements";
+    }
+
+
+    @RequestMapping("/allUnactiveAnnouncements")
+    public String viewUnactiveAnnouncements(Model model) {
+        List<Announcement> listAnnouncements = announcementService.getAllUnactiveReportedAnnouncements();// TODO porzadnie zrobic
+        model.addAttribute("listAnnouncements", listAnnouncements);
+        return "all_unactive_announcements";
+    }
+
+    @RequestMapping(value = "/active/{id}")
+    public String active(@PathVariable(name = "id") int id) {
+        Announcement announcement = announcementService.findById(id);
+        announcement.setActive(true);
+        announcementService.saveAnnouncement(announcement);
+        return "redirect:/allUnactiveAnnouncements";
     }
 
 }
