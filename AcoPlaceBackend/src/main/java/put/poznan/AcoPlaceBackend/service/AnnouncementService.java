@@ -30,6 +30,10 @@ public class AnnouncementService {
         return announcementRepository.findAnnouncements(searchCriteria);
     }
 
+    public List<Announcement> getAll() {
+        return announcementRepository.findAll();
+    }
+
     public Announcement saveAnnouncement(Announcement announcement) {
         return announcementRepository.save(announcement);
     }

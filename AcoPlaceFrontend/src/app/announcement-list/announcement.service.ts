@@ -13,7 +13,7 @@ export class AnnouncementService {
   constructor(private httpClient: HttpClient) { }
 
   getAnnouncementsList(): Observable<Announcement[]> {
-    return this.httpClient.get<Announcement[]>("http://localhost:8080/searchAnnouncement");
+    return this.httpClient.get<Announcement[]>("http://localhost:8080/free/announcements");
   }
 
   getAnnouncementById(id: number): Observable<Announcement> {
@@ -61,7 +61,7 @@ export class AnnouncementService {
     params = params.set('mustHave', mustHave);
 
 
-    return this.httpClient.get<Announcement[]>(`http://localhost:8080/searchAnnouncement`, { params });
+    return this.httpClient.get<Announcement[]>(`http://localhost:8080/free/searchAnnouncement`, { params });
 
   }
 
