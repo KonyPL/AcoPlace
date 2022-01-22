@@ -3,19 +3,15 @@ package put.poznan.AcoPlace.admin.controller;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import put.poznan.AcoPlace.admin.model.AdminUser;
 import put.poznan.AcoPlace.admin.model.Announcement;
 import put.poznan.AcoPlace.admin.repository.AdminUserRepository;
-import put.poznan.AcoPlace.admin.repository.AnnouncementRepository;
 import put.poznan.AcoPlace.admin.service.AnnouncementService;
 
 
-import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 @CrossOrigin()
@@ -39,7 +35,7 @@ public class AnnouncementController {
     public String viewReportedAnnouncements(Model model) {
         List<Announcement> listAnnouncements = announcementService.getAllReportedAnnouncements();
         model.addAttribute("listAnnouncements", listAnnouncements);
-        return "all_announcements";
+        return "all_reported_announcements";
     }
 
     @RequestMapping(value = "/announcement/delete/{id}")
@@ -56,6 +52,13 @@ public class AnnouncementController {
         model.addAttribute("announcement", announcement);
 
         return "announcement";
+    }
+    @RequestMapping(value = "/announcement/inactive/showById/{id}")
+    public String announcementInactive(Model model, @PathVariable(name = "id") int id) {
+        Announcement announcement = announcementService.findById(id);
+        model.addAttribute("announcement", announcement);
+
+        return "inactiveAnnouncement";
     }
 
 
@@ -172,8 +175,25 @@ public class AnnouncementController {
         announcement.setAdmin(null);
         announcement.setReportedTime(null);
         announcement.setEdited(false);
+        announcement.setActive(true);
         announcementService.saveAnnouncement(announcement);
         return "redirect:/allReportedAnnouncements";
+    }
+
+
+    @RequestMapping("/allInactiveAnnouncements")
+    public String viewInactiveAnnouncements(Model model) {
+        List<Announcement> listAnnouncements = announcementService.getAllInactiveReportedAnnouncements();// TODO porzadnie zrobic
+        model.addAttribute("listAnnouncements", listAnnouncements);
+        return "all_inactive_announcements";
+    }
+
+    @RequestMapping(value = "/active/{id}")
+    public String active(@PathVariable(name = "id") int id) {
+        Announcement announcement = announcementService.findById(id);
+        announcement.setActive(true);
+        announcementService.saveAnnouncement(announcement);
+        return "redirect:/allInactiveAnnouncements";
     }
 
 }

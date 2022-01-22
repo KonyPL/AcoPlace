@@ -21,7 +21,7 @@ public class CustomUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("User not found");
         }
         if(!user.getActive()) {
-            throw new ResourceNotFoundException("username with email: "+user.getEmail()+" is not active, please contact our support to active your account");
+            throw new ResourceNotFoundException("Username with e-mail address: "+user.getEmail()+" is not active. Please contact our support at admin@acoplace.com to activate your account.");
         }
         return new CustomUserDetails(user);
     }

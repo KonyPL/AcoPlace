@@ -30,6 +30,7 @@ public class Announcement {
     private String admin;
     private String reportedTime;
     private Boolean edited;
+    private Boolean active;
 
     @ManyToOne
     private WebUser webUser;
@@ -37,7 +38,7 @@ public class Announcement {
     public Announcement() {
     }
 
-    public Announcement(long id, String country, String city, String postalCode, String district, String state, String street, String houseNumber, String title, String text, String propertyType, double price, String currency, int livingSpace, int yearBuilt, Date availableFrom, Date publicationDate, Boolean reported, String reason, String description, String admin, String reportedTime, Boolean edited, WebUser webUser) {
+    public Announcement(long id, String country, String city, String postalCode, String district, String state, String street, String houseNumber, String title, String text, String propertyType, double price, String currency, int livingSpace, int yearBuilt, Date availableFrom, Date publicationDate, Boolean reported, String reason, String description, String admin, String reportedTime, Boolean edited, Boolean active, WebUser webUser) {
         this.id = id;
         this.country = country;
         this.city = city;
@@ -61,7 +62,16 @@ public class Announcement {
         this.admin = admin;
         this.reportedTime = reportedTime;
         this.edited = edited;
+        this.active = active;
         this.webUser = webUser;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 
     public Boolean getEdited() {
