@@ -1,5 +1,6 @@
 package put.poznan.AcoPlaceBackend.controller;
 
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,5 +22,13 @@ public class UserController {
     @GetMapping("/users")
     public List<WebUser> getAllUsers(){
         return userService.getAllUsers();
+    }
+
+    @GetMapping("/user/current")
+    public WebUser getCurrentUser(){
+
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        System.out.println("GET USER CALLED, user name="+username);
+        return userService.finByUserName(username);
     }
 }

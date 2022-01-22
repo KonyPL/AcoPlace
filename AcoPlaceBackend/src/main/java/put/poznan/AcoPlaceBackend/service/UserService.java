@@ -1,6 +1,7 @@
 package put.poznan.AcoPlaceBackend.service;
 
 import org.springframework.stereotype.Service;
+import put.poznan.AcoPlaceBackend.exception.ResourceNotFoundException;
 import put.poznan.AcoPlaceBackend.model.WebUser;
 import put.poznan.AcoPlaceBackend.repository.UserRepository;
 
@@ -25,5 +26,9 @@ public class UserService {
 
     public WebUser saveWebUser(WebUser webUser){
         return userRepository.save(webUser);
+    }
+
+    public WebUser finByUserName(String username) {
+        return userRepository.findByUserName(username).orElseThrow(() -> new ResourceNotFoundException("user with name="+username+"not found"));
     }
 }
