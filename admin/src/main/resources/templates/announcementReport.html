@@ -104,91 +104,92 @@
 
 
         <form action="#" th:action="@{/saveAnnouncement}" th:object="${announcement}" method="post">
-
+<!--     <form action="#" th:action="@{/saveAnnouncementEdited}" th:object="${announcement}" method="post">
+!-->
             <tr>
                 <td>ID</td>
-                <td th:text="${announcement.getId()}"></td>
+                <td><input type="text" readonly th:field="*{id}"/></td>
             </tr>
 
             <tr>
                 <td>Property Type</td>
-                <td th:text="${announcement.getPropertyType()}"></td>
+                <td><input type="text" readonly th:field="*{propertyType}"/></td>
             </tr>
 
             <tr>
                 <td>Title</td>
-                <td th:text="${announcement.getTitle()}"></td>
+                <td><input type="text" readonly th:field="*{title}"/></td>
             </tr>
 
             <tr>
                 <td>Text</td>
-                <td th:text="${announcement.getText()}"></td>
+                <td><input type="text" readonly th:field="*{text}"/></td>
             </tr>
 
             <tr>
                 <td>Country</td>
-                <td th:text="${announcement.getCountry()}"></td>
+                <td><input type="text" readonly th:field="*{country}"/></td>
             </tr>
 
             <tr>
                 <td>State</td>
-                <td th:text="${announcement.getState()}"></td>
+                <td><input type="text" readonly th:field="*{state}"/></td>
             </tr>
 
             <tr>
                 <td>City</td>
-                <td th:text="${announcement.getCity()}"></td>
+                <td><input type="text" readonly th:field="*{city}"/></td>
             </tr>
 
             <tr>
                 <td>District</td>
-                <td th:text="${announcement.getDistrict()}"></td>
+                <td><input type="text" readonly th:field="*{district}"/></td>
             </tr>
 
             <tr>
                 <td>Street</td>
-                <td th:text="${announcement.getStreet()}"></td>
+                <td><input type="text" readonly th:field="*{street}"/></td>
             </tr>
 
             <tr>
                 <td>House Number</td>
-                <td th:text="${announcement.getHouseNumber()}"></td>
+                <td><input type="text" readonly th:field="*{houseNumber}"/></td>
             </tr>
 
             <tr>
                 <td>Postal Code</td>
-                <td th:text="${announcement.getPostalCode()}"></td>
+                <td><input type="text" readonly th:field="*{postalCode}"/></td>
             </tr>
 
             <tr>
                 <td>Living Space</td>
-                <td th:text="${announcement.getLivingSpace()}"></td>
+                <td><input type="text" readonly th:field="*{livingSpace}"/></td>
             </tr>
 
             <tr>
                 <td>Price</td>
-                <td th:text="${announcement.getPrice()}"></td>
+                <td><input type="text" readonly th:field="*{price}"/></td>
             </tr>
             <tr>
                 <td>Currency</td>
-                <td th:text="${announcement.getCurrency()}"></td>
+                <td><input type="text" readonly th:field="*{price}"/></td>
             </tr>
 
             <tr>
                 <td>Year Built</td>
-                <td th:text="${announcement.getYearBuilt()}"></td>
+                <td><input type="text" readonly th:field="*{yearBuilt}"/></td>
             </tr>
 
             <tr>
                 <td>Available From</td>
-                <td th:text="${announcement.getAvailableFrom()}"></td>
+                <td><input type="text" readonly th:field="*{availableFrom}"/></td>
             </tr>
 
             <tr>
                 <td>Publication Date</td>
-                <td th:text="${announcement.getPublicationDate()}"></td>
+                <td><input type="text" readonly th:field="*{publicationDate}"/></td>
             </tr>
-
+    
 
             <tr>
                 <td align="center" colspan="2"><b>Write the reason of reporting and description:</b></td>
