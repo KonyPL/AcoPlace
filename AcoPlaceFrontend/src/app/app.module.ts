@@ -119,7 +119,7 @@ import { NgxImageCompressService } from 'ngx-image-compress';
     UserProfileComponent,
     AnnoucementActiveListComponent,
     AnnouncementInactiveListComponent,
-    AnnouncementFavouriteListComponent
+    AnnouncementFavouriteListComponent,
     //Koniec kodu Wodnika
     FileUploadComponent,
     FileBase64Component

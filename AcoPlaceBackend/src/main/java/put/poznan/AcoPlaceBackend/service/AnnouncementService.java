@@ -28,9 +28,9 @@ public class AnnouncementService {
     private final FavouriteRepository favouriteRepository;
 
 
-    public Announcement getAnnouncementById(long id) {
+    public Announcement getAnnouncementById(Integer id) {
         // return advertisementRepository.getById(id);
-        return announcementRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Advertisement with id:" + id + " not found in database"));
+        return announcementRepository.findAnnouncementById(id).orElseThrow(() -> new ResourceNotFoundException("Advertisement with id:" + id + " not found in database"));
     }
 
     public List<AnnouncementDto> searchAnnouncements(AnnouncementSearchCriteria searchCriteria) {
