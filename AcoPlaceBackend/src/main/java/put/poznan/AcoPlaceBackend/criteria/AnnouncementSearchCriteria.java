@@ -54,9 +54,29 @@ public class AnnouncementSearchCriteria {
     private String district;
     private String state;
     private String street;
-    private FlatDetails flatDetails;
-    private RoomDetails roomDetails;
-    private HouseDetails houseDetails;
+
+    //FLAT / HOUSE / ROOM
+    private Integer bathrooms;
+    private Integer balcony;
+
+    //FLAT / HOUSE
+    private Boolean basement;
+    private Integer bedrooms;
+
+    //FLAT / ROOM
+    private Integer floor;
+
+    //FLAT
+    private Integer flatParking;
+
+    //HOUSE
+    private Integer floors;
+    private Integer lotSize;
+    private Boolean parking;
+
+    //ROOM
+    private Integer bedsInRoom;
+    private Integer numberOfFlatmates;
 
     public static class AnnouncementSearchCriteriaBuilder{
         private String title;
@@ -82,6 +102,8 @@ public class AnnouncementSearchCriteria {
         private Boolean nearBakery;
         private Boolean nearFoodMarket;
         private Boolean nearSupermarket;
+        private Boolean basement;
+        private Boolean parking;
 
         public AnnouncementSearchCriteriaBuilder title(String title) {
             this.title = (title != null) ? "%" + title + "%" : null;
@@ -90,7 +112,9 @@ public class AnnouncementSearchCriteria {
 
         public AnnouncementSearchCriteriaBuilder mustHave(String mustHave) {
             if( mustHave == null ){ return this; } else { this.detailsPresent = true; }
-            String[] params = {"bath","shower","microwave","oven","petsAllowed","elevator","nearPark"};
+            String[] params = {"bath","shower","microwave","oven","petsAllowed","elevator","nearPark","fenced",
+                    "nearTram","nearBus","wifi","ethernetOutlets","internet","tv","dishwasher","clothesDryer",
+                    "nearShoppingMall","nearBakery","nearFoodMarket","nearSupermarket","basement","parking"};
             //for each param in list
             for (String param : params) {
                 try {
@@ -123,7 +147,9 @@ public class AnnouncementSearchCriteria {
         if (detailsPresent != null) result.put("detailsPresent", detailsPresent);
         //create a list of all possible params for easier bind
         String[] params = {"availableFrom","title","propertyType","livingSpace","internetSpeed","bath","shower",
-                "microwave","oven","petsAllowed","elevator","nearPark"};
+                "microwave","oven","petsAllowed","elevator","nearPark","fenced",
+                "nearTram","nearBus","wifi","ethernetOutlets","internet","tv","dishwasher","clothesDryer",
+                "nearShoppingMall","nearBakery","nearFoodMarket","nearSupermarket","basement","parking"};
         //for each param in list
         for (String param : params) {
             try {
