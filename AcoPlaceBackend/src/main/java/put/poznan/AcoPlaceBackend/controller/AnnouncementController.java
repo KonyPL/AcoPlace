@@ -24,7 +24,7 @@ public class AnnouncementController {
     }
 
     @GetMapping("/announcement/{id}")
-    public Announcement getAdvertisementById(@PathVariable long id){
+    public Announcement getAdvertisementById(@PathVariable int id){
         return announcementService.getAnnouncementById(id);
     }
 

@@ -17,5 +17,12 @@ export class Announcement {
     availableFrom: Date;
     publicationDate: Date;
     webUser: number;
-
+    reported: boolean;
+    reason: string; 
+    description: string;
+    admin: string;
+    reportedTime: string;
+    edited: boolean;
+    active: boolean; 
 }
+
