@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@angular/flex-layout": "^13.0.0-beta.36",
+    "@kolkov/ngx-gallery": "^2.0.0",
+    "mdb-angular-ui-kit": "^1.6.0",
+    "ngx-owl-carousel": "^2.0.7",
+    "ngx-owl-carousel-o": "^7.0.1"
+  }
+}

@@ -15,6 +15,7 @@ import { RegisterSuccessComponent } from './auth/register-success/register-succe
 import { RegisterComponent } from './auth/register/register.component';
 //Koniec kodu Wodnika
 import { SearchAnnouncementComponent } from './search-announcement/search-announcement.component';
+import { SearchComponent } from './search/search.component';
 import { StartPageComponent } from './start-page/start-page.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 // import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -25,7 +26,7 @@ const appRoutes: Routes = [
 
     { path: 'announcements-list', component: AnnouncementListComponent },
     { path: 'announcement/:id', component: AnnouncementDetailsComponent },
-    { path: 'add-announcement', component: AddAnnouncementComponent, canActivate: [AuthGuard]},
+    { path: 'add-announcement', component: AddAnnouncementComponent, canActivate: [AuthGuard] },
     { path: 'announcement-details-list', component: AnnouncementDetailsListComponent },
     { path: 'search-announcement', component: SearchAnnouncementComponent },
     { path: 'user-profile', component: UserProfileComponent },
@@ -38,8 +39,14 @@ const appRoutes: Routes = [
     {path: 'register-success', component: RegisterSuccessComponent},
     {path: 'activeAnnouncement', component: AnnoucementActiveListComponent},
     {path: 'inactiveAnnouncement', component: AnnouncementInactiveListComponent},
-    {path: 'favouriteAnnouncement', component: AnnouncementFavouriteListComponent}
+    {path: 'favouriteAnnouncement', component: AnnouncementFavouriteListComponent},
     //Koniec kodu Wodnika
+    { path: 'search', component: SearchComponent },
+    { path: 'register', component: RegisterComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'register-success', component: RegisterSuccessComponent },
+    { path: 'activeAnnouncement', component: AnnoucementActiveListComponent },
+    { path: 'inactiveAnnouncement', component: AnnouncementInactiveListComponent }
 
 
 ];

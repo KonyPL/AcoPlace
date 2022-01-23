@@ -1,0 +1,11 @@
+<label for="file">Select file
+    <img [src]="imageUrl" alt="Image Review">
+</label>
+
+<input type="file" id="file" accept="image/*" multiple hidden (change)="onSelectNewFile($any($event).target?.files)">
+
+<button (click)="convertFileToBase64()">Base64</button>
+
+<div *ngFor="let base of base64">
+    <img [src]="base">
+</div>
