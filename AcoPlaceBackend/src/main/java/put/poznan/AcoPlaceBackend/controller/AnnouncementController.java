@@ -13,6 +13,10 @@ import put.poznan.AcoPlaceBackend.repository.HouseDetailsRepository;
 import put.poznan.AcoPlaceBackend.repository.UserRepository;
 import put.poznan.AcoPlaceBackend.service.AnnouncementService;
 import put.poznan.AcoPlaceBackend.service.HouseDetailsService;
+import put.poznan.AcoPlaceBackend.model.Favourite;
+import put.poznan.AcoPlaceBackend.service.AnnouncementService;
+import put.poznan.AcoPlaceBackend.service.FavouriteService;
+
 
 import java.sql.Date;
 import java.util.List;
@@ -23,16 +27,17 @@ import java.util.Optional;
 @CrossOrigin()//tu mozna dac  z jakieg hosta pozniej
 public class AnnouncementController {
     private final AnnouncementService announcementService;
+    private final FavouriteService favouriteService;
 
-
-
-    public AnnouncementController(AnnouncementService announcementService) {
+    public AnnouncementController(AnnouncementService announcementService, FavouriteService favouriteService) {
         this.announcementService = announcementService;
-
+        this.favouriteService = favouriteService;
     }
 
+
+
     @GetMapping("/announcement/{id}")
-    public Announcement getAdvertisementById(@PathVariable int id){
+    public Announcement getAdvertisementById(@PathVariable Integer id){
         return announcementService.getAnnouncementById(id);
     }
 
@@ -89,6 +94,16 @@ public class AnnouncementController {
     @PostMapping("/addAnnouncementByDto")
     public Announcement createAnnouncementByDto(@RequestBody AnnouncementCreateDto announcementCreateDto) {
         System.out.println("add create DTO="+announcementCreateDto.toString());
-       return announcementService.createAnnouncementByDto(announcementCreateDto);
+       return announcementService.createAnnouncementByDto(announcementCreateDto);}
+      
+    @GetMapping("/announcement/favourite/{id}")
+    public Favourite addFavouriteAnnouncementToCurrentUser(@PathVariable Integer id){
+        return  favouriteService.setFavouriteAnnouncement(id);
+    }
+
+   @GetMapping("/announcements/favourite")
+    public List<Announcement> getAllFavouriteAnnouncementsIdForCurrentUser(){
+        return announcementService.getFavouriteForCurrentUser();
+
     }
 }

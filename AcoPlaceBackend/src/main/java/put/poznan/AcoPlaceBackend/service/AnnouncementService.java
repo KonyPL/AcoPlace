@@ -8,8 +8,17 @@ import org.springframework.stereotype.Service;
 import put.poznan.AcoPlaceBackend.criteria.AnnouncementSearchCriteria;
 import put.poznan.AcoPlaceBackend.dto.AnnouncementDto;
 import put.poznan.AcoPlaceBackend.exception.ResourceNotFoundException;
+
 import put.poznan.AcoPlaceBackend.model.*;
 import put.poznan.AcoPlaceBackend.repository.*;
+
+import put.poznan.AcoPlaceBackend.model.Announcement;
+import put.poznan.AcoPlaceBackend.model.WebUser;
+import put.poznan.AcoPlaceBackend.repository.AnnouncementDetailsRepository;
+import put.poznan.AcoPlaceBackend.repository.AnnouncementRepository;
+import put.poznan.AcoPlaceBackend.repository.FavouriteRepository;
+import put.poznan.AcoPlaceBackend.repository.UserRepository;
+
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -24,12 +33,16 @@ public class AnnouncementService {
     private final AnnouncementRepository announcementRepository;
     private final AnnouncementDetailsRepository announcementDetailsRepository;
     private final UserRepository userRepository;
+private final FavouriteRepository favouriteRepository;
     private final HouseDetailsRepository houseDetailsRepository;
     private final FlatDetailsRepository flatDetailsRepository;
     private final RoomDetailsRepository roomDetailsRepository;
 
 
-    public Announcement getAnnouncementById(int id) {
+ 
+
+
+    public Announcement getAnnouncementById(Integer id) {
         // return advertisementRepository.getById(id);
         return announcementRepository.findAnnouncementById(id).orElseThrow(() -> new ResourceNotFoundException("Advertisement with id:" + id + " not found in database"));
     }
@@ -59,6 +72,7 @@ public class AnnouncementService {
         WebUser webUser = userRepository.findByUserName(username).orElseThrow(() -> new ResourceNotFoundException("user with name="+username+"nor found"));
         return announcementRepository.getInactiveForUser(webUser.getId());
     }
+
 
     public Announcement createAnnouncementByDto(AnnouncementCreateDto announcementCreateDto){
         System.out.println(announcementCreateDto.toString());
@@ -159,6 +173,18 @@ public class AnnouncementService {
             flatDetailsRepository.save(flatDetails);
         }
 
-        return announcement;
+        return announcement;}
+      
+    public List<Announcement> getFavouriteForCurrentUser() {
+        String username= SecurityContextHolder.getContext().getAuthentication().getName();
+        WebUser webUser = userRepository.findByUserName(username).orElseThrow(() -> new ResourceNotFoundException("user with name="+username+"nor found"));
+        List<Integer> favouriteIdList = favouriteRepository.getAllAnnouncementIdForCurrentUser(webUser.getId());
+        List<Announcement> announcementList = new ArrayList<>();
+        for (int id: favouriteIdList) {
+            announcementList.add( announcementRepository.findAnnouncementById(id).orElseThrow(()-> new ResourceNotFoundException("Announcement with id="+id+"not found")));
+        }
+        return announcementList;
+        //@Query(value="SELECT announcement_details.announcement_id FROM announcement_details WHERE shower=?1  AND oven=?2",nativeQuery = true)
+
     }
 }

@@ -72,11 +72,13 @@ import { SearchComponent } from './search/search.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AnnoucementActiveListComponent } from './annoucement-active-list/annoucement-active-list.component';
 import { AnnouncementInactiveListComponent } from './announcement-inactive-list/announcement-inactive-list.component';
+import { AnnouncementFavouriteListComponent } from './announcement-favourite-list/announcement-favourite-list.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { FileBase64Component } from './file-base64/file-base64.component';
 import { NgxGalleryImageComponent } from '@kolkov/ngx-gallery/lib/ngx-gallery-image/ngx-gallery-image.component';
 import { NgxImageCompressorModule } from 'ngx-image-compressor';
 import { NgxImageCompressService } from 'ngx-image-compress';
+
 // import { SidebarComponent } from './sidebar/sidebar.component';
 // import { NgImageSliderModule } from 'ng-image-slider';
 // import { SidebarComponent } from './sidebar/sidebar.component';
@@ -117,6 +119,8 @@ import { NgxImageCompressService } from 'ngx-image-compress';
     UserProfileComponent,
     AnnoucementActiveListComponent,
     AnnouncementInactiveListComponent,
+    AnnouncementFavouriteListComponent,
+    //Koniec kodu Wodnika
     FileUploadComponent,
     FileBase64Component
   ],

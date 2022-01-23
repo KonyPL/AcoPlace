@@ -5,6 +5,7 @@ import { AnnoucementActiveListComponent } from './annoucement-active-list/annouc
 // import { AdminComponent } from './admin/admin.component';
 import { AnnouncementDetailsListComponent } from './announcement-details-list/announcement-details-list.component';
 import { AnnouncementDetailsComponent } from './announcement-details/announcement-details.component';
+import { AnnouncementFavouriteListComponent } from './announcement-favourite-list/announcement-favourite-list.component';
 import { AnnouncementInactiveListComponent } from './announcement-inactive-list/announcement-inactive-list.component';
 import { AnnouncementListComponent } from './announcement-list/announcement-list.component';
 import { AuthGuard } from './auth.guard';
@@ -32,7 +33,14 @@ const appRoutes: Routes = [
     // { path: 'admin', component: AdminComponent },
     { path: 'start', component: StartPageComponent },
     { path: '', component: StartPageComponent },
-
+    //Kod Wodnika
+    {path: 'register', component: RegisterComponent},
+    {path: 'login', component: LoginComponent},
+    {path: 'register-success', component: RegisterSuccessComponent},
+    {path: 'activeAnnouncement', component: AnnoucementActiveListComponent},
+    {path: 'inactiveAnnouncement', component: AnnouncementInactiveListComponent},
+    {path: 'favouriteAnnouncement', component: AnnouncementFavouriteListComponent},
+    //Koniec kodu Wodnika
     { path: 'search', component: SearchComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent },

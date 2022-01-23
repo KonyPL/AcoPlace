@@ -15,7 +15,11 @@ public interface AnnouncementDetailsRepository extends JpaRepository<Announcemen
     @Query(value="SELECT announcement_details.announcement_id FROM announcement_details WHERE shower=?1  AND oven=?2",nativeQuery = true)
     List<Integer> findAllByParams(Boolean shower, Boolean oven);
 
+
     @org.springframework.data.jpa.repository.Query(value="SELECT * FROM announcement_details a WHERE a.id=?1", nativeQuery = true) // dodac active
     Optional<AnnouncementDetails> findAnnouncementDetailsById(Integer id);
+  
+    @org.springframework.data.jpa.repository.Query(value="SELECT * FROM announcement_details WHERE announcement_details.announcement_id=?1", nativeQuery = true) // dodac active
+    Optional<AnnouncementDetails> findAnnouncementById(Integer id);
 
 }
