@@ -32,6 +32,12 @@ export class AnnouncementService {
     return this.httpClient.get<Announcement>(`http://localhost:8080/announcement/` + id);
   }
 
+
+  addAnnouncementToFavourite(id: number): Observable<any> {
+    return this.httpClient.get<any>(`http://localhost:8080/announcement/favourite/` + id);
+  }
+
+
   createAnnouncement(announcement: Announcement): Observable<any> {
     return this.httpClient.post(`http://localhost:8080/addAnnouncement`, announcement);
   }
@@ -140,5 +146,8 @@ export class AnnouncementService {
     return this.httpClient.get<AnnouncementDetails>(`http://localhost:8080/announcementDetails/` + id);
   }
 
+  getFavouriteAnnouncementsList(): Observable<Announcement[]> {
+    return this.httpClient.get<Announcement[]>("http://localhost:8080/announcements/favourite");
+  }
 
 }

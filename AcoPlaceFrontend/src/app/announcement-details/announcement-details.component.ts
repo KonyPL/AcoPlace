@@ -30,5 +30,16 @@ export class AnnouncementDetailsComponent implements OnInit {//TODO ZMIANA NAZWY
     )  }
 
   
+    addToFavourite(){
+      console.log("ID FROMA ANNOUNCEMENT="+this.announcement.id);
+      console.log("ID FROMA path="+this.id);
+
+     this.announcementService.addAnnouncementToFavourite( this.announcement.id).subscribe(
+       data => {
+         console.log("data from add to favourite"+data);
+       }
+     )
+
+    }
 
 }
