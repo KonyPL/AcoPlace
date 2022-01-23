@@ -179,6 +179,9 @@ public interface AnnouncementRepository extends JpaRepository<Announcement, Long
 
     @org.springframework.data.jpa.repository.Query(value="SELECT * FROM Announcement a WHERE a.web_user_id = ?1 and a.active='false'", nativeQuery = true) // dodac active
     List<Announcement> getInactiveForUser(Integer id);
+
+    @org.springframework.data.jpa.repository.Query(value="SELECT * FROM Announcement a WHERE a.id=?1", nativeQuery = true) // dodac active
+    Optional<Announcement> findAnnouncementById(Integer id);
 }
 
 //    @org.springframework.data.jpa.repository.Query(value="SELECT * FROM announcement WHERE announcement.web_user_id=?1") // dodac active

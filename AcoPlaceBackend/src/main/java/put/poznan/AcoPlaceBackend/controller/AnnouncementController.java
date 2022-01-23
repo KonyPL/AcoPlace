@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.*;
 import put.poznan.AcoPlaceBackend.criteria.AnnouncementSearchCriteria;
 import put.poznan.AcoPlaceBackend.dto.AnnouncementDto;
 import put.poznan.AcoPlaceBackend.model.Announcement;
+import put.poznan.AcoPlaceBackend.model.Favourite;
 import put.poznan.AcoPlaceBackend.service.AnnouncementService;
+import put.poznan.AcoPlaceBackend.service.FavouriteService;
 
 import java.sql.Date;
 import java.util.List;
@@ -17,10 +19,12 @@ import java.util.Optional;
 @CrossOrigin()//tu mozna dac  z jakieg hosta pozniej
 public class AnnouncementController {
     private final AnnouncementService announcementService;
+    private final FavouriteService favouriteService;
 
 
-    public AnnouncementController(AnnouncementService announcementService) {
+    public AnnouncementController(AnnouncementService announcementService, FavouriteService favouriteService) {
         this.announcementService = announcementService;
+        this.favouriteService = favouriteService;
     }
 
     @GetMapping("/announcement/{id}")
@@ -75,5 +79,15 @@ public class AnnouncementController {
     @GetMapping("/announcements/inactive")
     public List<Announcement> getAllInactiveAnnouncementsForCurrentUser(){
         return announcementService.getInactiveForCurrentUser();
+    }
+
+    @GetMapping("/announcement/favourite/{id}")
+    public Favourite addFavouriteAnnouncementToCurrentUser(@PathVariable Integer id){
+        return  favouriteService.setFavouriteAnnouncement(id);
+    }
+
+   @GetMapping("/announcements/favourite")
+    public List<Announcement> getAllFavouriteAnnouncementsIdForCurrentUser(){
+        return announcementService.getFavouriteForCurrentUser();
     }
 }

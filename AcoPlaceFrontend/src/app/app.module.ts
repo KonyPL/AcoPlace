@@ -69,6 +69,7 @@ import {MatListModule} from '@angular/material/list';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AnnoucementActiveListComponent } from './annoucement-active-list/annoucement-active-list.component';
 import { AnnouncementInactiveListComponent } from './announcement-inactive-list/announcement-inactive-list.component';
+import { AnnouncementFavouriteListComponent } from './announcement-favourite-list/announcement-favourite-list.component';
 
 // import { SidebarComponent } from './sidebar/sidebar.component';
 // import { NgImageSliderModule } from 'ng-image-slider';
@@ -107,7 +108,8 @@ import { AnnouncementInactiveListComponent } from './announcement-inactive-list/
     SidebarComponent,
     UserProfileComponent,
     AnnoucementActiveListComponent,
-    AnnouncementInactiveListComponent
+    AnnouncementInactiveListComponent,
+    AnnouncementFavouriteListComponent
     //Koniec kodu Wodnika
   ],
   imports: [
