@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-
+import { Image } from '../model';
+import { ImageCompressorService, CompressorConfig } from 'ngx-image-compressor';
+import { NgxImageCompressService } from 'ngx-image-compress';
 @Component({
   selector: 'app-file-base64',
   templateUrl: './file-base64.component.html',
@@ -8,63 +10,32 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class FileBase64Component implements OnInit {
 
-  base64: string = "Base64...";
-  fileSelected?: Blob;
+  base64: string[] = [];
+  compressedFiles: File[] = [];
   imageUrl?: string;
 
-  constructor(private sant: DomSanitizer) { }
+  imgResult: string = "";
+
+  constructor(private sant: DomSanitizer, private imageCompressor: ImageCompressorService) { }
 
   ngOnInit(): void {
   }
 
-  fileInput = document.getElementById('pictureInput');
-
-  public getFileById(event: any) {
-    console.log("pobieram plik");
-
-  }
-
-  // This is for storing the base64 strings
-  // myFiles = {};
-  // if you expect files by default, make this disabled
-  // we will wait until the last file being processed
-  isFilesReady = true;
-
-  //   fileInput.addEventListener('change', async (event: any) => {
-  //   const files = event.srcElement.files;
-
-  //   console.log(files)
-  // });
-
-  public handleUpload(event: any) {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      console.log(reader.result);
-    };
-    reader.onerror = function (error) {
-      console.log('Error: ', error);
-    };
-  }
-
-
   onSelectNewFile(files: FileList): void {
-    this.fileSelected = files[0];
-    this.imageUrl = this.sant.bypassSecurityTrustUrl(window.URL.createObjectURL(this.fileSelected)) as string;
-    this.base64 = "Base64...";
+    const rawFiles: File[] = [].slice.call(files);
+    rawFiles.forEach(async (file: File) => {
+      const config: CompressorConfig = { orientation: 1, ratio: 50, quality: 50, enableLogs: true };
+      this.compressedFiles.push(await this.imageCompressor.compressFile(file, config));
+    });
   }
 
   convertFileToBase64(): void {
-    let reader = new FileReader();
-    reader.readAsDataURL(this.fileSelected as Blob);
-    reader.onloadend = () => {
-      this.base64 = reader.result as string;
-    }
+    this.compressedFiles.forEach(async (blob: Blob) => {
+      let reader = new FileReader();
+      reader.readAsDataURL(blob as Blob);
+      reader.onloadend = () => {
+        this.base64.push(reader.result as string);
+      }
+    });
   }
-
-
-
 }
-
-

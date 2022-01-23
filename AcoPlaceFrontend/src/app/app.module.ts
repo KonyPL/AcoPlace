@@ -74,7 +74,9 @@ import { AnnoucementActiveListComponent } from './annoucement-active-list/annouc
 import { AnnouncementInactiveListComponent } from './announcement-inactive-list/announcement-inactive-list.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { FileBase64Component } from './file-base64/file-base64.component';
-
+import { NgxGalleryImageComponent } from '@kolkov/ngx-gallery/lib/ngx-gallery-image/ngx-gallery-image.component';
+import { NgxImageCompressorModule } from 'ngx-image-compressor';
+import { NgxImageCompressService } from 'ngx-image-compress';
 // import { SidebarComponent } from './sidebar/sidebar.component';
 // import { NgImageSliderModule } from 'ng-image-slider';
 // import { SidebarComponent } from './sidebar/sidebar.component';
@@ -169,10 +171,13 @@ import { FileBase64Component } from './file-base64/file-base64.component';
     MatToolbarModule,
     MatDividerModule,
     MatListModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    NgxImageCompressorModule
+
 
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }, HttpClientModule],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }, HttpClientModule, NgxImageCompressService],
+
   // vvv Tak było "wcześniej"
   //providers: [HttpClientModule],
   bootstrap: [AppComponent]
