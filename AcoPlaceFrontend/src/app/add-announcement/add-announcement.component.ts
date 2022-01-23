@@ -4,6 +4,7 @@ import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AnnouncementService } from '../announcement-list/announcement.service';
 import { Announcement } from '../model/announcement';
+import { AnnouncementCreateDto } from '../model/announcement-dto';
 //import { MatSliderModule } from '@angular/material/slider';
 
 @Component({
@@ -12,7 +13,7 @@ import { Announcement } from '../model/announcement';
   styleUrls: ['./add-announcement.component.css']
 })
 export class AddAnnouncementComponent implements OnInit {
-  announcement: Announcement = new Announcement();
+  announcementDto: AnnouncementCreateDto = new AnnouncementCreateDto();
 
   constructor(private announcementService: AnnouncementService, private router: Router) { }
 
@@ -22,7 +23,7 @@ export class AddAnnouncementComponent implements OnInit {
   
 
   saveAnnouncement(){
-    this.announcementService.createAnnouncement(this.announcement).subscribe( data =>{
+    this.announcementService.createAnnouncementByDto(this.announcementDto).subscribe( data =>{
       console.log("jestem w save announcement"+data);
       this.goToAnnouncementList();
     }, error=> console.log(error))
@@ -35,7 +36,7 @@ export class AddAnnouncementComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log("THIS ANNOUNCEMENT on sumbit clicked"+this.announcement);
+    console.log("THIS ANNOUNCEMENT on sumbit clicked"+this.announcementDto);
     this.saveAnnouncement();
   }
 }

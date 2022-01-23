@@ -2,11 +2,17 @@ package put.poznan.AcoPlaceBackend.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import put.poznan.AcoPlaceBackend.criteria.AnnouncementSearchCriteria;
 import put.poznan.AcoPlaceBackend.dto.AnnouncementDto;
+import put.poznan.AcoPlaceBackend.exception.ResourceNotFoundException;
 import put.poznan.AcoPlaceBackend.model.Announcement;
+import put.poznan.AcoPlaceBackend.model.AnnouncementCreateDto;
+import put.poznan.AcoPlaceBackend.repository.HouseDetailsRepository;
+import put.poznan.AcoPlaceBackend.repository.UserRepository;
 import put.poznan.AcoPlaceBackend.service.AnnouncementService;
+import put.poznan.AcoPlaceBackend.service.HouseDetailsService;
 
 import java.sql.Date;
 import java.util.List;
@@ -19,8 +25,10 @@ public class AnnouncementController {
     private final AnnouncementService announcementService;
 
 
+
     public AnnouncementController(AnnouncementService announcementService) {
         this.announcementService = announcementService;
+
     }
 
     @GetMapping("/announcement/{id}")
@@ -75,5 +83,12 @@ public class AnnouncementController {
     @GetMapping("/announcements/inactive")
     public List<Announcement> getAllInactiveAnnouncementsForCurrentUser(){
         return announcementService.getInactiveForCurrentUser();
+    }
+
+
+    @PostMapping("/addAnnouncementByDto")
+    public Announcement createAnnouncementByDto(@RequestBody AnnouncementCreateDto announcementCreateDto) {
+        System.out.println("add create DTO="+announcementCreateDto.toString());
+       return announcementService.createAnnouncementByDto(announcementCreateDto);
     }
 }

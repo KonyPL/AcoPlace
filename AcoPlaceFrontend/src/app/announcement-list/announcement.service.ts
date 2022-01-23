@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Announcement } from '../model/announcement';
 import { AnnouncementParams } from '../model/announcementParams';
 import { AnnouncementDetails } from '../model/announcement-details';
+import { AnnouncementCreateDto } from '../model/announcement-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +32,10 @@ export class AnnouncementService {
 
   createAnnouncement(announcement: Announcement): Observable<Object> {
     return this.httpClient.post(`http://localhost:8080/addAnnouncement`, announcement);
+  }
+
+  createAnnouncementByDto(announcementDto: AnnouncementCreateDto): Observable<Object> {
+    return this.httpClient.post(`http://localhost:8080/addAnnouncementByDto`, announcementDto);
   }
 
   getAnnouncementWithParams(announcementParams: AnnouncementParams): Observable<Announcement[]> {
