@@ -96,7 +96,7 @@
 
             <div class="justify-content-center col-md-12" style="text-align: left; padding: 0px 30px;">
                 <div class="col-md-12">
-                    <div *ngIf="announcementParams.propertyType==='MIESZKANIE'">wybrales mieszkanie
+                    <div *ngIf="announcementParams.propertyType==='FLAT'">wybrales mieszkanie
                         <div class="row" style="background: #fff; margin: 10px 0; border-radius: 0%;">
                             <div class="justify-content-center col-md-12" style="padding: 0 50px;">
                                 <mat-checkbox [(ngModel)]="announcementParams.basement" name="basement">Basement
@@ -154,7 +154,7 @@
                         </div>
 
                     </div>
-                    <div *ngIf="announcementParams.propertyType==='DOM'">wybrales DOM
+                    <div *ngIf="announcementParams.propertyType==='HOUSE'">wybrales DOM
 
                         <div class="col-md-12" style="text-align: center;">
                             <form class="example-form">
@@ -219,7 +219,7 @@
                         </div>
 
                     </div>
-                    <div *ngIf="announcementParams.propertyType==='POKOJ'">wybrales POKOJ
+                    <div *ngIf="announcementParams.propertyType==='ROOM'">wybrales POKOJ
                         <div class="col-md-12" style="text-align: center;">
                             <form class="example-form">
                                 <mat-form-field class="full-width" appearance="fill">
