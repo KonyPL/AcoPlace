@@ -1,6 +1,6 @@
 --user table
 insert into web_user(id,email,password,active) values(100,'piotr1@wp.pl','1234','true');
-insert into web_user(id,email,password,active) values(101,'mirek@wp.pl','4321','false'); --false 
+insert into web_user(id,email,password,active) values(101,'mirek@wp.pl','4321','true');
 insert into web_user(id,email,password,active) values(102,'jurek@wp.pl','1221','true');
 insert into web_user(id,email,password,active) values(103,'wiesiek@wp.pl','5555','true');
 insert into web_user(id,email,password,active) values(104,'zbyszek@wp.pl','7890','true');

@@ -99,6 +99,7 @@
 
         <th>ID</th>
         <th>TITLE</th>
+        <th>ACTIVATE</th>
         <th>SHOW</th>
         <th>EDIT</th>
         <th>REPORT</th>
@@ -109,7 +110,10 @@
         <tr th:each="announcement:${listAnnouncements}">
             <td th:text="${announcement.getId()}">ID</td>
             <td th:text="${announcement.getTitle()}">Title</td>
-
+            
+            <td>
+                <a th:href="@{'/active/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-check"></i> Activate</button></a>
+            </td>
             <td>
                 <a th:href="@{'/announcement/inactive/showById/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-info"></i> Show</button></a>
             </td>
@@ -122,7 +126,6 @@
             <td>
                 <a th:href="@{'/announcement/delete/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-trash"></i> Delete</button></a>
             </td>
-
         </tr>
         </tbody>
     </table>
