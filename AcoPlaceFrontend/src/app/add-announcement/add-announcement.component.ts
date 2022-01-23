@@ -20,12 +20,14 @@ export class AddAnnouncementComponent implements OnInit {
   ngOnInit(): void {
   }
 
+//TU DUZO DO ZMIANY JESZCE 
+  
+onSubmit(){
+  console.log("THIS ANNOUNCEMENT on sumbit clicked"+this.announcementDto);
 
-  saveAnnouncement(){
-    this.announcementService.createAnnouncementByDto(this.announcementDto).subscribe( data =>{
-      console.log("jestem w save announcement"+data);
+ this.saveAnnouncement();
+}
 
- 
 
   goToAnnouncementList() {
     console.log("jestem w  go to tu chce byc announcement list");
@@ -33,9 +35,10 @@ export class AddAnnouncementComponent implements OnInit {
   }
 
 
-  onSubmit(){
-    console.log("THIS ANNOUNCEMENT on sumbit clicked"+this.announcementDto);
-  
-    this.saveAnnouncement();
-  }
+saveAnnouncement(){
+    this.announcementService.createAnnouncementByDto(this.announcementDto).subscribe();
+    console.log("JESTEM E SAVE ANNOUNCEMENT");
+    }
+
 }
+

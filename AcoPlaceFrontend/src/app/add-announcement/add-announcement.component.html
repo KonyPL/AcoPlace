@@ -1,0 +1,19 @@
+<div class="col-md-6">
+    <h2 class="text-center">Add ANNOUNCEMENT</h2>
+    <form>
+      <div class="form-group">
+        <label for="country">country (string):</label>
+        <input [(ngModel)]="announcementDto.country" placeholder="country" name="country" class="form-control" id="country">
+      </div>
+    
+       <div class="form-group">
+        <label for="city">LastName:</label>
+        <input [(ngModel)]="announcementDto.country" placeholder="city" name="city" class="form-control" id="city">
+      </div>
+    
+
+
+     
+      <button class="btn btn-success" (click)="onSubmit()">Create</button>
+    </form>
+    </div>

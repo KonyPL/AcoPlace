@@ -26,20 +26,17 @@ import java.util.List;
 import java.util.Map;
 
 @RequiredArgsConstructor
-@AllArgsConstructor
 @Service
 public class AnnouncementService {
 
     private final AnnouncementRepository announcementRepository;
     private final AnnouncementDetailsRepository announcementDetailsRepository;
     private final UserRepository userRepository;
-private final FavouriteRepository favouriteRepository;
+    private final FavouriteRepository favouriteRepository;
     private final HouseDetailsRepository houseDetailsRepository;
     private final FlatDetailsRepository flatDetailsRepository;
     private final RoomDetailsRepository roomDetailsRepository;
 
-
- 
 
 
     public Announcement getAnnouncementById(Integer id) {
