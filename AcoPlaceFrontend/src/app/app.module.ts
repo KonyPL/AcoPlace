@@ -29,7 +29,7 @@ import { StartPageComponent } from './start-page/start-page.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterSuccessComponent } from './auth/register-success/register-success.component';
-import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 //import {Ng2Webstorage} from 'ngx-webstorage';
 import { HttpClientInterceptor } from './http-client-interceptor';
 import { NgxWebstorageModule } from 'ngx-webstorage';
@@ -65,11 +65,18 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDividerModule } from '@angular/material/divider';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list'
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { SearchComponent } from './search/search.component';
+// import { BoxComponent } from './box/box.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AnnoucementActiveListComponent } from './annoucement-active-list/annoucement-active-list.component';
 import { AnnouncementInactiveListComponent } from './announcement-inactive-list/announcement-inactive-list.component';
-
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { FileBase64Component } from './file-base64/file-base64.component';
+import { NgxGalleryImageComponent } from '@kolkov/ngx-gallery/lib/ngx-gallery-image/ngx-gallery-image.component';
+import { NgxImageCompressorModule } from 'ngx-image-compressor';
+import { NgxImageCompressService } from 'ngx-image-compress';
 // import { SidebarComponent } from './sidebar/sidebar.component';
 // import { NgImageSliderModule } from 'ng-image-slider';
 // import { SidebarComponent } from './sidebar/sidebar.component';
@@ -100,15 +107,18 @@ import { AnnouncementInactiveListComponent } from './announcement-inactive-list/
     GalleryComponent,
     // CarouselHolderComponent,
     // SidebarComponent
-    //Kod Wodnika
     RegisterComponent,
     LoginComponent,
     RegisterSuccessComponent,
     SidebarComponent,
+    SearchComponent,
+    // BoxComponent,
+
     UserProfileComponent,
     AnnoucementActiveListComponent,
-    AnnouncementInactiveListComponent
-    //Koniec kodu Wodnika
+    AnnouncementInactiveListComponent,
+    FileUploadComponent,
+    FileBase64Component
   ],
   imports: [
     BrowserModule,
@@ -160,10 +170,14 @@ import { AnnouncementInactiveListComponent } from './announcement-inactive-list/
     MatTableModule,
     MatToolbarModule,
     MatDividerModule,
-    MatListModule
-    
+    MatListModule,
+    MatFormFieldModule,
+    NgxImageCompressorModule
+
+
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true}, HttpClientModule],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }, HttpClientModule, NgxImageCompressService],
+
   // vvv Tak było "wcześniej"
   //providers: [HttpClientModule],
   bootstrap: [AppComponent]

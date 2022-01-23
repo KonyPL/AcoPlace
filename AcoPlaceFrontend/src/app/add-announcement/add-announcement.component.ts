@@ -20,23 +20,22 @@ export class AddAnnouncementComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
 
   saveAnnouncement(){
     this.announcementService.createAnnouncementByDto(this.announcementDto).subscribe( data =>{
       console.log("jestem w save announcement"+data);
-      this.goToAnnouncementList();
-    }, error=> console.log(error))
-    
-  }
 
-  goToAnnouncementList(){
+ 
+
+  goToAnnouncementList() {
     console.log("jestem w  go to tu chce byc announcement list");
     this.router.navigate(['announcements-list']);
   }
 
+
   onSubmit(){
     console.log("THIS ANNOUNCEMENT on sumbit clicked"+this.announcementDto);
+  
     this.saveAnnouncement();
   }
 }
