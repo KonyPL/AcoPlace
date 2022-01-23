@@ -72,6 +72,8 @@ import { SearchComponent } from './search/search.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AnnoucementActiveListComponent } from './annoucement-active-list/annoucement-active-list.component';
 import { AnnouncementInactiveListComponent } from './announcement-inactive-list/announcement-inactive-list.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { FileBase64Component } from './file-base64/file-base64.component';
 
 // import { SidebarComponent } from './sidebar/sidebar.component';
 // import { NgImageSliderModule } from 'ng-image-slider';
@@ -112,7 +114,9 @@ import { AnnouncementInactiveListComponent } from './announcement-inactive-list/
 
     UserProfileComponent,
     AnnoucementActiveListComponent,
-    AnnouncementInactiveListComponent
+    AnnouncementInactiveListComponent,
+    FileUploadComponent,
+    FileBase64Component
   ],
   imports: [
     BrowserModule,

@@ -96,6 +96,9 @@ export class AnnouncementService {
     if (announcementParams.livingSpace != undefined) {
       params = params.set('livingSpace', announcementParams.livingSpace);
     }
+    if (announcementParams.flatParking != undefined) {
+      params = params.set('flatParking', announcementParams.livingSpace)
+    }
 
     if (announcementParams.propertyType != undefined) {
       params = params.set('propertyType', announcementParams.propertyType);
@@ -121,7 +124,7 @@ export class AnnouncementService {
     if (announcementParams.nearBakery === true) mustHave += "nearBakery,";
     if (announcementParams.nearFoodMarket === true) mustHave += "nearFoodMarket,";
     if (announcementParams.nearSupermarket === true) mustHave += "nearSupermarket,";
-    if (announcementParams.flatParking === true) mustHave += "flatParking,";
+
     if (announcementParams.basement === true) mustHave += "basement,";
     if (announcementParams.parking === true) mustHave += "parking,";
 

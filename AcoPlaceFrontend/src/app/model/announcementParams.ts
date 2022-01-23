@@ -31,7 +31,7 @@ export class AnnouncementParams {
     floor: number;
     bedrooms: number;
     bathrooms: number;
-    flatParking: boolean;
+    flatParking: number;
     balcony: number;
     // house
     floors: number;

@@ -115,13 +115,16 @@
                         </div>
 
 
-                        <div class="row" style="background: #fff; margin: 10px 0; border-radius: 0%;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.flatParking" name="flatParking">
-                                    FlatParking</mat-checkbox>
-                            </div>
-                        </div>
 
+                        <div class="col-md-12" style="text-align: center;">
+                            <form class="example-form">
+                                <mat-form-field class="full-width" appearance="fill">
+                                    <mat-label>FlatParking</mat-label>
+                                    <input matInput placeholder="Poland" value="Sushi" type="number" id="flatParking"
+                                        [(ngModel)]="announcementParams.flatParking" name="flatParking" required>
+                                </mat-form-field>
+                            </form>
+                        </div>
                         <div class="col-md-12" style="text-align: center;">
                             <form class="example-form">
                                 <mat-form-field class="full-width" appearance="fill">

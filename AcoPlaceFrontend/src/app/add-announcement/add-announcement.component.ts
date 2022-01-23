@@ -19,23 +19,37 @@ export class AddAnnouncementComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
 
-  saveAnnouncement(){
-    this.announcementService.createAnnouncement(this.announcement).subscribe( data =>{
-      console.log("jestem w save announcement"+data);
+  // const fileInput = document.getElementById('pictureInput')
+
+  // This is for storing the base64 strings
+  // let myFiles = {}
+  // if you expect files by default, make this disabled
+  // we will wait until the last file being processed
+  // let isFilesReady = true
+
+  // fileInput.addEventListener('change', async (event) => {
+  //   const files = event.srcElement.files;
+
+  //   console.log(files)
+  // })
+
+
+  saveAnnouncement() {
+    this.announcementService.createAnnouncement(this.announcement).subscribe(data => {
+      console.log("jestem w save announcement" + data);
       this.goToAnnouncementList();
-    }, error=> console.log(error))
-    
+    }, error => console.log(error))
+
   }
 
-  goToAnnouncementList(){
+  goToAnnouncementList() {
     console.log("jestem w  go to tu chce byc announcement list");
     this.router.navigate(['announcements-list']);
   }
 
-  onSubmit(){
-    console.log("THIS ANNOUNCEMENT on sumbit clicked"+this.announcement);
+  onSubmit() {
+    console.log("THIS ANNOUNCEMENT on sumbit clicked" + this.announcement);
     this.saveAnnouncement();
   }
 }
