@@ -46,8 +46,15 @@ public interface AnnouncementRepository extends JpaRepository<Announcement, Long
 
                 // FROM
                 builder.append("FROM public.announcement a " + System.lineSeparator());
-                if (queryParams.get("detailsPresent") != null || queryParams.get("internetSpeed") != null ) {
-                    builder.append("  INNER JOIN public.announcement_details a_d ON a.id = a_d.announcement_id " + System.lineSeparator());
+                if (queryParams.get("detailsPresent") != null || queryParams.get("internetSpeed") != null) {
+                    builder.append(" INNER JOIN public.announcement_details a_d ON a.id = a_d.announcement_id " + System.lineSeparator());
+                }
+                if (queryParams.get("propertyType") == "ROOM") {
+                    builder.append(" INNER JOIN public.room_details r_d ON a.id = r_d.announcement_id " + System.lineSeparator());
+                } else if (queryParams.get("propertyType") == "FLAT") {
+                    builder.append(" INNER JOIN public.flat_details f_d ON a.id = f_d.announcement_id " + System.lineSeparator());
+                } else if (queryParams.get("propertyType") == "HOUSE") {
+                    builder.append(" INNER JOIN public.house_details h_d ON a.id = h_d.announcement_id " + System.lineSeparator());
                 }
 
                 // WHERE
@@ -71,7 +78,65 @@ public interface AnnouncementRepository extends JpaRepository<Announcement, Long
                     builder.append("  AND a_d.internet_speed >= :internetSpeed " + System.lineSeparator());
                 }
 
-                String[] detailParamsToBuild = {"bath","shower","microwave","oven","petsAllowed","elevator","nearPark"};
+                if (queryParams.get("propertyType") == "ROOM"){
+                    if (queryParams.get("floor") != null) {
+                        builder.append("  AND r_d.floor <= :floor " + System.lineSeparator());
+                    }
+                    if (queryParams.get("bedsInRoom") != null) {
+                        builder.append("  AND r_d.beds_in_room = :bedsInRoom " + System.lineSeparator());
+                    }
+                    if (queryParams.get("numberOfFlatmates") != null) {
+                        builder.append("  AND r_d.numberOfFlatmates <= :numberOfFlatmates " + System.lineSeparator());
+                    }
+                    if (queryParams.get("bathrooms") != null) {
+                        builder.append("  AND r_d.bathrooms >= :bathrooms " + System.lineSeparator());
+                    }
+                } else if (queryParams.get("propertyType") == "FLAT"){
+                    if (queryParams.get("basement") != null) {
+                        builder.append("  AND f_d.basement = :basement " + System.lineSeparator());
+                    }
+                    if (queryParams.get("floor") != null) {
+                        builder.append("  AND f_d.floor <= :floor " + System.lineSeparator());
+                    }
+                    if (queryParams.get("bedrooms") != null) {
+                        builder.append("  AND f_d.bedrooms >= :bedrooms " + System.lineSeparator());
+                    }
+                    if (queryParams.get("bathrooms") != null) {
+                        builder.append("  AND f_d.bathrooms >= :bathrooms " + System.lineSeparator());
+                    }
+                    if (queryParams.get("flatParking") != null) {
+                        builder.append("  AND f_d.flatParking >= :flatParking " + System.lineSeparator());
+                    }
+                    if (queryParams.get("balcony") != null) {
+                        builder.append("  AND f_d.balcony >= :balcony " + System.lineSeparator());
+                    }
+                } else if (queryParams.get("propertyType") == "HOUSE"){
+                    if (queryParams.get("basement") != null) {
+                        builder.append("  AND h_d.basement = :basement " + System.lineSeparator());
+                    }
+                    if (queryParams.get("parking") != null){
+                        builder.append("  AND h_d.parking = :parking " + System.lineSeparator());
+                    }
+                    if (queryParams.get("floors") != null){
+                        builder.append("  AND h_d.floors >= :floors " + System.lineSeparator());
+                    }
+                    if (queryParams.get("bedrooms") != null){
+                        builder.append("  AND h_d.bedrooms >= :bedrooms " + System.lineSeparator());
+                    }
+                    if (queryParams.get("bathrooms") != null){
+                        builder.append("  AND h_d.bathrooms >= :bathrooms " + System.lineSeparator());
+                    }
+                    if (queryParams.get("lotSize") != null){
+                        builder.append("  AND h_d.lotSize >= :lotSize " + System.lineSeparator());
+                    }
+                    if (queryParams.get("balcony") != null){
+                        builder.append("  AND h_d.balcony >= :balcony " + System.lineSeparator());
+                    }
+                }
+
+                String[] detailParamsToBuild = {"bath","shower","microwave","oven","petsAllowed","elevator","nearPark",
+                        "fenced", "nearTram","nearBus","wifi","ethernetOutlets","internet","tv","dishwasher",
+                        "clothesDryer", "nearShoppingMall","nearBakery","nearFoodMarket","nearSupermarket"};
 
                 for(String param : detailParamsToBuild){
                     if (queryParams.get(param) != null) {
@@ -92,7 +157,9 @@ public interface AnnouncementRepository extends JpaRepository<Announcement, Long
                 }
 
                 String[] possibleParams = {"availableFrom","title","propertyType","livingSpace","internetSpeed","bath",
-                        "shower", "microwave","oven","petsAllowed","elevator","nearPark"};
+                        "shower", "microwave","oven","petsAllowed","elevator","nearPark","fenced",
+                        "nearTram","nearBus","wifi","ethernetOutlets","internet","tv","dishwasher","clothesDryer",
+                        "nearShoppingMall","nearBakery","nearFoodMarket","nearSupermarket","basement","parking"};
 
                 //Set all params specified in possibleParams
                 for(String param : possibleParams){

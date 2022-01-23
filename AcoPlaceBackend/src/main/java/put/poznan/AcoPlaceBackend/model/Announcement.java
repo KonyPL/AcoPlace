@@ -53,6 +53,7 @@ public class Announcement implements Serializable {
     private String currency;
     private Integer livingSpace;
     private Integer yearBuilt;
+    //Admin
     private Boolean reported;
     private String reason;
     private String description;
