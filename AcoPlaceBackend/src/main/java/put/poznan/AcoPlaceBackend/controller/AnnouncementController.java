@@ -106,4 +106,10 @@ public class AnnouncementController {
         return announcementService.getFavouriteForCurrentUser();
 
     }
+
+    @GetMapping("/announcement/announcementDto/{id}")
+    public AnnouncementCreateDto getAdvertisementById(@PathVariable Integer id){
+        return announcementService.getAnnouncementDtoById(id);
+    }
+
 }

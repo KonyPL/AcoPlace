@@ -184,4 +184,8 @@ public class AnnouncementService {
         //@Query(value="SELECT announcement_details.announcement_id FROM announcement_details WHERE shower=?1  AND oven=?2",nativeQuery = true)
 
     }
+
+    public AnnouncementCreateDto getAnnouncementDtoById(Integer id) {
+        // pobrac odpowiedni rzeczy z tego tzn po id odpowiadajace flat details itpi zmapwaoc to na ogloszenie
+    }
 }
