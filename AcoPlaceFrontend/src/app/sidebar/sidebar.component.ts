@@ -19,7 +19,7 @@ export class SidebarComponent implements OnInit {
   }
   
   ngOnChanges(changes: SimpleChanges) { //ladnie wywoulje sie podczas zmian w authenticated
-    console.log("ng on changes sidebar CALLED---------------------------------------------------------------------------------------------------")
+    console.log("ng on changes sidebar CALLED---------------------------------------------------------------------------------------------------") // do wyrzucenia to
     this.getCurrentUser();
 
   }

@@ -7,6 +7,7 @@ import { HouseDetails } from '../model/house-details';
 import { FlatDetails } from '../model/flat-details';
 import { RoomDetails } from '../model/room-details';
 import { AnnouncementDetails } from '../model/announcement-details';
+import { AnnouncementCreateDto } from '../model/announcement-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -52,6 +53,10 @@ export class AnnouncementService {
   }
   createAnnouncementDetails(announcementDetails: AnnouncementDetails): Observable<Object> {
     return this.httpClient.post(`http://localhost:8080/addAnnouncementDetails`, announcementDetails);
+  }
+
+  createAnnouncementByDto(announcementDto: AnnouncementCreateDto): Observable<Object> {
+    return this.httpClient.post(`http://localhost:8080/addAnnouncementByDto`, announcementDto);
   }
 
   getAnnouncementWithParams(announcementParams: AnnouncementParams): Observable<Announcement[]> {

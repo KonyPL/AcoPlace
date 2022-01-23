@@ -4,6 +4,7 @@ import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AnnouncementService } from '../announcement-list/announcement.service';
 import { Announcement } from '../model/announcement';
+import { AnnouncementCreateDto } from '../model/announcement-dto';
 //import { MatSliderModule } from '@angular/material/slider';
 
 @Component({
@@ -12,7 +13,7 @@ import { Announcement } from '../model/announcement';
   styleUrls: ['./add-announcement.component.css']
 })
 export class AddAnnouncementComponent implements OnInit {
-  announcement: Announcement = new Announcement();
+  announcementDto: AnnouncementCreateDto = new AnnouncementCreateDto();
 
   constructor(private announcementService: AnnouncementService, private router: Router) { }
 
@@ -20,36 +21,21 @@ export class AddAnnouncementComponent implements OnInit {
   }
 
 
-  // const fileInput = document.getElementById('pictureInput')
+  saveAnnouncement(){
+    this.announcementService.createAnnouncementByDto(this.announcementDto).subscribe( data =>{
+      console.log("jestem w save announcement"+data);
 
-  // This is for storing the base64 strings
-  // let myFiles = {}
-  // if you expect files by default, make this disabled
-  // we will wait until the last file being processed
-  // let isFilesReady = true
-
-  // fileInput.addEventListener('change', async (event) => {
-  //   const files = event.srcElement.files;
-
-  //   console.log(files)
-  // })
-
-
-  saveAnnouncement() {
-    this.announcementService.createAnnouncement(this.announcement).subscribe(data => {
-      console.log("jestem w save announcement" + data);
-      this.goToAnnouncementList();
-    }, error => console.log(error))
-
-  }
+ 
 
   goToAnnouncementList() {
     console.log("jestem w  go to tu chce byc announcement list");
     this.router.navigate(['announcements-list']);
   }
 
-  onSubmit() {
-    console.log("THIS ANNOUNCEMENT on sumbit clicked" + this.announcement);
+
+  onSubmit(){
+    console.log("THIS ANNOUNCEMENT on sumbit clicked"+this.announcementDto);
+  
     this.saveAnnouncement();
   }
 }

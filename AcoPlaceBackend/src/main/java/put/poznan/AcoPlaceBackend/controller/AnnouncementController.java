@@ -2,13 +2,21 @@ package put.poznan.AcoPlaceBackend.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import put.poznan.AcoPlaceBackend.criteria.AnnouncementSearchCriteria;
 import put.poznan.AcoPlaceBackend.dto.AnnouncementDto;
+import put.poznan.AcoPlaceBackend.exception.ResourceNotFoundException;
 import put.poznan.AcoPlaceBackend.model.Announcement;
+import put.poznan.AcoPlaceBackend.model.AnnouncementCreateDto;
+import put.poznan.AcoPlaceBackend.repository.HouseDetailsRepository;
+import put.poznan.AcoPlaceBackend.repository.UserRepository;
+import put.poznan.AcoPlaceBackend.service.AnnouncementService;
+import put.poznan.AcoPlaceBackend.service.HouseDetailsService;
 import put.poznan.AcoPlaceBackend.model.Favourite;
 import put.poznan.AcoPlaceBackend.service.AnnouncementService;
 import put.poznan.AcoPlaceBackend.service.FavouriteService;
+
 
 import java.sql.Date;
 import java.util.List;
@@ -21,11 +29,12 @@ public class AnnouncementController {
     private final AnnouncementService announcementService;
     private final FavouriteService favouriteService;
 
-
     public AnnouncementController(AnnouncementService announcementService, FavouriteService favouriteService) {
         this.announcementService = announcementService;
         this.favouriteService = favouriteService;
     }
+
+
 
     @GetMapping("/announcement/{id}")
     public Announcement getAdvertisementById(@PathVariable Integer id){
@@ -81,6 +90,12 @@ public class AnnouncementController {
         return announcementService.getInactiveForCurrentUser();
     }
 
+
+    @PostMapping("/addAnnouncementByDto")
+    public Announcement createAnnouncementByDto(@RequestBody AnnouncementCreateDto announcementCreateDto) {
+        System.out.println("add create DTO="+announcementCreateDto.toString());
+       return announcementService.createAnnouncementByDto(announcementCreateDto);}
+      
     @GetMapping("/announcement/favourite/{id}")
     public Favourite addFavouriteAnnouncementToCurrentUser(@PathVariable Integer id){
         return  favouriteService.setFavouriteAnnouncement(id);
@@ -89,5 +104,6 @@ public class AnnouncementController {
    @GetMapping("/announcements/favourite")
     public List<Announcement> getAllFavouriteAnnouncementsIdForCurrentUser(){
         return announcementService.getFavouriteForCurrentUser();
+
     }
 }
