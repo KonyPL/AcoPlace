@@ -6,7 +6,7 @@
 
 <button (click)="convertFileToBase64()">Base64</button>
 <input [(ngModel)]="announcementId" type="number" id="announcementId">
-<button (click)="sendImages(announcementId)">Send</button>
+<button (click)="sendImages()">Send</button>
 <button (click)="getImages(announcementId)">Download</button>
 
 <div *ngFor="let base of base64">

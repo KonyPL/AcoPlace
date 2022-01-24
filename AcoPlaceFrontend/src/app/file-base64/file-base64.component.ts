@@ -48,7 +48,7 @@ export class FileBase64Component implements OnInit {
     });
   }
 
-  sendImages(announcementId: number): void {
+  sendImages(): void {
     let images: ImageStorage[] = [];
     this.base64.forEach(async (encoded: string) => {
       let imageStorage: ImageStorage = new ImageStorage();
@@ -57,7 +57,7 @@ export class FileBase64Component implements OnInit {
       images.push(imageStorage)
     });
 
-    this.imageUploadService.addImages(String(announcementId), images).subscribe()
+    this.imageUploadService.addImages(this.announcementId, images).subscribe()
   }
 
   getImages(announcementId: number): void {

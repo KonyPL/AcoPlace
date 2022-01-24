@@ -10,7 +10,7 @@ export class ImageUploadService {
     constructor(private httpClient: HttpClient) { }
 
     // Returns an observable
-    addImages(announcementId: string, images: ImageStorage[]): Observable<any> {
+    addImages(announcementId: number, images: ImageStorage[]): Observable<any> {
         return this.httpClient.post(`http://localhost:8080/announcement/${announcementId}/addImages`, images);
       }
 
