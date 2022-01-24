@@ -1,5 +1,5 @@
 export class ImageStorage {
     id: number;
-    announcement_id: number;
+    announcementId: number;
     b64image: string;
 }

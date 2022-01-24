@@ -1,11 +1,18 @@
 <label for="file">Select file
-    <img [src]="imageUrl" alt="Image Review">
+    <img [src]="imageUrl" alt="Image Preview">
 </label>
 
 <input type="file" id="file" accept="image/*" multiple hidden (change)="onSelectNewFile($any($event).target?.files)">
 
 <button (click)="convertFileToBase64()">Base64</button>
+<input [(ngModel)]="announcementId" type="number" id="announcementId">
+<button (click)="sendImages(announcementId)">Send</button>
+<button (click)="getImages(announcementId)">Download</button>
 
 <div *ngFor="let base of base64">
     <img [src]="base">
+</div>
+Downloaded
+<div *ngFor="let down of downloaded">
+    <img [src]="down">
 </div>

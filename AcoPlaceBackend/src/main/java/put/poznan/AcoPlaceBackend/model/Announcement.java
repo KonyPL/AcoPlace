@@ -9,6 +9,7 @@ import put.poznan.AcoPlaceBackend.dto.AnnouncementDto;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Getter
@@ -70,6 +71,9 @@ public class Announcement implements Serializable {
 
     @ManyToOne
     private WebUser webUser;
+
+    @OneToMany
+    private List<ImageStorage> images;
 
     @Override
     public String toString() {
