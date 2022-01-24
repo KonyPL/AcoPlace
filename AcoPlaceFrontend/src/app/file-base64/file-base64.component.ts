@@ -5,6 +5,7 @@ import { ImageCompressorService, CompressorConfig } from 'ngx-image-compressor';
 import { NgxImageCompressService } from 'ngx-image-compress';
 import { ImageStorage } from '../model/image-storage';
 import { ImageUploadService } from './image-upload.service';
+import { ActivatedRoute, Params } from '@angular/router';
 @Component({
   selector: 'app-file-base64',
   templateUrl: './file-base64.component.html',
@@ -25,11 +26,15 @@ export class FileBase64Component implements OnInit {
   downloaded: string[] = [];
 
   constructor(private sant: DomSanitizer, private imageCompressor: ImageCompressorService,
-    private imageUploadService: ImageUploadService) { }
+    private imageUploadService: ImageUploadService, private route: ActivatedRoute) { }
 
-  ngOnInit(): void {
-  }
-
+    ngOnInit(): void {
+      this.route.params.subscribe((params: Params)=> {
+        this.announcementId=+params['id'];
+      });
+    
+  
+    }
   onSelectNewFile(files: FileList): void {
     const rawFiles: File[] = [].slice.call(files);
     rawFiles.forEach(async (file: File) => {

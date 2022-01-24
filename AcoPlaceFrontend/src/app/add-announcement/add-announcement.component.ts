@@ -40,21 +40,22 @@ onSubmit(){
 saveAnnouncement(){
     this.announcementService.createAnnouncementByDto(this.announcementDto).subscribe(
       data => {
-        this.announcementId= data.id;
-        console.log("JESTEM E SAVE ANNOUNCEMENTdata id="+data.id);
+        this.announcementId= data;
+        console.log("dane po zwrocie  zposta id="+data);
+        this.addImages();
 
       }
     );
-    console.log("JESTEM E SAVE ANNOUNCEMENT");
+    console.log("JESTEM w SAVE ANNOUNCEMENT");
 
-   this.addImages();
+
 
     }
 
 
     addImages(){
       console.log("ID FROM ANNOUCEMENT CREATE DTO "+this.announcementId)
-      this.router.navigate(['addImages', this.announcementDto.id]);
+      this.router.navigate(['addImages', this.announcementId]);
     }
     /*  
     data => {
