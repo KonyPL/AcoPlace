@@ -41,6 +41,8 @@ saveAnnouncement(){
     this.announcementService.createAnnouncementByDto(this.announcementDto).subscribe(
       data => {
         this.announcementId= data.id;
+        console.log("JESTEM E SAVE ANNOUNCEMENTdata id="+data.id);
+
       }
     );
     console.log("JESTEM E SAVE ANNOUNCEMENT");
@@ -51,7 +53,7 @@ saveAnnouncement(){
 
 
     addImages(){
-      console.log("ID FROM ANNOUCEMENT CREATE DTO ")
+      console.log("ID FROM ANNOUCEMENT CREATE DTO "+this.announcementId)
       this.router.navigate(['addImages', this.announcementDto.id]);
     }
     /*  
