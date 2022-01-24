@@ -1,9 +1,8 @@
 package put.poznan.AcoPlaceBackend.controller;
 
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import put.poznan.AcoPlaceBackend.dto.UserProfileDto;
 import put.poznan.AcoPlaceBackend.model.WebUser;
 import put.poznan.AcoPlaceBackend.service.UserService;
 
@@ -30,5 +29,16 @@ public class UserController {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         System.out.println("GET USER CALLED, user name="+username);
         return userService.finByUserName(username);
+    }
+
+    @GetMapping("/userProfileDto/current")
+    public UserProfileDto getUserProfileDtoForCurrentUser(){
+        return  userService.findCurrentUserProfileDto();
+
+    }
+
+    @PostMapping("/user/editByDto")
+    public UserProfileDto updateUserByDto(@RequestBody UserProfileDto userProfileDto){
+        return  userService.updateUserByDto(userProfileDto);
     }
 }

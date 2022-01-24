@@ -79,6 +79,7 @@ import { NgxGalleryImageComponent } from '@kolkov/ngx-gallery/lib/ngx-gallery-im
 import { NgxImageCompressorModule } from 'ngx-image-compressor';
 import { NgxImageCompressService } from 'ngx-image-compress';
 import { EditAnnouncementComponent } from './edit-announcement/edit-announcement.component';
+import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.component';
 
 // import { SidebarComponent } from './sidebar/sidebar.component';
 // import { NgImageSliderModule } from 'ng-image-slider';
@@ -124,7 +125,8 @@ import { EditAnnouncementComponent } from './edit-announcement/edit-announcement
     //Koniec kodu Wodnika
     FileUploadComponent,
     FileBase64Component,
-    EditAnnouncementComponent
+    EditAnnouncementComponent,
+    UserProfileEditComponent
   ],
   imports: [
     BrowserModule,

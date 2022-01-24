@@ -18,6 +18,7 @@ import { EditAnnouncementComponent } from './edit-announcement/edit-announcement
 import { SearchAnnouncementComponent } from './search-announcement/search-announcement.component';
 import { SearchComponent } from './search/search.component';
 import { StartPageComponent } from './start-page/start-page.component';
+import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 // import { UserProfileComponent } from './user-profile/user-profile.component';
 
@@ -48,8 +49,8 @@ const appRoutes: Routes = [
     { path: 'register-success', component: RegisterSuccessComponent },
     { path: 'activeAnnouncement', component: AnnoucementActiveListComponent },
     { path: 'inactiveAnnouncement', component: AnnouncementInactiveListComponent },
-    { path: 'announcementEdit/:id', component: EditAnnouncementComponent }
-
+    { path: 'announcementEdit/:id', component: EditAnnouncementComponent },
+    { path: 'userEdit', component: UserProfileEditComponent}
 
 
 ];
