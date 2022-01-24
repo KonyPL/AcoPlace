@@ -48,12 +48,17 @@
             </div>
             <div class="form-group">
                 <label for="lastname">availableFrom</label>
-                <input [(ngModel)]="announcementDto.availableFrom" placeholder="availableFrom" name="availableFrom"
-                    class="form-control" id="availableFrom">
+                <input [(ngModel)]="announcementDto.availableFrom" placeholder="yyyy-mm-dd" name="availableFrom"
+                    [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" class="form-control date" id="dp" type="text">
             </div>
+            <!-- <mat-form-field>
+                <input matInput [matDatePicker]="myDatePicker">
+                <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+                <mat-datepicker #myDatePicker></mat-datepicker>
+            </mat-form-field> -->
 
         </div>
-        <div class="col-md-3">
+        <div class=" col-md-3">
             <Label>Address</Label>
             <div class="form-group">
                 <label for="name">Country</label>
@@ -141,7 +146,8 @@
                     </mat-checkbox>
                 </div>
                 <div class="form-group">
-                    <mat-checkbox [(ngModel)]="announcementDto.ethernetOutlets" name="ethernetOutlets">EthernetOutlets
+                    <mat-checkbox [(ngModel)]="announcementDto.ethernetOutlets" name="ethernetOutlets">
+                        EthernetOutlets
                     </mat-checkbox>
                 </div>
                 <div class="form-group">
@@ -307,7 +313,8 @@
                     </mat-checkbox>
                 </div>
                 <div class="form-group">
-                    <mat-checkbox [(ngModel)]="announcementDto.nearSupermarket" name="nearSupermarket">nearSupermarket
+                    <mat-checkbox [(ngModel)]="announcementDto.nearSupermarket" name="nearSupermarket">
+                        nearSupermarket
                     </mat-checkbox>
                 </div>
             </div>

@@ -80,7 +80,8 @@ import { NgxImageCompressorModule } from 'ngx-image-compressor';
 import { NgxImageCompressService } from 'ngx-image-compress';
 import { EditAnnouncementComponent } from './edit-announcement/edit-announcement.component';
 import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.component';
-
+import { BannerGalleryComponent } from './banner-gallery/banner-gallery.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 // import { SidebarComponent } from './sidebar/sidebar.component';
 // import { NgImageSliderModule } from 'ng-image-slider';
 // import { SidebarComponent } from './sidebar/sidebar.component';
@@ -126,9 +127,11 @@ import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.
     FileUploadComponent,
     FileBase64Component,
     EditAnnouncementComponent,
-    UserProfileEditComponent
+    UserProfileEditComponent,
+    BannerGalleryComponent
   ],
   imports: [
+    NgbModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,

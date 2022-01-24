@@ -1,432 +1,24 @@
-<div class="container ">
+<div class="row ">
 
-    <div class="row ">
-        <div class="col-md-3" style="background-color: #eee;
-        height: 100%;
-        top: 0; left: 0;">
-
-            <p style="text-align: center;">Filtry</p>
-            <div class="row">
-
-            </div>
-            <div (ngSubmit)="onSubmit()">
-
-                <div class="col-md-12" style="text-align: center; margin-top: 5%;">
-                    <form class="example-form">
-                        <mat-form-field class="full-width" appearance="fill">
-                            <mat-label>priceMin</mat-label>
-                            <input matInput placeholder="50" value="Sushi" type="number" id="priceMin"
-                                [(ngModel)]="announcementParams.priceMin" name="priceMin" required>
-                        </mat-form-field>
-                    </form>
-                </div>
-                <div class="col-md-12" style="text-align: center;">
-                    <form class="example-form">
-                        <mat-form-field class="full-width" appearance="fill">
-                            <mat-label>priceMax</mat-label>
-                            <input matInput placeholder="500" value="Sushi" type="number" id="priceMax"
-                                [(ngModel)]="announcementParams.priceMax" name="priceMax" required>
-                        </mat-form-field>
-                    </form>
-                </div>
-                <div class="col-md-12" style="text-align: center;">
-                    <form class="example-form">
-                        <mat-form-field class="full-width" appearance="fill">
-                            <mat-label>Country</mat-label>
-                            <input matInput placeholder="Poland" value="Sushi" type="text" id="country"
-                                [(ngModel)]="announcementParams.country" name="country" required>
-                        </mat-form-field>
-                    </form>
-                </div>
-                <div class="col-md-12" style="text-align: center;">
-                    <form class="example-form">
-                        <mat-form-field class="full-width" appearance="fill">
-                            <mat-label>City</mat-label>
-                            <input matInput placeholder="Poland" value="Sushi" type="text" id="city"
-                                [(ngModel)]="announcementParams.city" name="city" required>
-                        </mat-form-field>
-                    </form>
-                </div>
-                <div class="col-md-12" style="text-align: center;">
-                    <form class="example-form">
-                        <mat-form-field class="full-width" appearance="fill">
-                            <mat-label>District</mat-label>
-                            <input matInput placeholder="Poland" value="Sushi" type="text" id="district"
-                                [(ngModel)]="announcementParams.district" name="district" required>
-                        </mat-form-field>
-                    </form>
-                </div>
+    <div class="col-md-9">
 
 
 
-                <div class="col-md-12" style="text-align: center;">
-                    <form class="example-form">
-                        <mat-form-field class="full-width" appearance="fill">
-                            <mat-label>InternetSpeed</mat-label>
-                            <input matInput placeholder="Poland" value="Sushi" type="number" id="internetSpeed"
-                                [(ngModel)]="announcementParams.internetSpeed" name="internetSpeed" required>
-                        </mat-form-field>
-                    </form>
-                </div>
-                <div class="col-md-12" style="text-align: center;">
-                    <form class="example-form">
-                        <mat-form-field class="full-width" appearance="fill">
-                            <mat-label>LivingSpace</mat-label>
-                            <input matInput placeholder="Poland" value="Sushi" type="number" id="livingSpace"
-                                [(ngModel)]="announcementParams.livingSpace" name="livingSpace" required>
-                        </mat-form-field>
-                    </form>
-                </div>
-                <div class="col-md-12" style="text-align: center;">
-                    <form class="example-form">
-                        <mat-form-field class="full-width" appearance="fill">
-                            <mat-label>Property type</mat-label>
-
-                            <mat-select id="propertyType" [(ngModel)]="announcementParams.propertyType"
-                                name="propertyType" required>
-                                <mat-option value="FLAT" style="text-align: center;">FLAT</mat-option>
-                                <mat-option value="HOUSE" style="text-align: center;">HOUSE</mat-option>
-                                <mat-option value="ROOM" style="text-align: center;">ROOM</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </form>
-                </div>
-
-            </div>
-
-            <div class="justify-content-center col-md-12" style="text-align: left; padding: 0px 30px;">
-                <div class="col-md-12">
-                    <div *ngIf="announcementParams.propertyType==='FLAT'">wybrales mieszkanie
-                        <div class="row" style="background: #fff; margin: 10px 0; border-radius: 0%;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.basement" name="basement">Basement
-                                </mat-checkbox>
-                            </div>
-                        </div>
-
-                        <div class="col-md-12" style="text-align: center;">
-                            <form class="example-form">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>Balcony</mat-label>
-                                    <input matInput placeholder="Poland" value="Sushi" type="number" id="balcony"
-                                        [(ngModel)]="announcementParams.balcony" name="balcony" required>
-                                </mat-form-field>
-                            </form>
-                        </div>
-
-
-
-                        <div class="col-md-12" style="text-align: center;">
-                            <form class="example-form">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>FlatParking</mat-label>
-                                    <input matInput placeholder="Poland" value="Sushi" type="number" id="flatParking"
-                                        [(ngModel)]="announcementParams.flatParking" name="flatParking" required>
-                                </mat-form-field>
-                            </form>
-                        </div>
-                        <div class="col-md-12" style="text-align: center;">
-                            <form class="example-form">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>Floor</mat-label>
-                                    <input matInput placeholder="Poland" value="Sushi" type="number" id="floor"
-                                        [(ngModel)]="announcementParams.floor" name="floor" required>
-                                </mat-form-field>
-                            </form>
-                        </div>
-                        <div class="col-md-12" style="text-align: center;">
-                            <form class="example-form">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>Bedrooms</mat-label>
-                                    <input matInput placeholder="Poland" value="Sushi" type="number" id="bedrooms"
-                                        [(ngModel)]="announcementParams.bedrooms" name="bedrooms" required>
-                                </mat-form-field>
-                            </form>
-                        </div>
-                        <div class="col-md-12" style="text-align: center;">
-                            <form class="example-form">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>Bathrooms</mat-label>
-                                    <input matInput placeholder="Poland" value="Sushi" type="number" id="bathrooms"
-                                        [(ngModel)]="announcementParams.bathrooms" name="bathrooms" required>
-                                </mat-form-field>
-                            </form>
-                        </div>
-
-                    </div>
-                    <div *ngIf="announcementParams.propertyType==='HOUSE'">wybrales DOM
-
-                        <div class="col-md-12" style="text-align: center;">
-                            <form class="example-form">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>Balcony</mat-label>
-                                    <input matInput placeholder="Poland" value="Sushi" type="number" id="balcony"
-                                        [(ngModel)]="announcementParams.balcony" name="balcony" required>
-                                </mat-form-field>
-                            </form>
-                        </div>
-                        <div class="col-md-12" style="text-align: center;">
-                            <form class="example-form">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>LotSize</mat-label>
-                                    <input matInput placeholder="Poland" value="Sushi" type="number" id="lotSize"
-                                        [(ngModel)]="announcementParams.lotSize" name="lotSize" required>
-                                </mat-form-field>
-                            </form>
-                        </div>
-
-                        <div class="col-md-12" style="text-align: center;">
-                            <form class="example-form">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>Floors</mat-label>
-                                    <input matInput placeholder="Poland" value="Sushi" type="number" id="floors"
-                                        [(ngModel)]="announcementParams.floors" name="floors" required>
-                                </mat-form-field>
-                            </form>
-                        </div>
-                        <div class="col-md-12" style="text-align: center;">
-                            <form class="example-form">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>Bedrooms</mat-label>
-                                    <input matInput placeholder="Poland" value="Sushi" type="number" id="bedrooms"
-                                        [(ngModel)]="announcementParams.bedrooms" name="bedrooms" required>
-                                </mat-form-field>
-                            </form>
-                        </div>
-                        <div class="col-md-12" style="text-align: center;">
-                            <form class="example-form">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>Bathrooms</mat-label>
-                                    <input matInput placeholder="Poland" value="Sushi" type="number" id="bathrooms"
-                                        [(ngModel)]="announcementParams.bathrooms" name="bathrooms" required>
-                                </mat-form-field>
-                            </form>
-                        </div>
-
-                        <div class="row" style="background: #fff; margin: 10px 0; border-radius: 0%;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.basement" name="basement">Basement
-                                </mat-checkbox>
-                            </div>
-                        </div>
-
-
-                        <div class="row" style="background: #fff; margin: 10px 0; border-radius: 0%;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.parking" name="parking">Parking
-                                </mat-checkbox>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div *ngIf="announcementParams.propertyType==='ROOM'">wybrales POKOJ
-                        <div class="col-md-12" style="text-align: center;">
-                            <form class="example-form">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>Floor</mat-label>
-                                    <input matInput placeholder="Poland" value="Sushi" type="number" id="floor"
-                                        [(ngModel)]="announcementParams.floor" name="floor" required>
-                                </mat-form-field>
-                            </form>
-                        </div>
-
-                        <div class="col-md-12" style="text-align: center;">
-                            <form class="example-form">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>BedsInRoom</mat-label>
-                                    <input matInput placeholder="Poland" value="Sushi" type="number" id="bedsInRoom"
-                                        [(ngModel)]="announcementParams.bedsInRoom" name="bedsInRoom" required>
-                                </mat-form-field>
-                            </form>
-                        </div>
-                        <div class="col-md-12" style="text-align: center;">
-                            <form class="example-form">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>NumberOfFlatmates</mat-label>
-                                    <input matInput placeholder="Poland" value="Sushi" type="number"
-                                        id="numberOfFlatmates" [(ngModel)]="announcementParams.numberOfFlatmates"
-                                        name="numberOfFlatmates" required>
-                                </mat-form-field>
-                            </form>
-                        </div>
-
-                        <div class="col-md-12" style="text-align: center;">
-                            <form class="example-form">
-                                <mat-form-field class="full-width" appearance="fill">
-                                    <mat-label>Bathrooms</mat-label>
-                                    <input matInput placeholder="Poland" value="Sushi" type="number" id="bathrooms"
-                                        [(ngModel)]="announcementParams.bathrooms" name="bathrooms" required>
-                                </mat-form-field>
-                            </form>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <form (ngSubmit)="onSubmit()">
-                <div class="row">
-                    <div class=" row" style="font-size: 15px; padding: 20px 10px 10px 10px;">
-                        Cechy/Wyposażenie:
-                    </div>
-                    <div class="justify-content-center col-md-12" style="text-align: left; padding: 0px 30px;">
-
-                        <div class="row" style="background: #fff; margin: 10px 0; border-radius: 0%;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.bath" name="bath">Bath</mat-checkbox>
-                            </div>
-                        </div>
-                        <div class="row" style="background: #fff; margin: 10px 0;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.shower" name="shower"
-                                    class="example-margin">
-                                    Shower</mat-checkbox>
-                            </div>
-                        </div>
-                        <div class="row" style="background: #fff; margin: 10px 0;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.microwave" name="microwave">Microwave
-                                </mat-checkbox>
-                            </div>
-                        </div>
-                        <div class="row" style="background: #fff; margin: 10px 0;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-
-                                <mat-checkbox [(ngModel)]="announcementParams.oven" name="oven">
-                                    Oven
-                                </mat-checkbox>
-                            </div>
-                        </div>
-                        <div class="row" style="background: #fff; margin: 10px 0;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.elevator" name="elevator">Elevator
-                                </mat-checkbox>
-                            </div>
-                        </div>
-                        <div class="row" style="background: #fff; margin: 10px 0;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.internet" name="internet">Internet
-                                </mat-checkbox>
-                            </div>
-                        </div>
-                        <div class="row" style="background: #fff; margin: 10px 0;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.wifi" name="wifi">WiFi</mat-checkbox>
-                            </div>
-                        </div>
-                        <div class="row" style="background: #fff; margin: 10px 0;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.ethernetOutlets" name="ethernetOutlets">
-                                    EthernetOutlets</mat-checkbox>
-                            </div>
-                        </div>
-                        <div class="row" style="background: #fff; margin: 10px 0;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.tv" name="tv">TV</mat-checkbox>
-                            </div>
-                        </div>
-                        <div class="row" style="background: #fff; margin: 10px 0;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.clothesDryer" name="clothesDryer">
-                                    ClothesDryer</mat-checkbox>
-                            </div>
-                        </div>
-                        <div class="row" style="background: #fff; margin: 10px 0 10px 0;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.dishwasher" name="dishwasher">Dishwasher
-                                </mat-checkbox>
-                            </div>
-                        </div>
-                        <div class="row" style="background: #fff; margin: 10px 0 10px 0;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.petsAllowed" name="petsAllowed">
-                                    PetsAllowed</mat-checkbox>
-                            </div>
-                        </div>
-                        <div class="row" style="background: #fff; margin: 10px 0 20px 0;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.fenced" name="fenced">Fenced
-                                </mat-checkbox>
-                            </div>
-                        </div>
-
-
-
-                    </div>
-                    <div class=" row" style="font-size: 15px; padding: 10px 10px 10px 10px;">
-                        Położenie:
-                    </div>
-                    <div class="justify-content-center col-md-12" style="text-align: left; padding: 0px 30px;">
-                        <div class="row" style="background: #fff; margin: 10px 0;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.nearPark" name="nearPark">nearPark
-                                </mat-checkbox>
-                            </div>
-                        </div>
-                        <div class="row" style="background: #fff; margin: 10px 0;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.nearTram" name="nearTram">nearTram
-                                </mat-checkbox>
-                            </div>
-                        </div>
-                        <div class="row" style="background: #fff; margin: 10px 0;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.nearBus" name="nearBus">nearBus
-                                </mat-checkbox>
-                            </div>
-                        </div>
-                        <div class="row" style="background: #fff; margin: 10px 0;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.nearShoppingMall" name="nearShoppingMall">
-                                    nearShoppingMall</mat-checkbox>
-                            </div>
-                        </div>
-                        <div class="row" style="background: #fff; margin: 10px 0;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.nearBakery" name="nearBakery">nearBakery
-                                </mat-checkbox>
-                            </div>
-                        </div>
-                        <div class="row" style="background: #fff; margin: 10px 0;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.nearFoodMarket" name="nearFoodMarket">
-                                    nearFoodMarket</mat-checkbox>
-                            </div>
-                        </div>
-                        <div class="row" style="background: #fff; margin: 10px 0 20px 0;">
-                            <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                                <mat-checkbox [(ngModel)]="announcementParams.nearSupermarket" name="nearSupermarket">
-                                    nearSupermarket</mat-checkbox>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit">SEARCH</button>
-                    <button>Reset</button>
-
-                </div>
-            </form>
-
-        </div>
         <div class="row">
-            <div class="col-md-9" style="background-color: #eee;">
+            <div class="col-md-12">
 
+                <div class="card-header card-header-danger">
+                    <h2 class="card-title" style="text-align: center;">Announcement list</h2>
+                </div>
+                <table>
 
-
-                <div class="row">
-                    <div class="col-md-12">
-
-                        <div class="card-header card-header-danger">
-                            <h2 class="card-title" style="text-align: center;">Announcement list</h2>
-                        </div>
-                        <table>
-
-                        </table>
-                        <!-- <mat-form-field>
+                </table>
+                <!-- <mat-form-field>
                             <mat-label>
                                 <input manInput placeholder="example">
                             </mat-label>
                         </mat-form-field> -->
-                        <a *ngFor="let announcement of announcements" (click)="showAnnouncementById(announcement.id)" class="list-group-item clearfix">
+                <a *ngFor="let announcement of announcements" (click)="showAnnouncementById(announcement.id)" class="list-group-item clearfix">
                     <div class="pull-left" style="padding-left: 50px;">
                         <h4 class="list-group-item-heading">{{ announcement.title }}</h4>
                         <p class="list-group-item-text">{{ announcement.city }}, {{announcement.district}}, {{announcement.state}} </p>
@@ -436,12 +28,415 @@
                         <p class="list-group-item-text pull-right">{{ announcement.price }} {{announcement.currency}} </p>
                     </div>
                 </a>
-                    </div>
-                </div>
-
-                <!-- TUTAJ WKLEIC TABELE Z NOT!!!!!!! -->
-
             </div>
         </div>
+
+        <!-- TUTAJ WKLEIC TABELE Z NOT!!!!!!! -->
+
     </div>
+
+    <div class="col-md-3">
+
+        <p style="text-align: center;">Filtry</p>
+        <div class="row">
+
+        </div>
+        <div (ngSubmit)="onSubmit()">
+
+            <div class="col-md-12" style="text-align: center; margin-top: 5%;">
+                <form class="example-form">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>priceMin</mat-label>
+                        <input matInput placeholder="50" value="Sushi" type="number" id="priceMin"
+                            [(ngModel)]="announcementParams.priceMin" name="priceMin" required>
+                    </mat-form-field>
+                </form>
+            </div>
+            <div class="col-md-12" style="text-align: center;">
+                <form class="example-form">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>priceMax</mat-label>
+                        <input matInput placeholder="500" value="Sushi" type="number" id="priceMax"
+                            [(ngModel)]="announcementParams.priceMax" name="priceMax" required>
+                    </mat-form-field>
+                </form>
+            </div>
+            <div class="col-md-12" style="text-align: center;">
+                <form class="example-form">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Country</mat-label>
+                        <input matInput placeholder="Poland" value="Sushi" type="text" id="country"
+                            [(ngModel)]="announcementParams.country" name="country" required>
+                    </mat-form-field>
+                </form>
+            </div>
+            <div class="col-md-12" style="text-align: center;">
+                <form class="example-form">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>City</mat-label>
+                        <input matInput placeholder="Poland" value="Sushi" type="text" id="city"
+                            [(ngModel)]="announcementParams.city" name="city" required>
+                    </mat-form-field>
+                </form>
+            </div>
+            <div class="col-md-12" style="text-align: center;">
+                <form class="example-form">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>District</mat-label>
+                        <input matInput placeholder="Poland" value="Sushi" type="text" id="district"
+                            [(ngModel)]="announcementParams.district" name="district" required>
+                    </mat-form-field>
+                </form>
+            </div>
+
+
+
+            <div class="col-md-12" style="text-align: center;">
+                <form class="example-form">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>InternetSpeed</mat-label>
+                        <input matInput placeholder="Poland" value="Sushi" type="number" id="internetSpeed"
+                            [(ngModel)]="announcementParams.internetSpeed" name="internetSpeed" required>
+                    </mat-form-field>
+                </form>
+            </div>
+            <div class="col-md-12" style="text-align: center;">
+                <form class="example-form">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>LivingSpace</mat-label>
+                        <input matInput placeholder="Poland" value="Sushi" type="number" id="livingSpace"
+                            [(ngModel)]="announcementParams.livingSpace" name="livingSpace" required>
+                    </mat-form-field>
+                </form>
+            </div>
+            <div class="col-md-12" style="text-align: center;">
+                <form class="example-form">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Property type</mat-label>
+
+                        <mat-select id="propertyType" [(ngModel)]="announcementParams.propertyType" name="propertyType"
+                            required>
+                            <mat-option value="FLAT" style="text-align: center;">FLAT</mat-option>
+                            <mat-option value="HOUSE" style="text-align: center;">HOUSE</mat-option>
+                            <mat-option value="ROOM" style="text-align: center;">ROOM</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="justify-content-center col-md-12" style="text-align: left; padding: 0px 30px;">
+            <div class="col-md-12">
+                <div *ngIf="announcementParams.propertyType==='FLAT'">wybrales mieszkanie
+                    <div class="row">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                            <mat-checkbox [(ngModel)]="announcementParams.basement" name="basement">Basement
+                            </mat-checkbox>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12" style="text-align: center;">
+                        <form class="example-form">
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Balcony</mat-label>
+                                <input matInput placeholder="Poland" value="Sushi" type="number" id="balcony"
+                                    [(ngModel)]="announcementParams.balcony" name="balcony" required>
+                            </mat-form-field>
+                        </form>
+                    </div>
+
+
+
+                    <div class="col-md-12" style="text-align: center;">
+                        <form class="example-form">
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>FlatParking</mat-label>
+                                <input matInput placeholder="Poland" value="Sushi" type="number" id="flatParking"
+                                    [(ngModel)]="announcementParams.flatParking" name="flatParking" required>
+                            </mat-form-field>
+                        </form>
+                    </div>
+                    <div class="col-md-12" style="text-align: center;">
+                        <form class="example-form">
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Floor</mat-label>
+                                <input matInput placeholder="Poland" value="Sushi" type="number" id="floor"
+                                    [(ngModel)]="announcementParams.floor" name="floor" required>
+                            </mat-form-field>
+                        </form>
+                    </div>
+                    <div class="col-md-12" style="text-align: center;">
+                        <form class="example-form">
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Bedrooms</mat-label>
+                                <input matInput placeholder="Poland" value="Sushi" type="number" id="bedrooms"
+                                    [(ngModel)]="announcementParams.bedrooms" name="bedrooms" required>
+                            </mat-form-field>
+                        </form>
+                    </div>
+                    <div class="col-md-12" style="text-align: center;">
+                        <form class="example-form">
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Bathrooms</mat-label>
+                                <input matInput placeholder="Poland" value="Sushi" type="number" id="bathrooms"
+                                    [(ngModel)]="announcementParams.bathrooms" name="bathrooms" required>
+                            </mat-form-field>
+                        </form>
+                    </div>
+
+                </div>
+                <div *ngIf="announcementParams.propertyType==='HOUSE'">wybrales DOM
+
+                    <div class="col-md-12" style="text-align: center;">
+                        <form class="example-form">
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Balcony</mat-label>
+                                <input matInput placeholder="Poland" value="Sushi" type="number" id="balcony"
+                                    [(ngModel)]="announcementParams.balcony" name="balcony" required>
+                            </mat-form-field>
+                        </form>
+                    </div>
+                    <div class="col-md-12" style="text-align: center;">
+                        <form class="example-form">
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>LotSize</mat-label>
+                                <input matInput placeholder="Poland" value="Sushi" type="number" id="lotSize"
+                                    [(ngModel)]="announcementParams.lotSize" name="lotSize" required>
+                            </mat-form-field>
+                        </form>
+                    </div>
+
+                    <div class="col-md-12" style="text-align: center;">
+                        <form class="example-form">
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Floors</mat-label>
+                                <input matInput placeholder="Poland" value="Sushi" type="number" id="floors"
+                                    [(ngModel)]="announcementParams.floors" name="floors" required>
+                            </mat-form-field>
+                        </form>
+                    </div>
+                    <div class="col-md-12" style="text-align: center;">
+                        <form class="example-form">
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Bedrooms</mat-label>
+                                <input matInput placeholder="Poland" value="Sushi" type="number" id="bedrooms"
+                                    [(ngModel)]="announcementParams.bedrooms" name="bedrooms" required>
+                            </mat-form-field>
+                        </form>
+                    </div>
+                    <div class="col-md-12" style="text-align: center;">
+                        <form class="example-form">
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Bathrooms</mat-label>
+                                <input matInput placeholder="Poland" value="Sushi" type="number" id="bathrooms"
+                                    [(ngModel)]="announcementParams.bathrooms" name="bathrooms" required>
+                            </mat-form-field>
+                        </form>
+                    </div>
+
+                    <div class="row" style=" margin: 10px 0; border-radius: 0%;">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                            <mat-checkbox [(ngModel)]="announcementParams.basement" name="basement">Basement
+                            </mat-checkbox>
+                        </div>
+                    </div>
+
+
+                    <div class="row" style=" margin: 10px 0; border-radius: 0%;">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                            <mat-checkbox [(ngModel)]="announcementParams.parking" name="parking">Parking
+                            </mat-checkbox>
+                        </div>
+                    </div>
+
+                </div>
+                <div *ngIf="announcementParams.propertyType==='ROOM'">wybrales POKOJ
+                    <div class="col-md-12" style="text-align: center;">
+                        <form class="example-form">
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Floor</mat-label>
+                                <input matInput placeholder="Poland" value="Sushi" type="number" id="floor"
+                                    [(ngModel)]="announcementParams.floor" name="floor" required>
+                            </mat-form-field>
+                        </form>
+                    </div>
+
+                    <div class="col-md-12" style="text-align: center;">
+                        <form class="example-form">
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>BedsInRoom</mat-label>
+                                <input matInput placeholder="Poland" value="Sushi" type="number" id="bedsInRoom"
+                                    [(ngModel)]="announcementParams.bedsInRoom" name="bedsInRoom" required>
+                            </mat-form-field>
+                        </form>
+                    </div>
+                    <div class="col-md-12" style="text-align: center;">
+                        <form class="example-form">
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>NumberOfFlatmates</mat-label>
+                                <input matInput placeholder="Poland" value="Sushi" type="number" id="numberOfFlatmates"
+                                    [(ngModel)]="announcementParams.numberOfFlatmates" name="numberOfFlatmates"
+                                    required>
+                            </mat-form-field>
+                        </form>
+                    </div>
+
+                    <div class="col-md-12" style="text-align: center;">
+                        <form class="example-form">
+                            <mat-form-field class="full-width" appearance="fill">
+                                <mat-label>Bathrooms</mat-label>
+                                <input matInput placeholder="Poland" value="Sushi" type="number" id="bathrooms"
+                                    [(ngModel)]="announcementParams.bathrooms" name="bathrooms" required>
+                            </mat-form-field>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <form (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class=" row" style="font-size: 15px; padding: 20px 10px 10px 10px;">
+                    Cechy/Wyposażenie:
+                </div>
+                <div class="justify-content-center col-md-12" style="text-align: left; padding: 0px 30px;">
+
+                    <div class="row">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                            <mat-checkbox [(ngModel)]="announcementParams.bath" name="bath">Bath</mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                            <mat-checkbox [(ngModel)]="announcementParams.shower" name="shower" class="example-margin">
+                                Shower</mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                            <mat-checkbox [(ngModel)]="announcementParams.microwave" name="microwave">Microwave
+                            </mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+
+                            <mat-checkbox [(ngModel)]="announcementParams.oven" name="oven">
+                                Oven
+                            </mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                            <mat-checkbox [(ngModel)]="announcementParams.elevator" name="elevator">Elevator
+                            </mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                            <mat-checkbox [(ngModel)]="announcementParams.internet" name="internet">Internet
+                            </mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                            <mat-checkbox [(ngModel)]="announcementParams.wifi" name="wifi">WiFi</mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                            <mat-checkbox [(ngModel)]="announcementParams.ethernetOutlets" name="ethernetOutlets">
+                                EthernetOutlets</mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                            <mat-checkbox [(ngModel)]="announcementParams.tv" name="tv">TV</mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                            <mat-checkbox [(ngModel)]="announcementParams.clothesDryer" name="clothesDryer">
+                                ClothesDryer</mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                            <mat-checkbox [(ngModel)]="announcementParams.dishwasher" name="dishwasher">Dishwasher
+                            </mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                            <mat-checkbox [(ngModel)]="announcementParams.petsAllowed" name="petsAllowed">
+                                PetsAllowed</mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                            <mat-checkbox [(ngModel)]="announcementParams.fenced" name="fenced">Fenced
+                            </mat-checkbox>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class=" row">
+                    Położenie:
+                </div>
+                <div class="justify-content-center col-md-12" style="text-align: left; padding: 0px 30px;">
+                    <div class="row">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                            <mat-checkbox [(ngModel)]="announcementParams.nearPark" name="nearPark">nearPark
+                            </mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                            <mat-checkbox [(ngModel)]="announcementParams.nearTram" name="nearTram">nearTram
+                            </mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                            <mat-checkbox [(ngModel)]="announcementParams.nearBus" name="nearBus">nearBus
+                            </mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                            <mat-checkbox [(ngModel)]="announcementParams.nearShoppingMall" name="nearShoppingMall">
+                                nearShoppingMall</mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                            <mat-checkbox [(ngModel)]="announcementParams.nearBakery" name="nearBakery">nearBakery
+                            </mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                            <mat-checkbox [(ngModel)]="announcementParams.nearFoodMarket" name="nearFoodMarket">
+                                nearFoodMarket</mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                            <mat-checkbox [(ngModel)]="announcementParams.nearSupermarket" name="nearSupermarket">
+                                nearSupermarket</mat-checkbox>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit">SEARCH</button>
+                <button>Reset</button>
+
+            </div>
+        </form>
+
+    </div>
+
 </div>
