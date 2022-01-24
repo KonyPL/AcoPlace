@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
-    <title>All announcements</title>
+    <title>All inactive announcements</title>
 </head>
 <style>
     .header {
@@ -25,20 +25,6 @@
 
     /* Darker background on mouse-over */
     .btn:hover {
-        background-color: #068550;
-    }
-
-    .addbutn {
-        background-color: #04AA6D;
-        border: none;
-        color: white;
-        padding: 20px 28px;
-        font-size: 28px;
-        cursor: pointer;
-    }
-
-    /* Darker background on mouse-over */
-    .addbutn:hover {
         background-color: #068550;
     }
     #announcements {
@@ -94,22 +80,16 @@
 <body>
 <div class="topnav">
     <a th:href="@{/logout}"> Sign out </a>
-    <a class="active "th:href="@{/allAnnouncements}"> All announcements </a>
+    <a th:href="@{/allAnnouncements}"> All announcements </a>
     <a th:href="@{/findByTitle}"> Find by title </a>
     <a th:href="@{/findById}"> Find by ID </a>
     <a th:href="@{/allReportedAnnouncements}"> Reported </a>
-    <a th:href="@{/allInactiveAnnouncements}"> Inactive </a>
-    <a th:href="@{/allEditedByUser}"> EditedByUser</a>
-    <a th:href="@{/allEditedByUserAndReported}"> EditedByUserAndReported</a>
+    <a class="active" th:href="@{/allInactiveAnnouncements}"> Inactive </a>
 
 </div>
 
 <div class="header">
-    <h1>All announcements</h1>
-</div>
-<div align = "center">
-    </br>
-    <a th:href="@{'add'}"><button class="addbutn"><i class="fa fa-plus-square"></i> Add new announcement</button></a>
+    <h1>All EDITED BY USER  AMD REPORTED announcements</h1>
 </div>
 
 <div align="center">
@@ -131,7 +111,7 @@
             <td th:text="${announcement.getTitle()}">Title</td>
 
             <td>
-                <a th:href="@{'/announcement/showById/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-info"></i> Show</button></a>
+                <a th:href="@{'/announcement/inactive/showById/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-info"></i> Show</button></a>
             </td>
             <td>
                 <a th:href="@{'/announcement/editById/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-pencil-square-o"></i> Edit</button></a>

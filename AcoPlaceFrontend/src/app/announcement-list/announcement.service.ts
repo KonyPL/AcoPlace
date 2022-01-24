@@ -59,6 +59,10 @@ export class AnnouncementService {
     return this.httpClient.post(`http://localhost:8080/addAnnouncementByDto`, announcementDto);
   }
 
+  updateAnnouncementByDto(announcementDto: AnnouncementCreateDto): Observable<Object> {
+    return this.httpClient.post(`http://localhost:8080/updateAnnouncementByDto`, announcementDto);
+  }
+
   getAnnouncementWithParams(announcementParams: AnnouncementParams): Observable<Announcement[]> {
 
     let params = new HttpParams();
@@ -155,4 +159,8 @@ export class AnnouncementService {
     return this.httpClient.get<Announcement[]>("http://localhost:8080/announcements/favourite");
   }
 
+
+  getAnnouncementCreateDtoById(id: number):Observable<AnnouncementCreateDto> {
+    return this.httpClient.get<AnnouncementCreateDto>("http://localhost:8080/announcement/announcementDto/"+id);
+  }
 }

@@ -41,5 +41,8 @@ export class AnnouncementDetailsComponent implements OnInit {//TODO ZMIANA NAZWY
      )
 
     }
-
+ 
+    editAnnouncement(){
+      this.router.navigate(['announcementEdit', this.id]);
+    }
 }
