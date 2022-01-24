@@ -12,7 +12,9 @@ public class ImageStorage {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Integer id;
-        private Integer announcementId;
+        @ManyToOne(fetch = FetchType.LAZY, optional = false)
+        @JoinColumn(name = "announcementId", nullable = false)
+        private Announcement announcement;
         @Column(columnDefinition="TEXT")
         private String b64image;
 }
