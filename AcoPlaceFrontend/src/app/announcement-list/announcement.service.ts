@@ -55,7 +55,7 @@ export class AnnouncementService {
     return this.httpClient.post(`http://localhost:8080/addAnnouncementDetails`, announcementDetails);
   }
 
-  createAnnouncementByDto(announcementDto: AnnouncementCreateDto): Observable<Object> {
+  createAnnouncementByDto(announcementDto: AnnouncementCreateDto): Observable<any> {
     return this.httpClient.post(`http://localhost:8080/addAnnouncementByDto`, announcementDto);
   }
 

@@ -14,6 +14,8 @@ import { AnnouncementCreateDto } from '../model/announcement-dto';
 })
 export class AddAnnouncementComponent implements OnInit {
   announcementDto: AnnouncementCreateDto = new AnnouncementCreateDto();
+  announcementId: number;
+
 
   constructor(private announcementService: AnnouncementService, private router: Router) { }
 
@@ -29,18 +31,38 @@ onSubmit(){
 }
 
 
-  goToAnnouncementList() {
+ /* goToAnnouncementList() {
     console.log("jestem w  go to tu chce byc announcement list");
     this.router.navigate(['announcements-list']);
-  }
+  }*/
 
 
 saveAnnouncement(){
-    this.announcementService.createAnnouncementByDto(this.announcementDto).subscribe();
+    this.announcementService.createAnnouncementByDto(this.announcementDto).subscribe(
+      data => {
+        this.announcementId= data.id;
+      }
+    );
     console.log("JESTEM E SAVE ANNOUNCEMENT");
-    this.goToAnnouncementList(); // mozna przekierowac gdzies indziej ale tak wstepnie 
+
+   this.addImages();
+
     }
-    
+
+
+    addImages(){
+      console.log("ID FROM ANNOUCEMENT CREATE DTO ")
+      this.router.navigate(['addImages', this.announcementDto.id]);
+    }
+    /*  
+    data => {
+        this.announcementsDetailsList = data;
+        console.log("DATA from endpoint" + data);
+      }
+    */
 
 }
+
+
+
 
