@@ -50,4 +50,12 @@ public class AnnouncementService {
     public List<Announcement> getAllInactiveReportedAnnouncements() {
         return announcementRepository.findAllInactive();
     }
+
+    public List<Announcement> getAllEditedByUser() {
+       return announcementRepository.findAllEditedByUser();
+    }
+
+    public List<Announcement> getAllEditedByUserAndReported() {
+        return announcementRepository.findAllEditedByUserAndReportedOrEdited();
+    }
 }

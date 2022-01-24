@@ -13,10 +13,12 @@ import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterSuccessComponent } from './auth/register-success/register-success.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { EditAnnouncementComponent } from './edit-announcement/edit-announcement.component';
 //Koniec kodu Wodnika
 import { SearchAnnouncementComponent } from './search-announcement/search-announcement.component';
 import { SearchComponent } from './search/search.component';
 import { StartPageComponent } from './start-page/start-page.component';
+import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 // import { UserProfileComponent } from './user-profile/user-profile.component';
 
@@ -46,7 +48,9 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register-success', component: RegisterSuccessComponent },
     { path: 'activeAnnouncement', component: AnnoucementActiveListComponent },
-    { path: 'inactiveAnnouncement', component: AnnouncementInactiveListComponent }
+    { path: 'inactiveAnnouncement', component: AnnouncementInactiveListComponent },
+    { path: 'announcementEdit/:id', component: EditAnnouncementComponent },
+    { path: 'userEdit', component: UserProfileEditComponent}
 
 
 ];

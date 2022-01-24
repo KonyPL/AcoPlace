@@ -192,8 +192,24 @@ public class AnnouncementController {
     public String active(@PathVariable(name = "id") int id) {
         Announcement announcement = announcementService.findById(id);
         announcement.setActive(true);
+        announcement.setEditedByUser(false);
         announcementService.saveAnnouncement(announcement);
         return "redirect:/allInactiveAnnouncements";
+    }
+
+
+    @RequestMapping("/allEditedByUser")
+    public String viewEditedByUserAnnouncements(Model model) {
+        List<Announcement> listAnnouncements = announcementService.getAllEditedByUser();
+        model.addAttribute("listAnnouncements", listAnnouncements);
+        return "all_edited_announcements";
+    }
+
+    @RequestMapping("/allEditedByUserAndReported")
+    public String viewEditedByUserAndReportedAnnouncements(Model model) {
+        List<Announcement> listAnnouncements = announcementService.getAllEditedByUserAndReported();// TODO porzadnie zrobic
+        model.addAttribute("listAnnouncements", listAnnouncements);
+        return "all_edited_reported_announcements";
     }
 
 }

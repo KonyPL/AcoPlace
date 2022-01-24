@@ -1,15 +1,15 @@
+import { i18nMetaToJSDoc } from '@angular/compiler/src/render3/view/i18n/meta';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserDetails } from '../model/user-details';
 import { UserProfileDto } from '../model/user-profile-dto';
 import { UserService } from '../sidebar/user.service';
 
 @Component({
-  selector: 'app-user-profile',
-  templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.css']
+  selector: 'app-user-profile-edit',
+  templateUrl: './user-profile-edit.component.html',
+  styleUrls: ['./user-profile-edit.component.css']
 })
-export class UserProfileComponent implements OnInit {
+export class UserProfileEditComponent implements OnInit {
 
   userProfileDto: UserProfileDto;
 
@@ -18,7 +18,6 @@ export class UserProfileComponent implements OnInit {
   ngOnInit(): void {
     this.getUserDetails();
   }
-
 
 
   public getUserDetails(){
@@ -30,8 +29,17 @@ export class UserProfileComponent implements OnInit {
     )  }
 
 
-    editUser(){
-      this.router.navigate(['userEdit']);
+    goToUserProfile() {
+      console.log("jestem w  go tp user profie");
+      this.router.navigate(['user-profile']);
     }
+
+    onEdit(){
+      this.userService.updateUserByDto(this.userProfileDto).subscribe();
+      this.goToUserProfile();
+
+    }
+
+
 
 }
