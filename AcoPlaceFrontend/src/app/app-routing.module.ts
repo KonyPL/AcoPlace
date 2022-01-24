@@ -14,6 +14,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterSuccessComponent } from './auth/register-success/register-success.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { EditAnnouncementComponent } from './edit-announcement/edit-announcement.component';
+import { FileBase64Component } from './file-base64/file-base64.component';
 //Koniec kodu Wodnika
 import { SearchAnnouncementComponent } from './search-announcement/search-announcement.component';
 import { SearchComponent } from './search/search.component';
@@ -50,7 +51,9 @@ const appRoutes: Routes = [
     { path: 'activeAnnouncement', component: AnnoucementActiveListComponent },
     { path: 'inactiveAnnouncement', component: AnnouncementInactiveListComponent },
     { path: 'announcementEdit/:id', component: EditAnnouncementComponent },
-    { path: 'userEdit', component: UserProfileEditComponent}
+    { path: 'userEdit', component: UserProfileEditComponent}, 
+    { path: 'addImages/:id', component: FileBase64Component }
+
 
 
 ];
