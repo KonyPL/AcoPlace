@@ -62,6 +62,7 @@ public class Announcement implements Serializable {
     private String reportedTime;
     private Boolean edited;
     private Boolean active;
+    private Boolean editedByUser;
 
 
     @Temporal(TemporalType.DATE)

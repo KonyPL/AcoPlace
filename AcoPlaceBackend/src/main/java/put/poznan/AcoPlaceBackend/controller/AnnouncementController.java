@@ -95,7 +95,15 @@ public class AnnouncementController {
     public Announcement createAnnouncementByDto(@RequestBody AnnouncementCreateDto announcementCreateDto) {
         System.out.println("add create DTO="+announcementCreateDto.toString());
        return announcementService.createAnnouncementByDto(announcementCreateDto);}
-      
+
+
+    //updateAnnouncementByDto
+
+    @PostMapping("/updateAnnouncementByDto")
+    public Announcement updateAnnouncementByDto(@RequestBody AnnouncementCreateDto announcementCreateDto) {
+        System.out.println("add EDIT DTO="+announcementCreateDto.toString());
+        return announcementService.updateAnnouncementByDto(announcementCreateDto);}
+
     @GetMapping("/announcement/favourite/{id}")
     public Favourite addFavouriteAnnouncementToCurrentUser(@PathVariable Integer id){
         return  favouriteService.setFavouriteAnnouncement(id);
@@ -106,4 +114,10 @@ public class AnnouncementController {
         return announcementService.getFavouriteForCurrentUser();
 
     }
+
+    @GetMapping("/announcement/announcementDto/{id}")
+    public AnnouncementCreateDto getAdvertisementDtoById(@PathVariable Integer id){
+        return announcementService.getAnnouncementDtoById(id);
+    }
+
 }

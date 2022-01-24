@@ -38,7 +38,9 @@ onSubmit(){
 saveAnnouncement(){
     this.announcementService.createAnnouncementByDto(this.announcementDto).subscribe();
     console.log("JESTEM E SAVE ANNOUNCEMENT");
+    this.goToAnnouncementList(); // mozna przekierowac gdzies indziej ale tak wstepnie 
     }
+    
 
 }
 

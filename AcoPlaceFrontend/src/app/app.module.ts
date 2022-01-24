@@ -78,6 +78,8 @@ import { FileBase64Component } from './file-base64/file-base64.component';
 import { NgxGalleryImageComponent } from '@kolkov/ngx-gallery/lib/ngx-gallery-image/ngx-gallery-image.component';
 import { NgxImageCompressorModule } from 'ngx-image-compressor';
 import { NgxImageCompressService } from 'ngx-image-compress';
+import { EditAnnouncementComponent } from './edit-announcement/edit-announcement.component';
+import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.component';
 
 // import { SidebarComponent } from './sidebar/sidebar.component';
 // import { NgImageSliderModule } from 'ng-image-slider';
@@ -122,7 +124,9 @@ import { NgxImageCompressService } from 'ngx-image-compress';
     AnnouncementFavouriteListComponent,
     //Koniec kodu Wodnika
     FileUploadComponent,
-    FileBase64Component
+    FileBase64Component,
+    EditAnnouncementComponent,
+    UserProfileEditComponent
   ],
   imports: [
     BrowserModule,
