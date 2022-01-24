@@ -1,4 +1,4 @@
-<div class="component">
+<div class="component" style="padding-left: 20px;">
     <div *ngIf="announcement.edited==true"> ANNOUNCEMENT EDITED </div>
     <div *ngIf="announcement.reported==true"> ANNOUNCEMENT reported by </div>
 
@@ -55,16 +55,17 @@
             </app-announcement-details-details>
         </div>
         <div class="col-md-4" style="border: solid 1px black;">
-            <app-house-details *ngIf="announcement.propertyType==='DOM'" [id]=announcement.id>
+            <!-- HOUSE/FLAT/ROOM DETAILS NAPRAWIC WYSWIETLANIE -->
+            <!-- <app-house-details *ngIf="announcement.propertyType==='HOUSE'" [id]=announcement.id>
             </app-house-details>
 
 
-            <app-flat-details *ngIf="announcement.propertyType==='MIESZKANIE'" [id]=announcement.id>
+            <app-flat-details *ngIf="announcement.propertyType==='FLAT'" [id]=announcement.id>
             </app-flat-details>
 
 
-            <app-room-details *ngIf="announcement.propertyType==='POKOJ'" [id]=announcement.id>
-            </app-room-details>
+            <app-room-details *ngIf="announcement.propertyType==='ROOM'" [id]=announcement.id>
+            </app-room-details> -->
         </div>
     </div>
 </div>

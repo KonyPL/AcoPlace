@@ -8,12 +8,12 @@
             <!-- basic -->
             <div class="form-group">
                 <label for="name">Title</label>
-                <input [(ngModel)]="announcementDto.title" placeholder="title" name="title" class="form-control"
+                <input [(ngModel)]="announcementDto.title" placeholder="A new room" name="title" class="form-control"
                     id="title">
             </div>
             <div class="form-group">
                 <label for="name">PropertyType</label>
-                <select [(ngModel)]="announcementDto.propertyType" name="propertyType"
+                <select [(ngModel)]="announcementDto.propertyType" placeholder="HOUSE" name="propertyType"
                     class="form-control form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="text">
                     <option value="HOUSE">HOUSE</option>
                     <option value="FLAT">FLAT</option>
@@ -25,7 +25,7 @@
 
             <div class="form-group">
                 <label for="name">Price</label>
-                <input [(ngModel)]="announcementDto.price" placeholder="price" name="price" class="form-control"
+                <input [(ngModel)]="announcementDto.price" placeholder="3000" name="price" class="form-control"
                     id="price" type="number">
             </div>
             <div class="form-group">
@@ -38,19 +38,21 @@
             </div>
             <div class="form-group">
                 <label for="name">LivingSpace</label>
-                <input [(ngModel)]="announcementDto.livingSpace" placeholder="livingSpace" name="livingSpace"
-                    class="form-control" id="livingSpace">
+                <input [(ngModel)]="announcementDto.livingSpace" placeholder="7" name="livingSpace" class="form-control"
+                    id="livingSpace">
             </div>
             <div class="form-group">
                 <label for="name">yearBuilt</label>
-                <input [(ngModel)]="announcementDto.yearBuilt" placeholder="yearBuilt" name="yearBuilt"
-                    class="form-control" type="number" id="yearBuilt">
+                <input [(ngModel)]="announcementDto.yearBuilt" placeholder="1980" name="yearBuilt" class="form-control"
+                    type="number" id="yearBuilt">
             </div>
             <div class="form-group">
                 <label for="lastname">availableFrom</label>
                 <input [(ngModel)]="announcementDto.availableFrom" placeholder="yyyy-mm-dd" name="availableFrom"
-                    [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" class="form-control date" id="dp" type="text">
+                    class="form-control date" type="date">
             </div>
+            <!-- [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" id="dp" -->
+
             <!-- <mat-form-field>
                 <input matInput [matDatePicker]="myDatePicker">
                 <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
@@ -62,36 +64,37 @@
             <Label>Address</Label>
             <div class="form-group">
                 <label for="name">Country</label>
-                <input [(ngModel)]="announcementDto.country" placeholder="Polska" name="coutry" class="form-control"
+                <input [(ngModel)]="announcementDto.country" placeholder="Poland" name="coutry" class="form-control"
                     id="country">
             </div>
             <div class="form-group">
                 <label for="name">City</label>
-                <input [(ngModel)]="announcementDto.city" placeholder="city" name="city" class="form-control" id="city">
+                <input [(ngModel)]="announcementDto.city" placeholder="Poznan" name="city" class="form-control"
+                    id="city">
             </div>
             <div class="form-group">
                 <label for="name">PostalCode</label>
-                <input [(ngModel)]="announcementDto.postalCode" placeholder="Polska" name="postalCode"
+                <input [(ngModel)]="announcementDto.postalCode" placeholder="60-180" name="postalCode"
                     class="form-control" id="postalCode">
             </div>
             <div class="form-group">
                 <label for="name">State</label>
-                <input [(ngModel)]="announcementDto.state" placeholder="state" name="state" class="form-control"
-                    id="state">
+                <input [(ngModel)]="announcementDto.state" placeholder="Greater Poland" name="state"
+                    class="form-control" id="state">
             </div>
             <div class="form-group">
                 <label for="name">District</label>
-                <input [(ngModel)]="announcementDto.district" placeholder="district" name="district"
-                    class="form-control" id="district">
+                <input [(ngModel)]="announcementDto.district" placeholder="Rataje" name="district" class="form-control"
+                    id="district">
             </div>
             <div class="form-group">
                 <label for="name">Street</label>
-                <input [(ngModel)]="announcementDto.street" placeholder="street" name="street" class="form-control"
-                    id="street">
+                <input [(ngModel)]="announcementDto.street" placeholder="Broughton Rd" name="street"
+                    class="form-control" id="street">
             </div>
             <div class="form-group">
                 <label for="lastname">HouseNumber</label>
-                <input [(ngModel)]="announcementDto.houseNumber" placeholder="houseNumber" name="houseNumber"
+                <input [(ngModel)]="announcementDto.houseNumber" placeholder="21" name="houseNumber"
                     class="form-control" id="houseNumber">
             </div>
 
@@ -104,6 +107,7 @@
                 <label>Details</label>
                 <!-- <div class="row"></div> -->
                 <!-- details -->
+
                 <div class="form-group">
 
                     <mat-checkbox [(ngModel)]="announcementDto.bath" name="bath">Bath
@@ -155,9 +159,15 @@
                     </mat-checkbox>
                 </div>
 
+
                 <div class="form-group">
                     <mat-checkbox [(ngModel)]="announcementDto.tv" name="tv">TV
                     </mat-checkbox>
+                </div>
+                <div class="form-group">
+                    <label for="name">InternetSpeed</label>
+                    <input [(ngModel)]="announcementDto.internetSpeed" placeholder="500" name="internetSpeed"
+                        class="form-control" id="internetSpeed" type="number">
                 </div>
                 <div class="form-group">
                     <mat-checkbox [(ngModel)]="announcementDto.dishwasher" name="dishwasher">Dishwasher
@@ -167,42 +177,38 @@
                     <mat-checkbox [(ngModel)]="announcementDto.clothesDryer" name="clothesDryer">ClothesDryer
                     </mat-checkbox>
                 </div>
-                <div class="form-group">
-                    <label for="name">InternetSpeed</label>
-                    <input [(ngModel)]="announcementDto.internetSpeed" placeholder="internetSpeed" name="internetSpeed"
-                        class="form-control" id="internetSpeed" type="number">
-                </div>
+
             </div>
             <div class="col-md-3">
 
-                <div *ngIf="announcementDto.propertyType==='HOUSE'">wybrales HOUSE
+                <div *ngIf="announcementDto.propertyType==='HOUSE'">
                     <Label>House details</Label>
 
                     <!-- house details -->
                     <div class="form-group">
                         <label for="name">Floors</label>
-                        <input [(ngModel)]="announcementDto.floors" placeholder="floors" name="floors"
-                            class="form-control" id="floors" type="number">
+                        <input [(ngModel)]="announcementDto.floors" placeholder="2" name="floors" class="form-control"
+                            id="floors" type="number">
                     </div>
 
                     <div class="form-group">
                         <label for="name">Bedrooms</label>
-                        <input [(ngModel)]="announcementDto.bedrooms" placeholder="bedrooms" name="bedrooms"
+                        <input [(ngModel)]="announcementDto.bedrooms" placeholder="2" name="bedrooms"
                             class="form-control" id="bedrooms" type="number">
                     </div>
                     <div class="form-group">
                         <label for="lastname">Bathrooms</label>
-                        <input [(ngModel)]="announcementDto.bathrooms" placeholder="bathrooms" name="bathrooms"
+                        <input [(ngModel)]="announcementDto.bathrooms" placeholder="4" name="bathrooms"
                             class="form-control" id="bathrooms" type="number">
                     </div>
                     <div class="form-group">
                         <label for="lastname">Balcony</label>
-                        <input [(ngModel)]="announcementDto.balcony" placeholder="balcony" name="balcony"
-                            class="form-control" id="balcony" type="number">
+                        <input [(ngModel)]="announcementDto.balcony" placeholder="2" name="balcony" class="form-control"
+                            id="balcony" type="number">
                     </div>
                     <div class="form-group">
                         <label for="name">LotSize</label>
-                        <input [(ngModel)]="announcementDto.lotSize" placeholder="lotSize" name="lotSize"
+                        <input [(ngModel)]="announcementDto.lotSize" placeholder="70" name="lotSize"
                             class="form-control" id="lotSize" type="number">
                     </div>
                     <div class="form-group">
@@ -215,35 +221,35 @@
                     </div>
 
                 </div>
-                <div *ngIf="announcementDto.propertyType==='FLAT'">wybrales FLAT
+                <div *ngIf="announcementDto.propertyType==='FLAT'">
                     <Label>Flat details</Label>
                     <!-- flat details -->
 
                     <div class="form-group">
                         <label for="name">Floor</label>
-                        <input [(ngModel)]="announcementDto.floor" placeholder="floor" name="floor" class="form-control"
+                        <input [(ngModel)]="announcementDto.floor" placeholder="5" name="floor" class="form-control"
                             id="floor" type="number">
                     </div>
                     <div class="form-group">
                         <label for="name">Bedrooms</label>
-                        <input [(ngModel)]="announcementDto.bedrooms" placeholder="bedrooms" name="bedrooms"
+                        <input [(ngModel)]="announcementDto.bedrooms" placeholder="4" name="bedrooms"
                             class="form-control" id="bedrooms" type="number">
                     </div>
                     <div class="form-group">
                         <label for="lastname">Bathrooms</label>
-                        <input [(ngModel)]="announcementDto.bathrooms" placeholder="bathrooms" name="bathrooms"
+                        <input [(ngModel)]="announcementDto.bathrooms" placeholder="3" name="bathrooms"
                             class="form-control" id="bathrooms" type="number">
                     </div>
 
 
                     <div class="form-group">
                         <label for="lastname">Balcony</label>
-                        <input [(ngModel)]="announcementDto.balcony" placeholder="balcony" name="balcony"
-                            class="form-control" id="balcony" type="number">
+                        <input [(ngModel)]="announcementDto.balcony" placeholder="2" name="balcony" class="form-control"
+                            id="balcony" type="number">
                     </div>
                     <div class="form-group">
                         <label for="lastname">flatParking</label>
-                        <input [(ngModel)]="announcementDto.flatParking" placeholder="flatParking" name="flatParking"
+                        <input [(ngModel)]="announcementDto.flatParking" placeholder="1" name="flatParking"
                             class="form-control" id="flatParking" type="number">
                     </div>
                     <div class="form-group">
@@ -251,26 +257,27 @@
                         </mat-checkbox>
                     </div>
                 </div>
-                <div *ngIf="announcementDto.propertyType==='ROOM'">wybrales ROOM
+                <div *ngIf="announcementDto.propertyType==='ROOM'">
                     <!-- room details -->
+                    <Label>Room details</Label>
                     <div>
                         <label for="name">Floor</label>
-                        <input [(ngModel)]="announcementDto.floor" placeholder="floor" name="floor" class="form-control"
+                        <input [(ngModel)]="announcementDto.floor" placeholder="1" name="floor" class="form-control"
                             id="floor" type="number">
                     </div>
                     <div class="form-group">
                         <label for="name">BedsInRoom</label>
-                        <input [(ngModel)]="announcementDto.bedsInRoom" placeholder="bedsInRoom" name="bedsInRoom"
+                        <input [(ngModel)]="announcementDto.bedsInRoom" placeholder="2" name="bedsInRoom"
                             class="form-control" id="bedsInRoom" type="number">
                     </div>
                     <div class="form-group">
                         <label for="lastname">NumberOfFlatmates</label>
-                        <input [(ngModel)]="announcementDto.numberOfFlatmates" placeholder="numberOfFlatmates"
-                            name="numberOfFlatmates" class="form-control" id="numberOfFlatmates" type="number">
+                        <input [(ngModel)]="announcementDto.numberOfFlatmates" placeholder="3" name="numberOfFlatmates"
+                            class="form-control" id="numberOfFlatmates" type="number">
                     </div>
                     <div class="form-group">
                         <label for="lastname">Bathrooms</label>
-                        <input [(ngModel)]="announcementDto.bathrooms" placeholder="bathrooms" name="bathrooms"
+                        <input [(ngModel)]="announcementDto.bathrooms" placeholder="4" name="bathrooms"
                             class="form-control" id="bathrooms" type="number">
                     </div>
                 </div>
@@ -280,8 +287,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="lastname">Text</label>
-                    <textarea [(ngModel)]="announcementDto.text" placeholder="text" name="text" class="form-control"
-                        id="text" cols="10" rows="10"></textarea>
+                    <textarea [(ngModel)]="announcementDto.text" placeholder="A description of your announcement... "
+                        name="text" class="form-control" id="text" cols="10" rows="10"></textarea>
                 </div>
             </div>
             <div class="col-md-3">

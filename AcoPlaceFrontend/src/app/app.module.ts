@@ -82,6 +82,7 @@ import { EditAnnouncementComponent } from './edit-announcement/edit-announcement
 import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.component';
 import { BannerGalleryComponent } from './banner-gallery/banner-gallery.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 // import { SidebarComponent } from './sidebar/sidebar.component';
 // import { NgImageSliderModule } from 'ng-image-slider';
 // import { SidebarComponent } from './sidebar/sidebar.component';
@@ -187,7 +188,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }, HttpClientModule, NgxImageCompressService],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }, HttpClientModule, NgxImageCompressService, 
+    {provide: MAT_DATE_LOCALE, useValue: 'en-GB'},
+  ],
 
   // vvv Tak było "wcześniej"
   //providers: [HttpClientModule],
