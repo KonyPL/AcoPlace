@@ -1,73 +1,49 @@
 import { Component, OnInit } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
-import { Image } from '../model/image';
 import { NgxGalleryOptions } from '@kolkov/ngx-gallery';
 import { NgxGalleryImage } from '@kolkov/ngx-gallery';
 import { NgxGalleryAnimation } from '@kolkov/ngx-gallery';
-
+import { ActivatedRoute, Params } from '@angular/router';
+import { ImageUploadService } from '../file-base64/image-upload.service';
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent implements OnInit {
-  galleryOptions: NgxGalleryOptions[];
-  galleryImages: NgxGalleryImage[];
+  galleryOptions: NgxGalleryOptions[] = [];
+  galleryImages: NgxGalleryImage[] = [];
+  announcement_id: number;
+  downloadedImages: string[] = [];
+
+  convertStringToGalleryImages(): void {
+    this.downloadedImages.forEach(async (imgString: string) => {
+      const image: NgxGalleryImage = {
+        small: imgString,
+        medium: imgString,
+        big: imgString
+      }
+      this.galleryImages.push(image);
+      console.log("gallery Images " + image);
+    });
+  }
+
+  getImages(): void {
+    this.imageUploadService.getImages(this.announcement_id).subscribe(data => {
+      this.downloadedImages = data;
+      console.log("getImages " + data);
+      this.convertStringToGalleryImages();
+    });
+  }
 
   arrowNextIcon: 'fa fa-chevron-right';
-  // public images: Image[] = [
-  //   {
-  //     url: 'assets/images/Poznan_logo.png',
-  //     id: '1',
-  //     // row: '3/3'
-  //   },
-  //   {
-  //     url: 'assets/images/photo1.png',
-  //     id: '2',
-  //     // row: '3/3'
-  //   },
-  //   {
-  //     url: 'assets/images/photo2.png',
-  //     id: '3',
-  //     // row: '3/3'
-  //   },
-  //   {
-  //     url: 'assets/images/photo3.png',
-  //     id: '4',
-  //     // row: '3/3'
-  //   },
-  // ] as Array<Image>;
 
-  // customOptions: OwlOptions = {
-  //   loop: true,
-  //   mouseDrag: false,
-  //   touchDrag: false,
-  //   pullDrag: false,
-  //   dots: false,
-  //   navSpeed: 700,
-  //   navText: ['', ''],
-  //   responsive: {
-  //     0: {
-  //       items: 1
-  //     },
-  //     400: {
-  //       items: 2
-  //     },
-  //     740: {
-  //       items: 3
-  //     },
-  //     940: {
-  //       items: 4
-  //     }
-  //   },
-  //   nav: true
-  // }
 
-  // slides: any = [[]];
-
-  constructor() { }
+  constructor(private route: ActivatedRoute, private imageUploadService: ImageUploadService) { }
 
   ngOnInit() {
+    this.route.params.subscribe((params: Params) => {
+      this.announcement_id = + params['id'];
+    })
     this.galleryOptions = [
       {
         // banner tak mozna
@@ -112,42 +88,8 @@ export class GalleryComponent implements OnInit {
       }
     ];
 
-    this.galleryImages = [
-      {
-        small: 'assets/images/photo1.png',
-        medium: 'assets/images/photo1.png',
-        big: 'assets/images/photo1.png'
-      },
-      {
-        small: 'assets/images/photo2.png',
-        medium: 'assets/images/photo2.png',
-        big: 'assets/images/photo2.png'
-      },
-      {
-        small: 'assets/images/photo3.png',
-        medium: 'assets/images/photo3.png',
-        big: 'assets/images/photo3.png'
-      },
-      {
-        small: 'assets/images/photo1.png',
-        medium: 'assets/images/photo1.png',
-        big: 'assets/images/photo1.png'
-      },
-      {
-        small: 'assets/images/photo2.png',
-        medium: 'assets/images/photo2.png',
-        big: 'assets/images/photo2.png'
-      }, {
-        small: 'assets/images/photo3.png',
-        medium: 'assets/images/photo3.png',
-        big: 'assets/images/photo3.png'
-      },
-      {
-        small: 'assets/images/photo1.png',
-        medium: 'assets/images/photo1.png',
-        big: 'assets/images/photo1.png'
-      }
-    ];
+    this.getImages();
+
   }
 
 }
