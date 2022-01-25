@@ -37,7 +37,7 @@
 
     <div class="col-md-3">
 
-        <p style="text-align: center;">Filtry</p>
+        <!-- <p style="text-align: center;">Filtry</p> -->
         <div class="row">
 
         </div>
@@ -128,7 +128,7 @@
 
         <div class="justify-content-center col-md-12" style="text-align: left; padding: 0px 30px;">
             <div class="col-md-12">
-                <div *ngIf="announcementParams.propertyType==='FLAT'">wybrales mieszkanie
+                <div *ngIf="announcementParams.propertyType==='FLAT'">
                     <div class="row">
                         <div class="justify-content-center col-md-12" style="padding: 0 50px;">
                             <mat-checkbox [(ngModel)]="announcementParams.basement" name="basement">Basement
@@ -186,7 +186,7 @@
                     </div>
 
                 </div>
-                <div *ngIf="announcementParams.propertyType==='HOUSE'">wybrales DOM
+                <div *ngIf="announcementParams.propertyType==='HOUSE'">
 
                     <div class="col-md-12" style="text-align: center;">
                         <form class="example-form">
@@ -251,7 +251,7 @@
                     </div>
 
                 </div>
-                <div *ngIf="announcementParams.propertyType==='ROOM'">wybrales POKOJ
+                <div *ngIf="announcementParams.propertyType==='ROOM'">
                     <div class="col-md-12" style="text-align: center;">
                         <form class="example-form">
                             <mat-form-field class="full-width" appearance="fill">
@@ -299,7 +299,7 @@
         <form (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class=" row" style="font-size: 15px; padding: 20px 10px 10px 10px;">
-                    Cechy/Wyposażenie:
+                    Equipment:
                 </div>
                 <div class="justify-content-center col-md-12" style="text-align: left; padding: 0px 30px;">
 
@@ -384,8 +384,8 @@
 
 
                 </div>
-                <div class=" row">
-                    Położenie:
+                <div class=" row" style="font-size: 15px; padding: 20px 10px 10px 10px;">
+                    Location:
                 </div>
                 <div class="justify-content-center col-md-12" style="text-align: left; padding: 0px 30px;">
                     <div class="row">
@@ -431,8 +431,9 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit">SEARCH</button>
-                <button>Reset</button>
+
+                <button class="btn btn-success" type="submit">Search</button>
+                <button class="btn btn-primary">Reset</button>
 
             </div>
         </form>

@@ -2,7 +2,7 @@
 
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-        <span  routerLink="/" mat-icon-button>
+        <span mat-icon-button>
             <mat-icon class="navbar-icon">
                 home
             </mat-icon>AcoPlace
@@ -10,7 +10,7 @@
         <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
             <ul fxLayout="row" fxLayoutGap="20px">
                 <li routerLinkActive="active">
-                    <span routerLink="/announcements-list" mat-icon-button> List
+                    <span routerLink="/announcements-list" mat-icon-button> Search
                         
                     </span>
                 </li>
@@ -19,7 +19,7 @@
                         
                     </span>
                 </li>
-               
+
                 <li *ngIf="!authService.isAuthenticated()" routerLinkActive="active">
                     <span routerLink="/register" mat-icon-button>Register
                         
@@ -35,7 +35,7 @@
                        
                     </span>
                 </li>
-                
+
             </ul>
         </div>
 

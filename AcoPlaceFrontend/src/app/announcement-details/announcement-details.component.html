@@ -2,60 +2,100 @@
     <div *ngIf="announcement.edited==true"> ANNOUNCEMENT EDITED </div>
     <div *ngIf="announcement.reported==true"> ANNOUNCEMENT reported by </div>
 
+
+
+
     <div class=" row">
         <div class="row">
-            <h3 style="background-color: #eee; border: 1px solid black; text-align: center;">Announcement-details</h3>
+            <!-- <h3 style="text-align: center;">Announcement-details</h3> -->
         </div>
-        <div> <span mat-icon-button><a (click)="addToFavourite()" >ADD TO FAVOURITE</a>
-            <!-- <mat-icon>LOGIN</mat-icon> -->
-        </span></div>
-        <div> <span mat-icon-button><a (click)="editAnnouncement()" >EDIT ANNOUNCEMENT</a>
-            <!-- <mat-icon>LOGIN</mat-icon> -->
-        </span></div>
-        <div class="col-md-12" style="border: solid 1px black;">
-            <div class="row" style="border: solid 1px black;">
-                <h4 style="text-align: center;">Tytuł ogłoszenia</h4>
+        <div>
+            <button primary mat-icon-button (click)="addToFavourite()">ADD TO FAVOURITE
+                <!-- <mat-icon>LOGIN</mat-icon> -->
+            </button>
+        </div>
+        <div> <button primary mat-icon-button (click)="editAnnouncement()">EDIT ANNOUNCEMENT
+                <!-- <mat-icon>LOGIN</mat-icon> -->
+            </button></div>
+        <div class="col-md-12">
+            <div class="row">
+                <h4 style="text-align: center; font-weight: bold;">{{announcement.title}}</h4>
             </div>
         </div>
-        <div class="col-md-8 " style="border: solid 1px black;">
+        <div class="col-md-8 ">
 
-            <p>Opis ogłoszenia...</p>
+            <p>{{announcement.text}}</p>
             <div class="row">
                 <app-gallery></app-gallery>
             </div>
         </div>
-        <div class="col-md-4" style="border: solid 1px black;">
+        <div class="col-md-4">
             <h5>
-                Info:
+                <!-- Info: -->
             </h5>
-            <p style="border-top: 1px solid black;">id from path={{id}}</p>
-            <p>id from announcement={{announcement.id}}</p>
-            <p>id={{announcement.id}}</p>
-            <p>country={{announcement.country}}</p>
-            <p>postal code={{announcement.postalCode}}
-            <p>
-            <p>District={{announcement.district}}</p>
-            <p>state={{announcement.state}}</p>
-            <p>street={{announcement.street}}</p>
-            <p>hnumber={{announcement.houseNumber}}</p>
-            <p>title={{announcement.title}}</p>
-            <p>text={{announcement.text}}</p>
-            <p> property type={{announcement.propertyType}}</p>
-            <p>price = {{announcement.price}}</p>
-            <p>currency={{announcement.currency}}</p>
-            <p>living space={{announcement.livingSpace}}</p>
-            <p>year built={{announcement.yearBuilt}}</p>
-            <p>available from={{announcement.availableFrom}}</p>
-            <p>publicationDate={{announcement.publicationDate}}</p>
+            <div class="col-md-12">
+                <label>Country: {{announcement.country}}</label>
+
+            </div>
+            <div class="col-md-12">
+                <label>City: {{announcement.city}}</label>
+
+            </div>
+            <div class="col-md-12">
+                <label>Postal code: {{announcement.postalCode}}</label>
+
+            </div>
+            <div class="col-md-12">
+                <label>District: {{announcement.district}}</label>
+
+            </div>
+            <div class="col-md-12">
+                <label>State: {{announcement.state}}</label>
+
+            </div>
+            <div class="col-md-12">
+                <label>Street: {{announcement.street}}</label>
+
+            </div>
+            <div class="col-md-12">
+                <label>House number: {{announcement.houseNumber}}</label>
+
+            </div>
+            <div class="col-md-12">
+                <label>Price: {{announcement.price}} {{announcement.currency}}</label>
+
+            </div>
+
+            <div class="col-md-12">
+                <label>Living space: {{announcement.livingSpace}}</label>
+
+            </div>
+            <div class="col-md-12">
+                <label>Year built: {{announcement.yearBuilt}}</label>
+
+            </div>
+            <div class="col-md-12">
+                <label>Available from: {{announcement.availableFrom}}</label>
+
+            </div>
+
+            <div class="col-md-12">
+                <label>Publication date: {{announcement.publicationDate}}</label>
+
+            </div>
+
+
+
+
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8" style="border: solid 1px black;">
+        <div class="col-md-8">
             <app-announcement-details-details [id]=announcement.id>
             </app-announcement-details-details>
         </div>
-        <div class="col-md-4" style="border: solid 1px black;">
-            <!-- HOUSE/FLAT/ROOM DETAILS NAPRAWIC WYSWIETLANIE -->
+        <div class="col-md-4">
+
             <!-- <app-house-details *ngIf="announcement.propertyType==='HOUSE'" [id]=announcement.id>
             </app-house-details>
 

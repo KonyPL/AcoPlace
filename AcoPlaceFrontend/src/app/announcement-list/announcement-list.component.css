@@ -38,3 +38,14 @@ a.whole {
     height: 100%;
     
 }
+
+button {
+    padding: 10px 20px;
+}
+
+.center-div {
+    position: relative;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, 0%);
+  }

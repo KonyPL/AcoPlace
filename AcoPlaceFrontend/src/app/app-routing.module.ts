@@ -35,14 +35,14 @@ const appRoutes: Routes = [
     { path: 'user-profile', component: UserProfileComponent },
     // { path: 'admin', component: AdminComponent },
     { path: 'start', component: StartPageComponent },
-    { path: '', component: StartPageComponent },
+    { path: '', component: AnnouncementListComponent },
     //Kod Wodnika
-    {path: 'register', component: RegisterComponent},
-    {path: 'login', component: LoginComponent},
-    {path: 'register-success', component: RegisterSuccessComponent},
-    {path: 'activeAnnouncement', component: AnnoucementActiveListComponent},
-    {path: 'inactiveAnnouncement', component: AnnouncementInactiveListComponent},
-    {path: 'favouriteAnnouncement', component: AnnouncementFavouriteListComponent},
+    { path: 'register', component: RegisterComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'register-success', component: RegisterSuccessComponent },
+    { path: 'activeAnnouncement', component: AnnoucementActiveListComponent },
+    { path: 'inactiveAnnouncement', component: AnnouncementInactiveListComponent },
+    { path: 'favouriteAnnouncement', component: AnnouncementFavouriteListComponent },
     //Koniec kodu Wodnika
     { path: 'search', component: SearchComponent },
     { path: 'register', component: RegisterComponent },
@@ -51,7 +51,7 @@ const appRoutes: Routes = [
     { path: 'activeAnnouncement', component: AnnoucementActiveListComponent },
     { path: 'inactiveAnnouncement', component: AnnouncementInactiveListComponent },
     { path: 'announcementEdit/:id', component: EditAnnouncementComponent },
-    { path: 'userEdit', component: UserProfileEditComponent}, 
+    { path: 'userEdit', component: UserProfileEditComponent },
     { path: 'addImages/:id', component: FileBase64Component }
 
 
