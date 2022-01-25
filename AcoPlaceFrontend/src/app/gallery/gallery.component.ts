@@ -30,7 +30,6 @@ export class GalleryComponent implements OnInit {
   getImages(): void {
     this.imageUploadService.getImages(this.announcement_id).subscribe(data => {
       this.downloadedImages = data;
-      console.log("getImages " + data);
       this.convertStringToGalleryImages();
     });
   }
@@ -41,9 +40,6 @@ export class GalleryComponent implements OnInit {
   constructor(private route: ActivatedRoute, private imageUploadService: ImageUploadService) { }
 
   ngOnInit() {
-    this.route.params.subscribe((params: Params) => {
-      this.announcement_id = + params['id'];
-    })
     this.galleryOptions = [
       {
         // banner tak mozna
@@ -88,8 +84,13 @@ export class GalleryComponent implements OnInit {
       }
     ];
 
-    this.getImages();
-
+    let thisUrl = this.route.snapshot.url[0].path;
+    if(thisUrl != "addImages"){
+      this.route.params.subscribe((params: Params) => {
+        this.announcement_id = + params['id'];
+      })
+      this.getImages();
+    } 
   }
 
 }

@@ -5,7 +5,7 @@ import { ImageCompressorService, CompressorConfig } from 'ngx-image-compressor';
 import { NgxImageCompressService } from 'ngx-image-compress';
 import { ImageStorage } from '../model/image-storage';
 import { ImageUploadService } from './image-upload.service';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 @Component({
   selector: 'app-file-base64',
   templateUrl: './file-base64.component.html',
@@ -19,14 +19,13 @@ export class FileBase64Component implements OnInit {
 
   imgResult: string = "";
 
-  //czy tak jest ok?
   announcementId: number;
 
-  //debug
   downloaded: string[] = [];
 
   constructor(private sant: DomSanitizer, private imageCompressor: ImageCompressorService,
-    private imageUploadService: ImageUploadService, private route: ActivatedRoute) { }
+    private imageUploadService: ImageUploadService, private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
@@ -38,21 +37,18 @@ export class FileBase64Component implements OnInit {
   onSelectNewFile(files: FileList): void {
     const rawFiles: File[] = [].slice.call(files);
     rawFiles.forEach(async (file: File) => {
-      const config: CompressorConfig = { orientation: 1, ratio: 50, quality: 50, enableLogs: true };
-      this.compressedFiles.push(await this.imageCompressor.compressFile(file, config));
-
+      const config: CompressorConfig = { orientation: 1, ratio: 100, quality: 70, enableLogs: true };
+      this.convertFileToBase64(await this.imageCompressor.compressFile(file, config));
     })
-    this.convertFileToBase64();
+    
   }
 
-  convertFileToBase64(): void {
-    this.compressedFiles.forEach(async (blob: Blob) => {
-      let reader = new FileReader();
-      reader.readAsDataURL(blob as Blob);
-      reader.onloadend = () => {
-        this.base64.push(reader.result as string);
-      }
-    });
+  convertFileToBase64(blob: Blob): void {
+    let reader = new FileReader();
+    reader.readAsDataURL(blob as Blob);
+    reader.onloadend = () => {
+      this.base64.push(reader.result as string);
+    }
   }
 
   sendImages(): void {
@@ -65,14 +61,6 @@ export class FileBase64Component implements OnInit {
     });
 
     this.imageUploadService.addImages(this.announcementId, images).subscribe()
-  }
-
-  getImages(announcementId: number): void {
-    this.imageUploadService.getImages(announcementId).subscribe(
-      data => {
-        this.downloaded = data;
-        console.log("DATA from endpoint" + data);
-      }
-    )
+    this.router.navigate(['announcement', this.announcementId]);
   }
 }
