@@ -40,7 +40,7 @@ export class FileBase64Component implements OnInit {
       const config: CompressorConfig = { orientation: 1, ratio: 100, quality: 70, enableLogs: true };
       this.convertFileToBase64(await this.imageCompressor.compressFile(file, config));
     })
-    
+
   }
 
   convertFileToBase64(blob: Blob): void {
@@ -60,7 +60,7 @@ export class FileBase64Component implements OnInit {
       images.push(imageStorage)
     });
 
-    this.imageUploadService.addImages(this.announcementId, images).subscribe()
-    this.router.navigate(['announcement', this.announcementId]);
+    this.imageUploadService.addImages(this.announcementId, images).subscribe(() => { this.router.navigate(['announcement', this.announcementId]) })
+
   }
 }
