@@ -28,19 +28,21 @@ export class FileBase64Component implements OnInit {
   constructor(private sant: DomSanitizer, private imageCompressor: ImageCompressorService,
     private imageUploadService: ImageUploadService, private route: ActivatedRoute) { }
 
-    ngOnInit(): void {
-      this.route.params.subscribe((params: Params)=> {
-        this.announcementId=+params['id'];
-      });
-    
-  
-    }
+  ngOnInit(): void {
+    this.route.params.subscribe((params: Params) => {
+      this.announcementId = +params['id'];
+    });
+
+
+  }
   onSelectNewFile(files: FileList): void {
     const rawFiles: File[] = [].slice.call(files);
     rawFiles.forEach(async (file: File) => {
       const config: CompressorConfig = { orientation: 1, ratio: 50, quality: 50, enableLogs: true };
       this.compressedFiles.push(await this.imageCompressor.compressFile(file, config));
-    });
+
+    })
+    this.convertFileToBase64();
   }
 
   convertFileToBase64(): void {
