@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddAnnouncementComponent } from './add-announcement/add-announcement.component';
+import { AllInfoAnnouncementComponent } from './all-info-announcement/all-info-announcement.component';
 import { AnnoucementActiveListComponent } from './annoucement-active-list/annoucement-active-list.component';
 // import { AdminComponent } from './admin/admin.component';
 import { AnnouncementDetailsListComponent } from './announcement-details-list/announcement-details-list.component';
@@ -52,7 +53,9 @@ const appRoutes: Routes = [
     { path: 'inactiveAnnouncement', component: AnnouncementInactiveListComponent },
     { path: 'announcementEdit/:id', component: EditAnnouncementComponent },
     { path: 'userEdit', component: UserProfileEditComponent },
-    { path: 'addImages/:id', component: FileBase64Component }
+    { path: 'addImages/:id', component: FileBase64Component },
+    { path: 'allAnnouncement/:id', component: AllInfoAnnouncementComponent },
+
 
 
 

@@ -60,7 +60,7 @@ export class FileBase64Component implements OnInit {
       images.push(imageStorage)
     });
 
-    this.imageUploadService.addImages(this.announcementId, images).subscribe(() => { this.router.navigate(['announcement', this.announcementId]) })
+    this.imageUploadService.addImages(this.announcementId, images).subscribe(() => { this.router.navigate(['allAnnouncement', this.announcementId]) })
 
   }
 }

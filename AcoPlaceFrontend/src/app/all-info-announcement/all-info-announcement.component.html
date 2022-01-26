@@ -1,7 +1,6 @@
 <div class="component" style="padding-left: 20px;">
-    <div *ngIf="announcement.edited==true"> ANNOUNCEMENT EDITED </div>
-    <div *ngIf="announcement.reported==true"> ANNOUNCEMENT reported by </div>
-
+    <div *ngIf="announcement.edited==true"> ANNOUNCEMENT WAS EDITED BY {{announcement.admin}} time: {{announcement.reportedTime}} </div>
+    <div *ngIf="announcement.reported==true"> ANNOUNCEMENT WAS REPORTED BY {{announcement.admin}} time: {{announcement.reportedTime}} </div>
 
 
 
@@ -9,12 +8,14 @@
         <div class="row">
             <!-- <h3 style="text-align: center;">Announcement-details</h3> -->
         </div>
-        <div>
-            <button primary mat-icon-button (click)="addToFavourite()">ADD TO FAVOURITE
-                <!-- <mat-icon>LOGIN</mat-icon> -->
-            </button>
+      
         </div>
-    
+        <div> <button primary mat-icon-button (click)="editAnnouncement()">EDIT ANNOUNCEMENT
+                <!-- <mat-icon>LOGIN</mat-icon> -->
+            </button></div>
+            <div> <button primary mat-icon-button (click)="addImages()">ADD IMAGES
+                <!-- <mat-icon>LOGIN</mat-icon> -->
+            </button></div>
         <div class="col-md-12">
             <div class="row">
                 <h4 style="text-align: center; font-weight: bold;">{{announcement.title}}</h4>
@@ -106,4 +107,3 @@
             </app-room-details> -->
         </div>
     </div>
-</div>

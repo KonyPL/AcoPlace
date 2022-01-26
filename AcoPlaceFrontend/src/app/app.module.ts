@@ -83,6 +83,7 @@ import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.
 import { BannerGalleryComponent } from './banner-gallery/banner-gallery.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { AllInfoAnnouncementComponent } from './all-info-announcement/all-info-announcement.component';
 // import { SidebarComponent } from './sidebar/sidebar.component';
 // import { NgImageSliderModule } from 'ng-image-slider';
 // import { SidebarComponent } from './sidebar/sidebar.component';
@@ -129,7 +130,8 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     FileBase64Component,
     EditAnnouncementComponent,
     UserProfileEditComponent,
-    BannerGalleryComponent
+    BannerGalleryComponent,
+    AllInfoAnnouncementComponent
   ],
   imports: [
     NgbModule,

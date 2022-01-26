@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { AnnouncementService } from '../announcement-list/announcement.service';
 import { Announcement } from '../model/announcement';
 
 @Component({
-  selector: 'app-announcement-details',
-  templateUrl: './announcement-details.component.html',
-  styleUrls: ['./announcement-details.component.css']
+  selector: 'app-all-info-announcement',
+  templateUrl: './all-info-announcement.component.html',
+  styleUrls: ['./all-info-announcement.component.css']
 })
-export class AnnouncementDetailsComponent implements OnInit {//TODO ZMIANA NAZWY POTRZEBNA
+export class AllInfoAnnouncementComponent implements OnInit {
+
   announcement: Announcement;
   id: number;
   constructor(private announcementService: AnnouncementService, private router: Router, private route: ActivatedRoute ) { }
@@ -42,4 +43,13 @@ export class AnnouncementDetailsComponent implements OnInit {//TODO ZMIANA NAZWY
 
     }
  
+    editAnnouncement(){
+      this.router.navigate(['announcementEdit', this.id]);
+    }
+
+
+    addImages() {
+      console.log("ID FROM ANNOUCEMENT CREATE DTO " + this.id)
+      this.router.navigate(['addImages', this.id]);
+    }
 }
