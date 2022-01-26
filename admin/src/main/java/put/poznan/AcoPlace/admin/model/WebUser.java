@@ -11,15 +11,15 @@ public class WebUser {
     private String userName;
     private String email;
     private String password;
-    private boolean active;
+    //private boolean active;
     private String roles;
 
-    public WebUser(Long id, String userName, String email, String password, boolean active, String roles) {
+    public WebUser(Long id, String userName, String email, String password, String roles) {
         this.id = id;
         this.userName = userName;
         this.email = email;
         this.password = password;
-        this.active = active;
+
         this.roles = roles;
     }
 
@@ -58,13 +58,6 @@ public class WebUser {
         this.password = password;
     }
 
-    public boolean isActive() {
-        return active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
-    }
 
     public String getRoles() {
         return roles;

@@ -246,6 +246,7 @@
     <a th:href="@{'/announcement/reportById/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-flag"></i> Report</button></a>
     <a th:href="@{'/announcement/delete/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-trash"></i> Delete</button></a>
     <a th:href="@{'/clearFlags/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-window-close"></i> Clear flags</button></a>
+    <a th:href="@{'/active/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-check"></i> Activate</button></a>
 
 </div>
 
