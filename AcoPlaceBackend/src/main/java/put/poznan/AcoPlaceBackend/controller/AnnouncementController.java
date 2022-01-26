@@ -36,7 +36,7 @@ public class AnnouncementController {
 
 
 
-    @GetMapping("/announcement/{id}")
+    @GetMapping("/free/announcement/{id}")
     public Announcement getAdvertisementById(@PathVariable Integer id){
         return announcementService.getAnnouncementById(id);
     }

@@ -30,7 +30,7 @@ export class AnnouncementService {
 
 
   getAnnouncementById(id: number): Observable<Announcement> {
-    return this.httpClient.get<Announcement>(`http://localhost:8080/announcement/` + id);
+    return this.httpClient.get<Announcement>(`http://localhost:8080/free/announcement/` + id);
   }
 
 
@@ -152,16 +152,16 @@ export class AnnouncementService {
   }
 
   getAnnouncementDetailsById(id: number): Observable<AnnouncementDetails> {
-    return this.httpClient.get<AnnouncementDetails>(`http://localhost:8080/announcementDetails/` + id);
+    return this.httpClient.get<AnnouncementDetails>(`http://localhost:8080/free/announcementDetails/` + id);
   }
   getHouseDetailsById(id: number): Observable<AnnouncementDetails> {
-    return this.httpClient.get<AnnouncementDetails>(`http://localhost:8080/houseDetails/` + id);
+    return this.httpClient.get<AnnouncementDetails>(`http://localhost:8080/free/houseDetails/` + id);
   }
   getFlatDetailsById(id: number): Observable<AnnouncementDetails> {
-    return this.httpClient.get<AnnouncementDetails>(`http://localhost:8080/flatDetails/` + id);
+    return this.httpClient.get<AnnouncementDetails>(`http://localhost:8080/free/flatDetails/` + id);
   }
   getRoomDetailsById(id: number): Observable<AnnouncementDetails> {
-    return this.httpClient.get<AnnouncementDetails>(`http://localhost:8080/roomDetails/` + id);
+    return this.httpClient.get<AnnouncementDetails>(`http://localhost:8080/free/roomDetails/` + id);
   }
 
   getFavouriteAnnouncementsList(): Observable<Announcement[]> {

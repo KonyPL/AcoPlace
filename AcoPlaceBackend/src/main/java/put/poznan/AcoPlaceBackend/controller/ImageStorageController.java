@@ -30,10 +30,8 @@ public class ImageStorageController {
         this.announcementRepository = announcementRepository;
     }
 
-    @GetMapping("/announcementImages")
+    @GetMapping("/free/announcementImages")
     public List<String> getAllAnnouncementImages(@RequestParam Integer id) {
-        System.out.println("SECURITY CONTEX HOLDER" + SecurityContextHolder.getContext().getAuthentication().getName());
-        System.out.println("user FROM auth service"+authService.getCurrentUser().get().toString());
         return imageStorageService.getAllAnnouncementImages(id);
     }
 

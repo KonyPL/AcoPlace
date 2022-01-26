@@ -27,7 +27,7 @@ public class AnnouncementDetailsController {
         return announcementDetailsService.getAllAnnouncementDetails();
     }
 
-    @GetMapping("/announcementDetails/{id}")
+    @GetMapping("/free/announcementDetails/{id}")
     public AnnouncementDetails getAnnouncementDetailsById(@PathVariable Integer id) {
         return announcementDetailsService.getAnnouncementDetailsById(id);
     }
