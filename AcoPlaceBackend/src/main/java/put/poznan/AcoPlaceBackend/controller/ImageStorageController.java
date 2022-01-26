@@ -35,6 +35,15 @@ public class ImageStorageController {
         return imageStorageService.getAllAnnouncementImages(id);
     }
 
+    @GetMapping("/free/announcementImage")
+    public String getOneAnnouncementImage(@RequestParam Integer id) {
+        try {
+            return imageStorageService.getOneAnnouncementImage(id);
+        }catch (IndexOutOfBoundsException noRecords){
+            return null;
+        }
+    }
+
     @PostMapping("/announcement/{id}/addImages")
     public List<ImageStorageDto> addImages(@PathVariable Integer id, @RequestBody List<ImageStorage> imageList)
     {

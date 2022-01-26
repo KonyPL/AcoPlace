@@ -20,6 +20,10 @@ public class ImageStorageService {
         return imageStorageRepository.findAllByAnnouncementId(announcementId);
     }
 
+    public String getOneAnnouncementImage(Integer announcementId) throws IndexOutOfBoundsException {
+        return imageStorageRepository.findAllByAnnouncementId(announcementId).get(0);
+    }
+
     public ImageStorage saveImage(ImageStorage imageStorage){
         return imageStorageRepository.save(imageStorage);
     }
