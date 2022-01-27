@@ -4,9 +4,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import put.poznan.AcoPlaceBackend.model.Announcement;
 
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -26,7 +25,21 @@ public class AnnouncementDto {
     private String currency;
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "CET")
     private Date availableFrom;
+    private List<String> images;
 
+    public AnnouncementDto(Integer id, String country, String city, String district, String state, String title,
+                           String propertyType, Double price, String currency, Date availableFrom){
+        this.id = id;
+        this.country = country;
+        this.city = city;
+        this.district = district;
+        this.state = state;
+        this.title = title;
+        this.propertyType = propertyType;
+        this.price = price;
+        this.currency = currency;
+        this.availableFrom = availableFrom;
+    }
     public AnnouncementDto makeFromModel(Announcement announcement){
         this.id = announcement.getId();
         this.country = announcement.getCountry();
@@ -38,7 +51,6 @@ public class AnnouncementDto {
         this.price = announcement.getPrice();
         this.currency = announcement.getCurrency();
         this.availableFrom = announcement.getAvailableFrom();
-
         return this;
     }
 }
