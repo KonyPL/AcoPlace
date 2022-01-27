@@ -23,7 +23,7 @@ public interface AnnouncementRepository extends JpaRepository<Announcement, Long
     @Query("SELECT announcement FROM Announcement announcement WHERE announcement.editedByUser = 'true' AND announcement.edited = 'false' AND announcement.reported = 'false' ") // tu chce miec edytowane przez usera ale edited na false oraz raported an true, bo sa swiezo dodane nie zraportowane jeszcze
     List<Announcement> findAllEditedByUser();
 
-    @Query("SELECT announcement FROM Announcement announcement WHERE announcement.edited= 'true' OR announcement.reported = 'true' AND announcement.editedByUser = 'true' ") // tu chc miec edytowane przez usera oraz zraportowane (raported na true) lub edytowane (edited na true)
+    @Query("SELECT announcement FROM Announcement announcement WHERE announcement.editedByUser = 'true' AND (announcement.edited= 'true' OR announcement.reported = 'true')")
     List<Announcement> findAllEditedByUserAndReportedOrEdited();
 
 

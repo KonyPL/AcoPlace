@@ -52,4 +52,10 @@ export class AllInfoAnnouncementComponent implements OnInit {
       console.log("ID FROM ANNOUCEMENT CREATE DTO " + this.id)
       this.router.navigate(['addImages', this.id]);
     }
+
+    delete(){
+      this.announcementService.deleteAnnouncementById(this.id).subscribe();
+      this.router.navigate(['search-announcement']);
+
+    }
 }
