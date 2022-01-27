@@ -58,7 +58,7 @@ public interface AnnouncementRepository extends JpaRepository<Announcement, Long
                 }
 
                 // WHERE
-                builder.append("WHERE 1 = 1 " + System.lineSeparator());
+                builder.append("WHERE 1 = 1 AND a.active = true " + System.lineSeparator());
                 if (queryParams.get("priceMin") != null) {
                     builder.append("  AND a.price between :priceMin AND :priceMax " + System.lineSeparator());
                 }
