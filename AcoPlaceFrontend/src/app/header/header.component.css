@@ -5,3 +5,9 @@ ul li {
 span {
   cursor: pointer;
 }
+
+.navbar-icon {
+  margin: 0 4px 3px 0;
+  vertical-align: middle;
+  height: 26px;
+}

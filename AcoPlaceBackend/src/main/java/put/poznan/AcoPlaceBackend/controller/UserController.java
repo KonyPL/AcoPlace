@@ -37,6 +37,12 @@ public class UserController {
 
     }
 
+    @GetMapping("/userProfileDto/getByAnnouncementId/{id}")
+    public UserProfileDto getUserProfileDtoForUserByAnnouncementID(@PathVariable Integer id){
+        return  userService.findUserProfileDtoByAnnouncementId(id);
+
+    }
+
     @PostMapping("/user/editByDto")
     public UserProfileDto updateUserByDto(@RequestBody UserProfileDto userProfileDto){
         return  userService.updateUserByDto(userProfileDto);

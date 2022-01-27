@@ -1,3 +1,4 @@
+
 .gallery {
     display: grid;
     width: 100%;
@@ -37,7 +38,7 @@
     transform: translate(-50%, 0%);
   }
 
-  ngx-gallery /deep/ ngx-gallery-image .ngx-gallery-arrow {
+  /* ngx-gallery /deep/ ngx-gallery-image .ngx-gallery-arrow {
     background-color: orangered;
   }
   ngx-gallery /deep/ ngx-gallery-thumbnails .ngx-gallery-arrow {
@@ -45,4 +46,4 @@
   }
   ngx-gallery /deep/ ngx-gallery-preview .ngx-gallery-arrow {
     background-color: orangered;
-  }
+  } */

@@ -80,7 +80,11 @@ import { NgxImageCompressorModule } from 'ngx-image-compressor';
 import { NgxImageCompressService } from 'ngx-image-compress';
 import { EditAnnouncementComponent } from './edit-announcement/edit-announcement.component';
 import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.component';
-
+import { BannerGalleryComponent } from './banner-gallery/banner-gallery.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { AllInfoAnnouncementComponent } from './all-info-announcement/all-info-announcement.component';
+import { OtherUserProfileComponent } from './other-user-profile/other-user-profile.component';
 // import { SidebarComponent } from './sidebar/sidebar.component';
 // import { NgImageSliderModule } from 'ng-image-slider';
 // import { SidebarComponent } from './sidebar/sidebar.component';
@@ -126,9 +130,13 @@ import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.
     FileUploadComponent,
     FileBase64Component,
     EditAnnouncementComponent,
-    UserProfileEditComponent
+    UserProfileEditComponent,
+    BannerGalleryComponent,
+    AllInfoAnnouncementComponent,
+    OtherUserProfileComponent
   ],
   imports: [
+    NgbModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
@@ -184,7 +192,9 @@ import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.
 
 
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }, HttpClientModule, NgxImageCompressService],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }, HttpClientModule, NgxImageCompressService, 
+    {provide: MAT_DATE_LOCALE, useValue: 'en-GB'},
+  ],
 
   // vvv Tak było "wcześniej"
   //providers: [HttpClientModule],

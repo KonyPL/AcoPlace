@@ -1,9 +1,7 @@
 package put.poznan.AcoPlaceBackend.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.*;
 import put.poznan.AcoPlaceBackend.dto.AnnouncementDto;
 
 import javax.persistence.*;
@@ -16,6 +14,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 @SqlResultSetMapping(
         name = "AnnouncementDtoMapping",
         classes = {
@@ -66,8 +65,9 @@ public class Announcement implements Serializable {
 
 
     @Temporal(TemporalType.DATE)
+    @JsonFormat(pattern = "dd-MM-yyyy", timezone = "CET")
     private Date availableFrom;
-
+    @JsonFormat(pattern = "dd-MM-yyyy hh:mm", timezone = "CET")
     private Date publicationDate;
 
     @ManyToOne
@@ -76,27 +76,4 @@ public class Announcement implements Serializable {
     @OneToMany
     private List<ImageStorage> images;
 
-    @Override
-    public String toString() {
-        return "Announcement{" +
-                "id=" + id +
-                ", country='" + country + '\'' +
-                ", city='" + city + '\'' +
-                ", postalCode='" + postalCode + '\'' +
-                ", district='" + district + '\'' +
-                ", state='" + state + '\'' +
-                ", street='" + street + '\'' +
-                ", houseNumber='" + houseNumber + '\'' +
-                ", title='" + title + '\'' +
-                ", text='" + text + '\'' +
-                ", propertyType='" + propertyType + '\'' +
-                ", price=" + price +
-                ", currency='" + currency + '\'' +
-                ", livingSpace=" + livingSpace +
-                ", yearBuilt=" + yearBuilt +
-                ", availableFrom=" + availableFrom +
-                ", publicationDate=" + publicationDate +
-                ", webUser=" + webUser +
-                '}';
-    }
 }

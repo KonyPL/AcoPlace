@@ -2,60 +2,40 @@
 
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-        <span routerLink="/" class="navbar-brand">AcoPlace</span>
+        <span mat-icon-button>
+            <mat-icon class="navbar-icon">
+                home
+            </mat-icon>AcoPlace
+        </span>
         <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
             <ul fxLayout="row" fxLayoutGap="20px">
                 <li routerLinkActive="active">
-                    <span routerLink="/announcements-list" mat-icon-button>List
-                        <!-- button  -->
-                        <!-- <mat-icon>List of announcements</mat-icon> -->
+                    <span routerLink="/announcements-list" mat-icon-button> Search
+                        
                     </span>
                 </li>
                 <li routerLinkActive="active">
                     <span routerLink="/add-announcement" mat-icon-button>Add
-                        <!-- <mat-icon>Add announcement</mat-icon> -->
+                        
                     </span>
                 </li>
-                <li routerLinkActive="active">
-                    <span routerLink="/announcement-details-list" mat-icon-button>Details
-                        <!-- <mat-icon>List of announcement details</mat-icon> -->
-                    </span>
-                </li>
-                <li routerLinkActive="active">
-                    <span routerLink="/search-announcement" mat-icon-button>Search
-                        <!-- <mat-icon>Search announcement</mat-icon> -->
-                    </span>
-                </li>
-                <li routerLinkActive="active">
-                    <span routerLink="/user-profile" mat-icon-button>Profile
-                        <!-- <mat-icon>User profile</mat-icon> -->
-                    </span>
-                </li>
+
                 <li *ngIf="!authService.isAuthenticated()" routerLinkActive="active">
                     <span routerLink="/register" mat-icon-button>Register
-                        <!-- <mat-icon>REGISTER</mat-icon> -->
+                        
                     </span>
                 </li>
                 <li *ngIf="!authService.isAuthenticated()" routerLinkActive="active">
                     <span routerLink="/login" mat-icon-button>Login
-                        <!-- <mat-icon>LOGIN</mat-icon> -->
+                        
                     </span>
                 </li>
                 <li *ngIf="authService.isAuthenticated()" routerLinkActive="active">
-                    <span mat-icon-button><a (click)="logout()" >LOGOUT</a>
-                        <!-- <mat-icon>LOGIN</mat-icon> -->
+                    <span mat-icon-button><a (click)="logout()" >Logout</a>
+                       
                     </span>
                 </li>
-                <li routerLinkActive="active">
-                    <span routerLink="/start" mat-icon-button>Start
-                        <!-- <mat-icon>Start</mat-icon> -->
-                    </span>
-                </li>
-                <li routerLinkActive="active">
-                    <span routerLink="/search" mat-icon-button>Search dynamic
-                        <!-- <mat-icon>Start</mat-icon> -->
-                    </span>
-                </li>
+
             </ul>
         </div>
 

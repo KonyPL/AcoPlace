@@ -1,39 +1,79 @@
 <div class="component">
     <div class="row">
         <div class="col-md-4">
-            <h5>Wyposażenie</h5>
-
-            <p>bath={{announcementDetails.bath}}</p>
-            <p>shower={{announcementDetails.shower}}</p>
-            <p>microvawe={{announcementDetails.microwave}}</p>
-            <p>oven={{announcementDetails.oven}}/
-            <p>
-            <p>elevator={{announcementDetails.elevator}}</p>
-            <p>dishwasher={{announcementDetails.dishwasher}}</p>
-            <p>clothesDryer={{announcementDetails.clothesDryer}}</p>
-            <p>fenced={{announcementDetails.fenced}}</p>
-            <p>petsAllowed={{announcementDetails.petsAllowed}}</p>
+            <h4 style="font-weight: bold;">Equipment</h4>
+            <hr>
+            <div style="text-align: center;" *ngIf="announcementDetails.bath">
+                <label>Bath</label>
+            </div>
+            <div style="text-align: center;" *ngIf="announcementDetails.shower">
+                <label>Shower</label>
+            </div>
+            <div style="text-align: center;" *ngIf="announcementDetails.microwave">
+                <label>Microwave</label>
+            </div>
+            <div style="text-align: center;" *ngIf="announcementDetails.oven">
+                <label>Oven</label>
+            </div>
+            <div style="text-align: center;" *ngIf="announcementDetails.elevator">
+                <label>Elevator</label>
+            </div>
+            <div style="text-align: center;" *ngIf="announcementDetails.dishwasher">
+                <label>Dishwasher</label>
+            </div>
+            <div style="text-align: center;" *ngIf="announcementDetails.clothesDryer">
+                <label>Clothes dryer</label>
+            </div>
+            <div style="text-align: center;" *ngIf="announcementDetails.petsAllowed">
+                <label>Pets allowed</label>
+            </div>
+            <div style="text-align: center;" *ngIf="announcementDetails.fenced">
+                <label>Property is fenced</label>
+            </div>
         </div>
         <div class="col-md-4">
-            <h5>Elektronika</h5>
-            <p>tv={{announcementDetails.tv}}</p>
-            <p>wifi={{announcementDetails.wifi}}</p>
-            <p>internet={{announcementDetails.internet}}</p>
-            <p>internet speed={{announcementDetails.internetSpeed}}</p>
-            <p>ethernetOutlets={{announcementDetails.ethernetOutlets}}</p>
-
-
+            <h4 style="font-weight: bold;">Electronics</h4>
+            <hr>
+            <div style="text-align: center;" *ngIf="announcementDetails.tv">
+                <label>TV</label>
+            </div>
+            <div style="text-align: center;" *ngIf="announcementDetails.wifi">
+                <label>WiFi</label>
+            </div>
+            <div style="text-align: center;" *ngIf="announcementDetails.internet">
+                <label>Internet</label>
+            </div>
+            <div style="text-align: center;">
+                <label>Internet speed: {{announcementDetails.internetSpeed}} Mb/s</label>
+            </div>
+            <div style="text-align: center;" *ngIf="announcementDetails.ethernetOutlets">
+                <label>Ethernet outlets</label>
+            </div>
         </div>
         <div class="col-md-4">
-            <h5>Położenie</h5>
-            <p>nearPark={{announcementDetails.nearPark}}</p>
-            <p>nearTram={{announcementDetails.nearTram}}</p>
-
-            <p>nearShoppingMall={{announcementDetails.nearShoppingMall}}</p>
-            <p>nearBakery={{announcementDetails.nearBakery}}</p>
-            <p>nearFoodMarket={{announcementDetails.nearFoodMarket}}</p>
-            <p>nearSuperMarket={{announcementDetails.nearSupermarket}}</p>
-            <p>nearBus={{announcementDetails.nearBus}}</p>
+            <h4 style="font-weight: bold;">Location</h4>
+            <hr>
+            <div style="text-align: center;" *ngIf="announcementDetails.nearPark">
+                <label>Near park</label>
+            </div>
+            <div style="text-align: center;" *ngIf="announcementDetails.nearTram">
+                <label>Near tram</label>
+            </div>
+            <div style="text-align: center;" *ngIf="announcementDetails.nearBus">
+                <label>Near bus</label>
+            </div>
+            <div style="text-align: center;" *ngIf="announcementDetails.nearShoppingMall">
+                <label>Near shopping mall</label>
+            </div>
+            <div style="text-align: center;" *ngIf="announcementDetails.nearBakery">
+                <label>Near bakery</label>
+            </div>
+            <div style="text-align: center;" *ngIf="announcementDetails.nearFoodMarket">
+                <label>Near food market</label>
+            </div>
+            <div style="text-align: center;" *ngIf="announcementDetails.nearSupermarket">
+                <label>Near supermarket</label>
+            </div>
         </div>
     </div>
 </div>

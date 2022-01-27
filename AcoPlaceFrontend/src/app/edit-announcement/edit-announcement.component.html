@@ -1,35 +1,35 @@
-<h2 class="text-center">EDIT ANNOUNCEMENT</h2>
+<h2 class="text-center">Edit ANNOUNCEMENT</h2>
 <div class="col-md-12" style="padding-left: 20px;">
     <form>
         <div class="col-md-3">
+            <!-- <p></p> tu jakas instrukcja co zrobic -->
+            <!-- gdzies zdjecia dodac -->
             <label>Basic</label>
             <!-- basic -->
             <div class="form-group">
-                <label for="name">Title (string):</label>
-                <input [(ngModel)]="announcementDto.title" placeholder="title" name="title" class="form-control"
+                <label for="name">Title</label>
+                <input [(ngModel)]="announcementDto.title" placeholder="A new room" name="title" class="form-control"
                     id="title">
             </div>
             <div class="form-group">
-                <label for="lastname">Text (string):</label>
-                <input [(ngModel)]="announcementDto.text" placeholder="text" name="text" class="form-control" id="text">
-            </div>
-
-            <div class="form-group">
-                <label for="name">PropertyType (string):</label>
-                <select [(ngModel)]="announcementDto.propertyType" name="propertyType"
+                <label for="name">PropertyType</label>
+                <select [(ngModel)]="announcementDto.propertyType" placeholder="HOUSE" name="propertyType"
                     class="form-control form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="text">
                     <option value="HOUSE">HOUSE</option>
                     <option value="FLAT">FLAT</option>
                     <option value="ROOM">ROOM</option>
                 </select>
             </div>
+
+
+
             <div class="form-group">
-                <label for="name">Price (string):</label>
-                <input [(ngModel)]="announcementDto.price" placeholder="price" name="price" class="form-control"
+                <label for="name">Price</label>
+                <input [(ngModel)]="announcementDto.price" placeholder="3000" name="price" class="form-control"
                     id="price" type="number">
             </div>
             <div class="form-group">
-                <label for="name">Currency (string):</label>
+                <label for="name">Currency</label>
                 <select [(ngModel)]="announcementDto.currency" name="currency"
                     class="form-control form-select form-select-lg mb-3" aria-label=".form-select-lg example"
                     id="currency">
@@ -37,267 +37,298 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="name">LivingSpace (string):</label>
-                <input [(ngModel)]="announcementDto.livingSpace" placeholder="livingSpace" name="livingSpace"
-                    class="form-control" id="livingSpace">
+                <label for="name">LivingSpace</label>
+                <input [(ngModel)]="announcementDto.livingSpace" placeholder="7" name="livingSpace" class="form-control"
+                    id="livingSpace">
             </div>
             <div class="form-group">
-                <label for="name">yearBuilt (string):</label>
-                <input [(ngModel)]="announcementDto.yearBuilt" placeholder="yearBuilt" name="yearBuilt"
-                    class="form-control" type="number" id="yearBuilt">
+                <label for="name">yearBuilt</label>
+                <input [(ngModel)]="announcementDto.yearBuilt" placeholder="1980" name="yearBuilt" class="form-control"
+                    type="number" id="yearBuilt">
             </div>
+            <div class="form-group">
+                <label for="lastname">availableFrom</label>
+                <input [(ngModel)]="announcementDto.availableFrom" placeholder="yyyy-mm-dd" name="availableFrom"
+                    class="form-control date" type="date">
+            </div>
+            <!-- [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" id="dp" -->
+
+            <!-- <mat-form-field>
+                <input matInput [matDatePicker]="myDatePicker">
+                <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+                <mat-datepicker #myDatePicker></mat-datepicker>
+            </mat-form-field> -->
+
         </div>
-        <div class="col-md-3">
+        <div class=" col-md-3">
             <Label>Address</Label>
             <div class="form-group">
-                <label for="name">Country (string):</label>
-                <input [(ngModel)]="announcementDto.country" placeholder="Polska" name="coutry" class="form-control"
+                <label for="name">Country</label>
+                <input [(ngModel)]="announcementDto.country" placeholder="Poland" name="coutry" class="form-control"
                     id="country">
             </div>
             <div class="form-group">
-                <label for="name">City (string):</label>
-                <input [(ngModel)]="announcementDto.city" placeholder="city" name="city" class="form-control" id="city">
+                <label for="name">City</label>
+                <input [(ngModel)]="announcementDto.city" placeholder="Poznan" name="city" class="form-control"
+                    id="city">
             </div>
             <div class="form-group">
-                <label for="name">PostalCode (string):</label>
-                <input [(ngModel)]="announcementDto.postalCode" placeholder="Polska" name="postalCode"
+                <label for="name">PostalCode</label>
+                <input [(ngModel)]="announcementDto.postalCode" placeholder="60-180" name="postalCode"
                     class="form-control" id="postalCode">
             </div>
             <div class="form-group">
-                <label for="name">State (string):</label>
-                <input [(ngModel)]="announcementDto.state" placeholder="state" name="state" class="form-control"
-                    id="state">
+                <label for="name">State</label>
+                <input [(ngModel)]="announcementDto.state" placeholder="Greater Poland" name="state"
+                    class="form-control" id="state">
             </div>
             <div class="form-group">
-                <label for="name">District (string):</label>
-                <input [(ngModel)]="announcementDto.district" placeholder="district" name="district"
-                    class="form-control" id="district">
+                <label for="name">District</label>
+                <input [(ngModel)]="announcementDto.district" placeholder="Rataje" name="district" class="form-control"
+                    id="district">
             </div>
             <div class="form-group">
-                <label for="name">Street (string):</label>
-                <input [(ngModel)]="announcementDto.street" placeholder="street" name="street" class="form-control"
-                    id="street">
+                <label for="name">Street</label>
+                <input [(ngModel)]="announcementDto.street" placeholder="Broughton Rd" name="street"
+                    class="form-control" id="street">
             </div>
             <div class="form-group">
-                <label for="lastname">HouseNumber (string):</label>
-                <input [(ngModel)]="announcementDto.houseNumber" placeholder="houseNumber" name="houseNumber"
+                <label for="lastname">HouseNumber</label>
+                <input [(ngModel)]="announcementDto.houseNumber" placeholder="21" name="houseNumber"
                     class="form-control" id="houseNumber">
             </div>
+
         </div>
 
         <div>
 
-            <Label>Available</Label>
-            <div class="form-group">
-                <label for="lastname">availableFrom (string):</label>
-                <input [(ngModel)]="announcementDto.availableFrom" placeholder="availableFrom" name="availableFrom"
-                    class="form-control" id="availableFrom">
-            </div>
-            <div class="form-group">
-                <label for="name">publicationDate (string):</label>
-                <input [(ngModel)]="announcementDto.publicationDate" placeholder="publicationDate"
-                    name="publicationDate" class="form-control" id="publicationDate">
-            </div>
-            <label>Details</label>
-            <!-- details -->
-            <div class="form-group">
-                <label for="lastname">Bath (string):</label>
-                <input [(ngModel)]="announcementDto.bath" placeholder="bath" name="bath" class="form-control" id="bath">
-            </div>
-            <div class="form-group">
-                <label for="name">Shower (string):</label>
-                <input [(ngModel)]="announcementDto.shower" placeholder="shower" name="shower" class="form-control"
-                    id="shower">
-            </div>
-            <div class="form-group">
-                <label for="name">Microwave (string):</label>
-                <input [(ngModel)]="announcementDto.microwave" placeholder="microwave" name="microwave"
-                    class="form-control" id="microwave">
-            </div>
-            <div class="form-group">
-                <label for="name">Oven (string):</label>
-                <input [(ngModel)]="announcementDto.oven" placeholder="oven" name="oven" class="form-control" id="oven">
-            </div>
-            <div class="form-group">
-                <label for="name">PetsAllowed (string):</label>
-                <input [(ngModel)]="announcementDto.petsAllowed" placeholder="petsAllowed" name="petsAllowed"
-                    class="form-control" id="petsAllowed">
-            </div>
-            <div class="form-group">
-                <label for="name">Elevator (string):</label>
-                <input [(ngModel)]="announcementDto.elevator" placeholder="elevator" name="elevator"
-                    class="form-control" id="elevator">
-            </div>
-            <div class="form-group">
-                <label for="name">Fenced (string):</label>
-                <input [(ngModel)]="announcementDto.fenced" placeholder="fenced" name="fenced" class="form-control"
-                    id="fencee">
-            </div>
 
-            <div class="form-group">
-                <label for="name">Wifi (string):</label>
-                <input [(ngModel)]="announcementDto.wifi" placeholder="wifi" name="wifi" class="form-control" id="wifi">
-            </div>
-            <div class="form-group">
-                <label for="lastname">EthernetOutlets (string):</label>
-                <input [(ngModel)]="announcementDto.ethernetOutlets" placeholder="ethernetOutlets"
-                    name="ethernetOutlets" class="form-control" id="ethernetOutlets">
-            </div>
-            <div class="form-group">
-                <label for="name">Internet (string):</label>
-                <input [(ngModel)]="announcementDto.internet" placeholder="internet" name="internet"
-                    class="form-control" id="internet">
-            </div>
-            <div class="form-group">
-                <label for="name">InternetSpeed (string):</label>
-                <input [(ngModel)]="announcementDto.internetSpeed" placeholder="internetSpeed" name="internetSpeed"
-                    class="form-control" id="internetSpeed">
-            </div>
-            <div class="form-group">
-                <label for="name">Tv (string):</label>
-                <input [(ngModel)]="announcementDto.tv" placeholder="tv" name="tv" class="form-control" id="tv">
-            </div>
-            <div class="form-group">
-                <label for="name">Dishwasher (string):</label>
-                <input [(ngModel)]="announcementDto.dishwasher" placeholder="dishwasher" name="dishwasher"
-                    class="form-control" id="dishwasher">
-            </div>
-            <div class="form-group">
-                <label for="name">ClothesDryer (string):</label>
-                <input [(ngModel)]="announcementDto.clothesDryer" placeholder="clothesDryer" name="clothesDryer"
-                    class="form-control" id="clothesDryer">
-            </div>
-            <Label>Place</Label>
-            <!-- place -->
-            <div class="form-group">
-                <label for="lastname">NearPark (string):</label>
-                <input [(ngModel)]="announcementDto.nearPark" placeholder="nearPark" name="nearPark"
-                    class="form-control" id="nearPark">
-            </div>
-            <div class="form-group">
-                <label for="lastname">NearTram (string):</label>
-                <input [(ngModel)]="announcementDto.nearTram" placeholder="nearTram" name="nearTram"
-                    class="form-control" id="nearTram">
-            </div>
-            <div class="form-group">
-                <label for="lastname">NearBus (string):</label>
-                <input [(ngModel)]="announcementDto.nearBus" placeholder="nearBus" name="nearBus" class="form-control"
-                    id="nearBus">
-            </div>
-            <div class="form-group">
-                <label for="lastname">NearShoppingMall (string):</label>
-                <input [(ngModel)]="announcementDto.nearShoppingMall" placeholder="nearShoppingMall"
-                    name="nearShoppingMall" class="form-control" id="nearShoppingMall">
-            </div>
-            <div class="form-group">
-                <label for="lastname">NearBakery (string):</label>
-                <input [(ngModel)]="announcementDto.nearBakery" placeholder="nearBakery" name="nearBakery"
-                    class="form-control" id="fencee">
-            </div>
-            <div class="form-group">
-                <label for="lastname">NearFoodMarket (string):</label>
-                <input [(ngModel)]="announcementDto.nearFoodMarket" placeholder="nearFoodMarket" name="nearFoodMarket"
-                    class="form-control" id="nearFoodMarket">
-            </div>
-            <div class="form-group">
-                <label for="name">NearSupermarket (string):</label>
-                <input [(ngModel)]="announcementDto.nearSupermarket" placeholder="nearSupermarket"
-                    name="nearSupermarket" class="form-control" id="nearSupermarket">
-            </div>
-            <div *ngIf="announcementDto.propertyType==='HOUSE'">wybrales HOUSE
-                <Label>House details</Label>
-                <!-- house details -->
-                <div class="form-group">
-                    <label for="name">Floors (string):</label>
-                    <input [(ngModel)]="announcementDto.floors" placeholder="floors" name="floors" class="form-control"
-                        id="floors">
-                </div>
-                <div class="form-group">
-                    <label for="name">Basement (string):</label>
-                    <input [(ngModel)]="announcementDto.basement" placeholder="basement" name="basement"
-                        class="form-control" id="basement">
-                </div>
-                <div class="form-group">
-                    <label for="name">Bedrooms (string):</label>
-                    <input [(ngModel)]="announcementDto.bedrooms" placeholder="bedrooms" name="bedrooms"
-                        class="form-control" id="bedrooms">
-                </div>
-                <div class="form-group">
-                    <label for="lastname">Bathrooms (string):</label>
-                    <input [(ngModel)]="announcementDto.bathrooms" placeholder="bathrooms" name="bathrooms"
-                        class="form-control" id="bathrooms">
-                </div>
-                <div class="form-group">
-                    <label for="lastname">Balcony (string):</label>
-                    <input [(ngModel)]="announcementDto.balcony" placeholder="balcony" name="balcony"
-                        class="form-control" id="balcony">
-                </div>
-                <div class="form-group">
-                    <label for="name">LotSize (string):</label>
-                    <input [(ngModel)]="announcementDto.lotSize" placeholder="lotSize" name="lotSize"
-                        class="form-control" id="lotSize">
-                </div>
-                <div class="form-group">
-                    <label for="lastname">Parking (string):</label>
-                    <input [(ngModel)]="announcementDto.parking" placeholder="parking" name="parking"
-                        class="form-control" id="parking">
-                </div>
-            </div>
-            <div *ngIf="announcementDto.propertyType==='FLAT'">wybrales FLAT
-                <Label>Flat details</Label>
-                <!-- flat details -->
+            <div class="col-md-3">
+                <label>Details</label>
+                <!-- <div class="row"></div> -->
+                <!-- details -->
 
                 <div class="form-group">
-                    <label for="name">Floor (string):</label>
-                    <input [(ngModel)]="announcementDto.floor" placeholder="floor" name="floor" class="form-control"
-                        id="floor">
+
+                    <mat-checkbox [(ngModel)]="announcementDto.bath" name="bath">Bath
+                    </mat-checkbox>
                 </div>
                 <div class="form-group">
-                    <label for="name">Bedrooms (string):</label>
-                    <input [(ngModel)]="announcementDto.bedrooms" placeholder="bedrooms" name="bedrooms"
-                        class="form-control" id="bedrooms">
+
+                    <mat-checkbox [(ngModel)]="announcementDto.shower" name="shower">Shower
+                    </mat-checkbox>
                 </div>
                 <div class="form-group">
-                    <label for="lastname">Bathrooms (string):</label>
-                    <input [(ngModel)]="announcementDto.bathrooms" placeholder="bathrooms" name="bathrooms"
-                        class="form-control" id="bathrooms">
+
+                    <mat-checkbox [(ngModel)]="announcementDto.microwave" name="microwave">Microwave
+                    </mat-checkbox>
+                </div>
+                <div class="form-group">
+
+                    <mat-checkbox [(ngModel)]="announcementDto.oven" name="oven">Oven
+                    </mat-checkbox>
+                </div>
+                <div class="form-group">
+
+                    <mat-checkbox [(ngModel)]="announcementDto.petsAllowed" name="petsAllowed">PetsAllowed
+                    </mat-checkbox>
+                </div>
+                <div class="form-group">
+
+                    <mat-checkbox [(ngModel)]="announcementDto.elevator" name="elevator">Elevator
+                    </mat-checkbox>
+                </div>
+                <div class="form-group">
+
+                    <mat-checkbox [(ngModel)]="announcementDto.fenced" name="fenced">Fenced
+                    </mat-checkbox>
                 </div>
 
                 <div class="form-group">
-                    <label for="name">FlatParking (string):</label>
-                    <input [(ngModel)]="announcementDto.flatParking" placeholder="flatParking" name="nearBakery"
-                        class="form-control" id="flatParking">
+
+                    <mat-checkbox [(ngModel)]="announcementDto.wifi" name="wifi">WiFi
+                    </mat-checkbox>
                 </div>
                 <div class="form-group">
-                    <label for="lastname">Balcony (string):</label>
-                    <input [(ngModel)]="announcementDto.balcony" placeholder="balcony" name="balcony"
-                        class="form-control" id="balcony">
+                    <mat-checkbox [(ngModel)]="announcementDto.ethernetOutlets" name="ethernetOutlets">
+                        EthernetOutlets
+                    </mat-checkbox>
+                </div>
+                <div class="form-group">
+                    <mat-checkbox [(ngModel)]="announcementDto.internet" name="internet">Internet
+                    </mat-checkbox>
+                </div>
+
+
+                <div class="form-group">
+                    <mat-checkbox [(ngModel)]="announcementDto.tv" name="tv">TV
+                    </mat-checkbox>
+                </div>
+                <div class="form-group">
+                    <label for="name">InternetSpeed</label>
+                    <input [(ngModel)]="announcementDto.internetSpeed" placeholder="500" name="internetSpeed"
+                        class="form-control" id="internetSpeed" type="number">
+                </div>
+                <div class="form-group">
+                    <mat-checkbox [(ngModel)]="announcementDto.dishwasher" name="dishwasher">Dishwasher
+                    </mat-checkbox>
+                </div>
+                <div class="form-group">
+                    <mat-checkbox [(ngModel)]="announcementDto.clothesDryer" name="clothesDryer">ClothesDryer
+                    </mat-checkbox>
+                </div>
+
+            </div>
+            <div class="col-md-3">
+
+                <div *ngIf="announcementDto.propertyType==='HOUSE'">
+                    <Label>House details</Label>
+
+                    <!-- house details -->
+                    <div class="form-group">
+                        <label for="name">Floors</label>
+                        <input [(ngModel)]="announcementDto.floors" placeholder="2" name="floors" class="form-control"
+                            id="floors" type="number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Bedrooms</label>
+                        <input [(ngModel)]="announcementDto.bedrooms" placeholder="2" name="bedrooms"
+                            class="form-control" id="bedrooms" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Bathrooms</label>
+                        <input [(ngModel)]="announcementDto.bathrooms" placeholder="4" name="bathrooms"
+                            class="form-control" id="bathrooms" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Balcony</label>
+                        <input [(ngModel)]="announcementDto.balcony" placeholder="2" name="balcony" class="form-control"
+                            id="balcony" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">LotSize</label>
+                        <input [(ngModel)]="announcementDto.lotSize" placeholder="70" name="lotSize"
+                            class="form-control" id="lotSize" type="number">
+                    </div>
+                    <div class="form-group">
+                        <mat-checkbox [(ngModel)]="announcementDto.basement" name="basement">Basement
+                        </mat-checkbox>
+                    </div>
+                    <div class="form-group">
+                        <mat-checkbox [(ngModel)]="announcementDto.parking" name="parking">Parking
+                        </mat-checkbox>
+                    </div>
+
+                </div>
+                <div *ngIf="announcementDto.propertyType==='FLAT'">
+                    <Label>Flat details</Label>
+                    <!-- flat details -->
+
+                    <div class="form-group">
+                        <label for="name">Floor</label>
+                        <input [(ngModel)]="announcementDto.floor" placeholder="5" name="floor" class="form-control"
+                            id="floor" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Bedrooms</label>
+                        <input [(ngModel)]="announcementDto.bedrooms" placeholder="4" name="bedrooms"
+                            class="form-control" id="bedrooms" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Bathrooms</label>
+                        <input [(ngModel)]="announcementDto.bathrooms" placeholder="3" name="bathrooms"
+                            class="form-control" id="bathrooms" type="number">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="lastname">Balcony</label>
+                        <input [(ngModel)]="announcementDto.balcony" placeholder="2" name="balcony" class="form-control"
+                            id="balcony" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">flatParking</label>
+                        <input [(ngModel)]="announcementDto.flatParking" placeholder="1" name="flatParking"
+                            class="form-control" id="flatParking" type="number">
+                    </div>
+                    <div class="form-group">
+                        <mat-checkbox [(ngModel)]="announcementDto.basement" name="basement">basement
+                        </mat-checkbox>
+                    </div>
+                </div>
+                <div *ngIf="announcementDto.propertyType==='ROOM'">
+                    <!-- room details -->
+                    <Label>Room details</Label>
+                    <div>
+                        <label for="name">Floor</label>
+                        <input [(ngModel)]="announcementDto.floor" placeholder="1" name="floor" class="form-control"
+                            id="floor" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">BedsInRoom</label>
+                        <input [(ngModel)]="announcementDto.bedsInRoom" placeholder="2" name="bedsInRoom"
+                            class="form-control" id="bedsInRoom" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">NumberOfFlatmates</label>
+                        <input [(ngModel)]="announcementDto.numberOfFlatmates" placeholder="3" name="numberOfFlatmates"
+                            class="form-control" id="numberOfFlatmates" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Bathrooms</label>
+                        <input [(ngModel)]="announcementDto.bathrooms" placeholder="4" name="bathrooms"
+                            class="form-control" id="bathrooms" type="number">
+                    </div>
                 </div>
             </div>
-            <div *ngIf="announcementDto.propertyType==='ROOM'">wybrales ROOM
-                <!-- room details -->
-                <div>
-                    <label for="name">Floor (string):</label>
-                    <input [(ngModel)]="announcementDto.floor" placeholder="floor" name="floor" class="form-control"
-                        id="floor">
-                </div>
+            <!-- </div> -->
+            <!-- <div class="row"> -->
+            <div class="col-md-6">
                 <div class="form-group">
-                    <label for="name">BedsInRoom (string):</label>
-                    <input [(ngModel)]="announcementDto.bedsInRoom" placeholder="bedsInRoom" name="bedsInRoom"
-                        class="form-control" id="bedsInRoom">
-                </div>
-                <div class="form-group">
-                    <label for="lastname">NumberOfFlatmates (string):</label>
-                    <input [(ngModel)]="announcementDto.numberOfFlatmates" placeholder="numberOfFlatmates"
-                        name="numberOfFlatmates" class="form-control" id="numberOfFlatmates">
-                </div>
-                <div class="form-group">
-                    <label for="lastname">Bathrooms (string):</label>
-                    <input [(ngModel)]="announcementDto.bathrooms" placeholder="bathrooms" name="bathrooms"
-                        class="form-control" id="bathrooms">
+                    <label for="lastname">Text</label>
+                    <textarea [(ngModel)]="announcementDto.text" placeholder="A description of your announcement... "
+                        name="text" class="form-control" id="text" cols="10" rows="10"></textarea>
                 </div>
             </div>
-            <button class="btn btn-success" (click)="onSubmitEdit()">EDIT</button>
-            <!-- </form> -->
+            <div class="col-md-3">
+                <Label>Place</Label>
+                <!-- place -->
+                <div class="form-group">
+                    <mat-checkbox [(ngModel)]="announcementDto.nearPark" name="nearPark">NearPark
+                    </mat-checkbox>
+                </div>
+                <div class="form-group">
+                    <mat-checkbox [(ngModel)]="announcementDto.nearTram" name="nearTram">NearTram
+                    </mat-checkbox>
+                </div>
+                <div class="form-group">
+                    <mat-checkbox [(ngModel)]="announcementDto.nearBus" name="nearBus">NearBus
+                    </mat-checkbox>
+                </div>
+                <div class="form-group">
+                    <mat-checkbox [(ngModel)]="announcementDto.nearShoppingMall" name="nearShoppingMall">
+                        NearShoppingMall
+                    </mat-checkbox>
+                </div>
+                <div class="form-group">
+                    <mat-checkbox [(ngModel)]="announcementDto.nearBakery" name="nearBakery">NearBakery
+                    </mat-checkbox>
+                </div>
+                <div class="form-group">
+                    <mat-checkbox [(ngModel)]="announcementDto.nearFoodMarket" name="nearFoodMarket">NearFoodMarket
+                    </mat-checkbox>
+                </div>
+                <div class="form-group">
+                    <mat-checkbox [(ngModel)]="announcementDto.nearSupermarket" name="nearSupermarket">
+                        nearSupermarket
+                    </mat-checkbox>
+                </div>
+            </div>
+            <!-- </div> -->
+
+
+            <button class="btn btn-success" (click)="onSubmitEdit()">Edit</button>
         </div>
-    </form> 
+    </form>
+</div>

@@ -1,18 +1,15 @@
-<label for="file">Select file
-    <img [src]="imageUrl" alt="Image Preview">
-</label>
+<h2 style="text-align:center;">Add your photos</h2>
+<div class="main">
+    <label for="file" class="button btn-primary btn">Select imagesfile
+        <input type="file" id="file" accept="image/*" class="button btn-primary btn" multiple hidden
+        (change)="onSelectNewFile($any($event).target?.files)">
+    </label>
 
-<input type="file" id="file" accept="image/*" multiple hidden (change)="onSelectNewFile($any($event).target?.files)">
+    <div class="row">
+        <div *ngFor="let base of base64" class="column">
+            <img [src]="base" [ngStyle]="{'border-radius':'10px'}">
+        </div>
+    </div>
 
-<button (click)="convertFileToBase64()">Base64</button>
-<input [(ngModel)]="announcementId" type="number" id="announcementId">
-<button (click)="sendImages()">Send</button>
-<button (click)="getImages(announcementId)">Download</button>
-
-<div *ngFor="let base of base64">
-    <img [src]="base">
-</div>
-Downloaded
-<div *ngFor="let down of downloaded">
-    <img [src]="down">
+    <button (click)="sendImages()" class="button btn-success btn" >Send Images</button>
 </div>

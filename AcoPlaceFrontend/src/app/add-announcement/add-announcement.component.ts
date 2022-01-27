@@ -5,8 +5,9 @@ import { Router } from '@angular/router';
 import { AnnouncementService } from '../announcement-list/announcement.service';
 import { Announcement } from '../model/announcement';
 import { AnnouncementCreateDto } from '../model/announcement-dto';
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 //import { MatSliderModule } from '@angular/material/slider';
-
+declare var $: any;
 @Component({
   selector: 'app-add-announcement',
   templateUrl: './add-announcement.component.html',
@@ -16,50 +17,54 @@ export class AddAnnouncementComponent implements OnInit {
   announcementDto: AnnouncementCreateDto = new AnnouncementCreateDto();
   announcementId: number;
 
+  model: NgbDateStruct;
 
   constructor(private announcementService: AnnouncementService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-//TU DUZO DO ZMIANY JESZCE 
-  
-onSubmit(){
-  console.log("THIS ANNOUNCEMENT on sumbit clicked"+this.announcementDto);
+  //TU DUZO DO ZMIANY JESZCE 
 
- this.saveAnnouncement();
-}
+  onSubmit() {
+    console.log("THIS ANNOUNCEMENT on sumbit clicked" + this.announcementDto);
 
-
- /* goToAnnouncementList() {
-    console.log("jestem w  go to tu chce byc announcement list");
-    this.router.navigate(['announcements-list']);
-  }*/
+    this.saveAnnouncement();
+  }
 
 
-saveAnnouncement(){
+  /* goToAnnouncementList() {
+     console.log("jestem w  go to tu chce byc announcement list");
+     this.router.navigate(['announcements-list']);
+   }*/
+
+
+  saveAnnouncement() {
     this.announcementService.createAnnouncementByDto(this.announcementDto).subscribe(
       data => {
-        this.announcementId= data.id;
+        this.announcementId = data;
+        console.log("dane po zwrocie  zposta id=" + data);
+        this.addImages();
+
       }
     );
-    console.log("JESTEM E SAVE ANNOUNCEMENT");
+    console.log("JESTEM w SAVE ANNOUNCEMENT");
 
-   this.addImages();
 
+
+  }
+
+
+  addImages() {
+    console.log("ID FROM ANNOUCEMENT CREATE DTO " + this.announcementId)
+    this.router.navigate(['addImages', this.announcementId]);
+  }
+  /*  
+  data => {
+      this.announcementsDetailsList = data;
+      console.log("DATA from endpoint" + data);
     }
-
-
-    addImages(){
-      console.log("ID FROM ANNOUCEMENT CREATE DTO ")
-      this.router.navigate(['addImages', this.announcementDto.id]);
-    }
-    /*  
-    data => {
-        this.announcementsDetailsList = data;
-        console.log("DATA from endpoint" + data);
-      }
-    */
+  */
 
 }
 

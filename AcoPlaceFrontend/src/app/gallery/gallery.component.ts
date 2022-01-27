@@ -1,86 +1,63 @@
 import { Component, OnInit } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
-import { Image } from '../model/image';
 import { NgxGalleryOptions } from '@kolkov/ngx-gallery';
 import { NgxGalleryImage } from '@kolkov/ngx-gallery';
 import { NgxGalleryAnimation } from '@kolkov/ngx-gallery';
-
+import { ActivatedRoute, Params } from '@angular/router';
+import { ImageUploadService } from '../file-base64/image-upload.service';
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent implements OnInit {
-  galleryOptions: NgxGalleryOptions[];
-  galleryImages: NgxGalleryImage[];
-  public images: Image[] = [
-    {
-      url: 'assets/images/Poznan_logo.png',
-      id: '1',
-      // row: '3/3'
-    },
-    {
-      url: 'assets/images/photo1.png',
-      id: '2',
-      // row: '3/3'
-    },
-    {
-      url: 'assets/images/photo2.png',
-      id: '3',
-      // row: '3/3'
-    },
-    {
-      url: 'assets/images/photo3.png',
-      id: '4',
-      // row: '3/3'
-    },
-  ] as Array<Image>;
+  galleryOptions: NgxGalleryOptions[] = [];
+  galleryImages: NgxGalleryImage[] = [];
+  announcement_id: number;
+  downloadedImages: string[] = [];
 
-  customOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: false,
-    touchDrag: false,
-    pullDrag: false,
-    dots: false,
-    navSpeed: 700,
-    navText: ['', ''],
-    responsive: {
-      0: {
-        items: 1
-      },
-      400: {
-        items: 2
-      },
-      740: {
-        items: 3
-      },
-      940: {
-        items: 4
+  convertStringToGalleryImages(): void {
+    this.downloadedImages.forEach(async (imgString: string) => {
+      const image: NgxGalleryImage = {
+        small: imgString,
+        medium: imgString,
+        big: imgString
       }
-    },
-    nav: true
+      this.galleryImages.push(image);
+      console.log("gallery Images " + image);
+    });
   }
 
-  slides: any = [[]];
+  getImages(): void {
+    this.imageUploadService.getImages(this.announcement_id).subscribe(data => {
+      this.downloadedImages = data;
+      this.convertStringToGalleryImages();
+    });
+  }
 
-  constructor() { }
+  arrowNextIcon: 'fa fa-chevron-right';
+
+
+  constructor(private route: ActivatedRoute, private imageUploadService: ImageUploadService) { }
 
   ngOnInit() {
     this.galleryOptions = [
       {
-        //banner tak mozna
-        // 'previewCloseOnEsc': true,
-        // 'previewKeyboardNavigation': true,
-        // 'imageBullets': true,
+        // banner tak mozna
+        'previewCloseOnEsc': true,
+        'previewKeyboardNavigation': true,
+        'imageBullets': true,
         // 'imageAutoPlay': true,
-        // thumbnailsArrows: true,
+        imageArrows: true,
+        previewArrows: true,
         thumbnailsArrows: true,
         width: '600px',
         height: '400px',
         thumbnailsColumns: 4,
         arrowPrevIcon: 'fa fa-chevron-left',
         arrowNextIcon: 'fa fa-chevron-right',
-        imageAnimation: NgxGalleryAnimation.Slide
+        imageAnimation: NgxGalleryAnimation.Slide,
+        imageSwipe: true,
+        imageArrowsAutoHide: false
       },
       // max-width 800
       {
@@ -91,56 +68,29 @@ export class GalleryComponent implements OnInit {
         thumbnailsPercent: 20,
         thumbnailsMargin: 20,
         thumbnailMargin: 20,
-        thumbnailsArrows: true,
-        thumbnailsSwipe: true,
-        imageBullets: true,
-        // arrowPrevIcon: fa fa-arrow-circle-o-left,
+        imageSwipe: true
+        // thumbnailsArrows: true,
+        // thumbnailsSwipe: true,
+        // imageBullets: true,
+        // arrowPrevIcon: fa-arrow-circle-o-left,
 
 
       },
       // max-width 400
       {
         breakpoint: 400,
-        preview: false
+        preview: false,
+        imageSwipe: true
       }
     ];
 
-    this.galleryImages = [
-      {
-        small: 'assets/images/photo1.png',
-        medium: 'assets/images/photo1.png',
-        big: 'assets/images/photo1.png'
-      },
-      {
-        small: 'assets/images/photo2.png',
-        medium: 'assets/images/photo2.png',
-        big: 'assets/images/photo2.png'
-      },
-      {
-        small: 'assets/images/photo3.png',
-        medium: 'assets/images/photo3.png',
-        big: 'assets/images/photo3.png'
-      },
-      {
-        small: 'assets/images/photo1.png',
-        medium: 'assets/images/photo1.png',
-        big: 'assets/images/photo1.png'
-      },
-      {
-        small: 'assets/images/photo2.png',
-        medium: 'assets/images/photo2.png',
-        big: 'assets/images/photo2.png'
-      }, {
-        small: 'assets/images/photo3.png',
-        medium: 'assets/images/photo3.png',
-        big: 'assets/images/photo3.png'
-      },
-      {
-        small: 'assets/images/photo1.png',
-        medium: 'assets/images/photo1.png',
-        big: 'assets/images/photo1.png'
-      }
-    ];
+    let thisUrl = this.route.snapshot.url[0].path;
+    if(thisUrl != "addImages"){
+      this.route.params.subscribe((params: Params) => {
+        this.announcement_id = + params['id'];
+      })
+      this.getImages();
+    } 
   }
 
 }

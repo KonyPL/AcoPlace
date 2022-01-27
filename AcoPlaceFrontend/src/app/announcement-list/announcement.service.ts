@@ -28,6 +28,10 @@ export class AnnouncementService {
     return this.httpClient.get<Announcement[]>("http://localhost:8080/announcements/inactive");
   }
 
+  getActiveAnnouncementsListById(id: number): Observable<Announcement[]> {
+    return this.httpClient.get<Announcement[]>("http://localhost:8080/announcements/getActiveByAdId/"+id);
+  }
+
 
   getAnnouncementById(id: number): Observable<Announcement> {
     return this.httpClient.get<Announcement>(`http://localhost:8080/announcement/` + id);
@@ -154,13 +158,22 @@ export class AnnouncementService {
   getAnnouncementDetailsById(id: number): Observable<AnnouncementDetails> {
     return this.httpClient.get<AnnouncementDetails>(`http://localhost:8080/announcementDetails/` + id);
   }
+  getHouseDetailsById(id: number): Observable<AnnouncementDetails> {
+    return this.httpClient.get<AnnouncementDetails>(`http://localhost:8080/houseDetails/` + id);
+  }
+  getFlatDetailsById(id: number): Observable<AnnouncementDetails> {
+    return this.httpClient.get<AnnouncementDetails>(`http://localhost:8080/flatDetails/` + id);
+  }
+  getRoomDetailsById(id: number): Observable<AnnouncementDetails> {
+    return this.httpClient.get<AnnouncementDetails>(`http://localhost:8080/roomDetails/` + id);
+  }
 
   getFavouriteAnnouncementsList(): Observable<Announcement[]> {
     return this.httpClient.get<Announcement[]>("http://localhost:8080/announcements/favourite");
   }
 
 
-  getAnnouncementCreateDtoById(id: number):Observable<AnnouncementCreateDto> {
-    return this.httpClient.get<AnnouncementCreateDto>("http://localhost:8080/announcement/announcementDto/"+id);
+  getAnnouncementCreateDtoById(id: number): Observable<AnnouncementCreateDto> {
+    return this.httpClient.get<AnnouncementCreateDto>("http://localhost:8080/announcement/announcementDto/" + id);
   }
 }

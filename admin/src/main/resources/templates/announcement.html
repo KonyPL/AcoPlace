@@ -85,6 +85,8 @@
     <a th:href="@{/findById}"> Find by ID </a>
     <a th:href="@{/allReportedAnnouncements}"> Reported </a>
     <a th:href="@{/allInactiveAnnouncements}"> Inactive </a>
+    <a th:href="@{/allEditedByUser}"> Edited by user</a>
+    <a th:href="@{/allEditedByUserAndReported}"> Edited by user and reported</a>
 
 
 </div>
@@ -246,6 +248,7 @@
     <a th:href="@{'/announcement/reportById/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-flag"></i> Report</button></a>
     <a th:href="@{'/announcement/delete/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-trash"></i> Delete</button></a>
     <a th:href="@{'/clearFlags/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-window-close"></i> Clear flags</button></a>
+    <a th:href="@{'/active/' + ${announcement.getId()}}"><button class="btn"><i class="fa fa-check"></i> Activate</button></a>
 
 </div>
 

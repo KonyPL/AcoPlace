@@ -30,4 +30,8 @@ export class UserService {
   updateUserByDto(userProfileDto: UserProfileDto): Observable<Object> {
     return this.httpClient.post(`http://localhost:8080/user/editByDto`, userProfileDto);
   }
+
+  getCurrentUserProfileDtoByAnnouncementId(id: number): Observable<UserProfileDto> {
+    return this.httpClient.get<UserProfileDto>(`http://localhost:8080/userProfileDto/getByAnnouncementId/`+ id)
+  }
 }

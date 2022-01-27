@@ -92,9 +92,12 @@ public class AnnouncementController {
 
 
     @PostMapping("/addAnnouncementByDto")
-    public Announcement createAnnouncementByDto(@RequestBody AnnouncementCreateDto announcementCreateDto) {
+    public Integer createAnnouncementByDto(@RequestBody AnnouncementCreateDto announcementCreateDto) {
         System.out.println("add create DTO="+announcementCreateDto.toString());
-       return announcementService.createAnnouncementByDto(announcementCreateDto);}
+
+       Announcement announcement = announcementService.createAnnouncementByDto(announcementCreateDto);
+    return announcement.getId();
+    }
 
 
     //updateAnnouncementByDto
@@ -118,6 +121,14 @@ public class AnnouncementController {
     @GetMapping("/announcement/announcementDto/{id}")
     public AnnouncementCreateDto getAdvertisementDtoById(@PathVariable Integer id){
         return announcementService.getAnnouncementDtoById(id);
+    }
+
+    @GetMapping("/announcements/getActiveByAdId/{id}")
+    public List<Announcement> getAllActiveForUserByAnnouncmentId(@PathVariable Integer id){
+        System.out.println("JESTEM W GET BY ID");
+        return announcementService.getActiveForUserByAnnouncementId(id);
+
+
     }
 
 }
