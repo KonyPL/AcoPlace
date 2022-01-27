@@ -3,18 +3,42 @@
         <div class="col-md-8" style="margin-top: 30px;">
             <h1 style="text-align: center; font-weight: bold;">{{announcement.title}}</h1>
             <div>
-
                 <app-gallery></app-gallery>
             </div>
             <p style="font-size: 16px;">{{announcement.text}}</p>
         </div>
         <div class="col-md-4">
             <h1 style="margin-top: 30px; font-size: 30px;">{{announcement.price}} {{announcement.currency}}</h1>
-            <button primary mat-icon-button (click)="addToFavourite()">ADD TO FAVOURITE
+            <!-- <button primary mat-icon-button (click)="addToFavourite()">ADD TO FAVOURITE
             </button>
             <button primary mat-icon-button (click)="editAnnouncement()">EDIT ANNOUNCEMENT
-            </button>
+            </button> -->
+            <button mat-raised-button color="primary" (click)="addToFavourite()">ADD TO FAVOURITE</button>
+            <button mat-raised-button color="primary" (click)="editAnnouncement()">EDIT ANNOUNCEMENT</button>
+
             <hr>
+            <div>
+                <div *ngIf="authService.isAuthenticated()">
+                    <div>
+                        <label style="font-size: 16px;">First name: {{userProfileDto.firstName}} </label>
+                    </div>
+                    <div>
+                        <label style="font-size: 16px;">Phone number: {{userProfileDto.phoneNumber}}</label>
+                    </div>
+                    <button mat-raised-button color="primary" (click)="goToUserProfile()">Check profile of this
+                        user</button>
+                    <hr>
+                </div>
+                <div *ngIf="!authService.isAuthenticated()">
+                    <div>
+                        <label style="font-size: 16px;">First name: {{userProfileDto.firstName}} </label>
+                    </div>
+                    <div>
+                        <label style="font-size: 16px;">Please Log in if you want see user profile </label>
+                    </div>
+                </div>
+
+            </div>
             <div style="font-size: 16px;">
                 <div>
                     <label>Available from: {{announcement.availableFrom}}</label>
@@ -68,18 +92,7 @@
             </div>
         </div>
     </div>
-    <div>
-        <div *ngIf="authService.isAuthenticated()">
-            <p>Firstname: {{userProfileDto.firstName}} </p>
-            <p>phoneNumber: {{userProfileDto.phoneNumber}}</p>
-            <a (click)="goToUserProfile()">check profile of this user</a>
-        </div>
-        <div *ngIf="!authService.isAuthenticated()">
-            <p>FirstnameL {{userProfileDto.firstName}}</p>
-            <p>Please Log in if you want see log number</p>
-        </div>
 
-    </div>
     <div class="row">
         <div class="col-md-8">
             <app-announcement-details-details [id]=announcement.id>

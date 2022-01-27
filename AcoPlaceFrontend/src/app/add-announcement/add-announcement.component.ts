@@ -6,7 +6,9 @@ import { AnnouncementService } from '../announcement-list/announcement.service';
 import { Announcement } from '../model/announcement';
 import { AnnouncementCreateDto } from '../model/announcement-dto';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
-//import { MatSliderModule } from '@angular/material/slider';
+import { MatButton } from '@angular/material/button';
+import { MatSliderModule } from '@angular/material/slider';
+// MatButton
 declare var $: any;
 @Component({
   selector: 'app-add-announcement',

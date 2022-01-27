@@ -1,44 +1,49 @@
 <div class="col-md-6">
-    <h2 class="text-center">EDIT USER PROFILE</h2>
-    <form>
+  <h2 class="text-center">Edit user profile</h2>
+  <form>
 
-        <div class="form-group">
-            <label for="uerName">UserName:</label>
-            <input [(ngModel)]="userProfileDto.userName" placeholder="UserName" name="userName" class="form-control" id="userName">
-          </div>
-          <div class="form-group">
-            <label for="email">EMAIL:</label>
-            <input [(ngModel)]="userProfileDto.email" placeholder="email" name="email" class="form-control" id="email">
-          </div>
-
-
-      <div class="form-group">
-        <label for="name">FirstName:</label>
-        <input [(ngModel)]="userProfileDto.firstName" placeholder="FirstName" name="firstName" class="form-control" id="firstName">
-      </div>
-    
-       <div class="form-group">
-        <label for="lastname">LastName:</label>
-        <input [(ngModel)]="userProfileDto.lastName" placeholder="LastName" name="lastName" class="form-control" id="lastName">
-      </div>
-
-      <div class="form-group">
-        <label for="phoneNumber">Phone number:</label>
-        <input [(ngModel)]="userProfileDto.phoneNumber" placeholder="phoneNumber" name="phoneNumber" class="form-control" id="phoneNumber">
-      </div>
-
-      <div class="form-group">
-        <label for="coountryCode">country code:</label>
-        <input [(ngModel)]="userProfileDto.countryCode" placeholder="countryCode" name="countryCode" class="form-control" id="countryCode">
-      </div>
-
-      <div class="form-group">
-        <label for="about">about:</label>
-        <input [(ngModel)]="userProfileDto.about" placeholder="about" name="about" class="form-control" id="about">
-      </div>
-
-    
-     
-      <button class="btn btn-success" (click)="onEdit()">EDIT</button>
-    </form>
+    <div class="form-group">
+      <label for="uerName">User name:</label>
+      <input [(ngModel)]="userProfileDto.userName" placeholder="UserName" name="userName" class="form-control"
+        id="userName">
     </div>
+    <div class="form-group">
+      <label for="email">E-mail:</label>
+      <input [(ngModel)]="userProfileDto.email" placeholder="email" name="email" class="form-control" id="email">
+    </div>
+
+
+    <div class="form-group">
+      <label for="name">First name:</label>
+      <input [(ngModel)]="userProfileDto.firstName" placeholder="FirstName" name="firstName" class="form-control"
+        id="firstName">
+    </div>
+
+    <div class="form-group">
+      <label for="lastname">Last name:</label>
+      <input [(ngModel)]="userProfileDto.lastName" placeholder="LastName" name="lastName" class="form-control"
+        id="lastName">
+    </div>
+
+    <div class="form-group">
+      <label for="phoneNumber">Phone number:</label>
+      <input [(ngModel)]="userProfileDto.phoneNumber" placeholder="phoneNumber" name="phoneNumber" class="form-control"
+        id="phoneNumber">
+    </div>
+
+    <div class="form-group">
+      <label for="coountryCode">Country code:</label>
+      <input [(ngModel)]="userProfileDto.countryCode" placeholder="countryCode" name="countryCode" class="form-control"
+        id="countryCode">
+    </div>
+
+    <div class="form-group">
+      <label for="about">About:</label>
+      <input [(ngModel)]="userProfileDto.about" placeholder="about" name="about" class="form-control" id="about">
+    </div>
+
+
+
+    <button class="btn btn-success" (click)="onEdit()">Edit</button>
+  </form>
+</div>
