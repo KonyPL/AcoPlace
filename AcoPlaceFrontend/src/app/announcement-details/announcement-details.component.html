@@ -1,6 +1,9 @@
 <div class="component" style="padding-left: 20px;">
-    <div *ngIf="announcement.edited==true"> ANNOUNCEMENT EDITED </div>
-    <div *ngIf="announcement.reported==true"> ANNOUNCEMENT reported by </div>
+    <!-- <div *ngIf="announcement$ | async as announcement">
+        <div *ngIf="announcement.edited==true"> ANNOUNCEMENT EDITED </div>
+        <div *ngIf="announcement.reported==true"> ANNOUNCEMENT reported by </div>
+    </div> -->
+
 
 
 
@@ -96,7 +99,7 @@
         </div>
         <div class="col-md-4">
 
-            <!-- <app-house-details *ngIf="announcement.propertyType==='HOUSE'" [id]=announcement.id>
+            <app-house-details *ngIf="announcement.propertyType==='HOUSE'" [id]=announcement.id>
             </app-house-details>
 
 
@@ -105,7 +108,7 @@
 
 
             <app-room-details *ngIf="announcement.propertyType==='ROOM'" [id]=announcement.id>
-            </app-room-details> -->
+            </app-room-details>
         </div>
     </div>
 </div>

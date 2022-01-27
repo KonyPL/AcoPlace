@@ -12,6 +12,6 @@ export class RoomService {
 
 
   getRoomByAnnouncementId(id: number): Observable<RoomDetails> {
-    return this.httpClient.get<RoomDetails>(`http://localhost:8080/roomDetails/announcement/`+id);
+    return this.httpClient.get<RoomDetails>(`http://localhost:8080/free/roomDetails/announcement/` + id);
   }
 }

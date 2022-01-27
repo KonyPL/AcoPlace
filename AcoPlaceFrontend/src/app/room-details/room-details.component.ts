@@ -9,7 +9,7 @@ import { RoomService } from './room.service';
 })
 export class RoomDetailsComponent implements OnInit {
 
-  @Input('id') id: number; 
+  @Input('id') id: number;
   roomDetails: RoomDetails;
 
   constructor(private roomService: RoomService) { }
@@ -20,12 +20,13 @@ export class RoomDetailsComponent implements OnInit {
 
 
 
-  public getRoomDetails(){
+  public getRoomDetails() {
     this.roomService.getRoomByAnnouncementId(this.id).subscribe(
       data => {
         this.roomDetails = data;
-        console.log("DATA from endpoint" + data);
+        console.log("DATA from endpoint room details" + data);
       }
-    )  }
+    )
+  }
 
 }

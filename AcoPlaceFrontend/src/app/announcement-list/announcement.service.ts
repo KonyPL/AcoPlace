@@ -154,14 +154,14 @@ export class AnnouncementService {
   getAnnouncementDetailsById(id: number): Observable<AnnouncementDetails> {
     return this.httpClient.get<AnnouncementDetails>(`http://localhost:8080/free/announcementDetails/` + id);
   }
-  getHouseDetailsById(id: number): Observable<AnnouncementDetails> {
-    return this.httpClient.get<AnnouncementDetails>(`http://localhost:8080/free/houseDetails/` + id);
+  getHouseDetailsById(id: number): Observable<HouseDetails> {
+    return this.httpClient.get<HouseDetails>(`http://localhost:8080/free/houseDetails/` + id);
   }
-  getFlatDetailsById(id: number): Observable<AnnouncementDetails> {
-    return this.httpClient.get<AnnouncementDetails>(`http://localhost:8080/free/flatDetails/` + id);
+  getFlatDetailsById(id: number): Observable<FlatDetails> {
+    return this.httpClient.get<FlatDetails>(`http://localhost:8080/free/flatDetails/` + id);
   }
-  getRoomDetailsById(id: number): Observable<AnnouncementDetails> {
-    return this.httpClient.get<AnnouncementDetails>(`http://localhost:8080/free/roomDetails/` + id);
+  getRoomDetailsById(id: number): Observable<RoomDetails> {
+    return this.httpClient.get<RoomDetails>(`http://localhost:8080/free/roomDetails/` + id);
   }
 
   getFavouriteAnnouncementsList(): Observable<Announcement[]> {

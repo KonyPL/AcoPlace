@@ -6,6 +6,8 @@ import { MatTableModule } from '@angular/material/table';
 import { SearchAnnouncementComponent } from '../search-announcement/search-announcement.component';
 import { AnnouncementParams } from '../model/announcementParams';
 import { ThemePalette } from '@angular/material/core';
+import { ImageUploadService } from '../file-base64/image-upload.service';
+import { ImageStorage } from '../model/image-storage';
 
 export interface Task {
   name: string;
@@ -28,10 +30,20 @@ export class AnnouncementListComponent implements OnInit {
 
   announcements: Announcement[];
 
-  constructor(private announcementService: AnnouncementService, private router: Router) { }
+  constructor(private announcementService: AnnouncementService, private router: Router, private imageUploadService: ImageUploadService) { }
 
   ngOnInit(): void {
     this.getAnnouncements();
+    // this.getImage
+  }
+
+  getImage(announcement_id: number): any {
+    this.imageUploadService.getImage(announcement_id).subscribe(
+      data => {
+        console.log("get image w announcement list component " + data);
+        return data;
+      }
+    )
   }
 
   private getAnnouncements() {

@@ -18,5 +18,10 @@ export class ImageUploadService {
     let params = new HttpParams().set("id", announcement_id)
     return this.httpClient.get<ImageStorage[]>(`http://localhost:8080/free/announcementImages`, { params });
   }
+  
+  getImage(announcement_id: number): Observable<any> {
+    let params = new HttpParams().set("id", announcement_id)
+    return this.httpClient.get<ImageStorage>(`http://localhost:8080/free/announcementImage`, { params });
+  }
 
 }

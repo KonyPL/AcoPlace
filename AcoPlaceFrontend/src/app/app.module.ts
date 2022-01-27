@@ -86,7 +86,9 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 // import { SidebarComponent } from './sidebar/sidebar.component';
 // import { NgImageSliderModule } from 'ng-image-slider';
 // import { SidebarComponent } from './sidebar/sidebar.component';
-
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatGridTileHarness } from '@angular/material/grid-list/testing';
+// import { GridLayoutComponent } from './grid-layout/grid-layout.component';
 
 // import {
 //   MatAutocompleteModule, MatButtonModule, MatCheckboxModule, MatDatepickerModule,
@@ -129,7 +131,8 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     FileBase64Component,
     EditAnnouncementComponent,
     UserProfileEditComponent,
-    BannerGalleryComponent
+    BannerGalleryComponent,
+    // GridLayoutComponent
   ],
   imports: [
     NgbModule,
@@ -184,12 +187,12 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     MatDividerModule,
     MatListModule,
     MatFormFieldModule,
-    NgxImageCompressorModule
-
+    NgxImageCompressorModule,
+    MatGridListModule,
 
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }, HttpClientModule, NgxImageCompressService, 
-    {provide: MAT_DATE_LOCALE, useValue: 'en-GB'},
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }, HttpClientModule, NgxImageCompressService,
+  { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
   ],
 
   // vvv Tak było "wcześniej"

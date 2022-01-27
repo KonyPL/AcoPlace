@@ -1,30 +1,26 @@
 <div>
-    <h5>Flat details</h5>
-    <!-- <p> id = {{flatDetails.id}}</p>
-    <p> floors = {{flatDetails.floor}}</p>
-    <p> bedrooms = {{flatDetails.bedrooms}}</p>
-    <p> bathrooms = {{flatDetails.bathrooms}}</p>
-    <p> flatParking = {{flatDetails.flatParking}}</p>
-    <p> balcony = {{flatDetails.balcony}}</p> -->
-</div>
-<div class="col-md-12">
-    <label>Floor: {{flatDetails.floor}}</label>
+    <h4 style="font-weight: bold;">Flat details</h4>
+    <hr>
 
 </div>
-<div class="col-md-12">
-    <label>Bedrooms: {{flatDetails.bedrooms}}</label>
+<div style="text-align: center;" *ngIf="flatDetails.floor">
+    <label>Floor number: {{ flatDetails.floor }}</label>
 
 </div>
-<div class="col-md-12">
-    <label>Bathrooms: {{flatDetails.bathrooms}}</label>
+<div style="text-align: center;" *ngIf="flatDetails.bedrooms">
+    <label>Number of bedrooms: {{ flatDetails.bedrooms }}</label>
 
 </div>
-<div class="col-md-12">
-    <label>Flat parking: {{flatDetails.flatParking}}</label>
+<div style="text-align: center;" *ngIf="flatDetails.bathrooms">
+    <label>Number of bathrooms: {{ flatDetails.bathrooms }}</label>
 
 </div>
-<div class="col-md-12">
-    <label>Balcony: {{flatDetails.balcony}}</label>
+<div style="text-align: center;" *ngIf="flatDetails.flatParking">
+    <label>Parking places: {{ flatDetails.flatParking }}</label>
+
+</div>
+<div style="text-align: center;" *ngIf="flatDetails.balcony">
+    <label>Number of balconies: {{ flatDetails.balcony }}</label>
 
 </div>
 <div style="text-align: center;" *ngIf="flatDetails.basement">

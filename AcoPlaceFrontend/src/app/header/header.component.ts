@@ -1,4 +1,7 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
 import { AuthService } from '../auth/auth.service';
 
 @Component({
@@ -8,7 +11,7 @@ import { AuthService } from '../auth/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public authService: AuthService) { }
+  constructor(public authService: AuthService, private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit(): void {
   }
@@ -16,5 +19,11 @@ export class HeaderComponent implements OnInit {
   logout() {
     this.authService.logout();
   }
+
+  // isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  //   .pipe(
+  //     map(result => result.matches),
+  //     shareReplay()
+  //   );
 
 }
