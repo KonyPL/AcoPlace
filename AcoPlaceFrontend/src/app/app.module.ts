@@ -88,6 +88,8 @@ import { OtherUserProfileComponent } from './other-user-profile/other-user-profi
 // import { SidebarComponent } from './sidebar/sidebar.component';
 // import { NgImageSliderModule } from 'ng-image-slider';
 // import { SidebarComponent } from './sidebar/sidebar.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatGridTileHarness } from '@angular/material/grid-list/testing';
 
 
 // import {
@@ -188,12 +190,12 @@ import { OtherUserProfileComponent } from './other-user-profile/other-user-profi
     MatDividerModule,
     MatListModule,
     MatFormFieldModule,
-    NgxImageCompressorModule
-
+    NgxImageCompressorModule,
+    MatGridListModule,
 
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }, HttpClientModule, NgxImageCompressService, 
-    {provide: MAT_DATE_LOCALE, useValue: 'en-GB'},
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }, HttpClientModule, NgxImageCompressService,
+  { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
   ],
 
   // vvv Tak było "wcześniej"

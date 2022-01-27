@@ -12,6 +12,6 @@ export class HouseService {
 
 
   getHouseByAnnouncementId(id: number): Observable<HouseDetails> {
-    return this.httpClient.get<HouseDetails>(`http://localhost:8080/houseDetails/announcement/`+id);
+    return this.httpClient.get<HouseDetails>(`http://localhost:8080/free/houseDetails/announcement/` + id);
   }
 }

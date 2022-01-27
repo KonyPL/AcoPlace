@@ -30,11 +30,30 @@ public class ImageStorageController {
         this.announcementRepository = announcementRepository;
     }
 
-    @GetMapping("/announcementImages")
+    @GetMapping("/free/announcementImages")
     public List<String> getAllAnnouncementImages(@RequestParam Integer id) {
-        System.out.println("SECURITY CONTEX HOLDER" + SecurityContextHolder.getContext().getAuthentication().getName());
-        System.out.println("user FROM auth service"+authService.getCurrentUser().get().toString());
         return imageStorageService.getAllAnnouncementImages(id);
+    }
+
+    @GetMapping("/announcementImages")
+    public List<ImageStorage> getAllAnnouncementImagesFullInfo(@RequestParam Integer id) {
+        return imageStorageService.getAllAnnouncementImagesFullInfo(id);
+    }
+
+    @GetMapping("/free/announcementImage")
+    public String getOneAnnouncementImage(@RequestParam Integer id) {
+        try {
+            return imageStorageService.getOneAnnouncementImage(id);
+        }catch (IndexOutOfBoundsException noRecords){
+            return null;
+        }
+    }
+
+    @DeleteMapping("/announcementImage")
+    public void deleteAnnouncementImages(@RequestParam(value="id[]") Integer[] ids) {
+        for (Integer id : ids){
+            imageStorageService.deleteImageById(id);
+        }
     }
 
     @PostMapping("/announcement/{id}/addImages")

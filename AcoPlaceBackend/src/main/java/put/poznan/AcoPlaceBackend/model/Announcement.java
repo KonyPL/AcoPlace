@@ -47,6 +47,7 @@ public class Announcement implements Serializable {
     private String street;
     private String houseNumber;
     private String title;
+    @Column(columnDefinition="TEXT")
     private String text;
     private String propertyType;
     private Double price;

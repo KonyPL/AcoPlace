@@ -20,7 +20,7 @@ public class FlatDetailsController {
         return flatDetailsService.getAllFlatDetails();
     }
 
-    @GetMapping("/flatDetails/{id}")
+    @GetMapping("/free/flatDetails/{id}")
     public FlatDetails getFlatDetailsById(long id){
         return flatDetailsService.getFlatById(id);
     }
@@ -30,7 +30,7 @@ public class FlatDetailsController {
         return  flatDetailsService.saveFlatDetails(flatDetails);
     }
 
-    @GetMapping("/flatDetails/announcement/{id}")
+    @GetMapping("/free/flatDetails/announcement/{id}")
     public FlatDetails getFlatDetailsByAnnouncementId(@PathVariable long id ){
         return flatDetailsService.getFlatByAnnouncementId(id);
     }

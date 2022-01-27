@@ -24,7 +24,8 @@ import { StartPageComponent } from './start-page/start-page.component';
 import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 // import { UserProfileComponent } from './user-profile/user-profile.component';
-
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatGridTileHarness} from '@angular/material/grid-list/testing';
 
 
 const appRoutes: Routes = [
@@ -36,7 +37,7 @@ const appRoutes: Routes = [
     { path: 'search-announcement', component: SearchAnnouncementComponent },
     { path: 'user-profile', component: UserProfileComponent },
     // { path: 'admin', component: AdminComponent },
-    { path: 'start', component: StartPageComponent },
+    { path: 'start', component: SearchComponent },
     { path: '', component: AnnouncementListComponent },
     //Kod Wodnika
     { path: 'register', component: RegisterComponent },

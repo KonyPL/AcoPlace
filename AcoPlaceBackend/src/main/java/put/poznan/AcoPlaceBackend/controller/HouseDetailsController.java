@@ -20,13 +20,13 @@ public class HouseDetailsController {
         return houseDetailsService.getAllHouseDetails();
     }
 
-    @GetMapping("/houseDetails/{id}")
+    @GetMapping("/free/houseDetails/{id}")
     public HouseDetails getHouseDetailsById(@PathVariable long id){
         return houseDetailsService.getHouseDetailsById(id);
     }
 
 
-    @GetMapping("/houseDetails/announcement/{id}")
+    @GetMapping("/free/houseDetails/announcement/{id}")
     public HouseDetails getHouseDetailsByAnnouncementId(@PathVariable long id) {
         return houseDetailsService.getHouseDetailsByAnnouncementId(id);
     }

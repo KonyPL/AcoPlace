@@ -1,12 +1,34 @@
 <div>
-    <h5>house-details component below!</h5>
-    <p>id= {{houseDetails.id}}</p>
-    <p>floors= {{houseDetails.floors}}</p>
-    <p>basement= {{houseDetails.basement}}</p>
-    <p>bedrooms= {{houseDetails.bedrooms}}</p>
-    <p>bathrooms= {{houseDetails.bathrooms}}</p>
-    <p>lotSize= {{houseDetails.lotSize}}</p>
-    <p>parking= {{houseDetails.parking}}</p>
-    <p>balcony= {{houseDetails.balcony}}</p>
+    <h4 style="font-size: 20px; font-weight: bold; margin-top: 60px; text-align: left;">House details</h4>
+    <hr>
+
 </div>
-<!-- TEST-->
+
+<div style="text-align: left; font-size: 16px;">
+    <div *ngIf="houseDetails.floors">
+        <label>Number of floors: {{ houseDetails.floors}}</label>
+
+    </div>
+
+    <div *ngIf="houseDetails.bedrooms">
+        <label>Number of bedrooms: {{ houseDetails.bedrooms}}</label>
+
+    </div>
+    <div *ngIf="houseDetails.bathrooms">
+        <label>Number of bathrooms: {{ houseDetails.bathrooms}}</label>
+
+    </div>
+    <div *ngIf="houseDetails.lotSize">
+        <label>Lot size: {{ houseDetails.lotSize}}</label>
+
+    </div>
+    <div *ngIf="houseDetails.balcony">
+        <label>Number of balconies: {{ houseDetails.balcony}}</label>
+    </div>
+    <div *ngIf="houseDetails.basement">
+        <label>Basement</label>
+    </div>
+    <div *ngIf="houseDetails.parking">
+        <label>Parking</label>
+    </div>
+</div>

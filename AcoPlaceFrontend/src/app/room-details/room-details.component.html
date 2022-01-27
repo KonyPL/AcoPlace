@@ -1,8 +1,23 @@
 <div>
-    <h5>room details component below</h5>
-    <p>id = {{roomDetails.id}}</p>
-    <p>floor = {{roomDetails.floor}}</p>
-    <p>beds in room = {{roomDetails.bedsInRoom}}</p>
-    <p>numberOfFlatmates = {{roomDetails.numberOfFlatmates}}</p>
-    <p>bathroosm = {{roomDetails.bathrooms}}</p>
+    <h4 style="font-size: 20px; font-weight: bold; margin-top: 60px; text-align: left;">Room details</h4>
+    <hr>
+
+</div>
+<div style="text-align: left; font-size: 16px;">
+    <div *ngIf="roomDetails.floor">
+        <label>Floor number: {{ roomDetails.floor }}</label>
+
+    </div>
+    <div *ngIf="roomDetails.bedsInRoom">
+        <label>Number of beds: {{ roomDetails.bedsInRoom }}</label>
+
+    </div>
+    <div *ngIf="roomDetails.numberOfFlatmates">
+        <label>Number of flatmates: {{ roomDetails.numberOfFlatmates }}</label>
+
+    </div>
+    <div *ngIf="roomDetails.bathrooms">
+        <label>Number of bathrooms: {{ roomDetails.bathrooms }}</label>
+
+    </div>
 </div>

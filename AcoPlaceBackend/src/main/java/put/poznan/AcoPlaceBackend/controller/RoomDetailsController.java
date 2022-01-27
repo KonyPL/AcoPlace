@@ -21,12 +21,12 @@ public class RoomDetailsController {
         return  roomDetailsService.getAllRoomDetails();
     }
 
-    @GetMapping("/roomDetails/{id}")
+    @GetMapping("/free/roomDetails/{id}")
     public RoomDetails getRoomDetailsById(@PathVariable  long id){
         return roomDetailsService.getRoomDetailsById(id);
     }
 
-    @GetMapping("/roomDetails/announcement/{id}")
+    @GetMapping("/free/roomDetails/announcement/{id}")
     public RoomDetails getRoomDetailsByAnnouncementIDId(@PathVariable  long id){
         return roomDetailsService.getRoomDetailsByAnnouncementId(id);
     }
