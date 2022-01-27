@@ -19,7 +19,7 @@
             <!-- </button> -->
             <!-- <button primary mat-icon-button (click)="addImages()">ADD IMAGES -->
             <!-- </button> -->
-            <button mat-raised-button color="primary" (click)="addToFavourite()">ADD TO FAVOURITE</button>
+
             <button mat-raised-button color="primary" (click)="editAnnouncement()">EDIT ANNOUNCEMENT</button>
             <button mat-raised-button color="primary" (click)="addImages()">ADD IMAGES</button>
             <hr>
@@ -32,8 +32,7 @@
                         <label style="font-size: 16px;">Phone number: {{userProfileDto.phoneNumber}}</label>
                     </div>
                     <!-- <button (click)="goToUserProfile()">Check profile of this user</button> -->
-                    <button mat-raised-button color="primary" (click)="goToUserProfile()">Check profile of this
-                        user</button>
+
                     <hr>
                 </div>
                 <div *ngIf="!authService.isAuthenticated()">

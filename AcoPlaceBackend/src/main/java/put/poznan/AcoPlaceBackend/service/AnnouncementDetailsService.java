@@ -22,7 +22,7 @@ public class AnnouncementDetailsService {
 
     public AnnouncementDetails getAnnouncementDetailsById(Integer id){
 
-        return announcementDetailsRepository.findAnnouncementDetailsById(id).orElseThrow(() -> new ResourceNotFoundException("AnnouncmentDetails with id:" + id + " not found in database"));
+        return announcementDetailsRepository.findAnnouncementDetailsByAnnouncementId(id);
         //return announcementDetailsRepository.findAnnouncementById(id).orElseThrow(() -> new ResourceNotFoundException("AnnouncmentDetails with id:" + id + " not found in database"));
 
     }
