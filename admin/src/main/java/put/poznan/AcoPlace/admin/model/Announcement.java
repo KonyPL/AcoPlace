@@ -18,10 +18,10 @@ public class Announcement {
     private String title;
     private String text;
     private String propertyType; //TODO change this to ENUM value
-    private double price;
+    private Double price;
     private String currency; //TODO change this to ENUM value
-    private int livingSpace;
-    private int yearBuilt;
+    private Integer livingSpace;
+    private Integer yearBuilt;
     private Date availableFrom;
     private Date publicationDate;
     private Boolean reported;

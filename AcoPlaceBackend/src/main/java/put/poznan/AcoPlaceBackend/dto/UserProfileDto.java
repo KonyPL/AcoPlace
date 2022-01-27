@@ -19,6 +19,8 @@ public class UserProfileDto {
     private String phoneNumber;
     private String countryCode;
     private String about;
+    //Profile picture
+    private String b64image;
 
     @Override
     public String toString() {

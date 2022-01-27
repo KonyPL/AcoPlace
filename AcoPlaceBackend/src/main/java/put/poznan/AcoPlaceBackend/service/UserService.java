@@ -57,6 +57,7 @@ public class UserService {
         userProfileDto.setPhoneNumber(userDetails.getPhoneNumber());
         userProfileDto.setCountryCode(userDetails.getCountryCode());
         userProfileDto.setAbout(userDetails.getAbout());
+        userProfileDto.setB64image(userDetails.getB64image());
 
         return userProfileDto;
     }
@@ -78,7 +79,8 @@ public class UserService {
         userProfileDto.setPhoneNumber(userDetails.getPhoneNumber());
         userProfileDto.setCountryCode(userDetails.getCountryCode());
         userProfileDto.setAbout(userDetails.getAbout());
-        System.out.println("USERNAME FOUNDED"+userProfileDto.toString());
+        userProfileDto.setB64image(userDetails.getB64image());
+        System.out.println("USERNAME FOUND "+userProfileDto.toString());
         return userProfileDto;
     }
 
@@ -95,6 +97,7 @@ public class UserService {
         userDetails.setPhoneNumber(userProfileDto.getPhoneNumber());
         userDetails.setCountryCode(userProfileDto.getCountryCode());
         userDetails.setAbout(userProfileDto.getAbout());
+        userDetails.setB64image(userProfileDto.getB64image());
         userDetailsRepository.save(userDetails);
 
         return userProfileDto;
