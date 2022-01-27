@@ -68,6 +68,18 @@ public interface AnnouncementRepository extends JpaRepository<Announcement, Long
                 if (queryParams.get("title") != null) {
                     builder.append("  AND a.title ilike :title " + System.lineSeparator());
                 }
+                if (queryParams.get("country") != null) {
+                    builder.append("  AND a.country ilike :country " + System.lineSeparator());
+                }
+                if (queryParams.get("state") != null) {
+                    builder.append("  AND a.state ilike :state " + System.lineSeparator());
+                }
+                if (queryParams.get("city") != null) {
+                    builder.append("  AND a.city ilike :city " + System.lineSeparator());
+                }
+                if (queryParams.get("district") != null) {
+                    builder.append("  AND a.district ilike :district " + System.lineSeparator());
+                }
                 if (queryParams.get("propertyType") != null) {
                     builder.append("  AND a.property_type like :propertyType " + System.lineSeparator());
                 }
@@ -156,7 +168,8 @@ public interface AnnouncementRepository extends JpaRepository<Announcement, Long
                     query.setParameter("priceMax", queryParams.get("priceMax"));
                 }
 
-                String[] possibleParams = {"availableFrom","title","propertyType","livingSpace","internetSpeed","bath",
+                String[] possibleParams = {"availableFrom","title","country","state","city","district","propertyType",
+                        "livingSpace","internetSpeed","bath",
                         "shower", "microwave","oven","petsAllowed","elevator","nearPark","fenced",
                         "nearTram","nearBus","wifi","ethernetOutlets","internet","tv","dishwasher","clothesDryer",
                         "nearShoppingMall","nearBakery","nearFoodMarket","nearSupermarket","basement","parking"};
