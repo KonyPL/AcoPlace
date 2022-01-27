@@ -50,7 +50,11 @@ public class AnnouncementController {
             @RequestParam(required = false) Optional<String> propertyType,
             @RequestParam(required = false) Optional<Integer> livingSpace,
             @RequestParam(required = false) Optional<String> mustHave,
-            @RequestParam(required = false) Optional<Integer> internetSpeed
+            @RequestParam(required = false) Optional<Integer> internetSpeed,
+            @RequestParam(required = false) Optional<String> city,
+            @RequestParam(required = false) Optional<String> country,
+            @RequestParam(required = false) Optional<String> state,
+            @RequestParam(required = false) Optional<String> district
     )
     {
         AnnouncementSearchCriteria searchCriteria = AnnouncementSearchCriteria.builder()
@@ -62,6 +66,10 @@ public class AnnouncementController {
                 .livingSpace(livingSpace.orElseGet(() -> null))
                 .internetSpeed(internetSpeed.orElseGet(() -> null))
                 .mustHave(mustHave.orElseGet(() -> null))
+                .city(city.orElseGet(() -> null))
+                .country(country.orElseGet(() -> null))
+                .state(state.orElseGet(() -> null))
+                .district(district.orElseGet(() -> null))
                 .build();
         List<AnnouncementDto> announcements = this.announcementService.searchAnnouncements(searchCriteria);
         return new ResponseEntity<>(announcements, HttpStatus.OK);
