@@ -19,4 +19,18 @@ public class UserProfileDto {
     private String phoneNumber;
     private String countryCode;
     private String about;
+
+    @Override
+    public String toString() {
+        return "UserProfileDto{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", email='" + email + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", countryCode='" + countryCode + '\'' +
+                ", about='" + about + '\'' +
+                '}';
+    }
 }

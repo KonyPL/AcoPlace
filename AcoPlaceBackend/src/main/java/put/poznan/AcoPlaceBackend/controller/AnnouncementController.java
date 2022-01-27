@@ -123,4 +123,12 @@ public class AnnouncementController {
         return announcementService.getAnnouncementDtoById(id);
     }
 
+    @GetMapping("/announcements/getActiveByAdId/{id}")
+    public List<Announcement> getAllActiveForUserByAnnouncmentId(@PathVariable Integer id){
+        System.out.println("JESTEM W GET BY ID");
+        return announcementService.getActiveForUserByAnnouncementId(id);
+
+
+    }
+
 }

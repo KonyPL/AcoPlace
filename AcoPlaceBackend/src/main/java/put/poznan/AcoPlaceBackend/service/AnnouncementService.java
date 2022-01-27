@@ -83,6 +83,7 @@ public class AnnouncementService {
         //TODO MAPPER PROSTY i tak pewnie nie zdazymy
         //TODO v1 w odpowiedniej kolejosci dac add details i flat details+++
         Announcement announcement = new Announcement();
+        announcement.setTitle(announcementCreateDto.getTitle());
         announcement.setCountry(announcementCreateDto.getCountry());
         announcement.setCity(announcementCreateDto.getCity());
         announcement.setPostalCode(announcementCreateDto.getPostalCode());
@@ -360,5 +361,10 @@ public class AnnouncementService {
 
        return  announcement;
 
+    }
+
+    public List<Announcement> getActiveForUserByAnnouncementId(Integer id) {
+        Announcement announcement = announcementRepository.findAnnouncementById(id).orElseThrow(() -> new ResourceNotFoundException("announcement not found"));
+        return announcementRepository.getActiveForUser(announcement.getWebUser().getId());
     }
 }

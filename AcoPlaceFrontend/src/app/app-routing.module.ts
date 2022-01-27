@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddAnnouncementComponent } from './add-announcement/add-announcement.component';
+import { AllInfoAnnouncementComponent } from './all-info-announcement/all-info-announcement.component';
 import { AnnoucementActiveListComponent } from './annoucement-active-list/annoucement-active-list.component';
 // import { AdminComponent } from './admin/admin.component';
 import { AnnouncementDetailsListComponent } from './announcement-details-list/announcement-details-list.component';
@@ -15,6 +16,7 @@ import { RegisterSuccessComponent } from './auth/register-success/register-succe
 import { RegisterComponent } from './auth/register/register.component';
 import { EditAnnouncementComponent } from './edit-announcement/edit-announcement.component';
 import { FileBase64Component } from './file-base64/file-base64.component';
+import { OtherUserProfileComponent } from './other-user-profile/other-user-profile.component';
 //Koniec kodu Wodnika
 import { SearchAnnouncementComponent } from './search-announcement/search-announcement.component';
 import { SearchComponent } from './search/search.component';
@@ -53,7 +55,10 @@ const appRoutes: Routes = [
     { path: 'inactiveAnnouncement', component: AnnouncementInactiveListComponent },
     { path: 'announcementEdit/:id', component: EditAnnouncementComponent },
     { path: 'userEdit', component: UserProfileEditComponent },
-    { path: 'addImages/:id', component: FileBase64Component }
+    { path: 'addImages/:id', component: FileBase64Component },
+    { path: 'allAnnouncement/:id', component: AllInfoAnnouncementComponent },
+    { path: 'allUserInfo/:id', component: OtherUserProfileComponent },
+
 
 
 

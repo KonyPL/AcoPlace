@@ -32,7 +32,7 @@ export class AnnouncementInactiveListComponent implements OnInit {
 
   public showAnnouncementById(id: number) {
     console.log("odczytuje id=" + id);
-    this.router.navigate(['announcement', id]);
+    this.router.navigate(['allAnnouncement', id]);
 
   }
 }

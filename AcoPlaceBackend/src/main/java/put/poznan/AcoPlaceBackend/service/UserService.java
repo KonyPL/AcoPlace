@@ -4,8 +4,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import put.poznan.AcoPlaceBackend.dto.UserProfileDto;
 import put.poznan.AcoPlaceBackend.exception.ResourceNotFoundException;
+import put.poznan.AcoPlaceBackend.model.Announcement;
 import put.poznan.AcoPlaceBackend.model.UserDetails;
 import put.poznan.AcoPlaceBackend.model.WebUser;
+import put.poznan.AcoPlaceBackend.repository.AnnouncementRepository;
 import put.poznan.AcoPlaceBackend.repository.UserDetailsRepository;
 import put.poznan.AcoPlaceBackend.repository.UserRepository;
 
@@ -16,10 +18,12 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final UserDetailsRepository userDetailsRepository;
+    private final AnnouncementRepository announcementRepository;
 
-    public UserService(UserRepository userRepository, UserDetailsRepository userDetailsRepository) {
+    public UserService(UserRepository userRepository, UserDetailsRepository userDetailsRepository, AnnouncementRepository announcementRepository) {
         this.userRepository = userRepository;
         this.userDetailsRepository = userDetailsRepository;
+        this.announcementRepository = announcementRepository;
     }
 
     public List<WebUser> getAllUsers() {
@@ -54,6 +58,27 @@ public class UserService {
         userProfileDto.setCountryCode(userDetails.getCountryCode());
         userProfileDto.setAbout(userDetails.getAbout());
 
+        return userProfileDto;
+    }
+
+
+    public UserProfileDto findUserProfileDtoByAnnouncementId(Integer id) {
+        Announcement announcement = announcementRepository.findAnnouncementById(id).orElseThrow(() -> new ResourceNotFoundException("announcement with"+id+"not found"));
+
+        WebUser webUser = announcement.getWebUser();
+        UserDetails userDetails = userDetailsRepository.findByWebUserId(webUser.getId());
+        //mapowanie do userProfile dot
+        UserProfileDto userProfileDto = new UserProfileDto();
+        userProfileDto.setUserName(webUser.getUserName());
+        userProfileDto.setId(webUser.getId());
+        userProfileDto.setUserName(webUser.getUserName());
+        userProfileDto.setEmail(webUser.getEmail());
+        userProfileDto.setFirstName(userDetails.getFirstName());
+        userProfileDto.setLastName(userDetails.getLastName());
+        userProfileDto.setPhoneNumber(userDetails.getPhoneNumber());
+        userProfileDto.setCountryCode(userDetails.getCountryCode());
+        userProfileDto.setAbout(userDetails.getAbout());
+        System.out.println("USERNAME FOUNDED"+userProfileDto.toString());
         return userProfileDto;
     }
 

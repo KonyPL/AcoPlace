@@ -1,12 +1,9 @@
 <div class="component" style="padding-left: 20px;">
-    <!-- <div *ngIf="announcement$ | async as announcement">
-        <div *ngIf="announcement.edited==true"> ANNOUNCEMENT EDITED </div>
-        <div *ngIf="announcement.reported==true"> ANNOUNCEMENT reported by </div>
-    </div> -->
     <div class="row">
         <div class="col-md-8" style="margin-top: 30px;">
             <h1 style="text-align: center; font-weight: bold;">{{announcement.title}}</h1>
             <div>
+
                 <app-gallery></app-gallery>
             </div>
             <p style="font-size: 16px;">{{announcement.text}}</p>
@@ -70,6 +67,18 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div>
+        <div *ngIf="authService.isAuthenticated()">
+            <p>Firstname: {{userProfileDto.firstName}} </p>
+            <p>phoneNumber: {{userProfileDto.phoneNumber}}</p>
+            <a (click)="goToUserProfile()">check profile of this user</a>
+        </div>
+        <div *ngIf="!authService.isAuthenticated()">
+            <p>FirstnameL {{userProfileDto.firstName}}</p>
+            <p>Please Log in if you want see log number</p>
+        </div>
+
     </div>
     <div class="row">
         <div class="col-md-8">
