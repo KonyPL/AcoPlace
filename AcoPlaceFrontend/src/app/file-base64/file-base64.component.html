@@ -2,7 +2,7 @@
 <div class="main">
     <label for="file" class="button btn-primary btn">Select imagesfile
         <input type="file" id="file" accept="image/*" class="button btn-primary btn" multiple hidden
-        (change)="onSelectNewFile($any($event).target?.files)">
+            (change)="onSelectNewFile($any($event).target?.files)">
     </label>
 
     <div class="row">
@@ -11,5 +11,5 @@
         </div>
     </div>
 
-    <button (click)="sendImages()" class="button btn-success btn" >Send Images</button>
+    <button (click)="sendImages()" class="button btn-primary btn">Send Images</button>
 </div>

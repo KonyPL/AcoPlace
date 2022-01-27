@@ -23,24 +23,7 @@
             <button mat-raised-button color="primary" (click)="editAnnouncement()">EDIT ANNOUNCEMENT</button>
             <button mat-raised-button color="primary" (click)="addImages()">ADD IMAGES</button>
             <hr>
-            <div>
-                <div *ngIf="authService.isAuthenticated()">
-                    <div>
-                        <label style="font-size: 16px;">First name: {{userProfileDto.firstName}} </label>
-                    </div>
-                    <div>
-                        <label style="font-size: 16px;">Phone number: {{userProfileDto.phoneNumber}}</label>
-                    </div>
-                    <!-- <button (click)="goToUserProfile()">Check profile of this user</button> -->
 
-                    <hr>
-                </div>
-                <div *ngIf="!authService.isAuthenticated()">
-                    <p>First name: {{userProfileDto.firstName}}</p>
-                    <p>Please Log in if you want see log number</p>
-                </div>
-
-            </div>
             <div style="font-size: 16px;">
                 <div>
                     <label>Available from: {{announcement.availableFrom}}</label>

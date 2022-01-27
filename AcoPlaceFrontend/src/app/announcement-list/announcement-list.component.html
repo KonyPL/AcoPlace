@@ -20,8 +20,8 @@
                         </mat-form-field> -->
                 <a *ngFor="let announcement of announcements" (click)="showAnnouncementById(announcement.id)" class="list-group-item clearfix" style="cursor:pointer">
                     <div class="col-xs-2 image" >
-                        <!-- style="background-color: grey;" -->
-                    <!-- <img [src]="imageStorage.b64image" alt="" width="70" height="70"> -->
+                        
+                    <img [src]="announcement.images[0]" onerror="this.src='/assets/images/placeholder.png';" width="auto" height="120">
                     </div>
                     <div class="col-xs-10 pull-left" style="padding-left: 50px;">
                         

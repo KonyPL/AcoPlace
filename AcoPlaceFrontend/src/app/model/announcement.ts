@@ -1,4 +1,5 @@
 export class Announcement {
+    images: string[];
     id: number;
     country: string;
     city: string;
@@ -18,11 +19,11 @@ export class Announcement {
     publicationDate: Date;
     webUser: number;
     reported: boolean;
-    reason: string; 
+    reason: string;
     description: string;
     admin: string;
     reportedTime: string;
     edited: boolean;
-    active: boolean; 
+    active: boolean;
 }
 

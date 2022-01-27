@@ -20,7 +20,8 @@ public class UserService {
     private final UserDetailsRepository userDetailsRepository;
     private final AnnouncementRepository announcementRepository;
 
-    public UserService(UserRepository userRepository, UserDetailsRepository userDetailsRepository, AnnouncementRepository announcementRepository) {
+    public UserService(UserRepository userRepository, UserDetailsRepository userDetailsRepository,
+            AnnouncementRepository announcementRepository) {
         this.userRepository = userRepository;
         this.userDetailsRepository = userDetailsRepository;
         this.announcementRepository = announcementRepository;
@@ -30,24 +31,26 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public WebUser getUserById(long id){
+    public WebUser getUserById(long id) {
         return userRepository.getById(id);
     }
 
-    public WebUser saveWebUser(WebUser webUser){
+    public WebUser saveWebUser(WebUser webUser) {
         return userRepository.save(webUser);
     }
 
     public WebUser finByUserName(String username) {
-        return userRepository.findByUserName(username).orElseThrow(() -> new ResourceNotFoundException("user with name="+username+"not found"));
+        return userRepository.findByUserName(username)
+                .orElseThrow(() -> new ResourceNotFoundException("user with name=" + username + "not found"));
     }
 
     public UserProfileDto findCurrentUserProfileDto() {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
-        System.out.println("GET USER CALLED, user name="+username);
-        WebUser webUser = userRepository.findByUserName(username).orElseThrow(() -> new ResourceNotFoundException("user with name="+username+"not found"));
+        System.out.println("GET USER CALLED, user name=" + username);
+        WebUser webUser = userRepository.findByUserName(username)
+                .orElseThrow(() -> new ResourceNotFoundException("user with name=" + username + "not found"));
         UserDetails userDetails = userDetailsRepository.findByWebUserId(webUser.getId());
-        //mapowanie do userProfile dot
+        // mapowanie do userProfile dot
         UserProfileDto userProfileDto = new UserProfileDto();
         userProfileDto.setId(webUser.getId());
         userProfileDto.setUserName(webUser.getUserName());
@@ -62,13 +65,13 @@ public class UserService {
         return userProfileDto;
     }
 
-
     public UserProfileDto findUserProfileDtoByAnnouncementId(Integer id) {
-        Announcement announcement = announcementRepository.findAnnouncementById(id).orElseThrow(() -> new ResourceNotFoundException("announcement with"+id+"not found"));
+        Announcement announcement = announcementRepository.findAnnouncementById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("announcement with" + id + "not found"));
 
         WebUser webUser = announcement.getWebUser();
         UserDetails userDetails = userDetailsRepository.findByWebUserId(webUser.getId());
-        //mapowanie do userProfile dot
+        // mapowanie do userProfile dot
         UserProfileDto userProfileDto = new UserProfileDto();
         userProfileDto.setUserName(webUser.getUserName());
         userProfileDto.setId(webUser.getId());
@@ -80,13 +83,14 @@ public class UserService {
         userProfileDto.setCountryCode(userDetails.getCountryCode());
         userProfileDto.setAbout(userDetails.getAbout());
         userProfileDto.setB64image(userDetails.getB64image());
-        System.out.println("USERNAME FOUND "+userProfileDto.toString());
+        System.out.println("USERNAME FOUND " + userProfileDto.toString());
         return userProfileDto;
     }
 
     public UserProfileDto updateUserByDto(UserProfileDto userProfileDto) {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
-        WebUser webUser = userRepository.findByUserName(username).orElseThrow(() -> new ResourceNotFoundException("user with name="+username+"not found"));
+        WebUser webUser = userRepository.findByUserName(username)
+                .orElseThrow(() -> new ResourceNotFoundException("user with name=" + username + "not found"));
         UserDetails userDetails = userDetailsRepository.findByWebUserId(webUser.getId());
         webUser.setEmail(userProfileDto.getEmail());
         webUser.setUserName(userProfileDto.getUserName());
