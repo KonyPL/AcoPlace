@@ -16,6 +16,7 @@ import { RegisterSuccessComponent } from './auth/register-success/register-succe
 import { RegisterComponent } from './auth/register/register.component';
 import { EditAnnouncementComponent } from './edit-announcement/edit-announcement.component';
 import { FileBase64Component } from './file-base64/file-base64.component';
+import { OtherUserProfileComponent } from './other-user-profile/other-user-profile.component';
 //Koniec kodu Wodnika
 import { SearchAnnouncementComponent } from './search-announcement/search-announcement.component';
 import { SearchComponent } from './search/search.component';
@@ -55,6 +56,7 @@ const appRoutes: Routes = [
     { path: 'userEdit', component: UserProfileEditComponent },
     { path: 'addImages/:id', component: FileBase64Component },
     { path: 'allAnnouncement/:id', component: AllInfoAnnouncementComponent },
+    { path: 'allUserInfo/:id', component: OtherUserProfileComponent },
 
 
 

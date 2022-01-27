@@ -28,6 +28,10 @@ export class AnnouncementService {
     return this.httpClient.get<Announcement[]>("http://localhost:8080/announcements/inactive");
   }
 
+  getActiveAnnouncementsListById(id: number): Observable<Announcement[]> {
+    return this.httpClient.get<Announcement[]>("http://localhost:8080/announcements/getActiveByAdId/"+id);
+  }
+
 
   getAnnouncementById(id: number): Observable<Announcement> {
     return this.httpClient.get<Announcement>(`http://localhost:8080/announcement/` + id);

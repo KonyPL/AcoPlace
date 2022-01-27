@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { AnnouncementService } from '../announcement-list/announcement.service';
+import { AuthService } from '../auth/auth.service';
 import { Announcement } from '../model/announcement';
+import { UserProfileDto } from '../model/user-profile-dto';
+import { UserService } from '../sidebar/user.service';
 
 @Component({
   selector: 'app-announcement-details',
@@ -11,13 +14,17 @@ import { Announcement } from '../model/announcement';
 export class AnnouncementDetailsComponent implements OnInit {//TODO ZMIANA NAZWY POTRZEBNA
   announcement: Announcement;
   id: number;
-  constructor(private announcementService: AnnouncementService, private router: Router, private route: ActivatedRoute ) { }
+  userProfileDto: UserProfileDto;
+
+  constructor(private announcementService: AnnouncementService, private router: Router, private route: ActivatedRoute, private userService: UserService, public authService: AuthService ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params)=> {
       this.id=+params['id'];
     });
     this.getAnnouncement();
+    this.getUserDetails();
+
 
   }
 
@@ -41,5 +48,18 @@ export class AnnouncementDetailsComponent implements OnInit {//TODO ZMIANA NAZWY
      )
 
     }
+
+    public getUserDetails(){
+      this.userService.getCurrentUserProfileDtoByAnnouncementId(this.id).subscribe(
+        data => {
+          this.userProfileDto = data;
+          console.log("DATA from endpoint" + data);
+        }
+      )  }
+
+
+      public goToUserProfile(){
+        this.router.navigate(['allUserInfo', this.id]);
+      }
  
 }
