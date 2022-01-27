@@ -36,6 +36,7 @@ public class AnnouncementService {
     private final HouseDetailsRepository houseDetailsRepository;
     private final FlatDetailsRepository flatDetailsRepository;
     private final RoomDetailsRepository roomDetailsRepository;
+    private final ImageStorageRepository imageStorageRepository;
 
 
 
@@ -45,7 +46,12 @@ public class AnnouncementService {
     }
 
     public List<AnnouncementDto> searchAnnouncements(AnnouncementSearchCriteria searchCriteria) {
-        return announcementRepository.findAnnouncements(searchCriteria);
+        List<AnnouncementDto> announcementDtoList = announcementRepository.findAnnouncements(searchCriteria);
+        for (AnnouncementDto announcement : announcementDtoList){
+            List<String> images = imageStorageRepository.findAllByAnnouncementId(announcement.getId());
+            announcement.setImages(images);
+        }
+        return announcementDtoList;
     }
 
     public List<Announcement> getAll() {

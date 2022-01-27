@@ -35,12 +35,24 @@ public class ImageStorageController {
         return imageStorageService.getAllAnnouncementImages(id);
     }
 
+    @GetMapping("/announcementImages")
+    public List<ImageStorage> getAllAnnouncementImagesFullInfo(@RequestParam Integer id) {
+        return imageStorageService.getAllAnnouncementImagesFullInfo(id);
+    }
+
     @GetMapping("/free/announcementImage")
     public String getOneAnnouncementImage(@RequestParam Integer id) {
         try {
             return imageStorageService.getOneAnnouncementImage(id);
         }catch (IndexOutOfBoundsException noRecords){
             return null;
+        }
+    }
+
+    @DeleteMapping("/announcementImage")
+    public void deleteAnnouncementImages(@RequestParam(value="id[]") Integer[] ids) {
+        for (Integer id : ids){
+            imageStorageService.deleteImageById(id);
         }
     }
 
