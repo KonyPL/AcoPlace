@@ -7,10 +7,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import put.poznan.AcoPlaceBackend.model.AuthenticationResponse;
-import put.poznan.AcoPlaceBackend.model.LoginRequest;
-import put.poznan.AcoPlaceBackend.model.RegisterRequest;
-import put.poznan.AcoPlaceBackend.model.WebUser;
+import put.poznan.AcoPlaceBackend.model.*;
+import put.poznan.AcoPlaceBackend.repository.UserDetailsRepository;
 import put.poznan.AcoPlaceBackend.repository.UserRepository;
 import put.poznan.AcoPlaceBackend.security.JwtProvider;
 
@@ -28,13 +26,18 @@ public class AuthService {
     @Autowired
     private JwtProvider jwtProvider;
 
+    @Autowired
+    private UserDetailsRepository userDetailsRepository;
+
     public void signup(RegisterRequest registerRequest) {
         WebUser user = new WebUser();
         user.setUserName(registerRequest.getUsername());
         user.setEmail(registerRequest.getEmail());
         user.setPassword(encodePassword(registerRequest.getPassword()));
-
-        userRepository.save(user);
+        WebUser createdUser = userRepository.save(user);
+        UserDetails userDetails = new UserDetails();
+        userDetails.setWebUser(createdUser);
+        userDetailsRepository.save(userDetails);
     }
 
     private String encodePassword(String password) {
