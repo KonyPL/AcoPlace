@@ -90,7 +90,7 @@ import { OtherUserProfileComponent } from './other-user-profile/other-user-profi
 // import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatGridTileHarness } from '@angular/material/grid-list/testing';
-
+import { MatButtonModule } from '@angular/material/button';
 
 // import {
 //   MatAutocompleteModule, MatButtonModule, MatCheckboxModule, MatDatepickerModule,
@@ -192,7 +192,7 @@ import { MatGridTileHarness } from '@angular/material/grid-list/testing';
     MatFormFieldModule,
     NgxImageCompressorModule,
     MatGridListModule,
-
+    MatButtonModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }, HttpClientModule, NgxImageCompressService,
   { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },

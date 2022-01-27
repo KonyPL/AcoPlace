@@ -8,7 +8,7 @@
             <div class="col-md-12">
 
                 <div class="card-header card-header-danger">
-                    <h2 class="card-title" style="text-align: center;">Announcement list</h2>
+                    <h2 class="card-title" style="text-align: center;">List of announcements</h2>
                 </div>
                 <table>
 
@@ -19,8 +19,9 @@
                             </mat-label>
                         </mat-form-field> -->
                 <a *ngFor="let announcement of announcements" (click)="showAnnouncementById(announcement.id)" class="list-group-item clearfix" style="cursor:pointer">
-                    <div class="col-xs-2 image" style="background-color: grey;">
-                    <!-- <img [src]="imageStorage.b64image" alt="" width="70" height="70"> -->
+                    <div class="col-xs-2 image" >
+                        
+                    <img [src]="announcement.images[0]" onerror="this.src='/assets/images/placeholder.png';" width="auto" height="120">
                     </div>
                     <div class="col-xs-10 pull-left" style="padding-left: 50px;">
                         
@@ -52,7 +53,7 @@
             <div class="col-md-12" style="text-align: center; margin-top: 5%;">
                 <form class="example-form">
                     <mat-form-field class="full-width" appearance="fill">
-                        <mat-label>priceMin</mat-label>
+                        <mat-label>Min price</mat-label>
                         <input matInput placeholder="50" value="Sushi" type="number" id="priceMin"
                             [(ngModel)]="announcementParams.priceMin" name="priceMin" required>
                     </mat-form-field>
@@ -61,7 +62,7 @@
             <div class="col-md-12" style="text-align: center;">
                 <form class="example-form">
                     <mat-form-field class="full-width" appearance="fill">
-                        <mat-label>priceMax</mat-label>
+                        <mat-label>Max price</mat-label>
                         <input matInput placeholder="500" value="Sushi" type="number" id="priceMax"
                             [(ngModel)]="announcementParams.priceMax" name="priceMax" required>
                     </mat-form-field>
@@ -100,7 +101,7 @@
             <div class="col-md-12" style="text-align: center;">
                 <form class="example-form">
                     <mat-form-field class="full-width" appearance="fill">
-                        <mat-label>InternetSpeed</mat-label>
+                        <mat-label>Internet speed</mat-label>
                         <input matInput placeholder="Poland" value="Sushi" type="number" id="internetSpeed"
                             [(ngModel)]="announcementParams.internetSpeed" name="internetSpeed" required>
                     </mat-form-field>
@@ -109,7 +110,7 @@
             <div class="col-md-12" style="text-align: center;">
                 <form class="example-form">
                     <mat-form-field class="full-width" appearance="fill">
-                        <mat-label>LivingSpace</mat-label>
+                        <mat-label>Living space</mat-label>
                         <input matInput placeholder="Poland" value="Sushi" type="number" id="livingSpace"
                             [(ngModel)]="announcementParams.livingSpace" name="livingSpace" required>
                     </mat-form-field>
@@ -157,7 +158,7 @@
                     <div class="col-md-12" style="text-align: center;">
                         <form class="example-form">
                             <mat-form-field class="full-width" appearance="fill">
-                                <mat-label>FlatParking</mat-label>
+                                <mat-label>Flat parking</mat-label>
                                 <input matInput placeholder="Poland" value="Sushi" type="number" id="flatParking"
                                     [(ngModel)]="announcementParams.flatParking" name="flatParking" required>
                             </mat-form-field>
@@ -206,7 +207,7 @@
                     <div class="col-md-12" style="text-align: center;">
                         <form class="example-form">
                             <mat-form-field class="full-width" appearance="fill">
-                                <mat-label>LotSize</mat-label>
+                                <mat-label>Lot size</mat-label>
                                 <input matInput placeholder="Poland" value="Sushi" type="number" id="lotSize"
                                     [(ngModel)]="announcementParams.lotSize" name="lotSize" required>
                             </mat-form-field>
@@ -271,7 +272,7 @@
                     <div class="col-md-12" style="text-align: center;">
                         <form class="example-form">
                             <mat-form-field class="full-width" appearance="fill">
-                                <mat-label>BedsInRoom</mat-label>
+                                <mat-label>Beds in room</mat-label>
                                 <input matInput placeholder="Poland" value="Sushi" type="number" id="bedsInRoom"
                                     [(ngModel)]="announcementParams.bedsInRoom" name="bedsInRoom" required>
                             </mat-form-field>
@@ -280,7 +281,7 @@
                     <div class="col-md-12" style="text-align: center;">
                         <form class="example-form">
                             <mat-form-field class="full-width" appearance="fill">
-                                <mat-label>NumberOfFlatmates</mat-label>
+                                <mat-label>Number of flatmates</mat-label>
                                 <input matInput placeholder="Poland" value="Sushi" type="number" id="numberOfFlatmates"
                                     [(ngModel)]="announcementParams.numberOfFlatmates" name="numberOfFlatmates"
                                     required>
@@ -354,7 +355,7 @@
                     <div class="row">
                         <div class="justify-content-center col-md-12" style="padding: 0 50px;">
                             <mat-checkbox [(ngModel)]="announcementParams.ethernetOutlets" name="ethernetOutlets">
-                                EthernetOutlets</mat-checkbox>
+                                Ethernet outlets</mat-checkbox>
                         </div>
                     </div>
                     <div class="row">
@@ -365,7 +366,7 @@
                     <div class="row">
                         <div class="justify-content-center col-md-12" style="padding: 0 50px;">
                             <mat-checkbox [(ngModel)]="announcementParams.clothesDryer" name="clothesDryer">
-                                ClothesDryer</mat-checkbox>
+                                Clothes dryer</mat-checkbox>
                         </div>
                     </div>
                     <div class="row">
@@ -377,7 +378,7 @@
                     <div class="row">
                         <div class="justify-content-center col-md-12" style="padding: 0 50px;">
                             <mat-checkbox [(ngModel)]="announcementParams.petsAllowed" name="petsAllowed">
-                                PetsAllowed</mat-checkbox>
+                                Pets allowed</mat-checkbox>
                         </div>
                     </div>
                     <div class="row">
@@ -396,51 +397,51 @@
                 <div class="justify-content-center col-md-12" style="text-align: left; padding: 0px 30px;">
                     <div class="row">
                         <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                            <mat-checkbox [(ngModel)]="announcementParams.nearPark" name="nearPark">nearPark
+                            <mat-checkbox [(ngModel)]="announcementParams.nearPark" name="nearPark">Near park
                             </mat-checkbox>
                         </div>
                     </div>
                     <div class="row">
                         <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                            <mat-checkbox [(ngModel)]="announcementParams.nearTram" name="nearTram">nearTram
+                            <mat-checkbox [(ngModel)]="announcementParams.nearTram" name="nearTram">Near tram
                             </mat-checkbox>
                         </div>
                     </div>
                     <div class="row">
                         <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                            <mat-checkbox [(ngModel)]="announcementParams.nearBus" name="nearBus">nearBus
+                            <mat-checkbox [(ngModel)]="announcementParams.nearBus" name="nearBus">Near bus
                             </mat-checkbox>
                         </div>
                     </div>
                     <div class="row">
                         <div class="justify-content-center col-md-12" style="padding: 0 50px;">
                             <mat-checkbox [(ngModel)]="announcementParams.nearShoppingMall" name="nearShoppingMall">
-                                nearShoppingMall</mat-checkbox>
+                                Near shopping mall</mat-checkbox>
                         </div>
                     </div>
                     <div class="row">
                         <div class="justify-content-center col-md-12" style="padding: 0 50px;">
-                            <mat-checkbox [(ngModel)]="announcementParams.nearBakery" name="nearBakery">nearBakery
+                            <mat-checkbox [(ngModel)]="announcementParams.nearBakery" name="nearBakery">Near bakery
                             </mat-checkbox>
                         </div>
                     </div>
                     <div class="row">
                         <div class="justify-content-center col-md-12" style="padding: 0 50px;">
                             <mat-checkbox [(ngModel)]="announcementParams.nearFoodMarket" name="nearFoodMarket">
-                                nearFoodMarket</mat-checkbox>
+                                Near food market</mat-checkbox>
                         </div>
                     </div>
                     <div class="row">
                         <div class="justify-content-center col-md-12" style="padding: 0 50px;">
                             <mat-checkbox [(ngModel)]="announcementParams.nearSupermarket" name="nearSupermarket">
-                                nearSupermarket</mat-checkbox>
+                                Near supermarket</mat-checkbox>
                         </div>
                     </div>
                 </div>
-
-                <button class="btn btn-success" type="submit">Search</button>
-                <button class="btn btn-primary">Reset</button>
-
+                <div style="text-align: center;">
+                    <!-- <button class="" type="submit">Search</button> -->
+                    <button mat-raised-button color="primary" type="submit">Search</button>
+                </div>
             </div>
         </form>
 

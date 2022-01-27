@@ -17,7 +17,7 @@ export class AnnouncementService {
   constructor(private httpClient: HttpClient) { }
 
   getAnnouncementsList(): Observable<Announcement[]> {
-    return this.httpClient.get<Announcement[]>("http://localhost:8080/free/announcements");
+    return this.httpClient.get<Announcement[]>("http://localhost:8080/free/searchAnnouncement");
   }
 
   getActiveAnnouncementsList(): Observable<Announcement[]> {
@@ -29,7 +29,7 @@ export class AnnouncementService {
   }
 
   getActiveAnnouncementsListById(id: number): Observable<Announcement[]> {
-    return this.httpClient.get<Announcement[]>("http://localhost:8080/announcements/getActiveByAdId/"+id);
+    return this.httpClient.get<Announcement[]>("http://localhost:8080/announcements/getActiveByAdId/" + id);
   }
 
 

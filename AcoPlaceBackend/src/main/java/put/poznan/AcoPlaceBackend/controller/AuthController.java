@@ -20,14 +20,12 @@ public class AuthController {
 
     @PostMapping("/signup")
     public ResponseEntity signup(@RequestBody RegisterRequest registerRequest) {
-        System.out.println("JESTEM W SIGNUP");
         authService.signup(registerRequest);
         return new ResponseEntity(HttpStatus.OK);
     }
 
     @PostMapping("/login")
     public AuthenticationResponse login(@RequestBody LoginRequest loginRequest) {
-        System.out.println("jestem w login component");
         return authService.login(loginRequest);
     }
 
