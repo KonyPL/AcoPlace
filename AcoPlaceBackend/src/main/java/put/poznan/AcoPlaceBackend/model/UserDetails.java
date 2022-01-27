@@ -19,6 +19,9 @@ public class UserDetails {
     private String countryCode;
     private String about;
 
+    @Column(columnDefinition="TEXT")
+    private String b64image;
+
     @ManyToOne
     private WebUser webUser;
 
