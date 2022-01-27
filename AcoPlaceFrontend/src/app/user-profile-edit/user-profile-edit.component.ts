@@ -24,7 +24,14 @@ export class UserProfileEditComponent implements OnInit {
     this.userService.getCurrentUserProfileDto().subscribe(
       data => {
         this.userProfileDto = data;
-        console.log("DATA from endpoint" + data);
+        console.log("DATA from endpoint about" + data.about);
+        console.log("DATA from endpoint about" + data.countryCode);
+        console.log("DATA from endpoint about" + data.email);
+        console.log("DATA from endpoint about" + data.userName);
+        console.log("DATA from endpoint about" + data.lastName);
+        console.log("DATA from endpoint about" + data.firstName);
+
+
       }
     )  }
 
