@@ -1,21 +1,23 @@
 <div>
-    <h4 style="font-weight: bold;">Room details</h4>
+    <h4 style="font-size: 20px; font-weight: bold; margin-top: 60px; text-align: left;">Room details</h4>
     <hr>
 
 </div>
-<div style="text-align: center;" *ngIf="roomDetails.floor">
-    <label>Floor number: {{ roomDetails.floor }}</label>
+<div style="text-align: left; font-size: 16px;">
+    <div *ngIf="roomDetails.floor">
+        <label>Floor number: {{ roomDetails.floor }}</label>
 
-</div>
-<div style="text-align: center;" *ngIf="roomDetails.bedsInRoom">
-    <label>Number of beds: {{ roomDetails.bedsInRoom }}</label>
+    </div>
+    <div *ngIf="roomDetails.bedsInRoom">
+        <label>Number of beds: {{ roomDetails.bedsInRoom }}</label>
 
-</div>
-<div style="text-align: center;" *ngIf="roomDetails.numberOfFlatmates">
-    <label>Number of flatmates: {{ roomDetails.numberOfFlatmates }}</label>
+    </div>
+    <div *ngIf="roomDetails.numberOfFlatmates">
+        <label>Number of flatmates: {{ roomDetails.numberOfFlatmates }}</label>
 
-</div>
-<div style="text-align: center;" *ngIf="roomDetails.bathrooms">
-    <label>Number of bathrooms: {{ roomDetails.bathrooms }}</label>
+    </div>
+    <div *ngIf="roomDetails.bathrooms">
+        <label>Number of bathrooms: {{ roomDetails.bathrooms }}</label>
 
+    </div>
 </div>

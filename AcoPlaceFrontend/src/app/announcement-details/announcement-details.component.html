@@ -3,93 +3,72 @@
         <div *ngIf="announcement.edited==true"> ANNOUNCEMENT EDITED </div>
         <div *ngIf="announcement.reported==true"> ANNOUNCEMENT reported by </div>
     </div> -->
-
-
-
-
-
-    <div class=" row">
-        <div class="row">
-            <!-- <h3 style="text-align: center;">Announcement-details</h3> -->
-        </div>
-        <div>
-            <button primary mat-icon-button (click)="addToFavourite()">ADD TO FAVOURITE
-                <!-- <mat-icon>LOGIN</mat-icon> -->
-            </button>
-        </div>
-        <div> <button primary mat-icon-button (click)="editAnnouncement()">EDIT ANNOUNCEMENT
-                <!-- <mat-icon>LOGIN</mat-icon> -->
-            </button></div>
-        <div class="col-md-12">
-            <div class="row">
-                <h4 style="text-align: center; font-weight: bold;">{{announcement.title}}</h4>
-            </div>
-        </div>
-        <div class="col-md-8 ">
-
-            <p>{{announcement.text}}</p>
-            <div class="row">
+    <div class="row">
+        <div class="col-md-8" style="margin-top: 30px;">
+            <h1 style="text-align: center; font-weight: bold;">{{announcement.title}}</h1>
+            <div>
                 <app-gallery></app-gallery>
             </div>
+            <p style="font-size: 16px;">{{announcement.text}}</p>
         </div>
         <div class="col-md-4">
-            <h5>
-                <!-- Info: -->
-            </h5>
-            <div class="col-md-12">
-                <label>Country: {{announcement.country}}</label>
-
+            <h1 style="margin-top: 30px; font-size: 30px;">{{announcement.price}} {{announcement.currency}}</h1>
+            <button primary mat-icon-button (click)="addToFavourite()">ADD TO FAVOURITE
+            </button>
+            <button primary mat-icon-button (click)="editAnnouncement()">EDIT ANNOUNCEMENT
+            </button>
+            <hr>
+            <div style="font-size: 16px;">
+                <div>
+                    <label>Available from: {{announcement.availableFrom}}</label>
+                </div>
+                <div>
+                    <label>Publication date: {{announcement.publicationDate}}</label>
+                </div>
             </div>
-            <div class="col-md-12">
-                <label>City: {{announcement.city}}</label>
-
+            <hr>
+            <div style="font-size: 16px;">
+                <div>
+                    <label>Country: {{announcement.country}}</label>
+                </div>
+                <div>
+                    <label>City: {{announcement.city}}</label>
+                </div>
+                <div>
+                    <label>Postal code: {{announcement.postalCode}}</label>
+                </div>
+                <div>
+                    <label>District: {{announcement.district}}</label>
+                </div>
+                <div>
+                    <label>State: {{announcement.state}}</label>
+                </div>
+                <div>
+                    <label>Street: {{announcement.street}}</label>
+                </div>
+                <div>
+                    <label>House number: {{announcement.houseNumber}}</label>
+                </div>
             </div>
-            <div class="col-md-12">
-                <label>Postal code: {{announcement.postalCode}}</label>
+            <app-house-details *ngIf="announcement.propertyType==='HOUSE'" [id]=announcement.id
+                style="text-align: left;">
+            </app-house-details>
 
+
+            <app-flat-details *ngIf="announcement.propertyType==='FLAT'" [id]=announcement.id style="text-align: left;">
+            </app-flat-details>
+
+
+            <app-room-details *ngIf="announcement.propertyType==='ROOM'" [id]=announcement.id style="text-align: left;">
+            </app-room-details>
+            <div style="font-size: 16px;">
+                <div>
+                    <label>Living space: {{announcement.livingSpace}}</label>
+                </div>
+                <div>
+                    <label>Year built: {{announcement.yearBuilt}}</label>
+                </div>
             </div>
-            <div class="col-md-12">
-                <label>District: {{announcement.district}}</label>
-
-            </div>
-            <div class="col-md-12">
-                <label>State: {{announcement.state}}</label>
-
-            </div>
-            <div class="col-md-12">
-                <label>Street: {{announcement.street}}</label>
-
-            </div>
-            <div class="col-md-12">
-                <label>House number: {{announcement.houseNumber}}</label>
-
-            </div>
-            <div class="col-md-12">
-                <label>Price: {{announcement.price}} {{announcement.currency}}</label>
-
-            </div>
-
-            <div class="col-md-12">
-                <label>Living space: {{announcement.livingSpace}}</label>
-
-            </div>
-            <div class="col-md-12">
-                <label>Year built: {{announcement.yearBuilt}}</label>
-
-            </div>
-            <div class="col-md-12">
-                <label>Available from: {{announcement.availableFrom}}</label>
-
-            </div>
-
-            <div class="col-md-12">
-                <label>Publication date: {{announcement.publicationDate}}</label>
-
-            </div>
-
-
-
-
         </div>
     </div>
     <div class="row">
@@ -98,17 +77,6 @@
             </app-announcement-details-details>
         </div>
         <div class="col-md-4">
-
-            <app-house-details *ngIf="announcement.propertyType==='HOUSE'" [id]=announcement.id>
-            </app-house-details>
-
-
-            <app-flat-details *ngIf="announcement.propertyType==='FLAT'" [id]=announcement.id>
-            </app-flat-details>
-
-
-            <app-room-details *ngIf="announcement.propertyType==='ROOM'" [id]=announcement.id>
-            </app-room-details>
         </div>
     </div>
 </div>

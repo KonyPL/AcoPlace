@@ -88,7 +88,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 // import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatGridTileHarness } from '@angular/material/grid-list/testing';
-// import { GridLayoutComponent } from './grid-layout/grid-layout.component';
+
 
 // import {
 //   MatAutocompleteModule, MatButtonModule, MatCheckboxModule, MatDatepickerModule,
@@ -132,7 +132,7 @@ import { MatGridTileHarness } from '@angular/material/grid-list/testing';
     EditAnnouncementComponent,
     UserProfileEditComponent,
     BannerGalleryComponent,
-    // GridLayoutComponent
+
   ],
   imports: [
     NgbModule,

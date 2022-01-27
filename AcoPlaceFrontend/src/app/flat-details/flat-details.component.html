@@ -1,28 +1,30 @@
 <div>
-    <h4 style="font-weight: bold;">Flat details</h4>
+    <h4 style="font-size: 20px; font-weight: bold; margin-top: 60px; text-align: left;">Flat details</h4>
     <hr>
-
 </div>
-<div style="text-align: center;" *ngIf="flatDetails.floor">
-    <label>Floor number: {{ flatDetails.floor }}</label>
 
-</div>
-<div style="text-align: center;" *ngIf="flatDetails.bedrooms">
-    <label>Number of bedrooms: {{ flatDetails.bedrooms }}</label>
+<div style="text-align: left; font-size: 16px;">
+    <div *ngIf="flatDetails.floor">
+        <label>Floor number: {{ flatDetails.floor }}</label>
 
-</div>
-<div style="text-align: center;" *ngIf="flatDetails.bathrooms">
-    <label>Number of bathrooms: {{ flatDetails.bathrooms }}</label>
+    </div>
+    <div *ngIf="flatDetails.bedrooms">
+        <label>Number of bedrooms: {{ flatDetails.bedrooms }}</label>
 
-</div>
-<div style="text-align: center;" *ngIf="flatDetails.flatParking">
-    <label>Parking places: {{ flatDetails.flatParking }}</label>
+    </div>
+    <div *ngIf="flatDetails.bathrooms">
+        <label>Number of bathrooms: {{ flatDetails.bathrooms }}</label>
 
-</div>
-<div style="text-align: center;" *ngIf="flatDetails.balcony">
-    <label>Number of balconies: {{ flatDetails.balcony }}</label>
+    </div>
+    <div *ngIf="flatDetails.flatParking">
+        <label>Parking places: {{ flatDetails.flatParking }}</label>
 
-</div>
-<div style="text-align: center;" *ngIf="flatDetails.basement">
-    <label>Basement</label>
+    </div>
+    <div *ngIf="flatDetails.balcony">
+        <label>Number of balconies: {{ flatDetails.balcony }}</label>
+
+    </div>
+    <div *ngIf="flatDetails.basement">
+        <label>Basement</label>
+    </div>
 </div>
