@@ -15,6 +15,10 @@
             </mat-label>
         </mat-form-field> -->
         <a *ngFor="let announcement of announcements" (click)="showAnnouncementById(announcement.id)"  class="list-group-item clearfix">
+            <div class="col-xs-2 image">
+                        
+                <img [src]="announcement.images[0]" onerror="this.src='/assets/images/placeholder.png';" width="auto" height="120">
+                </div>
     <div class="pull-left" style="padding-left: 50px;">
         <h4 class="list-group-item-heading">{{ announcement.title }}</h4>
         <p class="list-group-item-text">{{ announcement.city }}, {{announcement.district}}, {{announcement.state}} </p>

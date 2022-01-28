@@ -3,8 +3,6 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { AnnouncementService } from '../announcement-list/announcement.service';
 import { AuthService } from '../auth/auth.service';
 import { Announcement } from '../model/announcement';
-import { map } from 'rxjs/operators';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { HeaderComponent } from '../header/header.component';
 import { UserProfileDto } from '../model/user-profile-dto';
