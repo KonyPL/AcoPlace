@@ -2,11 +2,13 @@
 
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-        <span mat-icon-button>
+        <a routerLinkActive="active">
+        <span routerLink="/" mat-icon-button>
             <mat-icon class="navbar-icon">
                 home
             </mat-icon>AcoPlace
         </span>
+    </a>
         <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
             <ul fxLayout="row" fxLayoutGap="20px">
                 <li routerLinkActive="active">

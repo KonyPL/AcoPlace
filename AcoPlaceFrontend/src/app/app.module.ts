@@ -92,6 +92,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatGridTileHarness } from '@angular/material/grid-list/testing';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from './footer/footer.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 // import {
 //   MatAutocompleteModule, MatButtonModule, MatCheckboxModule, MatDatepickerModule,
@@ -137,7 +138,8 @@ import { FooterComponent } from './footer/footer.component';
     BannerGalleryComponent,
     AllInfoAnnouncementComponent,
     OtherUserProfileComponent,
-    FooterComponent
+    FooterComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     NgbModule,

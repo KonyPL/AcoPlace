@@ -24,8 +24,9 @@ import { StartPageComponent } from './start-page/start-page.component';
 import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 // import { UserProfileComponent } from './user-profile/user-profile.component';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatGridTileHarness} from '@angular/material/grid-list/testing';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatGridTileHarness } from '@angular/material/grid-list/testing';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 
 const appRoutes: Routes = [
@@ -58,6 +59,7 @@ const appRoutes: Routes = [
     { path: 'addImages/:id', component: FileBase64Component },
     { path: 'allAnnouncement/:id', component: AllInfoAnnouncementComponent },
     { path: 'allUserInfo/:id', component: OtherUserProfileComponent },
+    { path: 'privacy', component: PrivacyPolicyComponent }
 
 
 
