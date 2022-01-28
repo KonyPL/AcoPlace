@@ -21,7 +21,7 @@
                 <a *ngFor="let announcement of announcements" (click)="showAnnouncementById(announcement.id)" class="list-group-item clearfix" style="cursor:pointer">
                     <div class="col-xs-2 image">
                         
-                    <img [src]="announcement.images[0]" onerror="this.src='/assets/images/placeholder.png';" width="auto" height="120">
+                    <img [src]="announcement.images[0]" onerror="this.src='/assets/images/placeholder.png';" width="200" height="120" object-fit="cover">
                     </div>
                     <div class="col-xs-10 pull-left" style="padding-left: 50px;">
                         

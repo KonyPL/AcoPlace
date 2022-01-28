@@ -1,5 +1,4 @@
 <!-- --------------------HEADER ANGULAR MATERIAL-------------------- -->
-
 <mat-toolbar color="primary">
     <mat-toolbar-row>
         <a routerLinkActive="active">
@@ -9,8 +8,22 @@
             </mat-icon>AcoPlace
         </span>
     </a>
+        <div fxFlex fxLayout=" row" fxLayoutAlign="center">
+            <a>
+
+        </a>
+        </div>
         <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
             <ul fxLayout="row" fxLayoutGap="20px">
+
+
+                <li>
+                    <div>
+                        <input style="position: absolute; left: 50px; margin-right: auto;" size="80"
+                            type="text" placeholder="Search..." [(ngModel)]="announcementParams.title" name="title"
+                            id="title" style="color: black">
+                    </div>
+                </li>
                 <li routerLinkActive="active">
                     <span routerLink="/announcements-list" mat-icon-button> Search
                         

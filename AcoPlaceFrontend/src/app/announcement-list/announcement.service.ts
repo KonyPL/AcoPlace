@@ -74,6 +74,9 @@ export class AnnouncementService {
     if (announcementParams.city != undefined) {
       params = params.set('city', announcementParams.city);
     }
+    if (announcementParams.title != undefined) {
+      params = params.set('title', announcementParams.title);
+    }
     if (announcementParams.country != undefined) {
       params = params.set('country', announcementParams.country);
     }

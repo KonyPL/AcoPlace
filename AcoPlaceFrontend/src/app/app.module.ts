@@ -93,7 +93,7 @@ import { MatGridTileHarness } from '@angular/material/grid-list/testing';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from './footer/footer.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
-
+import { NgxImageGalleryModule } from 'ngx-image-gallery';
 // import {
 //   MatAutocompleteModule, MatButtonModule, MatCheckboxModule, MatDatepickerModule,
 //   MatFormFieldModule, MatInputModule, MatRadioModule, MatSelectModule, MatSliderModule,
@@ -196,7 +196,8 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
     MatFormFieldModule,
     NgxImageCompressorModule,
     MatGridListModule,
-    MatButtonModule
+    MatButtonModule,
+    NgxImageGalleryModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }, HttpClientModule, NgxImageCompressService,
   { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },

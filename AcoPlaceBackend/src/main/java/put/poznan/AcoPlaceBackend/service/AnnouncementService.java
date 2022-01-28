@@ -369,7 +369,7 @@ public class AnnouncementService {
     }
 
     public void deleteById(Integer id) {
-        announcementDetailsRepository.deleteAnnouncementDetailsByAnnouncementID(id);
+//        announcementDetailsRepository.deleteAnnouncementDetailsByAnnouncementID(id);
         announcementRepository.deleteAnnouncementById(id);
     }
 }

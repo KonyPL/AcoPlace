@@ -1,108 +1,121 @@
-<div class="component" style="padding-left: 20px;">
-    <div class="row">
-        <div class="col-md-8" style="margin-top: 30px;">
-            <h1 style="text-align: left; margin-left: 45px; font-weight: bold;">{{announcement.title}}</h1>
-            <div>
-                <app-gallery></app-gallery>
+<div class="col-sm-1 col-md-1"></div>
+<div class="col-sm-10 col-md-10">
+
+    <div class="component" style="padding-left: 2px;">
+        <div class="row">
+            <div class="col-md-8" style="margin-top: 30px;">
+                <h1 style="font-family: Lato; text-align: left; font-weight: 300; font-size: 30px; margin-left: 45px;">
+                    {{announcement.title}}</h1>
+                <div style="margin-left: 8%">
+                    <app-gallery></app-gallery>
+                </div>
+                <h4 style="font-size: 20px; font-weight: bold; margin-top: 60px; margin-left: 45px; text-align: left;">
+                    Description</h4>
+                <hr>
+                <p style="text-align: left; font-size: 16px; text-align: justify; margin-left: 45px;">
+                    {{announcement.text}}
+                </p>
             </div>
-            <p style="text-align: left; margin-left: 45px; font-size: 16px;">{{announcement.text}}</p>
-        </div>
-        <div class="col-md-4">
-            <h1 style="margin-top: 30px; font-size: 30px;">{{announcement.price}} {{announcement.currency}}</h1>
-            <!-- <button primary mat-icon-button (click)="addToFavourite()">ADD TO FAVOURITE
+            <div class="col-md-4">
+                <h1 style="margin-top: 30px; font-size: 30px;">{{announcement.price}} {{announcement.currency}}</h1>
+                <!-- <button primary mat-icon-button (click)="addToFavourite()">ADD TO FAVOURITE
             </button>
             <button primary mat-icon-button (click)="editAnnouncement()">EDIT ANNOUNCEMENT
             </button> -->
-            <button mat-raised-button color="primary" (click)="addToFavourite()">
-                <mat-icon>
-                    favorite
-                </mat-icon>ADD TO FAVOURITE
-            </button>
+                <button mat-raised-button color="primary" (click)="addToFavourite()">
+                    <mat-icon>
+                        favorite
+                    </mat-icon>ADD TO FAVOURITE
+                </button>
 
 
-            <hr>
-            <div>
-                <div *ngIf="authService.isAuthenticated()">
+                <hr>
+                <div>
+                    <div *ngIf="authService.isAuthenticated()">
+                        <div>
+                            <label style="font-size: 16px;">First name: {{userProfileDto.firstName}} </label>
+                        </div>
+                        <div>
+                            <label style="font-size: 16px;">Phone number: {{userProfileDto.phoneNumber}}</label>
+                        </div>
+                        <button mat-raised-button color="primary" (click)="goToUserProfile()">Check profile of this
+                            user</button>
+                        <hr>
+                    </div>
+                    <div *ngIf="!authService.isAuthenticated()">
+                        <div>
+                            <label style="font-size: 16px;">First name: {{userProfileDto.firstName}} </label>
+                        </div>
+                        <div>
+                            <label style="font-size: 16px;">Please Log in if you want see user profile </label>
+                        </div>
+                    </div>
+
+                </div>
+                <div style="font-size: 16px;">
                     <div>
-                        <label style="font-size: 16px;">First name: {{userProfileDto.firstName}} </label>
+                        <label>Available from: {{announcement.availableFrom}}</label>
                     </div>
                     <div>
-                        <label style="font-size: 16px;">Phone number: {{userProfileDto.phoneNumber}}</label>
+                        <label>Publication date: {{announcement.publicationDate}}</label>
                     </div>
-                    <button mat-raised-button color="primary" (click)="goToUserProfile()">Check profile of this
-                        user</button>
-                    <hr>
                 </div>
-                <div *ngIf="!authService.isAuthenticated()">
+                <hr>
+                <div style="font-size: 16px;">
                     <div>
-                        <label style="font-size: 16px;">First name: {{userProfileDto.firstName}} </label>
+                        <label>Country: {{announcement.country}}</label>
                     </div>
                     <div>
-                        <label style="font-size: 16px;">Please Log in if you want see user profile </label>
+                        <label>City: {{announcement.city}}</label>
+                    </div>
+                    <div>
+                        <label>Postal code: {{announcement.postalCode}}</label>
+                    </div>
+                    <div>
+                        <label>District: {{announcement.district}}</label>
+                    </div>
+                    <div>
+                        <label>State: {{announcement.state}}</label>
+                    </div>
+                    <div>
+                        <label>Street: {{announcement.street}}</label>
+                    </div>
+                    <div>
+                        <label>House number: {{announcement.houseNumber}}</label>
                     </div>
                 </div>
-
-            </div>
-            <div style="font-size: 16px;">
-                <div>
-                    <label>Available from: {{announcement.availableFrom}}</label>
-                </div>
-                <div>
-                    <label>Publication date: {{announcement.publicationDate}}</label>
-                </div>
-            </div>
-            <hr>
-            <div style="font-size: 16px;">
-                <div>
-                    <label>Country: {{announcement.country}}</label>
-                </div>
-                <div>
-                    <label>City: {{announcement.city}}</label>
-                </div>
-                <div>
-                    <label>Postal code: {{announcement.postalCode}}</label>
-                </div>
-                <div>
-                    <label>District: {{announcement.district}}</label>
-                </div>
-                <div>
-                    <label>State: {{announcement.state}}</label>
-                </div>
-                <div>
-                    <label>Street: {{announcement.street}}</label>
-                </div>
-                <div>
-                    <label>House number: {{announcement.houseNumber}}</label>
-                </div>
-            </div>
-            <app-house-details *ngIf="announcement.propertyType==='HOUSE'" [id]=announcement.id
-                style="text-align: left;">
-            </app-house-details>
+                <app-house-details *ngIf="announcement.propertyType==='HOUSE'" [id]=announcement.id
+                    style="text-align: left;">
+                </app-house-details>
 
 
-            <app-flat-details *ngIf="announcement.propertyType==='FLAT'" [id]=announcement.id style="text-align: left;">
-            </app-flat-details>
+                <app-flat-details *ngIf="announcement.propertyType==='FLAT'" [id]=announcement.id
+                    style="text-align: left;">
+                </app-flat-details>
 
 
-            <app-room-details *ngIf="announcement.propertyType==='ROOM'" [id]=announcement.id style="text-align: left;">
-            </app-room-details>
-            <div style="font-size: 16px;">
-                <div>
-                    <label>Living space: {{announcement.livingSpace}}</label>
-                </div>
-                <div>
-                    <label>Year built: {{announcement.yearBuilt}}</label>
+                <app-room-details *ngIf="announcement.propertyType==='ROOM'" [id]=announcement.id
+                    style="text-align: left;">
+                </app-room-details>
+                <div style="font-size: 16px;">
+                    <div>
+                        <label>Living space: {{announcement.livingSpace}} m<sup>2</sup></label>
+                    </div>
+                    <div>
+                        <label>Year built: {{announcement.yearBuilt}}</label>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-8">
-            <app-announcement-details-details [id]=announcement.id>
-            </app-announcement-details-details>
-        </div>
-        <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-8">
+                <app-announcement-details-details [id]=announcement.id>
+                </app-announcement-details-details>
+            </div>
+            <div class="col-md-4">
+            </div>
         </div>
     </div>
 </div>
+<div class="col-md-1"></div>

@@ -34,7 +34,7 @@ export class GalleryComponent implements OnInit {
     });
   }
 
-  arrowNextIcon: 'fa fa-chevron-right';
+  // arrowNextIcon: 'fa fa-chevron-right';
 
 
   constructor(private route: ActivatedRoute, private imageUploadService: ImageUploadService) { }
@@ -50,8 +50,8 @@ export class GalleryComponent implements OnInit {
         imageArrows: true,
         previewArrows: true,
         thumbnailsArrows: true,
-        width: '600px',
-        height: '400px',
+        width: '700px',
+        height: '550px',
         thumbnailsColumns: 4,
         arrowPrevIcon: 'fa fa-chevron-left',
         arrowNextIcon: 'fa fa-chevron-right',
@@ -79,18 +79,20 @@ export class GalleryComponent implements OnInit {
       // max-width 400
       {
         breakpoint: 400,
+        // width: '100%',
+        // height: '400px',
         preview: false,
         imageSwipe: true
       }
     ];
 
     let thisUrl = this.route.snapshot.url[0].path;
-    if(thisUrl != "addImages"){
+    if (thisUrl != "addImages") {
       this.route.params.subscribe((params: Params) => {
         this.announcement_id = + params['id'];
       })
       this.getImages();
-    } 
+    }
   }
 
 }
