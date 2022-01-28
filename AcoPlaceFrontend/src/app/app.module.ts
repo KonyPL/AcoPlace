@@ -91,6 +91,7 @@ import { OtherUserProfileComponent } from './other-user-profile/other-user-profi
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatGridTileHarness } from '@angular/material/grid-list/testing';
 import { MatButtonModule } from '@angular/material/button';
+import { FooterComponent } from './footer/footer.component';
 
 // import {
 //   MatAutocompleteModule, MatButtonModule, MatCheckboxModule, MatDatepickerModule,
@@ -135,7 +136,8 @@ import { MatButtonModule } from '@angular/material/button';
     UserProfileEditComponent,
     BannerGalleryComponent,
     AllInfoAnnouncementComponent,
-    OtherUserProfileComponent
+    OtherUserProfileComponent,
+    FooterComponent
   ],
   imports: [
     NgbModule,

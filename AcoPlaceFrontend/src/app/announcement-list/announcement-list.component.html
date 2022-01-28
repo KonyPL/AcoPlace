@@ -26,7 +26,7 @@
                     <div class="col-xs-10 pull-left" style="padding-left: 50px;">
                         
 
-                        <h4 class="list-group-item-heading">{{ announcement.title }}</h4>
+                        <h4 style="font-weight: bold;" class="list-group-item-heading">{{ announcement.title }}</h4>
                         <p class="list-group-item-text">{{ announcement.city }}, {{announcement.district}}, {{announcement.state}} </p>
                       </div>
                       <div class="pull-right" style="padding-right: 50px;">
@@ -49,7 +49,10 @@
 
         </div>
         <div (ngSubmit)="onSubmit()">
-
+            <div>
+                <button class="center-div" mat-raised-button color="primary" type="submit"
+                    style="margin-top: 10px; padding: 10px 80px;" (click)="onSubmit()">Search</button>
+            </div>
             <div class="col-md-12" style="text-align: center; margin-top: 5%;">
                 <form class="example-form">
                     <mat-form-field class="full-width" appearance="fill">
@@ -438,9 +441,9 @@
                         </div>
                     </div>
                 </div>
-                <div style="text-align: center;">
+                <div style="text-align: center; margin-top: 10px;">
                     <!-- <button class="" type="submit">Search</button> -->
-                    <button mat-raised-button color="primary" type="submit">Search</button>
+                    <button style="padding: 10px 80px;" mat-raised-button color="primary" type="submit">Search</button>
                 </div>
             </div>
         </form>

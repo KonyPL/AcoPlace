@@ -21,7 +21,7 @@ export class AnnouncementDetailsComponent implements OnInit {//TODO ZMIANA NAZWY
 
   userProfileDto: UserProfileDto;
 
-  constructor(private announcementService: AnnouncementService, private router: Router, private route: ActivatedRoute, private userService: UserService, public authService: AuthService ) { }
+  constructor(private announcementService: AnnouncementService, private router: Router, private route: ActivatedRoute, private userService: UserService, public authService: AuthService) { }
 
 
   ngOnInit(): void {
@@ -49,33 +49,38 @@ export class AnnouncementDetailsComponent implements OnInit {//TODO ZMIANA NAZWY
   editAnnouncement() {
     this.router.navigate(['announcementEdit', this.id]);
   }
-   
-
-  
-    addToFavourite(){
-      console.log("ID FROMA ANNOUNCEMENT="+this.announcement.id);
-      console.log("ID FROMA path="+this.id);
-
-     this.announcementService.addAnnouncementToFavourite( this.announcement.id).subscribe(
-       data => {
-         console.log("data from add to favourite"+data);
-       }
-     )
-
-    }
-
-    public getUserDetails(){
-      this.userService.getCurrentUserProfileDtoByAnnouncementId(this.id).subscribe(
-        data => {
-          this.userProfileDto = data;
-          console.log("DATA from endpoint" + data);
-        }
-      )  }
 
 
-      public goToUserProfile(){
-        this.router.navigate(['allUserInfo', this.id]);
+
+  addToFavourite() {
+    console.log("ID FROMA ANNOUNCEMENT=" + this.announcement.id);
+    console.log("ID FROMA path=" + this.id);
+
+    this.announcementService.addAnnouncementToFavourite(this.announcement.id).subscribe(
+      data => {
+        console.log("data from add to favourite" + data);
       }
- 
+    )
+
+  }
+
+  public getUserDetails() {
+    this.userService.getCurrentUserProfileDtoByAnnouncementId(this.id).subscribe(
+      data => {
+        this.userProfileDto = data;
+        console.log("DATA from endpoint" + data);
+      }
+    )
+  }
+
+
+  public goToUserProfile() {
+    this.router.navigate(['allUserInfo', this.id]);
+  }
+
+  public goToThisUserProfile() {
+    this.router.navigate(['allUserInfo', this.id]);
+  }
+
 
 }
