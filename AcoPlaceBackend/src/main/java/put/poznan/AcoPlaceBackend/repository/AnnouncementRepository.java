@@ -22,7 +22,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @Repository
-public interface AnnouncementRepository extends JpaRepository<Announcement, Long>, AcoJpaRepository {
+public interface AnnouncementRepository extends JpaRepository<Announcement, Integer>, AcoJpaRepository {
 
     @EntityGraph(type = EntityGraph.EntityGraphType.FETCH)
     List<Announcement> findAll(@Nullable Specification<Announcement> spec);
@@ -182,6 +182,9 @@ public interface AnnouncementRepository extends JpaRepository<Announcement, Long
 
     @org.springframework.data.jpa.repository.Query(value="SELECT * FROM Announcement a WHERE a.id=?1", nativeQuery = true) // dodac active
     Optional<Announcement> findAnnouncementById(Integer id);
+
+    @org.springframework.data.jpa.repository.Query(value="DELETE FROM Announcement a WHERE a.id =?1", nativeQuery = true) // dodac active
+    void deleteAnnouncementById(Integer id);
 }
 
 //    @org.springframework.data.jpa.repository.Query(value="SELECT * FROM announcement WHERE announcement.web_user_id=?1") // dodac active

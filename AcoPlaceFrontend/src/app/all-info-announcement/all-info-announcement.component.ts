@@ -59,6 +59,12 @@ export class AllInfoAnnouncementComponent implements OnInit {
     this.router.navigate(['addImages', this.id]);
   }
 
+  delete() {
+    this.announcementService.deleteAnnouncementById(this.id).subscribe();
+    this.router.navigate(['search-announcement']);
+
+  }
+
   public goToUserProfile() {
     this.router.navigate(['allUserInfo', this.id]);
   }

@@ -176,4 +176,7 @@ export class AnnouncementService {
   getAnnouncementCreateDtoById(id: number): Observable<AnnouncementCreateDto> {
     return this.httpClient.get<AnnouncementCreateDto>("http://localhost:8080/announcement/announcementDto/" + id);
   }
+  deleteAnnouncementById(id: number): Observable<any> {
+    return this.httpClient.delete("http://localhost:8080/announcement/delete/" + id);
+  }
 }
