@@ -146,7 +146,8 @@ public class AnnouncementSearchCriteria {
         }
         if (detailsPresent != null) result.put("detailsPresent", detailsPresent);
         //create a list of all possible params for easier bind
-        String[] params = {"availableFrom","title","propertyType","livingSpace","internetSpeed","bath","shower",
+        String[] params = {"availableFrom","title","country","state","city","district","propertyType","livingSpace",
+                "internetSpeed","bath","shower",
                 "microwave","oven","petsAllowed","elevator","nearPark","fenced",
                 "nearTram","nearBus","wifi","ethernetOutlets","internet","tv","dishwasher","clothesDryer",
                 "nearShoppingMall","nearBakery","nearFoodMarket","nearSupermarket","basement","parking"};
