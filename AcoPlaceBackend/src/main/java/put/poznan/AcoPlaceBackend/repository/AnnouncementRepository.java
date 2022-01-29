@@ -163,12 +163,7 @@ public interface AnnouncementRepository extends JpaRepository<Announcement, Inte
                 Query query = entityManager.createNativeQuery(nativeQuery, "AnnouncementDtoMapping");
 
                 // Set query parameters
-                if (queryParams.get("priceMin") != null) {
-                    query.setParameter("priceMin", queryParams.get("priceMin"));
-                    query.setParameter("priceMax", queryParams.get("priceMax"));
-                }
-
-                String[] possibleParams = {"availableFrom","title","country","state","city","district","propertyType",
+                String[] possibleParams = {"priceMin","priceMax","availableFrom","title","country","state","city","district","propertyType",
                         "livingSpace","internetSpeed","bath",
                         "shower", "microwave","oven","petsAllowed","elevator","nearPark","fenced",
                         "nearTram","nearBus","wifi","ethernetOutlets","internet","tv","dishwasher","clothesDryer",

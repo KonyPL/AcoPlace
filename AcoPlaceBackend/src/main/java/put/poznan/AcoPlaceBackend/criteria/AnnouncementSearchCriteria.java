@@ -106,7 +106,27 @@ public class AnnouncementSearchCriteria {
         private Boolean parking;
 
         public AnnouncementSearchCriteriaBuilder title(String title) {
-            this.title = (title != null) ? "%" + title + "%" : null;
+            this.title = (title != null) ? "%" + title.strip() + "%" : null;
+            return this;
+        }
+
+        public AnnouncementSearchCriteriaBuilder city(String city) {
+            this.city = (city != null) ? "%" + city.strip() + "%" : null;
+            return this;
+        }
+
+        public AnnouncementSearchCriteriaBuilder country(String country) {
+            this.country = (country != null) ? "%" + country.strip() + "%" : null;
+            return this;
+        }
+
+        public AnnouncementSearchCriteriaBuilder district(String district) {
+            this.district = (district != null) ? "%" + district.strip() + "%" : null;
+            return this;
+        }
+
+        public AnnouncementSearchCriteriaBuilder state(String state) {
+            this.state = (state != null) ? "%" + state.strip() + "%" : null;
             return this;
         }
 
@@ -138,15 +158,10 @@ public class AnnouncementSearchCriteria {
     public Map<String, Object> buildQueryParameters() {
         //create new HashMap
         Map<String, Object> result = Maps.newHashMap();
-        //check if both priceMin and priceMax have values other than null
-        //add both values to HashMap
-        if (ObjectUtils.allNotNull(priceMin, priceMax)) {
-            result.put("priceMin", priceMin);
-            result.put("priceMax", priceMax);
-        }
+
         if (detailsPresent != null) result.put("detailsPresent", detailsPresent);
         //create a list of all possible params for easier bind
-        String[] params = {"availableFrom","title","country","state","city","district","propertyType","livingSpace",
+        String[] params = {"priceMin","priceMax","availableFrom","title","country","state","city","district","propertyType","livingSpace",
                 "internetSpeed","bath","shower",
                 "microwave","oven","petsAllowed","elevator","nearPark","fenced",
                 "nearTram","nearBus","wifi","ethernetOutlets","internet","tv","dishwasher","clothesDryer",
