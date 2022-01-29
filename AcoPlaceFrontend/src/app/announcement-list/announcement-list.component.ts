@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Announcement } from '../model/announcement';
 import { AnnouncementService } from './announcement.service';
 import { MatTableModule } from '@angular/material/table';
-import { SearchAnnouncementComponent } from '../search-announcement/search-announcement.component';
+
 import { AnnouncementParams } from '../model/announcementParams';
 import { ThemePalette } from '@angular/material/core';
 import { ImageUploadService } from '../file-base64/image-upload.service';
@@ -31,7 +31,7 @@ export class AnnouncementListComponent implements OnInit {
   announcements: Announcement[];
 
   constructor(private announcementService: AnnouncementService, private router: Router, private imageUploadService: ImageUploadService) { }
-  
+
   ngOnInit(): void {
     this.getAnnouncements();
     // this.getImage
@@ -76,5 +76,5 @@ export class AnnouncementListComponent implements OnInit {
     )
   }
 
-  
+
 }

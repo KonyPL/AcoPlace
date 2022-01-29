@@ -25,11 +25,10 @@ export class AnnouncementDetailsComponent implements OnInit {//TODO ZMIANA NAZWY
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.id = +params['id'];
+
+      this.getAnnouncement();
+      this.getUserDetails();
     });
-    this.getAnnouncement();
-    this.getUserDetails();
-
-
   }
 
 
@@ -41,14 +40,6 @@ export class AnnouncementDetailsComponent implements OnInit {//TODO ZMIANA NAZWY
       }
     )
   }
-
-
-
-  editAnnouncement() {
-    this.router.navigate(['announcementEdit', this.id]);
-  }
-
-
 
   addToFavourite() {
     console.log("ID FROMA ANNOUNCEMENT=" + this.announcement.id);
@@ -71,14 +62,7 @@ export class AnnouncementDetailsComponent implements OnInit {//TODO ZMIANA NAZWY
     )
   }
 
-
   public goToUserProfile() {
     this.router.navigate(['allUserInfo', this.id]);
   }
-
-  public goToThisUserProfile() {
-    this.router.navigate(['allUserInfo', this.id]);
-  }
-
-
 }

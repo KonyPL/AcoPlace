@@ -1,17 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, HammerModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { AnnouncementListComponent } from './announcement-list/announcement-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AnnouncementDetailsComponent } from './announcement-details/announcement-details.component';
 import { AddAnnouncementComponent } from './add-announcement/add-announcement.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AnnouncementDetailsListComponent } from './announcement-details-list/announcement-details-list.component';
-import { SearchAnnouncementComponent } from './search-announcement/search-announcement.component';
 import { AnnouncementDetailsDetailsComponent } from './announcement-details-details/announcement-details-details.component';
 import { HouseDetailsComponent } from './house-details/house-details.component';
 import { RoomDetailsComponent } from './room-details/room-details.component';
@@ -21,19 +18,13 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-// import { UserProfileComponent } from './user-profile/user-profile.component';
-// import { AdminComponent } from './admin/admin.component';
 import { MatInputModule } from '@angular/material/input';
-import { StartPageComponent } from './start-page/start-page.component';
-// Kod Wodnika
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterSuccessComponent } from './auth/register-success/register-success.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-//import {Ng2Webstorage} from 'ngx-webstorage';
 import { HttpClientInterceptor } from './http-client-interceptor';
 import { NgxWebstorageModule } from 'ngx-webstorage';
-// Koniec kodu Wodnika
 import { OwlCarousel, OwlModule } from 'ngx-owl-carousel';
 import { GalleryComponent } from './gallery/gallery.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -67,38 +58,26 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list'
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { SearchComponent } from './search/search.component';
-// import { BoxComponent } from './box/box.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AnnoucementActiveListComponent } from './annoucement-active-list/annoucement-active-list.component';
 import { AnnouncementInactiveListComponent } from './announcement-inactive-list/announcement-inactive-list.component';
 import { AnnouncementFavouriteListComponent } from './announcement-favourite-list/announcement-favourite-list.component';
-import { FileUploadComponent } from './file-upload/file-upload.component';
 import { FileBase64Component } from './file-base64/file-base64.component';
 import { NgxGalleryImageComponent } from '@kolkov/ngx-gallery/lib/ngx-gallery-image/ngx-gallery-image.component';
 import { NgxImageCompressorModule } from 'ngx-image-compressor';
 import { NgxImageCompressService } from 'ngx-image-compress';
 import { EditAnnouncementComponent } from './edit-announcement/edit-announcement.component';
 import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.component';
-import { BannerGalleryComponent } from './banner-gallery/banner-gallery.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { AllInfoAnnouncementComponent } from './all-info-announcement/all-info-announcement.component';
 import { OtherUserProfileComponent } from './other-user-profile/other-user-profile.component';
-// import { SidebarComponent } from './sidebar/sidebar.component';
-// import { NgImageSliderModule } from 'ng-image-slider';
-// import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatGridTileHarness } from '@angular/material/grid-list/testing';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from './footer/footer.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { NgxImageGalleryModule } from 'ngx-image-gallery';
-// import {
-//   MatAutocompleteModule, MatButtonModule, MatCheckboxModule, MatDatepickerModule,
-//   MatFormFieldModule, MatInputModule, MatRadioModule, MatSelectModule, MatSliderModule,
-//   MatSlideToggleModule
-// } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -108,34 +87,22 @@ import { NgxImageGalleryModule } from 'ngx-image-gallery';
     AnnouncementDetailsComponent,
     AddAnnouncementComponent,
     AnnouncementDetailsListComponent,
-    SearchAnnouncementComponent,
     AnnouncementDetailsDetailsComponent,
     HouseDetailsComponent,
     RoomDetailsComponent,
     FlatDetailsComponent,
-    // UserProfileComponent,
-    // AdminComponent,
-    StartPageComponent,
     GalleryComponent,
-    // CarouselHolderComponent,
-    // SidebarComponent
     RegisterComponent,
     LoginComponent,
     RegisterSuccessComponent,
     SidebarComponent,
-    SearchComponent,
-    // BoxComponent,
-
     UserProfileComponent,
     AnnoucementActiveListComponent,
     AnnouncementInactiveListComponent,
     AnnouncementFavouriteListComponent,
-    //Koniec kodu Wodnika
-    FileUploadComponent,
     FileBase64Component,
     EditAnnouncementComponent,
     UserProfileEditComponent,
-    BannerGalleryComponent,
     AllInfoAnnouncementComponent,
     OtherUserProfileComponent,
     FooterComponent,
