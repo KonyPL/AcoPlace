@@ -50,7 +50,7 @@ export class GalleryComponent implements OnInit {
         imageArrows: true,
         previewArrows: true,
         thumbnailsArrows: true,
-        width: '700px',
+        width: '100%',
         height: '550px',
         thumbnailsColumns: 4,
         arrowPrevIcon: 'fa fa-chevron-left',

@@ -1,29 +1,25 @@
-<div class="col-sm-1 col-md-1"></div>
-<div class="col-sm-10 col-md-10">
+<div class="col-sm-12 col-md-12">
     <div class="component" style="padding-left: 2%;">
         <div *ngIf="announcement.edited==true"> ANNOUNCEMENT WAS EDITED BY {{announcement.admin}} time:
             {{announcement.reportedTime}} </div>
         <div *ngIf="announcement.reported==true"> ANNOUNCEMENT WAS REPORTED BY {{announcement.admin}} time:
             {{announcement.reportedTime}} </div>
 
-        <div class="component" style="padding-left: 2px;">
+        <div class="component">
             <div class="row">
-                <div class="col-md-8" style="margin-top: 30px;">
-                    <!-- font-weight: bold; -->
-                    <h1
-                        style="font-family: Lato; text-align: left; font-weight: 300; font-size: 30px; margin-left: 45px;">
+                <div class="col-md-8" style="margin-top: 30px; padding-left: 5%; padding-right: 3%;">
+                    <h1 style="font-family: Lato; text-align: left; font-weight: 300; font-size: 30px;">
                         {{announcement.title}}</h1>
-                    <div style="padding-left: 8%;">
+                    <div>
                         <app-gallery></app-gallery>
                     </div>
-                    <h4
-                        style="font-size: 20px; font-weight: bold; margin-top: 60px; text-align: left; margin-left: 45px;">
+                    <h4 style="font-size: 20px; font-weight: bold; margin-top: 60px; text-align: left;">
                         Description</h4>
                     <hr>
-                    <p style="text-align: left; margin-left: 45px; font-size: 16px; text-align: justify;">
+                    <p style="text-align: left; font-size: 16px; text-align: justify;">
                         {{announcement.text}}</p>
                 </div>
-                <div class="col-md-4" style="padding-right: 10%;">
+                <div class="col-md-4" style="padding-left: 3%; padding-right: 5%;">
                     <h1 style="margin-top: 30px; font-size: 30px;">{{announcement.price}} {{announcement.currency}}</h1>
 
                     <button style="margin: 5px;" mat-raised-button color="primary" (click)="editAnnouncement()">EDIT
@@ -92,7 +88,7 @@
             </div>
 
             <div class="row">
-                <div class="col-md-8" style="padding-left: 4%;">
+                <div class="col-md-8" style="padding-left: 5%;">
                     <app-announcement-details-details [id]=announcement.id>
                     </app-announcement-details-details>
                 </div>
@@ -101,4 +97,3 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-1 col-md-1"></div>

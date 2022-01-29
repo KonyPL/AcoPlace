@@ -172,9 +172,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
   { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
   ],
 
-  // vvv Tak było "wcześniej"
-  //providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-//comment

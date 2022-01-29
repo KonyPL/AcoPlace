@@ -4,10 +4,10 @@
     background-image: url("home1.jpg");
 } */
 
-mat-drawer-container {
+.mat-drawer-container {
     min-height: 93%;
-    /* font-family: Lato; */
-    
+    font-family: Lato;
+    overflow: unset;
 }
 
 /* html, body { height: 100%; font-family: Lato;}
