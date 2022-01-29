@@ -8,6 +8,11 @@
             </mat-icon>AcoPlace
         </span>
     </a>
+
+        <!-- <a routerLinkActive="active">
+        <span routerLink="/not-found">Not found</span>
+    </a> -->
+
         <div fxFlex fxLayout=" row" fxLayoutAlign="center">
             <a>
 
@@ -21,7 +26,7 @@
                     <div>
                         <input #title style="position: absolute; left: 50px; margin-right: auto;" size="80" type="text"
                             placeholder="Search..." name="title" id="title" style="color: black"
-                             (keyup)="searchAnnouncement($event)">
+                            (keyup)="searchAnnouncement($event)">
                     </div>
                 </li>
                 <li routerLinkActive="active">
@@ -46,7 +51,7 @@
                     </span>
                 </li>
                 <li *ngIf="authService.isAuthenticated()" routerLinkActive="active">
-                    <span mat-icon-button><a (click)="logout()" routerLink="/announcements-list2" >Logout</a>
+                    <span mat-icon-button><a (click)="logout()" routerLink="/announcements-list" >Logout</a>
                        
                     </span>
                 </li>
