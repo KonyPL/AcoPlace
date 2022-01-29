@@ -6,7 +6,7 @@
             <div class="col-md-8" style="margin-top: 30px;">
                 <h1 style="font-family: Lato; text-align: left; font-weight: 300; font-size: 30px; margin-left: 45px;">
                     {{announcement.title}}</h1>
-                <div style="margin-left: 8%">
+                <div style="padding-left: 8%">
                     <app-gallery></app-gallery>
                 </div>
                 <h4 style="font-size: 20px; font-weight: bold; margin-top: 60px; margin-left: 45px; text-align: left;">
@@ -16,13 +16,13 @@
                     {{announcement.text}}
                 </p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" style="padding-right: 10%;">
                 <h1 style="margin-top: 30px; font-size: 30px;">{{announcement.price}} {{announcement.currency}}</h1>
                 <!-- <button primary mat-icon-button (click)="addToFavourite()">ADD TO FAVOURITE
             </button>
             <button primary mat-icon-button (click)="editAnnouncement()">EDIT ANNOUNCEMENT
             </button> -->
-                <button mat-raised-button color="primary" (click)="addToFavourite()">
+                <button style="margin: 5px;" mat-raised-button color="primary" (click)="addToFavourite()">
                     <mat-icon>
                         favorite
                     </mat-icon>ADD TO FAVOURITE
@@ -109,7 +109,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-8" style="padding-left: 4%;">
                 <app-announcement-details-details [id]=announcement.id>
                 </app-announcement-details-details>
 
@@ -119,4 +119,4 @@
         </div>
     </div>
 </div>
-<div class="col-md-1"></div>
+<div class="col-sm-1 col-md-1"></div>
