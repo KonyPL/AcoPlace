@@ -4,6 +4,7 @@ export class UserDetails {
     phoneNumber: string;
     countryCode: string;
     about: string;
+    b64image: string;
   }
 
 

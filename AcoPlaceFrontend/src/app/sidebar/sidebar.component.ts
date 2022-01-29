@@ -3,6 +3,7 @@ import { WebUser } from '../model/WebUser';
 import { UserService } from './user.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
+import { UserProfileDto } from '../model/user-profile-dto';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -10,41 +11,39 @@ import { MatIconRegistry } from '@angular/material/icon';
 })
 export class SidebarComponent implements OnInit {
 
-//   const THUMBUP_ICON =
-//   `
-//   <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px">
-//     <path d="M0 0h24v24H0z" fill="none"/>
-//     <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.` +
-//   `44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5` +
-//   `1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1.91l-.01-.01L23 10z"/>
-//   </svg>
-// `;
-
   @Input() authenticated: boolean;
   webUser: WebUser = new WebUser;
+
+  userProfileDto: UserProfileDto = new UserProfileDto;
 
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    //console.log("ngOnInit sidebar="+this.authenticated); 
+    this.getCurrentUserPicture();
   }
 
   ngOnChanges(changes: SimpleChanges) { //ladnie wywoulje sie podczas zmian w authenticated
     console.log("ng on changes sidebar CALLED---------------------------------------------------------------------------------------------------") // do wyrzucenia to
     this.getCurrentUser();
-
+    this.getCurrentUserPicture();
   }
 
   public getCurrentUser() {
     this.userService.getCurrentUser().subscribe(
       data => {
         this.webUser = data;
-        console.log("DATA from endpoint" + data.id + data.email + data.userName + data.password);
       }
     )
   }
 
-
+  public getCurrentUserPicture(){
+    this.userService.getCurrentUserDetails().subscribe(
+    data => {
+      this.userProfileDto.b64image = data.b64image;
+      console.log("Img" + data)
+    }
+    )
+  }
 
 
 }

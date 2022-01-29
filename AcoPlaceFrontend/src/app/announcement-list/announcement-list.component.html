@@ -19,19 +19,17 @@
                             </mat-label>
                         </mat-form-field> -->
                 <a *ngFor="let announcement of announcements" (click)="showAnnouncementById(announcement.id)" class="list-group-item clearfix" style="cursor:pointer">
-                    <div class="col-xs-2 image">
+                    <div class="col-xs-3 image">
                         
-                    <img [src]="announcement.images[0]" onerror="this.src='/assets/images/placeholder.png';" width="200" height="120" object-fit="cover">
+                    <img [src]="announcement.images[0]" onerror="this.src='/assets/images/placeholder.png';" style="width: 100%; height: auto; max-width: 200; max-height: 120;" object-fit="cover">
                     </div>
-                    <div class="col-xs-10 pull-left" style="padding-left: 50px;">
-                        
-
-                        <h4 style="font-weight: bold; margin-left: 30px;" class="list-group-item-heading">{{ announcement.title }}</h4>
-                        <p class="list-group-item-text" style="margin-left: 30px;">{{ announcement.country }}, {{announcement.state}}, {{ announcement.city }}, {{announcement.district}}</p>
+                    <div class="col-xs-6 pull-left">
+                        <h4 style="font-weight: bold; margin-left: 10%;" class="list-group-item-heading">{{ announcement.title }}</h4>
+                        <p class="list-group-item-text" style="margin-left: 10%;">{{ announcement.country }}, {{announcement.state}}, {{ announcement.city }}, {{announcement.district}}</p>
                       </div>
-                      <div class="pull-right" style="padding-right: 50px;">
-                        <h4 class="list-group-item-heading ">{{ announcement.propertyType }}</h4>
-                        <p class="list-group-item-text pull-right">{{ announcement.price }} {{announcement.currency}} </p>
+                      <div class="col-xs-3 pull-right" style="margin-top: 10%; margin-right: -7%">
+                        <h4 class="list-group-item-heading" style="margin: 0 0 0 0">{{ announcement.propertyType }}</h4>
+                        <p class="list-group-item-text ">{{ announcement.price }} {{announcement.currency}} </p>
                   
                     </div>
                 </a>
@@ -49,11 +47,10 @@
 
         </div>
         <div (ngSubmit)="onSubmit()">
-            <div>
-                <button class="center-div" mat-raised-button color="primary" type="submit"
-                    style="margin-top: 10px; padding: 10px 80px;" (click)="onSubmit()">Search</button>
-            </div>
             <div class="col-md-12" style="text-align: center; margin-top: 5%;">
+                <div style="text-align: center; margin-top: 10px; margin-bottom: 10px;">
+                    <button style="padding: 10px 80px;" mat-raised-button color="primary" type="submit" (click)="onSubmit()">Search</button>
+                </div>
                 <form class="example-form">
                     <mat-form-field class="full-width" appearance="fill">
                         <mat-label>Min price</mat-label>
