@@ -60,8 +60,11 @@ export class AllInfoAnnouncementComponent implements OnInit {
   }
 
   delete() {
-    this.announcementService.deleteAnnouncementById(this.id).subscribe();
-    this.router.navigate(['search-announcement']);
+    if (window.confirm("Do you really want delete this announcement?")) {
+      this.announcementService.deleteAnnouncementById(this.id).subscribe();
+      this.router.navigate(['announcements-list']);
+      window.alert("Announcement Deleted!");
+    }
 
   }
 
@@ -73,7 +76,10 @@ export class AllInfoAnnouncementComponent implements OnInit {
     this.userService.getCurrentUserProfileDtoByAnnouncementId(this.id).subscribe(
       data => {
         this.userProfileDto = data;
-        console.log("DATA from endpoint" + data);
+        //switch to standard page for non-owner
+        if(data.userName != this.authService.currentUserName()){
+          this.router.navigate(['announcement', this.id]);
+        }
       }
     )
   }

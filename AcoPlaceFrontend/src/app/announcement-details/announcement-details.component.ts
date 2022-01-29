@@ -57,7 +57,10 @@ export class AnnouncementDetailsComponent implements OnInit {//TODO ZMIANA NAZWY
     this.userService.getCurrentUserProfileDtoByAnnouncementId(this.id).subscribe(
       data => {
         this.userProfileDto = data;
-        console.log("DATA from endpoint" + data);
+        //switch to AllInfo page for owner
+        if(data.userName === this.authService.currentUserName()){
+          this.router.navigate(['allAnnouncement', this.id]);
+        }
       }
     )
   }
