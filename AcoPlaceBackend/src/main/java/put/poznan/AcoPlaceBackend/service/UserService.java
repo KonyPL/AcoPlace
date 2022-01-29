@@ -92,7 +92,6 @@ public class UserService {
     }
 
     public UserProfileDto updateUserByDto(UserProfileDto userProfileDto) {
-        System.out.println("USER PROFILE DTO w uupdete servie" + userProfileDto.toString());
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         WebUser webUser = userRepository.findByUserName(username)
                 .orElseThrow(() -> new ResourceNotFoundException("user with name=" + username + "not found"));

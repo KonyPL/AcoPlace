@@ -7,4 +7,5 @@ export class UserProfileDto {
     phoneNumber: string;
     countryCode: string;
     about: string;
+    b64image: string;
   }

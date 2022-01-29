@@ -33,6 +33,11 @@ public class UserDetailsController {
         return userDetailsService.saveUserDetails(userDetails);
     }
 
+    @GetMapping("/free/userDetails/{id}/profilePicture")
+    public String getUserProfilePicture(@PathVariable Integer id){
+        return userDetailsService.getUserProfilePictureById(id);
+    }
+
     @GetMapping("/currentUserDetails")
     public UserDetails getCurrentUserDetails(){
         System.out.println("currentUserDetails called");

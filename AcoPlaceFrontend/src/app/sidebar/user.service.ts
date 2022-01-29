@@ -22,17 +22,20 @@ export class UserService {
 
   //getCurrentUserProfileDto
 
-  getCurrentUserProfileDto(): Observable<UserProfileDto> { //zmiana danych potrzebna
+  getCurrentUserProfileDto(): Observable<UserProfileDto> {
     return this.httpClient.get<UserProfileDto>(`http://localhost:8080/userProfileDto/current`);
   }
 
   
   updateUserByDto(userProfileDto: UserProfileDto): Observable<Object> {
-    console.log("JESTEM W UPDATE USER BY DTO");
     return this.httpClient.post(`http://localhost:8080/user/editByDto`, userProfileDto);
   }
 
   getCurrentUserProfileDtoByAnnouncementId(id: number): Observable<UserProfileDto> {
     return this.httpClient.get<UserProfileDto>(`http://localhost:8080/userProfileDto/getByAnnouncementId/`+ id)
+  }
+
+  getUserImage(userId: number): Observable<any> {
+    return this.httpClient.get<string>(`http://localhost:8080/free/userDetails/` + userId + `/profilePicture`);
   }
 }

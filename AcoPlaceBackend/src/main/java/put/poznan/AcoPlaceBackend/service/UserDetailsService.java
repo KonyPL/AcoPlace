@@ -37,7 +37,12 @@ public class UserDetailsService {
 
         String username= SecurityContextHolder.getContext().getAuthentication().getName();
         WebUser currentWebUser = userRepository.findByUserName(username).orElseThrow(() -> new ResourceNotFoundException("user with name="+username+" not found"));
-        System.out.println("JESTEM  W CURRENT USER DETAILS webuser id="+currentWebUser.getId());
         return userDetailsRepository.findByWebUserId(currentWebUser.getId());
     }
+
+    public String getUserProfilePictureById(Integer id){
+        UserDetails userDetails = userDetailsRepository.findByWebUserId(id);
+        return userDetails.getB64image();
+    }
+
 }

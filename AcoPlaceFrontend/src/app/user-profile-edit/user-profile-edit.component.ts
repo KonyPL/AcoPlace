@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserProfileDto } from '../model/user-profile-dto';
 import { UserService } from '../sidebar/user.service';
+import { ImageCompressorService, CompressorConfig } from 'ngx-image-compressor';
+import { NgxImageCompressService } from 'ngx-image-compress';
+import { ImageStorage } from '../model/image-storage';
 
 @Component({
   selector: 'app-user-profile-edit',
@@ -13,7 +16,7 @@ export class UserProfileEditComponent implements OnInit {
 
   userProfileDto: UserProfileDto;
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router, private imageCompressor: ImageCompressorService) { }
 
   ngOnInit(): void {
     this.getUserDetails();
@@ -37,16 +40,30 @@ export class UserProfileEditComponent implements OnInit {
 
 
     goToUserProfile() {
-      console.log("jestem w  go tp user profie");
       this.router.navigate(['user-profile']);
     }
 
     onEdit(){
       this.userService.updateUserByDto(this.userProfileDto).subscribe();
       this.goToUserProfile();
-
     }
 
-
+    //User profile picture
+    onSelectNewFile(files: FileList): void {
+      const rawFiles: File[] = [].slice.call(files);
+      rawFiles.forEach(async (file: File) => {
+        const config: CompressorConfig = { orientation: 1, ratio: 100, quality: 70, enableLogs: true };
+        this.convertFileToBase64(await this.imageCompressor.compressFile(file, config));
+      })
+  
+    }
+  
+    convertFileToBase64(blob: Blob): void {
+      let reader = new FileReader();
+      reader.readAsDataURL(blob as Blob);
+      reader.onloadend = () => {
+        this.userProfileDto.b64image = (reader.result as string);
+      }
+    }
 
 }
