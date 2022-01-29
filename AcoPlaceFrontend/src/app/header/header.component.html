@@ -19,9 +19,9 @@
 
                 <li>
                     <div>
-                        <input style="position: absolute; left: 50px; margin-right: auto;" size="80"
-                            type="text" placeholder="Search..." [(ngModel)]="announcementParams.title" name="title"
-                            id="title" style="color: black">
+                        <input #title style="position: absolute; left: 50px; margin-right: auto;" size="80" type="text"
+                            placeholder="Search..." name="title" id="title" style="color: black"
+                             (keyup)="searchAnnouncement($event)">
                     </div>
                 </li>
                 <li routerLinkActive="active">

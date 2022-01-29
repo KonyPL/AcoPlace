@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Announcement } from '../model/announcement';
 import { AnnouncementParams } from '../model/announcementParams';
 import { HouseDetails } from '../model/house-details';
@@ -13,6 +13,15 @@ import { AnnouncementCreateDto } from '../model/announcement-dto';
   providedIn: 'root'
 })
 export class AnnouncementService {
+
+  private title = new BehaviorSubject('');
+  currentTitle = this.title.asObservable();
+  // title2: string;
+
+
+  setTitle(title: string) {
+    this.title.next(title);
+  }
 
   constructor(private httpClient: HttpClient) { }
 
@@ -67,6 +76,15 @@ export class AnnouncementService {
     return this.httpClient.post(`http://localhost:8080/updateAnnouncementByDto`, announcementDto);
   }
 
+  getAnnouncementWithTitle(announcementParams: AnnouncementParams): Observable<Announcement[]> {
+    let params = new HttpParams();
+    if (announcementParams.city != undefined) {
+      params = params.set('city', announcementParams.city);
+    }
+    return this.httpClient.get<Announcement[]>(`http://localhost:8080/free/searchAnnouncement`, { params });
+  }
+
+
   getAnnouncementWithParams(announcementParams: AnnouncementParams): Observable<Announcement[]> {
 
     let params = new HttpParams();
@@ -74,8 +92,9 @@ export class AnnouncementService {
     if (announcementParams.city != undefined) {
       params = params.set('city', announcementParams.city);
     }
-    if (announcementParams.title != undefined) {
-      params = params.set('title', announcementParams.title);
+    if (this.title != undefined) {
+      this.currentTitle.subscribe((data) => { params = params.set('title', data) }
+      );
     }
     if (announcementParams.country != undefined) {
       params = params.set('country', announcementParams.country);
@@ -182,4 +201,5 @@ export class AnnouncementService {
   deleteAnnouncementById(id: number): Observable<any> {
     return this.httpClient.delete("http://localhost:8080/announcement/delete/" + id);
   }
+
 }

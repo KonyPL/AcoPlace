@@ -31,7 +31,7 @@ export class AnnouncementListComponent implements OnInit {
   announcements: Announcement[];
 
   constructor(private announcementService: AnnouncementService, private router: Router, private imageUploadService: ImageUploadService) { }
-
+  
   ngOnInit(): void {
     this.getAnnouncements();
     // this.getImage
@@ -67,14 +67,6 @@ export class AnnouncementListComponent implements OnInit {
   }
 
   searchAnnouncement() {
-
-    console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.oven);
-    console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.priceMax);
-    console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.priceMin);
-    console.log("THIS ANNOUNCEMENT search clicked" + this.announcementParams.shower);
-
-    // this.announcementParams.shower = this.shower ? true : false;
-
     this.announcementService.getAnnouncementWithParams(this.announcementParams).subscribe(
       data => {
         this.announcements = data;
@@ -83,4 +75,6 @@ export class AnnouncementListComponent implements OnInit {
       }
     )
   }
+
+  
 }
