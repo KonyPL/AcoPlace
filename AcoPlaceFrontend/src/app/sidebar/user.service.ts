@@ -28,6 +28,7 @@ export class UserService {
 
   
   updateUserByDto(userProfileDto: UserProfileDto): Observable<Object> {
+    console.log("JESTEM W UPDATE USER BY DTO");
     return this.httpClient.post(`http://localhost:8080/user/editByDto`, userProfileDto);
   }
 

@@ -367,4 +367,9 @@ public class AnnouncementService {
         Announcement announcement = announcementRepository.findAnnouncementById(id).orElseThrow(() -> new ResourceNotFoundException("announcement not found"));
         return announcementRepository.getActiveForUser(announcement.getWebUser().getId());
     }
+
+    public void deleteById(Integer id) {
+//        announcementDetailsRepository.deleteAnnouncementDetailsByAnnouncementID(id);
+        announcementRepository.deleteAnnouncementById(id);
+    }
 }

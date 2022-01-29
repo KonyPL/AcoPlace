@@ -139,4 +139,8 @@ public class AnnouncementController {
 
     }
 
+    @DeleteMapping("announcement/delete/{id}")
+    public void deleteById(@PathVariable Integer id){
+        announcementService.deleteById(id);
+    }
 }

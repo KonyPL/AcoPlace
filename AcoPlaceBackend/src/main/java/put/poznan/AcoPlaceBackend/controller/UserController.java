@@ -45,6 +45,7 @@ public class UserController {
 
     @PostMapping("/user/editByDto")
     public UserProfileDto updateUserByDto(@RequestBody UserProfileDto userProfileDto){
+        System.out.println("user profile dt w controlerze"+userProfileDto.toString());
         return  userService.updateUserByDto(userProfileDto);
     }
 }

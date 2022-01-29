@@ -6,4 +6,15 @@
 
 mat-drawer-container {
     min-height: 93%;
+    /* font-family: Lato; */
+    
 }
+
+/* html, body { height: 100%; font-family: Lato;}
+h1 h2 h3 h4 h5 {
+    font-weight: 100;
+}
+
+p {
+    font-weight: 300;
+} */

@@ -19,15 +19,15 @@
                             </mat-label>
                         </mat-form-field> -->
                 <a *ngFor="let announcement of announcements" (click)="showAnnouncementById(announcement.id)" class="list-group-item clearfix" style="cursor:pointer">
-                    <div class="col-xs-2 image" >
+                    <div class="col-xs-2 image">
                         
-                    <img [src]="announcement.images[0]" onerror="this.src='/assets/images/placeholder.png';" width="auto" height="120">
+                    <img [src]="announcement.images[0]" onerror="this.src='/assets/images/placeholder.png';" width="200" height="120" object-fit="cover">
                     </div>
                     <div class="col-xs-10 pull-left" style="padding-left: 50px;">
                         
 
-                        <h4 class="list-group-item-heading">{{ announcement.title }}</h4>
-                        <p class="list-group-item-text">{{ announcement.city }}, {{announcement.district}}, {{announcement.state}} </p>
+                        <h4 style="font-weight: bold; margin-left: 30px;" class="list-group-item-heading">{{ announcement.title }}</h4>
+                        <p class="list-group-item-text" style="margin-left: 30px;">{{ announcement.country }}, {{announcement.state}}, {{ announcement.city }}, {{announcement.district}}</p>
                       </div>
                       <div class="pull-right" style="padding-right: 50px;">
                         <h4 class="list-group-item-heading ">{{ announcement.propertyType }}</h4>
@@ -49,7 +49,10 @@
 
         </div>
         <div (ngSubmit)="onSubmit()">
-
+            <div>
+                <button class="center-div" mat-raised-button color="primary" type="submit"
+                    style="margin-top: 10px; padding: 10px 80px;" (click)="onSubmit()">Search</button>
+            </div>
             <div class="col-md-12" style="text-align: center; margin-top: 5%;">
                 <form class="example-form">
                     <mat-form-field class="full-width" appearance="fill">
@@ -133,11 +136,11 @@
 
         </div>
 
-        <div class="justify-content-center col-md-12" style="text-align: left; padding: 0px 30px;">
+        <div class="justify-content-center col-md-12" style="text-align: left; margin: 0px 0px 0px 0px;">
             <div class="col-md-12">
                 <div *ngIf="announcementParams.propertyType==='FLAT'">
                     <div class="row">
-                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px; margin-left: 69px;">
                             <mat-checkbox [(ngModel)]="announcementParams.basement" name="basement">Basement
                             </mat-checkbox>
                         </div>
@@ -243,7 +246,7 @@
                     </div>
 
                     <div class="row" style=" margin: 10px 0; border-radius: 0%;">
-                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px; margin-left: 69px;">
                             <mat-checkbox [(ngModel)]="announcementParams.basement" name="basement">Basement
                             </mat-checkbox>
                         </div>
@@ -251,7 +254,7 @@
 
 
                     <div class="row" style=" margin: 10px 0; border-radius: 0%;">
-                        <div class="justify-content-center col-md-12" style="padding: 0 50px;">
+                        <div class="justify-content-center col-md-12" style="padding: 0 50px; margin-left: 69px;">
                             <mat-checkbox [(ngModel)]="announcementParams.parking" name="parking">Parking
                             </mat-checkbox>
                         </div>
@@ -305,10 +308,11 @@
 
         <form (ngSubmit)="onSubmit()">
             <div class="row">
-                <div class=" row" style="font-size: 15px; padding: 20px 10px 10px 10px;">
+                <div class=" row" style="font-size: 15px; padding: 20px 10px 10px 10px; margin-left: 109px;">
                     Equipment:
                 </div>
-                <div class="justify-content-center col-md-12" style="text-align: left; padding: 0px 30px;">
+                <div class="justify-content-center col-md-12"
+                    style="text-align: left; padding: 0px 30px; margin-left: 40px;">
 
                     <div class="row">
                         <div class="justify-content-center col-md-12" style="padding: 0 50px;">
@@ -391,10 +395,11 @@
 
 
                 </div>
-                <div class=" row" style="font-size: 15px; padding: 20px 10px 10px 10px;">
+                <div class=" row" style="font-size: 15px; padding: 20px 10px 10px 10px; margin-left: 109px;">
                     Location:
                 </div>
-                <div class="justify-content-center col-md-12" style="text-align: left; padding: 0px 30px;">
+                <div class="justify-content-center col-md-12"
+                    style="text-align: left; padding: 0px 30px; margin-left: 40px;">
                     <div class="row">
                         <div class="justify-content-center col-md-12" style="padding: 0 50px;">
                             <mat-checkbox [(ngModel)]="announcementParams.nearPark" name="nearPark">Near park
@@ -438,9 +443,9 @@
                         </div>
                     </div>
                 </div>
-                <div style="text-align: center;">
+                <div style="text-align: center; margin-top: 10px;">
                     <!-- <button class="" type="submit">Search</button> -->
-                    <button mat-raised-button color="primary" type="submit">Search</button>
+                    <button style="padding: 10px 80px;" mat-raised-button color="primary" type="submit">Search</button>
                 </div>
             </div>
         </form>

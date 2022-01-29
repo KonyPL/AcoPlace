@@ -19,21 +19,22 @@ export class OtherUserProfileComponent implements OnInit {
   constructor(private userService: UserService, private router: Router, private route: ActivatedRoute, private announcementService: AnnouncementService) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params: Params)=> {
-      this.id=+params['id'];
+    this.route.params.subscribe((params: Params) => {
+      this.id = +params['id'];
     });
     this.getUserDetails();
     this.getAnnouncementsList();
   }
 
 
-  public getUserDetails(){
+  public getUserDetails() {
     this.userService.getCurrentUserProfileDtoByAnnouncementId(this.id).subscribe(
       data => {
         this.userProfileDto = data;
         console.log("DATA from endpoint" + data);
       }
-    )  }
+    )
+  }
 
 
 
@@ -52,5 +53,9 @@ export class OtherUserProfileComponent implements OnInit {
     console.log("odczytuje id=" + id);
     this.router.navigate(['announcement', id]);
 
+  }
+
+  public goToUserProfile() {
+    this.router.navigate(['allUserInfo', this.id]);
   }
 }

@@ -27,6 +27,7 @@ export class AnnouncementParams {
     city: string;
     district: string;
     livingSpace: number;
+    title: string;
     // flat
     floor: number;
     bedrooms: number;

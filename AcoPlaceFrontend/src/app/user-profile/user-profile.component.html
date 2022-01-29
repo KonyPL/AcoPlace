@@ -1,17 +1,42 @@
-<h4 style="padding-left: 20px;"> Edit your profile:</h4>
-<p>ID={{userProfileDto.id}}</p>
-<p>username={{userProfileDto.userName}}</p>
-<p>email={{userProfileDto.email}}</p>
-<p>FIRSTNAME={{userProfileDto.firstName}}</p>
-<p>lasSTNAME={{userProfileDto.lastName}}</p>
-<p>PHONE NUMBER={{userProfileDto.phoneNumber}}</p>
-<p>country code={{userProfileDto.countryCode}}</p>
-<p>about={{userProfileDto.about}}</p>
+<h2 class="text-center" style="margin-bottom: 60px;"> Your profile</h2>
 
-<div style="padding-left: 20px;">
-    <!-- <button class="btn"><a (click)="editUser()" >EDIT USER</a> -->
-    <!-- </button></div> -->
-    <button mat-raised-button color="primary" (click)="editUser()">EDIT USER</button>
-
-    <!-- <p>PPOZOSTAJE KWESTIA ROZKMINIENIA Z USER  -->
-    <!-- PREFERENCES ITP ITD DOŚC DUŻYTEMATE</p> -->
+<div class="col-md-1"></div>
+<div class="col-md-5">
+    <div style="padding-left: 40px; font-size: 18px;">
+        <div>
+            <label>Username: {{userProfileDto.userName}}</label>
+        </div>
+        <div>
+            <label>E-mail: {{userProfileDto.email}}</label>
+        </div>
+        <hr>
+        <div>
+            <label>First name: {{userProfileDto.firstName}}</label>
+        </div>
+        <div>
+            <label>Last name: {{userProfileDto.lastName}}</label>
+        </div>
+        <div>
+            <label>Phone number: {{userProfileDto.phoneNumber}}</label>
+        </div>
+        <div>
+            <label>Country code: {{userProfileDto.countryCode}}</label>
+        </div>
+        <hr>
+    </div>
+</div>
+<div class="col-md-5">
+    <div style="padding-left: 20px;">
+        <div style="font-size: 18px;">
+            <label>About: </label>
+        </div>
+        <div style="font-size: 16px;">
+            <p>{{userProfileDto.about}}</p>
+        </div>
+        <div>
+            <button mat-raised-button color="primary" (click)="editUser()" style="margin-top: 10px;">EDIT
+                USER</button>
+        </div>
+    </div>
+</div>
+<div class="col-md-1"></div>

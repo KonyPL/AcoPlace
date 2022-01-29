@@ -2,15 +2,56 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css";
 /* @import 'hammerjs'; */
+/* @import "~@angular/material/theming"; */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@font-face {
+    font-family: Lato;
+    font-weight: 100;
+    font-size: 150%;
+    src: local('Lato Thin'), 
+    url("https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap");
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@font-face {
+    font-family: Lato;
+    font-weight: 300;
+    src: local('Lato Light'), 
+    url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+}
+
+
+
+body [class^='mat-'], body [class*=' mat-'] { font-family: Lato;}
+h1, h2, h3, h4, h5 [class^='mat-']
+{
+    font-family: Lato;
+    font-weight: 100;
+}
+h1, h2, h3, h4, h5 [class*='mat-typography ']
+{
+    font-family: Lato;
+    font-weight: 100;
+}
+h1, h2, h3, h4, h5 [class*=' mat-'] {
+
+    font-family: Lato;
+    font-weight: 100;
+}
+
+
+p [class^='mat-'], p [class*=' mat-'] {
+    font-family: Lato;
+    font-weight: 300;
+}
+
+body .material-icons {
+    font-family: 'Material Icons';
+}
+
 @import '~@fortawesome/fontawesome-free/css/fontawesome.css';
 @import '~@fortawesome/fontawesome-free/css/solid.css';
 @import '~@fortawesome/fontawesome-free/css/regular.css';
 @import '~@fortawesome/fontawesome-free/css/brands.css';
  
 @import '~mdb-angular-ui-kit/assets/css/mdb.css';
+html, body { height: 100%; margin: 0; }

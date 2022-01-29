@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AnnouncementService } from '../announcement-list/announcement.service';
+import { ImageUploadService } from '../file-base64/image-upload.service';
 import { Announcement } from '../model/announcement';
 
 @Component({
@@ -10,10 +11,10 @@ import { Announcement } from '../model/announcement';
 })
 export class AnnouncementFavouriteListComponent implements OnInit {
 
-   
+
   announcements: Announcement[];
 
-  constructor(private announcementService: AnnouncementService, private router: Router) { }
+  constructor(private announcementService: AnnouncementService, private router: Router, private imageUploadService: ImageUploadService) { }
 
   ngOnInit(): void {
     this.getAnnouncementsFavouriteList();

@@ -18,14 +18,12 @@ import { EditAnnouncementComponent } from './edit-announcement/edit-announcement
 import { FileBase64Component } from './file-base64/file-base64.component';
 import { OtherUserProfileComponent } from './other-user-profile/other-user-profile.component';
 //Koniec kodu Wodnika
-import { SearchAnnouncementComponent } from './search-announcement/search-announcement.component';
-import { SearchComponent } from './search/search.component';
-import { StartPageComponent } from './start-page/start-page.component';
 import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 // import { UserProfileComponent } from './user-profile/user-profile.component';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatGridTileHarness} from '@angular/material/grid-list/testing';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatGridTileHarness } from '@angular/material/grid-list/testing';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 
 const appRoutes: Routes = [
@@ -34,10 +32,8 @@ const appRoutes: Routes = [
     { path: 'announcement/:id', component: AnnouncementDetailsComponent },
     { path: 'add-announcement', component: AddAnnouncementComponent, canActivate: [AuthGuard] },
     { path: 'announcement-details-list', component: AnnouncementDetailsListComponent },
-    { path: 'search-announcement', component: SearchAnnouncementComponent },
     { path: 'user-profile', component: UserProfileComponent },
     // { path: 'admin', component: AdminComponent },
-    { path: 'start', component: SearchComponent },
     { path: '', component: AnnouncementListComponent },
     //Kod Wodnika
     { path: 'register', component: RegisterComponent },
@@ -47,7 +43,6 @@ const appRoutes: Routes = [
     { path: 'inactiveAnnouncement', component: AnnouncementInactiveListComponent },
     { path: 'favouriteAnnouncement', component: AnnouncementFavouriteListComponent },
     //Koniec kodu Wodnika
-    { path: 'search', component: SearchComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register-success', component: RegisterSuccessComponent },
@@ -58,6 +53,7 @@ const appRoutes: Routes = [
     { path: 'addImages/:id', component: FileBase64Component },
     { path: 'allAnnouncement/:id', component: AllInfoAnnouncementComponent },
     { path: 'allUserInfo/:id', component: OtherUserProfileComponent },
+    { path: 'privacy', component: PrivacyPolicyComponent }
 
 
 

@@ -1,6 +1,7 @@
 <h2 style="text-align:center;">Add your photos</h2>
 <div class="main">
-    <label for="file" class="button btn-primary btn">Select imagesfile
+    <label for="file" class="button btn-primary btn">Select images
+
         <input type="file" id="file" accept="image/*" class="button btn-primary btn" multiple hidden
             (change)="onSelectNewFile($any($event).target?.files)">
     </label>
@@ -11,5 +12,5 @@
         </div>
     </div>
 
-    <button (click)="sendImages()" class="button btn-primary btn">Send Images</button>
+    <button mat-raised-button color="primary" (click)="sendImages()">Send images</button>
 </div>

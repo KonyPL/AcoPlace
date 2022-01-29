@@ -11,3 +11,8 @@ span {
   vertical-align: middle;
   height: 26px;
 }
+
+a {
+  text-decoration: none;
+  color: white;
+}

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FileUploadComponent } from './file-upload.component';
+import { PrivacyPolicyComponent } from './privacy-policy.component';
 
-describe('FileUploadComponent', () => {
-  let component: FileUploadComponent;
-  let fixture: ComponentFixture<FileUploadComponent>;
+describe('PrivacyPolicyComponent', () => {
+  let component: PrivacyPolicyComponent;
+  let fixture: ComponentFixture<PrivacyPolicyComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FileUploadComponent ]
+      declarations: [ PrivacyPolicyComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FileUploadComponent);
+    fixture = TestBed.createComponent(PrivacyPolicyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
