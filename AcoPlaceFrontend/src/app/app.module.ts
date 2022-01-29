@@ -78,6 +78,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from './footer/footer.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { NgxImageGalleryModule } from 'ngx-image-gallery';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -106,7 +107,8 @@ import { NgxImageGalleryModule } from 'ngx-image-gallery';
     AllInfoAnnouncementComponent,
     OtherUserProfileComponent,
     FooterComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    NotFoundComponent
   ],
   imports: [
     NgbModule,

@@ -24,12 +24,12 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatGridTileHarness } from '@angular/material/grid-list/testing';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 const appRoutes: Routes = [
 
     { path: 'announcements-list', component: AnnouncementListComponent },
-    { path: 'announcements-list2', component: AnnouncementListComponent },
     { path: 'announcement/:id', component: AnnouncementDetailsComponent },
     { path: 'add-announcement', component: AddAnnouncementComponent, canActivate: [AuthGuard] },
     { path: 'announcement-details-list', component: AnnouncementDetailsListComponent },
@@ -51,7 +51,10 @@ const appRoutes: Routes = [
     { path: 'addImages/:id', component: FileBase64Component },
     { path: 'allAnnouncement/:id', component: AllInfoAnnouncementComponent },
     { path: 'allUserInfo/:id', component: OtherUserProfileComponent },
-    { path: 'privacy', component: PrivacyPolicyComponent }
+    { path: 'privacy', component: PrivacyPolicyComponent },
+    { path: 'not-found', component: NotFoundComponent }
+
+
 
 
 
