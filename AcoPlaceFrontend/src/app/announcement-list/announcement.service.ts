@@ -103,8 +103,10 @@ export class AnnouncementService {
       params = params.set('district', announcementParams.district);
     }
 
-    if ((announcementParams.priceMax != undefined) && (announcementParams.priceMin != undefined)) {
+    if (announcementParams.priceMin != undefined) {
       params = params.set('priceMin', announcementParams.priceMin);
+    }
+    if (announcementParams.priceMax != undefined) {
       params = params.set('priceMax', announcementParams.priceMax);
     }
     if (announcementParams.floor != undefined) {
