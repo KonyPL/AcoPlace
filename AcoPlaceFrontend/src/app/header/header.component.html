@@ -1,34 +1,30 @@
 <!-- --------------------HEADER ANGULAR MATERIAL-------------------- -->
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-        <a routerLinkActive="active">
-        <span routerLink="/" mat-icon-button>
-            <mat-icon class="navbar-icon">
-                home
-            </mat-icon>AcoPlace
-        </span>
-    </a>
-
+        <div fxFlex fxLayout=" row" fxLayoutAlign="flex-start">
+            <a routerLinkActive="active">
+                <span routerLink="/" mat-icon-button>
+                    <mat-icon class="navbar-icon">
+                        home
+                    </mat-icon>AcoPlace
+                </span>
+            </a>
+        </div>
         <!-- <a routerLinkActive="active">
         <span routerLink="/not-found">Not found</span>
     </a> -->
 
-        <div fxFlex fxLayout=" row" fxLayoutAlign="center">
-            <a>
-
-        </a>
+        <div fxFlex fxLayout=" row" fxLayoutAlign="flex-around">
+            <section class="search-section">
+                <div class="search-div">
+                    <input #title class="search-input" type="text"
+                        placeholder="Search..." name="title" id="title"
+                        (keyup)="searchAnnouncement($event)">
+                </div>
+            </section>
         </div>
         <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
             <ul fxLayout="row" fxLayoutGap="20px">
-
-
-                <li>
-                    <div>
-                        <input #title style="position: absolute; left: 50px; margin-right: auto;" size="80" type="text"
-                            placeholder="Search..." name="title" id="title" style="color: black"
-                            (keyup)="searchAnnouncement($event)">
-                    </div>
-                </li>
                 <li routerLinkActive="active">
                     <span routerLink="/announcements-list" mat-icon-button> Search
                         
