@@ -28,9 +28,15 @@ public class FavouriteService {
         String username= SecurityContextHolder.getContext().getAuthentication().getName();
         WebUser webUser = userRepository.findByUserName(username).orElseThrow(() -> new ResourceNotFoundException("user with name="+username+" not found"));
         Announcement announcement = announcementRepository.findAnnouncementById(id).orElseThrow(() -> new ResourceNotFoundException("Announcement with id="+id+" not found"));
-        Favourite favourite = new Favourite();
-        favourite.setAnnouncement(announcement);
-        favourite.setWebUserId(webUser.getId());
-        return favouriteRepository.save(favourite);
+        //check if it does not already exist
+        if( favouriteRepository.getFavouriteByAnnouncementIdAndUserId(webUser.getId(), id) == null){
+            Favourite favourite = new Favourite();
+            favourite.setAnnouncement(announcement);
+            favourite.setWebUserId(webUser.getId());
+            return favouriteRepository.save(favourite);
+        } else {
+            return null;
+        }
+
     }
 }

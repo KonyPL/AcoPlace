@@ -36,18 +36,24 @@ export class AnnouncementDetailsComponent implements OnInit {//TODO ZMIANA NAZWY
     this.announcementService.getAnnouncementById(this.id).subscribe(
       data => {
         this.announcement = data;
-        console.log("DATA from endpoint get announcement" + data);
+      },
+      error => {
+        window.alert("Error: " + error);
       }
     )
   }
 
   addToFavourite() {
-    console.log("ID FROMA ANNOUNCEMENT=" + this.announcement.id);
-    console.log("ID FROMA path=" + this.id);
-
     this.announcementService.addAnnouncementToFavourite(this.announcement.id).subscribe(
       data => {
-        console.log("data from add to favourite" + data);
+        if(data == null){
+          window.alert("Annonuncement is already in Favorites!");
+        } else {
+          window.alert("Annonuncement successfully added to Favorites!");
+        }
+      },
+      error => {
+        window.alert("Error: " + error);
       }
     )
 

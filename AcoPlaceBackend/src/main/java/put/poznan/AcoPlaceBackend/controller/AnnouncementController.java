@@ -110,7 +110,7 @@ public class AnnouncementController {
 
     @GetMapping("/announcement/favourite/{id}")
     public Favourite addFavouriteAnnouncementToCurrentUser(@PathVariable Integer id){
-        return  favouriteService.setFavouriteAnnouncement(id);
+        return favouriteService.setFavouriteAnnouncement(id);
     }
 
    @GetMapping("/announcements/favourite")
