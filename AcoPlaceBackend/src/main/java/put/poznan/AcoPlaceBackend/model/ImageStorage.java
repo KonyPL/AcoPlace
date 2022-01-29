@@ -2,6 +2,8 @@ package put.poznan.AcoPlaceBackend.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 
@@ -14,6 +16,7 @@ public class ImageStorage {
         private Integer id;
         @ManyToOne(fetch = FetchType.LAZY, optional = false)
         @JoinColumn(name = "announcementId", nullable = false)
+        @OnDelete(action = OnDeleteAction.CASCADE)
         private Announcement announcement;
         @Column(columnDefinition="TEXT")
         private String b64image;

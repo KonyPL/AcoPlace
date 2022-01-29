@@ -62,53 +62,58 @@ public class AnnouncementService {
         return announcementRepository.save(announcement);
     }
 
-    public List<Announcement> getActiveForCurrentUser() {
+    public List<AnnouncementDto> getActiveForCurrentUser() {
         String username= SecurityContextHolder.getContext().getAuthentication().getName();
-        WebUser webUser = userRepository.findByUserName(username).orElseThrow(() -> new ResourceNotFoundException("user with name="+username+"nor found"));
-       return announcementRepository.getActiveForUser(webUser.getId());
+        WebUser webUser = userRepository.findByUserName(username).orElseThrow(() -> new ResourceNotFoundException("user with name="+username+" not found"));
 
-       // return announcementRepository.getActiveForUser();
+        List<AnnouncementDto> announcementDtoList = announcementRepository.getActiveForUser(webUser.getId());
+        for (AnnouncementDto announcement : announcementDtoList){
+            List<String> images = imageStorageRepository.findAllByAnnouncementId(announcement.getId());
+            announcement.setImages(images);
+        }
+        return announcementDtoList;
     }
 
-    public List<Announcement> getInactiveForCurrentUser() {
+    public List<AnnouncementDto> getInactiveForCurrentUser() {
         String username= SecurityContextHolder.getContext().getAuthentication().getName();
-        WebUser webUser = userRepository.findByUserName(username).orElseThrow(() -> new ResourceNotFoundException("user with name="+username+"nor found"));
-        return announcementRepository.getInactiveForUser(webUser.getId());
-    }
+        WebUser webUser = userRepository.findByUserName(username).orElseThrow(() -> new ResourceNotFoundException("user with name="+username+" not found"));
 
+        List<AnnouncementDto> announcementDtoList = announcementRepository.getInactiveForUser(webUser.getId());
+        for (AnnouncementDto announcement : announcementDtoList){
+            List<String> images = imageStorageRepository.findAllByAnnouncementId(announcement.getId());
+            announcement.setImages(images);
+        }
+        return announcementDtoList;
+    }
 
     public Announcement createAnnouncementByDto(AnnouncementCreateDto announcementCreateDto){
         System.out.println(announcementCreateDto.toString());
-        // announcementService.saveAnnouncement(announcement);
-        //TODO MAPPER PROSTY i tak pewnie nie zdazymy
-        //TODO v1 w odpowiedniej kolejosci dac add details i flat details+++
         Announcement announcement = new Announcement();
-        announcement.setTitle(announcementCreateDto.getTitle());
-        announcement.setCountry(announcementCreateDto.getCountry());
-        announcement.setCity(announcementCreateDto.getCity());
-        announcement.setPostalCode(announcementCreateDto.getPostalCode());
-        announcement.setDistrict(announcementCreateDto.getDistrict());
-        announcement.setState(announcementCreateDto.getState());
-        announcement.setStreet(announcementCreateDto.getStreet());
-        announcement.setHouseNumber(announcementCreateDto.getHouseNumber());
-        announcement.setText(announcementCreateDto.getText());
-        announcement.setPropertyType(announcementCreateDto.getPropertyType());
-        announcement.setPrice(announcementCreateDto.getPrice());
-        announcement.setCurrency(announcementCreateDto.getCurrency());
-        announcement.setLivingSpace(announcementCreateDto.getLivingSpace());
-        announcement.setYearBuilt(announcementCreateDto.getYearBuilt());
-        announcement.setAvailableFrom(announcementCreateDto.getAvailableFrom());
-        announcement.setPublicationDate((new Date(System.currentTimeMillis()))); //TU BYĆ MOŻE BĘDZIE POTRZEBNY ZMIAANA FORMATU DATY
+        announcement.setTitle(announcementCreateDto.getTitle())
+                .setCountry(announcementCreateDto.getCountry())
+                .setCity(announcementCreateDto.getCity())
+                .setPostalCode(announcementCreateDto.getPostalCode())
+                .setDistrict(announcementCreateDto.getDistrict())
+                .setState(announcementCreateDto.getState())
+                .setStreet(announcementCreateDto.getStreet())
+                .setHouseNumber(announcementCreateDto.getHouseNumber())
+                .setText(announcementCreateDto.getText())
+                .setPropertyType(announcementCreateDto.getPropertyType())
+                .setPrice(announcementCreateDto.getPrice())
+                .setCurrency(announcementCreateDto.getCurrency())
+                .setLivingSpace(announcementCreateDto.getLivingSpace())
+                .setYearBuilt(announcementCreateDto.getYearBuilt())
+                .setAvailableFrom(announcementCreateDto.getAvailableFrom())
+                .setPublicationDate((new Date(System.currentTimeMillis())));
 
-        // publication date ustawiana automatycznie
+        //publication date is set automatically
         //ADMIN things automatically
         announcement.setReported(false);
-        announcement.setEditedByUser(false); // nie jest edytowane przez usera
-        // reason, description i admin oraz reported time nie ustawiamy bo bedzie null
+        announcement.setEditedByUser(false); //not edited by user
+        //reason , description, admin, reportedTime are null by default
         announcement.setEdited(false);
         announcement.setActive(false);
-        //TODO tutaj zrobic rzeczy zwiazane z flaga editedByUser
-        //USTAWIANIE USERA Z SECURITY CONTEX HOLDERA
+        //set user
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         announcement.setWebUser(userRepository.findByUserName(username)
                 .orElseThrow(()-> new ResourceNotFoundException("WebUser with name="+username+" not found.")));
@@ -181,17 +186,19 @@ public class AnnouncementService {
 
         return announcement;}
       
-    public List<Announcement> getFavouriteForCurrentUser() {
+    public List<AnnouncementDto> getFavouriteForCurrentUser() {
         String username= SecurityContextHolder.getContext().getAuthentication().getName();
         WebUser webUser = userRepository.findByUserName(username).orElseThrow(() -> new ResourceNotFoundException("user with name="+username+"nor found"));
         List<Integer> favouriteIdList = favouriteRepository.getAllAnnouncementIdForCurrentUser(webUser.getId());
-        List<Announcement> announcementList = new ArrayList<>();
+        List<AnnouncementDto> announcementDtoList = new ArrayList<>();
         for (int id: favouriteIdList) {
-            announcementList.add( announcementRepository.findAnnouncementById(id).orElseThrow(()-> new ResourceNotFoundException("Announcement with id="+id+"not found")));
+            announcementDtoList.add( announcementRepository.findAnnouncementDtoById(id));//.orElseThrow(()-> new ResourceNotFoundException("Announcement with id="+id+"not found")));
         }
-        return announcementList;
-        //@Query(value="SELECT announcement_details.announcement_id FROM announcement_details WHERE shower=?1  AND oven=?2",nativeQuery = true)
-
+        for (AnnouncementDto announcement : announcementDtoList){
+            List<String> images = imageStorageRepository.findAllByAnnouncementId(announcement.getId());
+            announcement.setImages(images);
+        }
+        return announcementDtoList;
     }
 
     public AnnouncementCreateDto getAnnouncementDtoById(Integer id) {
@@ -363,13 +370,13 @@ public class AnnouncementService {
 
     }
 
-    public List<Announcement> getActiveForUserByAnnouncementId(Integer id) {
+    //Returns active announcements of Owner of provided AnnouncementId
+    public List<AnnouncementDto> getActiveForUserByAnnouncementId(Integer id) {
         Announcement announcement = announcementRepository.findAnnouncementById(id).orElseThrow(() -> new ResourceNotFoundException("announcement not found"));
         return announcementRepository.getActiveForUser(announcement.getWebUser().getId());
     }
 
     public void deleteById(Integer id) {
-//        announcementDetailsRepository.deleteAnnouncementDetailsByAnnouncementID(id);
-        announcementRepository.deleteAnnouncementById(id);
+        announcementRepository.deleteById(id);
     }
 }

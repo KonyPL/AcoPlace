@@ -2,6 +2,8 @@ package put.poznan.AcoPlaceBackend.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 
@@ -22,6 +24,7 @@ public class HouseDetails {
     private Integer balcony;
 
     @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Announcement announcement;
 
 }

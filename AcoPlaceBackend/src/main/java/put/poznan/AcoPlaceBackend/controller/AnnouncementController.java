@@ -24,7 +24,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin()//tu mozna dac  z jakieg hosta pozniej
+@CrossOrigin()
 public class AnnouncementController {
     private final AnnouncementService announcementService;
     private final FavouriteService favouriteService;
@@ -33,8 +33,6 @@ public class AnnouncementController {
         this.announcementService = announcementService;
         this.favouriteService = favouriteService;
     }
-
-
 
     @GetMapping("/free/announcement/{id}")
     public Announcement getAdvertisementById(@PathVariable Integer id){
@@ -75,7 +73,6 @@ public class AnnouncementController {
         return new ResponseEntity<>(announcements, HttpStatus.OK);
     }
 
-
     @PostMapping("/addAnnouncement")
     public Announcement createAnnouncement(@RequestBody Announcement announcement) {
         System.out.println(announcement.toString());
@@ -89,15 +86,14 @@ public class AnnouncementController {
     }
 
     @GetMapping("/announcements/active")
-    public List<Announcement> getAllActiveAnnouncementsForCurrentUser(){
+    public List<AnnouncementDto> getAllActiveAnnouncementsForCurrentUser(){
         return announcementService.getActiveForCurrentUser();
     }
 
     @GetMapping("/announcements/inactive")
-    public List<Announcement> getAllInactiveAnnouncementsForCurrentUser(){
+    public List<AnnouncementDto> getAllInactiveAnnouncementsForCurrentUser(){
         return announcementService.getInactiveForCurrentUser();
     }
-
 
     @PostMapping("/addAnnouncementByDto")
     public Integer createAnnouncementByDto(@RequestBody AnnouncementCreateDto announcementCreateDto) {
@@ -107,9 +103,6 @@ public class AnnouncementController {
     return announcement.getId();
     }
 
-
-    //updateAnnouncementByDto
-
     @PostMapping("/updateAnnouncementByDto")
     public Announcement updateAnnouncementByDto(@RequestBody AnnouncementCreateDto announcementCreateDto) {
         System.out.println("add EDIT DTO="+announcementCreateDto.toString());
@@ -117,11 +110,11 @@ public class AnnouncementController {
 
     @GetMapping("/announcement/favourite/{id}")
     public Favourite addFavouriteAnnouncementToCurrentUser(@PathVariable Integer id){
-        return  favouriteService.setFavouriteAnnouncement(id);
+        return favouriteService.setFavouriteAnnouncement(id);
     }
 
    @GetMapping("/announcements/favourite")
-    public List<Announcement> getAllFavouriteAnnouncementsIdForCurrentUser(){
+    public List<AnnouncementDto> getAllFavouriteAnnouncementsIdForCurrentUser(){
         return announcementService.getFavouriteForCurrentUser();
 
     }
@@ -132,11 +125,8 @@ public class AnnouncementController {
     }
 
     @GetMapping("/announcements/getActiveByAdId/{id}")
-    public List<Announcement> getAllActiveForUserByAnnouncmentId(@PathVariable Integer id){
-        System.out.println("JESTEM W GET BY ID");
+    public List<AnnouncementDto> getAllActiveForUserByAnnouncmentId(@PathVariable Integer id){
         return announcementService.getActiveForUserByAnnouncementId(id);
-
-
     }
 
     @DeleteMapping("announcement/delete/{id}")

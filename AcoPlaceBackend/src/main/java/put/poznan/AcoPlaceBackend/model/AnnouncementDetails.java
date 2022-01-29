@@ -2,6 +2,8 @@ package put.poznan.AcoPlaceBackend.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 
@@ -36,6 +38,7 @@ public class AnnouncementDetails {
     private boolean nearSupermarket;
 
     @OneToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Announcement announcement;
 
 }
