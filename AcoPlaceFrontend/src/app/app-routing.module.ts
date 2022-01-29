@@ -33,16 +33,13 @@ const appRoutes: Routes = [
     { path: 'add-announcement', component: AddAnnouncementComponent, canActivate: [AuthGuard] },
     { path: 'announcement-details-list', component: AnnouncementDetailsListComponent },
     { path: 'user-profile', component: UserProfileComponent },
-    // { path: 'admin', component: AdminComponent },
     { path: '', component: AnnouncementListComponent },
-    //Kod Wodnika
     { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register-success', component: RegisterSuccessComponent },
     { path: 'activeAnnouncement', component: AnnoucementActiveListComponent },
     { path: 'inactiveAnnouncement', component: AnnouncementInactiveListComponent },
     { path: 'favouriteAnnouncement', component: AnnouncementFavouriteListComponent },
-    //Koniec kodu Wodnika
     { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register-success', component: RegisterSuccessComponent },

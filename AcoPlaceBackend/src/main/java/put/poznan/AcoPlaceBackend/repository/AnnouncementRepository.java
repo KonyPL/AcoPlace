@@ -1,14 +1,14 @@
 package put.poznan.AcoPlaceBackend.repository;
 
 import com.google.common.base.CaseFormat;
-import org.apache.commons.lang3.ObjectUtils;
 
-import com.google.common.collect.Maps;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import put.poznan.AcoPlaceBackend.criteria.AnnouncementSearchCriteria;
 import put.poznan.AcoPlaceBackend.dto.AnnouncementDto;
 import put.poznan.AcoPlaceBackend.model.Announcement;
@@ -59,8 +59,12 @@ public interface AnnouncementRepository extends JpaRepository<Announcement, Inte
 
                 // WHERE
                 builder.append("WHERE 1 = 1 AND a.active = true " + System.lineSeparator());
-                if (queryParams.get("priceMin") != null) {
+                if (queryParams.get("priceMin") != null && queryParams.get("priceMax") != null) {
                     builder.append("  AND a.price between :priceMin AND :priceMax " + System.lineSeparator());
+                } else if(queryParams.get("priceMin") != null){
+                    builder.append("  AND a.price >= :priceMin " + System.lineSeparator());
+                } else if(queryParams.get("priceMax") != null){
+                    builder.append("  AND a.price <= :priceMax " + System.lineSeparator());
                 }
                 if (queryParams.get("availableFrom") != null) {
                     builder.append("  AND a.available_from <= :availableFrom " + System.lineSeparator());
@@ -181,18 +185,53 @@ public interface AnnouncementRepository extends JpaRepository<Announcement, Inte
         });
     }
 
+    default List<AnnouncementDto> getActiveForUser(Integer id) {
+        return this.findAll(new QueryCallback<List<AnnouncementDto>>() {
+            @SuppressWarnings("unchecked")
+            @Override
+            public List<AnnouncementDto> doWithEntityManager(EntityManager entityManager) {
+                Query query = entityManager.createNativeQuery("SELECT a.id as a_id, a.title, a.country," +
+                        "a.state, a.city, a.district, a.property_type, a.price, a.currency, a.available_from " +
+                        "FROM Announcement a WHERE a.web_user_id = :id and a.active='true'", "AnnouncementDtoMapping");
+                query.setParameter("id", id);
+                return query.getResultList();
+            }
+        });
+    }
 
-    @org.springframework.data.jpa.repository.Query(value="SELECT * FROM Announcement a WHERE a.web_user_id = ?1 and a.active='true'", nativeQuery = true) // dodac active
-    List<Announcement> getActiveForUser(int i );
-
-    @org.springframework.data.jpa.repository.Query(value="SELECT * FROM Announcement a WHERE a.web_user_id = ?1 and a.active='false'", nativeQuery = true) // dodac active
-    List<Announcement> getInactiveForUser(Integer id);
+    default List<AnnouncementDto> getInactiveForUser(Integer id) {
+        return this.findAll(new QueryCallback<List<AnnouncementDto>>() {
+            @SuppressWarnings("unchecked")
+            @Override
+            public List<AnnouncementDto> doWithEntityManager(EntityManager entityManager) {
+                Query query = entityManager.createNativeQuery("SELECT a.id as a_id, a.title, a.country," +
+                        "a.state, a.city, a.district, a.property_type, a.price, a.currency, a.available_from " +
+                        "FROM Announcement a WHERE a.web_user_id = :id and a.active='false'", "AnnouncementDtoMapping");
+                query.setParameter("id", id);
+                return query.getResultList();
+            }
+        });
+    }
 
     @org.springframework.data.jpa.repository.Query(value="SELECT * FROM Announcement a WHERE a.id=?1", nativeQuery = true) // dodac active
     Optional<Announcement> findAnnouncementById(Integer id);
 
-    @org.springframework.data.jpa.repository.Query(value="DELETE FROM Announcement a WHERE a.id =?1", nativeQuery = true) // dodac active
-    void deleteAnnouncementById(Integer id);
-}
+    default AnnouncementDto findAnnouncementDtoById(Integer id) {
+        return this.findOne(new QueryCallback<AnnouncementDto>() {
+            @SuppressWarnings("unchecked")
+            @Override
+            public AnnouncementDto doWithEntityManager(EntityManager entityManager) {
+                Query query = entityManager.createNativeQuery("SELECT a.id as a_id, a.title, a.country," +
+                        "a.state, a.city, a.district, a.property_type, a.price, a.currency, a.available_from " +
+                        "FROM Announcement a WHERE a.id = :id", "AnnouncementDtoMapping");
+                query.setParameter("id", id);
+                return (AnnouncementDto) query.getSingleResult();
+            }
+        });
+    }
 
-//    @org.springframework.data.jpa.repository.Query(value="SELECT * FROM announcement WHERE announcement.web_user_id=?1") // dodac active
+//    @Transactional
+//    @Modifying(clearAutomatically = true)
+//    @org.springframework.data.jpa.repository.Query(value="DELETE FROM Announcement a WHERE a.id =?1", nativeQuery = true)
+//    void deleteAnnouncementById(Integer id);
+}

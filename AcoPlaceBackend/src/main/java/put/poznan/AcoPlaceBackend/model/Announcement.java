@@ -2,6 +2,7 @@ package put.poznan.AcoPlaceBackend.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
+import lombok.experimental.Accessors;
 import put.poznan.AcoPlaceBackend.dto.AnnouncementDto;
 
 import javax.persistence.*;
@@ -15,6 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Accessors(chain = true)
 @SqlResultSetMapping(
         name = "AnnouncementDtoMapping",
         classes = {
