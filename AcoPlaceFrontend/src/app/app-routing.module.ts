@@ -29,6 +29,7 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
 const appRoutes: Routes = [
 
     { path: 'announcements-list', component: AnnouncementListComponent },
+    { path: 'announcements-list2', component: AnnouncementListComponent },
     { path: 'announcement/:id', component: AnnouncementDetailsComponent },
     { path: 'add-announcement', component: AddAnnouncementComponent, canActivate: [AuthGuard] },
     { path: 'announcement-details-list', component: AnnouncementDetailsListComponent },

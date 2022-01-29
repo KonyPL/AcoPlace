@@ -8,8 +8,8 @@
             <!-- basic -->
             <div class="form-group">
                 <label for="name">Title</label>
-                <input [(ngModel)]="announcementDto.title" placeholder="A new room" name="title" class="form-control"
-                    id="title">
+                <input [(ngModel)]="announcementDto.title" placeholder="A good title sells the offer" name="title"
+                    class="form-control" id="title">
             </div>
             <div class="form-group">
                 <label for="name">Property type</label>
@@ -26,27 +26,33 @@
             <div class="form-group">
                 <label for="name">Price</label>
                 <input [(ngModel)]="announcementDto.price" placeholder="3000" name="price" class="form-control"
-                    id="price" type="number">
+                    id="price" type="number"
+                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                    min="0">
             </div>
             <div class="form-group">
                 <label for="name">Currency</label>
-                <select [(ngModel)]="announcementDto.currency" name="currency"
+                <select [(ngModel)]="announcementDto.currency" name="currency" placeholder="PLN"
                     class="form-control form-select form-select-lg mb-3" aria-label=".form-select-lg example"
                     id="currency">
                     <option class="form-control" value="PLN">PLN</option>
-                    <option class="form-control" value="PLN">EUR</option>
-                    <option class="form-control" value="PLN">USD</option>
+                    <option class="form-control" value="EUR">EUR</option>
+                    <option class="form-control" value="USD">USD</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="name">Living space</label>
                 <input [(ngModel)]="announcementDto.livingSpace" placeholder="7" name="livingSpace" class="form-control"
-                    id="livingSpace">
+                    id="livingSpace" type="number"
+                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                    min="0">
             </div>
             <div class="form-group">
                 <label for="name">Year built</label>
                 <input [(ngModel)]="announcementDto.yearBuilt" placeholder="1980" name="yearBuilt" class="form-control"
-                    type="number" id="yearBuilt">
+                    type="number"
+                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                    min="0" id="yearBuilt">
             </div>
             <div class="form-group">
                 <label for="lastname">Available from</label>
@@ -91,7 +97,7 @@
             </div>
             <div class="form-group">
                 <label for="name">Street</label>
-                <input [(ngModel)]="announcementDto.street" placeholder="Broughton Rd" name="street"
+                <input [(ngModel)]="announcementDto.street" placeholder="Osiedle Jagiellońskie" name="street"
                     class="form-control" id="street">
             </div>
             <div class="form-group">
@@ -170,7 +176,9 @@
                 <div class="form-group" *ngIf="announcementDto.internet!==undefined">
                     <label for="name">InternetSpeed</label>
                     <input [(ngModel)]="announcementDto.internetSpeed" placeholder="500" name="internetSpeed"
-                        class="form-control" id="internetSpeed" type="number">
+                        class="form-control" id="internetSpeed" type="number"
+                        onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                        min="0">
                 </div>
                 <div class="form-group">
                     <mat-checkbox [(ngModel)]="announcementDto.dishwasher" name="dishwasher">Dishwasher
@@ -191,28 +199,38 @@
                     <div class="form-group">
                         <label for="name">Floors</label>
                         <input [(ngModel)]="announcementDto.floors" placeholder="2" name="floors" class="form-control"
-                            id="floors" type="number">
+                            id="floors" type="number"
+                            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                            min="0">
                     </div>
 
                     <div class="form-group">
                         <label for="name">Bedrooms</label>
                         <input [(ngModel)]="announcementDto.bedrooms" placeholder="2" name="bedrooms"
-                            class="form-control" id="bedrooms" type="number">
+                            class="form-control" id="bedrooms" type="number"
+                            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                            min="0">
                     </div>
                     <div class="form-group">
                         <label for="lastname">Bathrooms</label>
                         <input [(ngModel)]="announcementDto.bathrooms" placeholder="4" name="bathrooms"
-                            class="form-control" id="bathrooms" type="number">
+                            class="form-control" id="bathrooms" type="number"
+                            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                            min="0">
                     </div>
                     <div class="form-group">
                         <label for="lastname">Balcony</label>
                         <input [(ngModel)]="announcementDto.balcony" placeholder="2" name="balcony" class="form-control"
-                            id="balcony" type="number">
+                            id="balcony" type="number"
+                            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                            min="0">
                     </div>
                     <div class="form-group">
                         <label for="name">Lot size</label>
                         <input [(ngModel)]="announcementDto.lotSize" placeholder="70" name="lotSize"
-                            class="form-control" id="lotSize" type="number">
+                            class="form-control" id="lotSize" type="number"
+                            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                            min="0">
                     </div>
                     <div class="form-group">
                         <mat-checkbox [(ngModel)]="announcementDto.basement" name="basement">Basement
@@ -231,29 +249,39 @@
                     <div class="form-group">
                         <label for="name">Floor</label>
                         <input [(ngModel)]="announcementDto.floor" placeholder="5" name="floor" class="form-control"
-                            id="floor" type="number">
+                            id="floor" type="number"
+                            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                            min="0">
                     </div>
                     <div class="form-group">
                         <label for="name">Bedrooms</label>
                         <input [(ngModel)]="announcementDto.bedrooms" placeholder="4" name="bedrooms"
-                            class="form-control" id="bedrooms" type="number">
+                            class="form-control" id="bedrooms" type="number"
+                            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                            min="0">
                     </div>
                     <div class="form-group">
                         <label for="lastname">Bathrooms</label>
                         <input [(ngModel)]="announcementDto.bathrooms" placeholder="3" name="bathrooms"
-                            class="form-control" id="bathrooms" type="number">
+                            class="form-control" id="bathrooms" type="number"
+                            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                            min="0">
                     </div>
 
 
                     <div class="form-group">
                         <label for="lastname">Balcony</label>
                         <input [(ngModel)]="announcementDto.balcony" placeholder="2" name="balcony" class="form-control"
-                            id="balcony" type="number">
+                            id="balcony" type="number"
+                            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                            min="0">
                     </div>
                     <div class="form-group">
                         <label for="lastname">Flat parking</label>
                         <input [(ngModel)]="announcementDto.flatParking" placeholder="1" name="flatParking"
-                            class="form-control" id="flatParking" type="number">
+                            class="form-control" id="flatParking" type="number"
+                            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                            min="0">
                     </div>
                     <div class="form-group">
                         <mat-checkbox [(ngModel)]="announcementDto.basement" name="basement">Basement
@@ -266,22 +294,30 @@
                     <div>
                         <label for="name">Floor</label>
                         <input [(ngModel)]="announcementDto.floor" placeholder="1" name="floor" class="form-control"
-                            id="floor" type="number">
+                            id="floor" type="number"
+                            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                            min="0">
                     </div>
                     <div class="form-group">
                         <label for="name">Beds in room</label>
                         <input [(ngModel)]="announcementDto.bedsInRoom" placeholder="2" name="bedsInRoom"
-                            class="form-control" id="bedsInRoom" type="number">
+                            class="form-control" id="bedsInRoom" type="number"
+                            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                            min="0">
                     </div>
                     <div class="form-group">
                         <label for="lastname">Number of flatmates</label>
                         <input [(ngModel)]="announcementDto.numberOfFlatmates" placeholder="3" name="numberOfFlatmates"
-                            class="form-control" id="numberOfFlatmates" type="number">
+                            class="form-control" id="numberOfFlatmates" type="number"
+                            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                            min="0">
                     </div>
                     <div class="form-group">
                         <label for="lastname">Bathrooms</label>
                         <input [(ngModel)]="announcementDto.bathrooms" placeholder="4" name="bathrooms"
-                            class="form-control" id="bathrooms" type="number">
+                            class="form-control" id="bathrooms" type="number"
+                            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                            min="0">
                     </div>
                 </div>
             </div>

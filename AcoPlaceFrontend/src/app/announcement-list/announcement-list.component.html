@@ -57,8 +57,9 @@
                 <form class="example-form">
                     <mat-form-field class="full-width" appearance="fill">
                         <mat-label>Min price</mat-label>
-                        <input matInput placeholder="50" value="Sushi" type="number" id="priceMin"
-                            [(ngModel)]="announcementParams.priceMin" name="priceMin" required>
+                        <input matInput placeholder="500" value="Sushi" type="number" min="0"
+                            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                            id="priceMin" [(ngModel)]="announcementParams.priceMin" name="priceMin" required>
                     </mat-form-field>
                 </form>
             </div>
@@ -66,8 +67,9 @@
                 <form class="example-form">
                     <mat-form-field class="full-width" appearance="fill">
                         <mat-label>Max price</mat-label>
-                        <input matInput placeholder="500" value="Sushi" type="number" id="priceMax"
-                            [(ngModel)]="announcementParams.priceMax" name="priceMax" required>
+                        <input matInput placeholder="5000" value="Sushi" type="number"
+                            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                            min="0" id="priceMax" [(ngModel)]="announcementParams.priceMax" name="priceMax" required>
                     </mat-form-field>
                 </form>
             </div>
@@ -84,7 +86,7 @@
                 <form class="example-form">
                     <mat-form-field class="full-width" appearance="fill">
                         <mat-label>City</mat-label>
-                        <input matInput placeholder="Poland" value="Sushi" type="text" id="city"
+                        <input matInput placeholder="Poznan" value="Sushi" type="text" id="city"
                             [(ngModel)]="announcementParams.city" name="city" required>
                     </mat-form-field>
                 </form>
@@ -93,7 +95,7 @@
                 <form class="example-form">
                     <mat-form-field class="full-width" appearance="fill">
                         <mat-label>District</mat-label>
-                        <input matInput placeholder="Poland" value="Sushi" type="text" id="district"
+                        <input matInput placeholder="Rataje" value="Sushi" type="text" id="district"
                             [(ngModel)]="announcementParams.district" name="district" required>
                     </mat-form-field>
                 </form>
@@ -105,8 +107,10 @@
                 <form class="example-form">
                     <mat-form-field class="full-width" appearance="fill">
                         <mat-label>Internet speed</mat-label>
-                        <input matInput placeholder="Poland" value="Sushi" type="number" id="internetSpeed"
-                            [(ngModel)]="announcementParams.internetSpeed" name="internetSpeed" required>
+                        <input matInput placeholder="500" value="Sushi" type="number"
+                            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                            min="0" id="internetSpeed" [(ngModel)]="announcementParams.internetSpeed"
+                            name="internetSpeed" required>
                     </mat-form-field>
                 </form>
             </div>
@@ -114,8 +118,10 @@
                 <form class="example-form">
                     <mat-form-field class="full-width" appearance="fill">
                         <mat-label>Living space</mat-label>
-                        <input matInput placeholder="Poland" value="Sushi" type="number" id="livingSpace"
-                            [(ngModel)]="announcementParams.livingSpace" name="livingSpace" required>
+                        <input matInput placeholder="7" value="Sushi" type="number"
+                            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                            min="0" id="livingSpace" [(ngModel)]="announcementParams.livingSpace" name="livingSpace"
+                            required>
                     </mat-form-field>
                 </form>
             </div>
@@ -150,8 +156,10 @@
                         <form class="example-form">
                             <mat-form-field class="full-width" appearance="fill">
                                 <mat-label>Balcony</mat-label>
-                                <input matInput placeholder="Poland" value="Sushi" type="number" id="balcony"
-                                    [(ngModel)]="announcementParams.balcony" name="balcony" required>
+                                <input matInput placeholder="1" value="Sushi" type="number"
+                                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                                    min="0" id="balcony" [(ngModel)]="announcementParams.balcony" name="balcony"
+                                    required>
                             </mat-form-field>
                         </form>
                     </div>
@@ -162,8 +170,10 @@
                         <form class="example-form">
                             <mat-form-field class="full-width" appearance="fill">
                                 <mat-label>Flat parking</mat-label>
-                                <input matInput placeholder="Poland" value="Sushi" type="number" id="flatParking"
-                                    [(ngModel)]="announcementParams.flatParking" name="flatParking" required>
+                                <input matInput placeholder="2" value="Sushi" type="number"
+                                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                                    min="0" id="flatParking" [(ngModel)]="announcementParams.flatParking"
+                                    name="flatParking" required>
                             </mat-form-field>
                         </form>
                     </div>
@@ -171,8 +181,9 @@
                         <form class="example-form">
                             <mat-form-field class="full-width" appearance="fill">
                                 <mat-label>Floor</mat-label>
-                                <input matInput placeholder="Poland" value="Sushi" type="number" id="floor"
-                                    [(ngModel)]="announcementParams.floor" name="floor" required>
+                                <input matInput placeholder="3" value="Sushi" type="number"
+                                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                                    min="0" id="floor" [(ngModel)]="announcementParams.floor" name="floor" required>
                             </mat-form-field>
                         </form>
                     </div>
@@ -180,8 +191,10 @@
                         <form class="example-form">
                             <mat-form-field class="full-width" appearance="fill">
                                 <mat-label>Bedrooms</mat-label>
-                                <input matInput placeholder="Poland" value="Sushi" type="number" id="bedrooms"
-                                    [(ngModel)]="announcementParams.bedrooms" name="bedrooms" required>
+                                <input matInput placeholder="2" value="Sushi" type="number"
+                                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                                    min="0" id="bedrooms" [(ngModel)]="announcementParams.bedrooms" name="bedrooms"
+                                    required>
                             </mat-form-field>
                         </form>
                     </div>
@@ -189,8 +202,10 @@
                         <form class="example-form">
                             <mat-form-field class="full-width" appearance="fill">
                                 <mat-label>Bathrooms</mat-label>
-                                <input matInput placeholder="Poland" value="Sushi" type="number" id="bathrooms"
-                                    [(ngModel)]="announcementParams.bathrooms" name="bathrooms" required>
+                                <input matInput placeholder="2" value="Sushi" type="number"
+                                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                                    min="0" id="bathrooms" [(ngModel)]="announcementParams.bathrooms" name="bathrooms"
+                                    required>
                             </mat-form-field>
                         </form>
                     </div>
@@ -202,8 +217,10 @@
                         <form class="example-form">
                             <mat-form-field class="full-width" appearance="fill">
                                 <mat-label>Balcony</mat-label>
-                                <input matInput placeholder="Poland" value="Sushi" type="number" id="balcony"
-                                    [(ngModel)]="announcementParams.balcony" name="balcony" required>
+                                <input matInput placeholder="1" value="Sushi" type="number"
+                                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                                    min="0" id="balcony" [(ngModel)]="announcementParams.balcony" name="balcony"
+                                    required>
                             </mat-form-field>
                         </form>
                     </div>
@@ -211,8 +228,10 @@
                         <form class="example-form">
                             <mat-form-field class="full-width" appearance="fill">
                                 <mat-label>Lot size</mat-label>
-                                <input matInput placeholder="Poland" value="Sushi" type="number" id="lotSize"
-                                    [(ngModel)]="announcementParams.lotSize" name="lotSize" required>
+                                <input matInput placeholder="70" value="Sushi" type="number"
+                                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                                    min="0" id="lotSize" [(ngModel)]="announcementParams.lotSize" name="lotSize"
+                                    required>
                             </mat-form-field>
                         </form>
                     </div>
@@ -221,8 +240,9 @@
                         <form class="example-form">
                             <mat-form-field class="full-width" appearance="fill">
                                 <mat-label>Floors</mat-label>
-                                <input matInput placeholder="Poland" value="Sushi" type="number" id="floors"
-                                    [(ngModel)]="announcementParams.floors" name="floors" required>
+                                <input matInput placeholder="2" value="Sushi" type="number"
+                                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                                    min="0" id="floors" [(ngModel)]="announcementParams.floors" name="floors" required>
                             </mat-form-field>
                         </form>
                     </div>
@@ -230,8 +250,10 @@
                         <form class="example-form">
                             <mat-form-field class="full-width" appearance="fill">
                                 <mat-label>Bedrooms</mat-label>
-                                <input matInput placeholder="Poland" value="Sushi" type="number" id="bedrooms"
-                                    [(ngModel)]="announcementParams.bedrooms" name="bedrooms" required>
+                                <input matInput placeholder="2" value="Sushi" type="number"
+                                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                                    min="0" id="bedrooms" [(ngModel)]="announcementParams.bedrooms" name="bedrooms"
+                                    required>
                             </mat-form-field>
                         </form>
                     </div>
@@ -239,8 +261,10 @@
                         <form class="example-form">
                             <mat-form-field class="full-width" appearance="fill">
                                 <mat-label>Bathrooms</mat-label>
-                                <input matInput placeholder="Poland" value="Sushi" type="number" id="bathrooms"
-                                    [(ngModel)]="announcementParams.bathrooms" name="bathrooms" required>
+                                <input matInput placeholder="3" value="Sushi" type="number"
+                                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                                    min="0" id="bathrooms" [(ngModel)]="announcementParams.bathrooms" name="bathrooms"
+                                    required>
                             </mat-form-field>
                         </form>
                     </div>
@@ -266,8 +290,9 @@
                         <form class="example-form">
                             <mat-form-field class="full-width" appearance="fill">
                                 <mat-label>Floor</mat-label>
-                                <input matInput placeholder="Poland" value="Sushi" type="number" id="floor"
-                                    [(ngModel)]="announcementParams.floor" name="floor" required>
+                                <input matInput placeholder="5" value="Sushi" type="number"
+                                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                                    min="0" id="floor" [(ngModel)]="announcementParams.floor" name="floor" required>
                             </mat-form-field>
                         </form>
                     </div>
@@ -276,8 +301,10 @@
                         <form class="example-form">
                             <mat-form-field class="full-width" appearance="fill">
                                 <mat-label>Beds in room</mat-label>
-                                <input matInput placeholder="Poland" value="Sushi" type="number" id="bedsInRoom"
-                                    [(ngModel)]="announcementParams.bedsInRoom" name="bedsInRoom" required>
+                                <input matInput placeholder="1" value="Sushi" type="number"
+                                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                                    id="bedsInRoom" min="0" [(ngModel)]="announcementParams.bedsInRoom"
+                                    name="bedsInRoom" required>
                             </mat-form-field>
                         </form>
                     </div>
@@ -285,9 +312,10 @@
                         <form class="example-form">
                             <mat-form-field class="full-width" appearance="fill">
                                 <mat-label>Number of flatmates</mat-label>
-                                <input matInput placeholder="Poland" value="Sushi" type="number" id="numberOfFlatmates"
-                                    [(ngModel)]="announcementParams.numberOfFlatmates" name="numberOfFlatmates"
-                                    required>
+                                <input matInput placeholder="3" value="Sushi" type="number"
+                                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                                    min="0" id="numberOfFlatmates" [(ngModel)]="announcementParams.numberOfFlatmates"
+                                    name="numberOfFlatmates" required>
                             </mat-form-field>
                         </form>
                     </div>
@@ -296,8 +324,10 @@
                         <form class="example-form">
                             <mat-form-field class="full-width" appearance="fill">
                                 <mat-label>Bathrooms</mat-label>
-                                <input matInput placeholder="Poland" value="Sushi" type="number" id="bathrooms"
-                                    [(ngModel)]="announcementParams.bathrooms" name="bathrooms" required>
+                                <input matInput placeholder="3" value="Sushi" type="number"
+                                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                                    min="0" id="bathrooms" [(ngModel)]="announcementParams.bathrooms" name="bathrooms"
+                                    required>
                             </mat-form-field>
                         </form>
                     </div>
