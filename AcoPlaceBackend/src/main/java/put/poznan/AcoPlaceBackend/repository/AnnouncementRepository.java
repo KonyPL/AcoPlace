@@ -230,8 +230,4 @@ public interface AnnouncementRepository extends JpaRepository<Announcement, Inte
         });
     }
 
-//    @Transactional
-//    @Modifying(clearAutomatically = true)
-//    @org.springframework.data.jpa.repository.Query(value="DELETE FROM Announcement a WHERE a.id =?1", nativeQuery = true)
-//    void deleteAnnouncementById(Integer id);
 }
