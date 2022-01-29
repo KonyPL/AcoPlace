@@ -1,42 +1,45 @@
-<h2 class="text-center" style="margin-bottom: 60px;"> Your profile</h2>
-
-<div class="col-md-1"></div>
-<div class="col-md-5">
-    <div style="padding-left: 40px; font-size: 18px;">
-        <div>
-            <label>Username: {{userProfileDto.userName}}</label>
-        </div>
-        <div>
-            <label>E-mail: {{userProfileDto.email}}</label>
-        </div>
-        <hr>
-        <div>
-            <label>First name: {{userProfileDto.firstName}}</label>
-        </div>
-        <div>
-            <label>Last name: {{userProfileDto.lastName}}</label>
-        </div>
-        <div>
-            <label>Phone number: {{userProfileDto.phoneNumber}}</label>
-        </div>
-        <div>
-            <label>Country code: {{userProfileDto.countryCode}}</label>
-        </div>
-        <hr>
-    </div>
-</div>
-<div class="col-md-5">
-    <div style="padding-left: 20px;">
-        <div style="font-size: 18px;">
-            <label>About: </label>
-        </div>
-        <div style="font-size: 16px;">
-            <p>{{userProfileDto.about}}</p>
-        </div>
-        <div>
-            <button mat-raised-button color="primary" (click)="editUser()" style="margin-top: 10px;">EDIT
-                USER</button>
+<h2 class="text-center" style="margin-bottom: 60px;">Your profile</h2>
+<div class="row" >
+    <div class="col-md-1"></div>
+    <div class="col-md-5">
+        <div style="padding-left: 40px; font-size: 18px;">
+            <div>
+                <label>Username: {{userProfileDto.userName}}</label>
+            </div>
+            <div>
+                <label>E-mail: {{userProfileDto.email}}</label>
+            </div>
+            <hr>
+            <div>
+                <label>First name: {{userProfileDto.firstName}}</label>
+            </div>
+            <div>
+                <label>Last name: {{userProfileDto.lastName}}</label>
+            </div>
+            <div>
+                <label>Phone number: {{userProfileDto.phoneNumber}}</label>
+            </div>
+            <div>
+                <label>Country code: {{userProfileDto.countryCode}}</label>
+            </div>
+            <hr>
         </div>
     </div>
+    <div class="col-md-5">
+        <div style="padding-left: 20px;">
+            <div style="font-size: 18px;">
+                <label>About: </label>
+            </div>
+            <div style="font-size: 16px;">
+                <p>{{userProfileDto.about}}</p>
+            </div>
+            
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+    </div>
+<div class="row" >
+    <div class="text-center">
+        <button mat-raised-button color="primary" (click)="editUser()" style="margin-top: 10px;">Edit your profile</button>
+    </div>
 </div>
-<div class="col-md-1"></div>

@@ -40,10 +40,7 @@ export class SidebarComponent implements OnInit {
     this.userService.getCurrentUserDetails().subscribe(
     data => {
       this.userProfileDto.b64image = data.b64image;
-      console.log("Img" + data)
     }
     )
   }
-
-
 }

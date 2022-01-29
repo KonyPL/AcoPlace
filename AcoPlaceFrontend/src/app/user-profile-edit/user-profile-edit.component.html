@@ -5,7 +5,7 @@
     <img [src]="userProfileDto.b64image" onerror="this.src='/assets/images/placeholder.jpg';" placeholder="Profile Picture"
     name="b64image" id="b64image" style="max-width: 300px; max-height: 500px; height: auto;" [ngStyle]="{'border-radius':'10px'}">
     <label for="file" class="button btn-primary btn" style="margin: 10px 10px 10px 10px">Select new profile picture
-      <input type="file" id="file" accept="image/*" class="button btn-primary btn" (change)="onSelectNewFile($any($event).target?.files)">
+      <input type="file" id="file" accept="image/*" (change)="onSelectNewFile($any($event).target?.files)">
     </label>
     
   </div>
@@ -55,7 +55,8 @@
       <textarea [(ngModel)]="userProfileDto.about" placeholder="about" name="about" class="form-control" id="about"
         cols="10" rows="10"></textarea>
     </div>
-    <button mat-raised-button color="primary" (click)="onEdit()">Edit</button>
+
+    <button mat-raised-button color="primary" (click)="onEdit()">Save</button>
   </form>
 </div>
 <div class="col-md-3"></div>

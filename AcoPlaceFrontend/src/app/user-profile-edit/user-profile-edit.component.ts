@@ -41,6 +41,7 @@ export class UserProfileEditComponent implements OnInit {
 
     goToUserProfile() {
       this.router.navigate(['user-profile']);
+      window.alert("Your changes were saved.")
     }
 
     onEdit(){

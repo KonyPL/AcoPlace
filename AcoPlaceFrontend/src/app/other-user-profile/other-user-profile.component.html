@@ -1,15 +1,32 @@
-<div style="font-size: 16px;">
-    <div>
-        <label>Username: {{userProfileDto.userName}}</label>
-    </div>
-    <div>
-        <label>Phone number: {{userProfileDto.phoneNumber}}</label>
+<h2 class="text-center" style="margin-bottom: 60px;"> {{userProfileDto.userName}}'s profile</h2>
+
+<div class="col-md-1"></div>
+<div class="col-md-5">
+    <div style="padding-left: 40px; font-size: 18px;">
+        <div>
+            <label>E-mail: {{userProfileDto.email}}</label>
+        </div>
+        <hr>
+        <div>
+            <label>Name: {{userProfileDto.firstName}} {{userProfileDto.lastName}}</label>
+        </div>
+        <div>
+            <label>Phone number: {{userProfileDto.countryCode}} {{userProfileDto.phoneNumber}}</label>
+        </div>
+        <hr>
     </div>
 </div>
-
-<button mat-raised-button color="primary" (click)="goToUserProfile()">Show user profile</button>
-
-<!-- <h4 style="padding-left: 20px;"> This user active announcements:</h4> -->
+<div class="col-md-5">
+    <div style="padding-left: 20px;">
+        <div style="font-size: 18px;">
+            <label>About: </label>
+        </div>
+        <div style="font-size: 16px;">
+            <p>{{userProfileDto.about}}</p>
+        </div>
+    </div>
+</div>
+<div class="col-md-1"></div>
 
 <div class="row">
     <div class="col-md-12">
