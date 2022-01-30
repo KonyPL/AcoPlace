@@ -9,7 +9,7 @@ import put.poznan.AcoPlaceBackend.service.UserService;
 import java.util.List;
 
 @RestController
-@CrossOrigin()//tu mozna dac  z jakieg hosta pozniej
+@CrossOrigin()
 public class UserController {
 
     private final UserService userService;

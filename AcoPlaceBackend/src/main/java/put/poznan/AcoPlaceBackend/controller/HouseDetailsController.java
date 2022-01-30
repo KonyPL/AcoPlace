@@ -7,7 +7,7 @@ import put.poznan.AcoPlaceBackend.service.HouseDetailsService;
 import java.util.List;
 
 @RestController
-@CrossOrigin()//tu mozna dac  z jakieg hosta pozniej
+@CrossOrigin()
 public class HouseDetailsController {
     private final HouseDetailsService houseDetailsService;
 

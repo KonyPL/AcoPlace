@@ -42,7 +42,7 @@ public class AnnouncementCreateDto {
 
     private Date publicationDate;
 
-    //web user id dodac to do czegos
+
     private Integer webUserId;
 
     //ANNOUNCEMENT DETAILS INFO

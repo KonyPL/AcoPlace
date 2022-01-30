@@ -21,10 +21,7 @@ public class AnnouncementDetailsService {
     }
 
     public AnnouncementDetails getAnnouncementDetailsById(Integer id){
-
         return announcementDetailsRepository.findAnnouncementDetailsByAnnouncementId(id);
-        //return announcementDetailsRepository.findAnnouncementById(id).orElseThrow(() -> new ResourceNotFoundException("AnnouncmentDetails with id:" + id + " not found in database"));
-
     }
 
     public AnnouncementDetails saveAnnouncementDetails(AnnouncementDetails announcementDetails){

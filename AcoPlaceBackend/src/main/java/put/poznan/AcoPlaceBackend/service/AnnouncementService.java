@@ -41,7 +41,6 @@ public class AnnouncementService {
 
 
     public Announcement getAnnouncementById(Integer id) {
-        // return advertisementRepository.getById(id);
         return announcementRepository.findAnnouncementById(id).orElseThrow(() -> new ResourceNotFoundException("Advertisement with id:" + id + " not found in database"));
     }
 
@@ -204,8 +203,6 @@ public class AnnouncementService {
     public AnnouncementCreateDto getAnnouncementDtoById(Integer id) {
         Announcement announcement = announcementRepository.findAnnouncementById(id).orElseThrow(()-> new ResourceNotFoundException("Announcement with"+id+"not found"));
         AnnouncementDetails announcementDetails = announcementDetailsRepository.findAnnouncementDetailsByAnnouncementId(id);
-        //zmapowac annoucnementdetails i announcement na annoucnemtCreateDto
-
         AnnouncementCreateDto announcementCreateDto = new AnnouncementCreateDto();
         announcementCreateDto.setId(announcement.getId());
         announcementCreateDto.setCountry(announcement.getCountry());
@@ -222,11 +219,7 @@ public class AnnouncementService {
         announcementCreateDto.setCurrency(announcement.getCurrency());
         announcementCreateDto.setLivingSpace(announcement.getLivingSpace());
         announcementCreateDto.setYearBuilt(announcement.getYearBuilt());
-        //TYCH ADMINOWSKICH CHYBA NIE BEDZIEMY POTRZEBOWAC TAK MYSLE, bo w sumie tego uzytkownik nie moze edytowac
 
-
-                //announcment details
-        //TODO caly czas blad leci na bath
         announcementCreateDto.setBath(announcementDetails.isBath());
         announcementCreateDto.setShower(announcementDetails.isShower());
         announcementCreateDto.setMicrowave(announcementDetails.isMicrowave());
@@ -298,9 +291,9 @@ public class AnnouncementService {
         announcement.setYearBuilt(announcementCreateDto.getYearBuilt());
         announcement.setAvailableFrom(announcementCreateDto.getAvailableFrom());
 
-        announcement.setActive(false);// po edycji ogloszenia jest nieaktywne
+        // after user edits announcement it has to be verified by admin again
+        announcement.setActive(false);
         announcement.setEditedByUser(true);
-        //TODO EDITED BY USER USTAWIC
 
         announcementRepository.save(announcement);
 

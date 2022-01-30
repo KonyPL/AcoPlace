@@ -54,7 +54,7 @@ public class UserService {
             userDetails = new UserDetails();
             userDetails.setFirstName("FIRST NAME");
         }
-        // mapowanie do userProfile dot
+
         UserProfileDto userProfileDto = new UserProfileDto();
         userProfileDto.setId(webUser.getId());
         userProfileDto.setUserName(webUser.getUserName());
@@ -75,7 +75,7 @@ public class UserService {
 
         WebUser webUser = announcement.getWebUser();
         UserDetails userDetails = userDetailsRepository.findByWebUserId(webUser.getId());
-        // mapowanie do userProfile dot
+
         UserProfileDto userProfileDto = new UserProfileDto();
         userProfileDto.setUserName(webUser.getUserName());
         userProfileDto.setId(webUser.getId());

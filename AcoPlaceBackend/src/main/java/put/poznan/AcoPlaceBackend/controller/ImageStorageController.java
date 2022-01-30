@@ -1,14 +1,10 @@
 package put.poznan.AcoPlaceBackend.controller;
 
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import put.poznan.AcoPlaceBackend.dto.ImageStorageDto;
 import put.poznan.AcoPlaceBackend.model.Announcement;
-import put.poznan.AcoPlaceBackend.model.AnnouncementDetails;
 import put.poznan.AcoPlaceBackend.model.ImageStorage;
 import put.poznan.AcoPlaceBackend.repository.AnnouncementRepository;
-import put.poznan.AcoPlaceBackend.service.AnnouncementDetailsService;
-import put.poznan.AcoPlaceBackend.service.AnnouncementService;
 import put.poznan.AcoPlaceBackend.service.AuthService;
 import put.poznan.AcoPlaceBackend.service.ImageStorageService;
 
