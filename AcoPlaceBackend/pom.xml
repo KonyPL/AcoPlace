@@ -12,7 +12,8 @@
 	<artifactId>AcoPlaceBackend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>AcoPlaceBackend</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Backend application for "AcoPlace" Web application supporting flat renting - Engineering Thesis</description>
+	<packaging>jar</packaging>
 	<properties>
 		<java.version>11</java.version>
 		<maven.compiler.source>11</maven.compiler.source>
@@ -80,6 +81,9 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>2.5.6</version>
+				<configuration>
+					<executable>true</executable>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.bsc.maven</groupId>
